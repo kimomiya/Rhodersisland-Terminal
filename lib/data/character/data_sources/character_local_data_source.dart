@@ -3,6 +3,7 @@ import 'package:injectable/injectable.dart';
 import 'package:sqflite/sqflite.dart';
 
 import '../../../core/enums/realm.dart';
+import '../../../shared/app_settings.dart';
 import '../models/character.dart';
 
 abstract class CharacterLocalDataSource {
@@ -17,14 +18,17 @@ abstract class CharacterLocalDataSource {
 class CharacterLocalDataSourceImpl implements CharacterLocalDataSource {
   const CharacterLocalDataSourceImpl({
     @required this.db,
+    @required this.settings,
   });
 
   final Database db;
+  final AppSettings settings;
 
   @override
   Future<Character> getCharacterBy(String id) async {
+    final realm = settings.getServerRealm();
     final results = await db.query(
-      '${Realm.zh_CN.value}_${Character.tableName}',
+      '${realm.value}_${Character.tableName}',
       where: 'id = ?',
       whereArgs: <dynamic>[id],
     );
@@ -33,8 +37,8 @@ class CharacterLocalDataSourceImpl implements CharacterLocalDataSource {
 
   @override
   Future<List<Character>> getCharacterList() async {
-    final results =
-        await db.query('${Realm.zh_CN.value}_${Character.tableName}');
+    final realm = settings.getServerRealm();
+    final results = await db.query('${realm.value}_${Character.tableName}');
 
     final characters = <Character>[];
     for (final item in results) {
@@ -46,10 +50,11 @@ class CharacterLocalDataSourceImpl implements CharacterLocalDataSource {
 
   @override
   Future<void> saveCharacterList(List<Character> characters) async {
+    final realm = settings.getServerRealm();
     for (final char in characters) {
       db.execute(
         '''
-        REPLACE INTO ${'${Realm.zh_CN.value}_${Character.tableName}'} (
+        REPLACE INTO ${'${realm.value}_${Character.tableName}'} (
           id, name, description, canUseGeneralPotentialItem,
           potentialItemId, team, displayNumber, appellation,
           position, tagList, displayLogo, itemUsage, itemDesc,

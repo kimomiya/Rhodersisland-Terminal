@@ -38,10 +38,11 @@ Future<GetIt> $initGetIt(
   gh.lazySingleton<SharedPreferences>(() => sharedPreferences);
   gh.lazySingleton<AppSettings>(
       () => AppSettingsImpl(get<SharedPreferences>()));
-  gh.lazySingleton<CharacterLocalDataSource>(
-      () => CharacterLocalDataSourceImpl(db: get<Database>()));
-  gh.lazySingleton<CharacterRemoteDataSource>(
-      () => CharacterRemoteDataSourceImpl(client: get<Dio>()));
+  gh.lazySingleton<CharacterLocalDataSource>(() => CharacterLocalDataSourceImpl(
+      db: get<Database>(), settings: get<AppSettings>()));
+  gh.lazySingleton<CharacterRemoteDataSource>(() =>
+      CharacterRemoteDataSourceImpl(
+          client: get<Dio>(), settings: get<AppSettings>()));
   gh.lazySingleton<CharacterRepository>(() => CharacterRepositoryImpl(
         remoteDataSource: get<CharacterRemoteDataSource>(),
         localDataSource: get<CharacterLocalDataSource>(),

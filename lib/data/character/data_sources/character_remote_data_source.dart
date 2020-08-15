@@ -4,9 +4,9 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../../core/enums/realm.dart';
+import '../../../shared/app_settings.dart';
 import '../models/character.dart';
-
-const realm = 'zh_CN';
 
 abstract class CharacterRemoteDataSource {
   Future<List<Character>> fetchCharacterList();
@@ -16,14 +16,17 @@ abstract class CharacterRemoteDataSource {
 class CharacterRemoteDataSourceImpl implements CharacterRemoteDataSource {
   const CharacterRemoteDataSourceImpl({
     @required this.client,
+    @required this.settings,
   });
 
   final Dio client;
+  final AppSettings settings;
 
   @override
   Future<List<Character>> fetchCharacterList() async {
+    final realm = settings.getServerRealm();
     final response = await client.get<String>(
-      '/$realm/gamedata/excel/character_table.json',
+      '/${realm.value}/gamedata/excel/character_table.json',
     );
 
     final data = jsonDecode(response.data) as Map<String, dynamic>;

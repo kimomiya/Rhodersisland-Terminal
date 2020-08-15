@@ -9,10 +9,10 @@ Future<void> main() async {
 
   await di.configure();
 
-  runApp(MyApp());
+  runApp(RhodersislandTerminal());
 }
 
-class MyApp extends StatelessWidget {
+class RhodersislandTerminal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
