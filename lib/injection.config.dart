@@ -11,7 +11,8 @@ import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'cubit/character/character_cubit.dart';
+import 'shared/app_settings.dart';
+import 'cubit/character/list/character_list_cubit.dart';
 import 'data/character/data_sources/character_local_data_source.dart';
 import 'data/character/data_sources/character_remote_data_source.dart';
 import 'data/character/character_repository.dart';
@@ -35,6 +36,8 @@ Future<GetIt> $initGetIt(
   gh.lazySingleton<NetworkInfo>(() => NetworkInfoImpl(get<Connectivity>()));
   final sharedPreferences = await registerModule.prefs;
   gh.lazySingleton<SharedPreferences>(() => sharedPreferences);
+  gh.lazySingleton<AppSettings>(
+      () => AppSettingsImpl(get<SharedPreferences>()));
   gh.lazySingleton<CharacterLocalDataSource>(
       () => CharacterLocalDataSourceImpl(db: get<Database>()));
   gh.lazySingleton<CharacterRemoteDataSource>(
@@ -44,7 +47,8 @@ Future<GetIt> $initGetIt(
         localDataSource: get<CharacterLocalDataSource>(),
         networkInfo: get<NetworkInfo>(),
       ));
-  gh.factory<CharacterCubit>(() => CharacterCubit(get<CharacterRepository>()));
+  gh.factory<CharacterListCubit>(
+      () => CharacterListCubit(get<CharacterRepository>()));
   return get;
 }
 

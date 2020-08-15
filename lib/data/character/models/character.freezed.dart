@@ -24,6 +24,7 @@ class _$CharacterTearOff {
       @JsonKey(defaultValue: '') String potentialItemId,
       @JsonKey(defaultValue: -1) int team,
       @JsonKey(defaultValue: '') String displayNumber,
+      @JsonKey(defaultValue: '') String tokenKey,
       @JsonKey(defaultValue: '') String appellation,
       @JsonKey(defaultValue: '') String position,
       @JsonKey(defaultValue: <String>[]) List<String> tagList,
@@ -42,6 +43,7 @@ class _$CharacterTearOff {
       potentialItemId: potentialItemId,
       team: team,
       displayNumber: displayNumber,
+      tokenKey: tokenKey,
       appellation: appellation,
       position: position,
       tagList: tagList,
@@ -74,6 +76,8 @@ mixin _$Character {
   int get team;
   @JsonKey(defaultValue: '')
   String get displayNumber;
+  @JsonKey(defaultValue: '')
+  String get tokenKey;
   @JsonKey(defaultValue: '')
   String get appellation;
   @JsonKey(defaultValue: '')
@@ -110,6 +114,7 @@ abstract class $CharacterCopyWith<$Res> {
       @JsonKey(defaultValue: '') String potentialItemId,
       @JsonKey(defaultValue: -1) int team,
       @JsonKey(defaultValue: '') String displayNumber,
+      @JsonKey(defaultValue: '') String tokenKey,
       @JsonKey(defaultValue: '') String appellation,
       @JsonKey(defaultValue: '') String position,
       @JsonKey(defaultValue: <String>[]) List<String> tagList,
@@ -138,6 +143,7 @@ class _$CharacterCopyWithImpl<$Res> implements $CharacterCopyWith<$Res> {
     Object potentialItemId = freezed,
     Object team = freezed,
     Object displayNumber = freezed,
+    Object tokenKey = freezed,
     Object appellation = freezed,
     Object position = freezed,
     Object tagList = freezed,
@@ -164,6 +170,7 @@ class _$CharacterCopyWithImpl<$Res> implements $CharacterCopyWith<$Res> {
       displayNumber: displayNumber == freezed
           ? _value.displayNumber
           : displayNumber as String,
+      tokenKey: tokenKey == freezed ? _value.tokenKey : tokenKey as String,
       appellation:
           appellation == freezed ? _value.appellation : appellation as String,
       position: position == freezed ? _value.position : position as String,
@@ -198,6 +205,7 @@ abstract class _$CharacterCopyWith<$Res> implements $CharacterCopyWith<$Res> {
       @JsonKey(defaultValue: '') String potentialItemId,
       @JsonKey(defaultValue: -1) int team,
       @JsonKey(defaultValue: '') String displayNumber,
+      @JsonKey(defaultValue: '') String tokenKey,
       @JsonKey(defaultValue: '') String appellation,
       @JsonKey(defaultValue: '') String position,
       @JsonKey(defaultValue: <String>[]) List<String> tagList,
@@ -227,6 +235,7 @@ class __$CharacterCopyWithImpl<$Res> extends _$CharacterCopyWithImpl<$Res>
     Object potentialItemId = freezed,
     Object team = freezed,
     Object displayNumber = freezed,
+    Object tokenKey = freezed,
     Object appellation = freezed,
     Object position = freezed,
     Object tagList = freezed,
@@ -253,6 +262,7 @@ class __$CharacterCopyWithImpl<$Res> extends _$CharacterCopyWithImpl<$Res>
       displayNumber: displayNumber == freezed
           ? _value.displayNumber
           : displayNumber as String,
+      tokenKey: tokenKey == freezed ? _value.tokenKey : tokenKey as String,
       appellation:
           appellation == freezed ? _value.appellation : appellation as String,
       position: position == freezed ? _value.position : position as String,
@@ -284,6 +294,7 @@ class _$_Character implements _Character {
       @JsonKey(defaultValue: '') this.potentialItemId,
       @JsonKey(defaultValue: -1) this.team,
       @JsonKey(defaultValue: '') this.displayNumber,
+      @JsonKey(defaultValue: '') this.tokenKey,
       @JsonKey(defaultValue: '') this.appellation,
       @JsonKey(defaultValue: '') this.position,
       @JsonKey(defaultValue: <String>[]) this.tagList,
@@ -321,6 +332,9 @@ class _$_Character implements _Character {
   final String displayNumber;
   @override
   @JsonKey(defaultValue: '')
+  final String tokenKey;
+  @override
+  @JsonKey(defaultValue: '')
   final String appellation;
   @override
   @JsonKey(defaultValue: '')
@@ -352,7 +366,7 @@ class _$_Character implements _Character {
 
   @override
   String toString() {
-    return 'Character(id: $id, name: $name, description: $description, canUseGeneralPotentialItem: $canUseGeneralPotentialItem, potentialItemId: $potentialItemId, team: $team, displayNumber: $displayNumber, appellation: $appellation, position: $position, tagList: $tagList, displayLogo: $displayLogo, itemUsage: $itemUsage, itemDesc: $itemDesc, itemObtainApproach: $itemObtainApproach, maxPotentialLevel: $maxPotentialLevel, rarity: $rarity, profession: $profession)';
+    return 'Character(id: $id, name: $name, description: $description, canUseGeneralPotentialItem: $canUseGeneralPotentialItem, potentialItemId: $potentialItemId, team: $team, displayNumber: $displayNumber, tokenKey: $tokenKey, appellation: $appellation, position: $position, tagList: $tagList, displayLogo: $displayLogo, itemUsage: $itemUsage, itemDesc: $itemDesc, itemObtainApproach: $itemObtainApproach, maxPotentialLevel: $maxPotentialLevel, rarity: $rarity, profession: $profession)';
   }
 
   @override
@@ -366,8 +380,7 @@ class _$_Character implements _Character {
             (identical(other.description, description) ||
                 const DeepCollectionEquality()
                     .equals(other.description, description)) &&
-            (identical(other.canUseGeneralPotentialItem,
-                    canUseGeneralPotentialItem) ||
+            (identical(other.canUseGeneralPotentialItem, canUseGeneralPotentialItem) ||
                 const DeepCollectionEquality().equals(
                     other.canUseGeneralPotentialItem,
                     canUseGeneralPotentialItem)) &&
@@ -379,6 +392,9 @@ class _$_Character implements _Character {
             (identical(other.displayNumber, displayNumber) ||
                 const DeepCollectionEquality()
                     .equals(other.displayNumber, displayNumber)) &&
+            (identical(other.tokenKey, tokenKey) ||
+                const DeepCollectionEquality()
+                    .equals(other.tokenKey, tokenKey)) &&
             (identical(other.appellation, appellation) ||
                 const DeepCollectionEquality()
                     .equals(other.appellation, appellation)) &&
@@ -420,6 +436,7 @@ class _$_Character implements _Character {
       const DeepCollectionEquality().hash(potentialItemId) ^
       const DeepCollectionEquality().hash(team) ^
       const DeepCollectionEquality().hash(displayNumber) ^
+      const DeepCollectionEquality().hash(tokenKey) ^
       const DeepCollectionEquality().hash(appellation) ^
       const DeepCollectionEquality().hash(position) ^
       const DeepCollectionEquality().hash(tagList) ^
@@ -450,6 +467,7 @@ abstract class _Character implements Character {
       @JsonKey(defaultValue: '') String potentialItemId,
       @JsonKey(defaultValue: -1) int team,
       @JsonKey(defaultValue: '') String displayNumber,
+      @JsonKey(defaultValue: '') String tokenKey,
       @JsonKey(defaultValue: '') String appellation,
       @JsonKey(defaultValue: '') String position,
       @JsonKey(defaultValue: <String>[]) List<String> tagList,
@@ -485,6 +503,9 @@ abstract class _Character implements Character {
   @override
   @JsonKey(defaultValue: '')
   String get displayNumber;
+  @override
+  @JsonKey(defaultValue: '')
+  String get tokenKey;
   @override
   @JsonKey(defaultValue: '')
   String get appellation;

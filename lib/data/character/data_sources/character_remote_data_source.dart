@@ -6,7 +6,7 @@ import 'package:injectable/injectable.dart';
 
 import '../models/character.dart';
 
-const realm = 'ja_JP';
+const realm = 'zh_CN';
 
 abstract class CharacterRemoteDataSource {
   Future<List<Character>> fetchCharacterList();

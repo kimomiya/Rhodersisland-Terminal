@@ -11,6 +11,8 @@ import 'models/character.dart';
 
 abstract class CharacterRepository {
   Future<Either<AppFailure, List<Character>>> getCharacterList();
+
+  Future<Either<AppFailure, List<Character>>> fetchCharacterList();
 }
 
 @LazySingleton(as: CharacterRepository)
@@ -28,14 +30,24 @@ class CharacterRepositoryImpl implements CharacterRepository {
   @override
   Future<Either<AppFailure, List<Character>>> getCharacterList() async {
     try {
+      final characters = await localDataSource.getCharacterList();
+      return right(characters);
+    } catch (e) {
+      return left(const AppFailure.noCachedData());
+    }
+  }
+
+  @override
+  Future<Either<AppFailure, List<Character>>> fetchCharacterList() async {
+    try {
       if (!await networkInfo.isConnected) {
         return left(const AppFailure.networkUnreachable());
       }
 
       final characters = await remoteDataSource.fetchCharacterList();
+      await localDataSource.saveCharacterList(characters);
       return right(characters);
     } on DioError catch (e) {
-      print(e);
       final code = e.response?.statusCode ?? 500;
       final description = e.response?.statusMessage ?? 'Unhandled Error';
       return left(AppFailure.remoteServerError(
@@ -43,7 +55,6 @@ class CharacterRepositoryImpl implements CharacterRepository {
         description: description,
       ));
     } catch (e) {
-      print(e);
       return left(const AppFailure.remoteServerError(
         code: 500,
         description: 'Unhandled Error',
