@@ -25,6 +25,7 @@ class PrefetchCubit extends Cubit<PrefetchState> {
     emit(const _FetchInProgress());
 
     if (_settings.getLastUpdatedDate().isNotEmpty) {
+      await Future<void>.delayed(const Duration(seconds: 1));
       emit(const _FetchSuccess());
       return;
     }

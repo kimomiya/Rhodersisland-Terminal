@@ -68,7 +68,7 @@ class AppSettingsImpl implements AppSettings {
 
   @override
   String getLastUpdatedDate() {
-    return prefs.getString(_lastUpdatedDateKey);
+    return prefs.getString(_lastUpdatedDateKey) ?? '';
   }
 
   @override
