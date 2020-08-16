@@ -1,4 +1,4 @@
-# Rhodersisland Terminal
+# Rhodesisland Terminal
 
 A new Flutter project.
 

@@ -9,14 +9,14 @@ Future<void> main() async {
 
   await di.configure();
 
-  runApp(RhodersislandTerminal());
+  runApp(RhodesislandTerminal());
 }
 
-class RhodersislandTerminal extends StatelessWidget {
+class RhodesislandTerminal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Rhodersisland Terminal',
+      title: 'Rhodesisland Terminal',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,

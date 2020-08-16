@@ -1,4 +1,4 @@
-package org.kimomiya.rhodersisland_terminal
+package org.kimomiya.rhodesisland_terminal
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -25,7 +25,7 @@ abstract class RegisterModule {
   @preResolve
   @lazySingleton
   Future<Database> get db => openDatabase(
-        'rhodersisland_terminal.db',
+        'rhodesisland_terminal.db',
         version: 1,
         onConfigure: onConfigure,
         onCreate: onCreate,

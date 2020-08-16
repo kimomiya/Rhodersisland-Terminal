@@ -18,6 +18,7 @@ class SplashPage extends StatelessWidget {
         create: (_) => locator<CharacterListCubit>(),
         child: const _ContentView(),
       ),
+      backgroundColor: Colors.grey[100],
     );
   }
 }
@@ -41,8 +42,14 @@ class _ContentViewState extends State<_ContentView> {
   Widget build(BuildContext context) {
     return BlocListener<CharacterListCubit, CharacterListState>(
       listener: _listenCubitState,
-      child: Stack(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          Image.asset(
+            'assets/images/logo/logo_rhodes.png',
+            width: 240,
+            fit: BoxFit.fitWidth,
+          ).center().padding(top: 180),
           _buildLoadingIndicator(),
         ],
       ),
@@ -58,9 +65,17 @@ class _ContentViewState extends State<_ContentView> {
   }
 
   Widget _buildLoadingIndicator() {
-    return LoadingIndicator(indicatorType: Indicator.ballRotateChase)
-        .height(44)
-        .width(44)
-        .center();
+    return Column(
+      children: [
+        LoadingIndicator(
+          indicatorType: Indicator.ballRotateChase,
+          color: const Color(0xFF0F0F0F),
+        ).height(48).width(48),
+        const Text('Connecting to the neural network')
+            .textColor(Colors.grey[700])
+            .fontSize(16)
+            .padding(top: 40),
+      ],
+    ).center().padding(bottom: 80);
   }
 }
