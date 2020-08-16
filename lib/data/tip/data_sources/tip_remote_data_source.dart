@@ -7,15 +7,15 @@ import 'package:injectable/injectable.dart';
 import '../../../core/enums/realm.dart';
 import '../../../shared/app_settings.dart';
 import '../../../shared/logger.dart';
-import '../models/character.dart';
+import '../models/tip.dart';
 
-abstract class CharacterRemoteDataSource {
-  Future<List<Character>> fetchCharacterList();
+abstract class TipRemoteDataSource {
+  Future<List<Tip>> fetchTips();
 }
 
-@LazySingleton(as: CharacterRemoteDataSource)
-class CharacterRemoteDataSourceImpl implements CharacterRemoteDataSource {
-  const CharacterRemoteDataSourceImpl({
+@LazySingleton(as: TipRemoteDataSource)
+class TipRemoteDataSourceImpl implements TipRemoteDataSource {
+  const TipRemoteDataSourceImpl({
     @required this.client,
     @required this.settings,
   });
@@ -24,9 +24,9 @@ class CharacterRemoteDataSourceImpl implements CharacterRemoteDataSource {
   final AppSettings settings;
 
   @override
-  Future<List<Character>> fetchCharacterList() async {
+  Future<List<Tip>> fetchTips() async {
     final realm = settings.getServerRealm();
-    final url = '/${realm.value}/gamedata/excel/character_table.json';
+    final url = '/${realm.value}/gamedata/excel/tip_table.json';
 
     logger.i('Get ~> $url');
 
@@ -35,14 +35,13 @@ class CharacterRemoteDataSourceImpl implements CharacterRemoteDataSource {
     logger.i('Recieved ~> $url');
 
     final data = jsonDecode(response.data) as Map<String, dynamic>;
+    final tipsData = data['tips'] as List;
 
-    final characters = <Character>[];
-    for (final key in data.keys) {
-      final value = data[key] as Map<String, dynamic>;
-      value['id'] = key;
-      characters.add(Character.fromJson(value));
+    final tips = <Tip>[];
+    for (final tipData in tipsData) {
+      tips.add(Tip.fromJson(tipData as Map<String, dynamic>));
     }
 
-    return characters;
+    return tips;
   }
 }

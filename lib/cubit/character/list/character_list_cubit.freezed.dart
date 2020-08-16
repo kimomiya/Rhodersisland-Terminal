@@ -35,6 +35,23 @@ class _$CharacterListStateTearOff {
       failure: failure,
     );
   }
+
+// ignore: unused_element
+  _FetchInProgress fetchInProgress() {
+    return const _FetchInProgress();
+  }
+
+// ignore: unused_element
+  _FetchSuccess fetchSuccess() {
+    return const _FetchSuccess();
+  }
+
+// ignore: unused_element
+  _FetchFailure fetchFailure({@required AppFailure failure}) {
+    return _FetchFailure(
+      failure: failure,
+    );
+  }
 }
 
 // ignore: unused_element
@@ -47,6 +64,9 @@ mixin _$CharacterListState {
     @required Result getInProgress(),
     @required Result getSuccess(List<Character> characters),
     @required Result getFailure(AppFailure failure),
+    @required Result fetchInProgress(),
+    @required Result fetchSuccess(),
+    @required Result fetchFailure(AppFailure failure),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -54,6 +74,9 @@ mixin _$CharacterListState {
     Result getInProgress(),
     Result getSuccess(List<Character> characters),
     Result getFailure(AppFailure failure),
+    Result fetchInProgress(),
+    Result fetchSuccess(),
+    Result fetchFailure(AppFailure failure),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -62,6 +85,9 @@ mixin _$CharacterListState {
     @required Result getInProgress(_GetInProgress value),
     @required Result getSuccess(_GetSuccess value),
     @required Result getFailure(_GetFailure value),
+    @required Result fetchInProgress(_FetchInProgress value),
+    @required Result fetchSuccess(_FetchSuccess value),
+    @required Result fetchFailure(_FetchFailure value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -69,6 +95,9 @@ mixin _$CharacterListState {
     Result getInProgress(_GetInProgress value),
     Result getSuccess(_GetSuccess value),
     Result getFailure(_GetFailure value),
+    Result fetchInProgress(_FetchInProgress value),
+    Result fetchSuccess(_FetchSuccess value),
+    Result fetchFailure(_FetchFailure value),
     @required Result orElse(),
   });
 }
@@ -126,11 +155,17 @@ class _$_Initial implements _Initial {
     @required Result getInProgress(),
     @required Result getSuccess(List<Character> characters),
     @required Result getFailure(AppFailure failure),
+    @required Result fetchInProgress(),
+    @required Result fetchSuccess(),
+    @required Result fetchFailure(AppFailure failure),
   }) {
     assert(inital != null);
     assert(getInProgress != null);
     assert(getSuccess != null);
     assert(getFailure != null);
+    assert(fetchInProgress != null);
+    assert(fetchSuccess != null);
+    assert(fetchFailure != null);
     return inital();
   }
 
@@ -141,6 +176,9 @@ class _$_Initial implements _Initial {
     Result getInProgress(),
     Result getSuccess(List<Character> characters),
     Result getFailure(AppFailure failure),
+    Result fetchInProgress(),
+    Result fetchSuccess(),
+    Result fetchFailure(AppFailure failure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -157,11 +195,17 @@ class _$_Initial implements _Initial {
     @required Result getInProgress(_GetInProgress value),
     @required Result getSuccess(_GetSuccess value),
     @required Result getFailure(_GetFailure value),
+    @required Result fetchInProgress(_FetchInProgress value),
+    @required Result fetchSuccess(_FetchSuccess value),
+    @required Result fetchFailure(_FetchFailure value),
   }) {
     assert(inital != null);
     assert(getInProgress != null);
     assert(getSuccess != null);
     assert(getFailure != null);
+    assert(fetchInProgress != null);
+    assert(fetchSuccess != null);
+    assert(fetchFailure != null);
     return inital(this);
   }
 
@@ -172,6 +216,9 @@ class _$_Initial implements _Initial {
     Result getInProgress(_GetInProgress value),
     Result getSuccess(_GetSuccess value),
     Result getFailure(_GetFailure value),
+    Result fetchInProgress(_FetchInProgress value),
+    Result fetchSuccess(_FetchSuccess value),
+    Result fetchFailure(_FetchFailure value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -226,11 +273,17 @@ class _$_GetInProgress implements _GetInProgress {
     @required Result getInProgress(),
     @required Result getSuccess(List<Character> characters),
     @required Result getFailure(AppFailure failure),
+    @required Result fetchInProgress(),
+    @required Result fetchSuccess(),
+    @required Result fetchFailure(AppFailure failure),
   }) {
     assert(inital != null);
     assert(getInProgress != null);
     assert(getSuccess != null);
     assert(getFailure != null);
+    assert(fetchInProgress != null);
+    assert(fetchSuccess != null);
+    assert(fetchFailure != null);
     return getInProgress();
   }
 
@@ -241,6 +294,9 @@ class _$_GetInProgress implements _GetInProgress {
     Result getInProgress(),
     Result getSuccess(List<Character> characters),
     Result getFailure(AppFailure failure),
+    Result fetchInProgress(),
+    Result fetchSuccess(),
+    Result fetchFailure(AppFailure failure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -257,11 +313,17 @@ class _$_GetInProgress implements _GetInProgress {
     @required Result getInProgress(_GetInProgress value),
     @required Result getSuccess(_GetSuccess value),
     @required Result getFailure(_GetFailure value),
+    @required Result fetchInProgress(_FetchInProgress value),
+    @required Result fetchSuccess(_FetchSuccess value),
+    @required Result fetchFailure(_FetchFailure value),
   }) {
     assert(inital != null);
     assert(getInProgress != null);
     assert(getSuccess != null);
     assert(getFailure != null);
+    assert(fetchInProgress != null);
+    assert(fetchSuccess != null);
+    assert(fetchFailure != null);
     return getInProgress(this);
   }
 
@@ -272,6 +334,9 @@ class _$_GetInProgress implements _GetInProgress {
     Result getInProgress(_GetInProgress value),
     Result getSuccess(_GetSuccess value),
     Result getFailure(_GetFailure value),
+    Result fetchInProgress(_FetchInProgress value),
+    Result fetchSuccess(_FetchSuccess value),
+    Result fetchFailure(_FetchFailure value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -350,11 +415,17 @@ class _$_GetSuccess implements _GetSuccess {
     @required Result getInProgress(),
     @required Result getSuccess(List<Character> characters),
     @required Result getFailure(AppFailure failure),
+    @required Result fetchInProgress(),
+    @required Result fetchSuccess(),
+    @required Result fetchFailure(AppFailure failure),
   }) {
     assert(inital != null);
     assert(getInProgress != null);
     assert(getSuccess != null);
     assert(getFailure != null);
+    assert(fetchInProgress != null);
+    assert(fetchSuccess != null);
+    assert(fetchFailure != null);
     return getSuccess(characters);
   }
 
@@ -365,6 +436,9 @@ class _$_GetSuccess implements _GetSuccess {
     Result getInProgress(),
     Result getSuccess(List<Character> characters),
     Result getFailure(AppFailure failure),
+    Result fetchInProgress(),
+    Result fetchSuccess(),
+    Result fetchFailure(AppFailure failure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -381,11 +455,17 @@ class _$_GetSuccess implements _GetSuccess {
     @required Result getInProgress(_GetInProgress value),
     @required Result getSuccess(_GetSuccess value),
     @required Result getFailure(_GetFailure value),
+    @required Result fetchInProgress(_FetchInProgress value),
+    @required Result fetchSuccess(_FetchSuccess value),
+    @required Result fetchFailure(_FetchFailure value),
   }) {
     assert(inital != null);
     assert(getInProgress != null);
     assert(getSuccess != null);
     assert(getFailure != null);
+    assert(fetchInProgress != null);
+    assert(fetchSuccess != null);
+    assert(fetchFailure != null);
     return getSuccess(this);
   }
 
@@ -396,6 +476,9 @@ class _$_GetSuccess implements _GetSuccess {
     Result getInProgress(_GetInProgress value),
     Result getSuccess(_GetSuccess value),
     Result getFailure(_GetFailure value),
+    Result fetchInProgress(_FetchInProgress value),
+    Result fetchSuccess(_FetchSuccess value),
+    Result fetchFailure(_FetchFailure value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -487,11 +570,17 @@ class _$_GetFailure implements _GetFailure {
     @required Result getInProgress(),
     @required Result getSuccess(List<Character> characters),
     @required Result getFailure(AppFailure failure),
+    @required Result fetchInProgress(),
+    @required Result fetchSuccess(),
+    @required Result fetchFailure(AppFailure failure),
   }) {
     assert(inital != null);
     assert(getInProgress != null);
     assert(getSuccess != null);
     assert(getFailure != null);
+    assert(fetchInProgress != null);
+    assert(fetchSuccess != null);
+    assert(fetchFailure != null);
     return getFailure(failure);
   }
 
@@ -502,6 +591,9 @@ class _$_GetFailure implements _GetFailure {
     Result getInProgress(),
     Result getSuccess(List<Character> characters),
     Result getFailure(AppFailure failure),
+    Result fetchInProgress(),
+    Result fetchSuccess(),
+    Result fetchFailure(AppFailure failure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -518,11 +610,17 @@ class _$_GetFailure implements _GetFailure {
     @required Result getInProgress(_GetInProgress value),
     @required Result getSuccess(_GetSuccess value),
     @required Result getFailure(_GetFailure value),
+    @required Result fetchInProgress(_FetchInProgress value),
+    @required Result fetchSuccess(_FetchSuccess value),
+    @required Result fetchFailure(_FetchFailure value),
   }) {
     assert(inital != null);
     assert(getInProgress != null);
     assert(getSuccess != null);
     assert(getFailure != null);
+    assert(fetchInProgress != null);
+    assert(fetchSuccess != null);
+    assert(fetchFailure != null);
     return getFailure(this);
   }
 
@@ -533,6 +631,9 @@ class _$_GetFailure implements _GetFailure {
     Result getInProgress(_GetInProgress value),
     Result getSuccess(_GetSuccess value),
     Result getFailure(_GetFailure value),
+    Result fetchInProgress(_FetchInProgress value),
+    Result fetchSuccess(_FetchSuccess value),
+    Result fetchFailure(_FetchFailure value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -548,4 +649,394 @@ abstract class _GetFailure implements CharacterListState {
 
   AppFailure get failure;
   _$GetFailureCopyWith<_GetFailure> get copyWith;
+}
+
+abstract class _$FetchInProgressCopyWith<$Res> {
+  factory _$FetchInProgressCopyWith(
+          _FetchInProgress value, $Res Function(_FetchInProgress) then) =
+      __$FetchInProgressCopyWithImpl<$Res>;
+}
+
+class __$FetchInProgressCopyWithImpl<$Res>
+    extends _$CharacterListStateCopyWithImpl<$Res>
+    implements _$FetchInProgressCopyWith<$Res> {
+  __$FetchInProgressCopyWithImpl(
+      _FetchInProgress _value, $Res Function(_FetchInProgress) _then)
+      : super(_value, (v) => _then(v as _FetchInProgress));
+
+  @override
+  _FetchInProgress get _value => super._value as _FetchInProgress;
+}
+
+class _$_FetchInProgress implements _FetchInProgress {
+  const _$_FetchInProgress();
+
+  @override
+  String toString() {
+    return 'CharacterListState.fetchInProgress()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _FetchInProgress);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result inital(),
+    @required Result getInProgress(),
+    @required Result getSuccess(List<Character> characters),
+    @required Result getFailure(AppFailure failure),
+    @required Result fetchInProgress(),
+    @required Result fetchSuccess(),
+    @required Result fetchFailure(AppFailure failure),
+  }) {
+    assert(inital != null);
+    assert(getInProgress != null);
+    assert(getSuccess != null);
+    assert(getFailure != null);
+    assert(fetchInProgress != null);
+    assert(fetchSuccess != null);
+    assert(fetchFailure != null);
+    return fetchInProgress();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result inital(),
+    Result getInProgress(),
+    Result getSuccess(List<Character> characters),
+    Result getFailure(AppFailure failure),
+    Result fetchInProgress(),
+    Result fetchSuccess(),
+    Result fetchFailure(AppFailure failure),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (fetchInProgress != null) {
+      return fetchInProgress();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result inital(_Initial value),
+    @required Result getInProgress(_GetInProgress value),
+    @required Result getSuccess(_GetSuccess value),
+    @required Result getFailure(_GetFailure value),
+    @required Result fetchInProgress(_FetchInProgress value),
+    @required Result fetchSuccess(_FetchSuccess value),
+    @required Result fetchFailure(_FetchFailure value),
+  }) {
+    assert(inital != null);
+    assert(getInProgress != null);
+    assert(getSuccess != null);
+    assert(getFailure != null);
+    assert(fetchInProgress != null);
+    assert(fetchSuccess != null);
+    assert(fetchFailure != null);
+    return fetchInProgress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result inital(_Initial value),
+    Result getInProgress(_GetInProgress value),
+    Result getSuccess(_GetSuccess value),
+    Result getFailure(_GetFailure value),
+    Result fetchInProgress(_FetchInProgress value),
+    Result fetchSuccess(_FetchSuccess value),
+    Result fetchFailure(_FetchFailure value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (fetchInProgress != null) {
+      return fetchInProgress(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FetchInProgress implements CharacterListState {
+  const factory _FetchInProgress() = _$_FetchInProgress;
+}
+
+abstract class _$FetchSuccessCopyWith<$Res> {
+  factory _$FetchSuccessCopyWith(
+          _FetchSuccess value, $Res Function(_FetchSuccess) then) =
+      __$FetchSuccessCopyWithImpl<$Res>;
+}
+
+class __$FetchSuccessCopyWithImpl<$Res>
+    extends _$CharacterListStateCopyWithImpl<$Res>
+    implements _$FetchSuccessCopyWith<$Res> {
+  __$FetchSuccessCopyWithImpl(
+      _FetchSuccess _value, $Res Function(_FetchSuccess) _then)
+      : super(_value, (v) => _then(v as _FetchSuccess));
+
+  @override
+  _FetchSuccess get _value => super._value as _FetchSuccess;
+}
+
+class _$_FetchSuccess implements _FetchSuccess {
+  const _$_FetchSuccess();
+
+  @override
+  String toString() {
+    return 'CharacterListState.fetchSuccess()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _FetchSuccess);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result inital(),
+    @required Result getInProgress(),
+    @required Result getSuccess(List<Character> characters),
+    @required Result getFailure(AppFailure failure),
+    @required Result fetchInProgress(),
+    @required Result fetchSuccess(),
+    @required Result fetchFailure(AppFailure failure),
+  }) {
+    assert(inital != null);
+    assert(getInProgress != null);
+    assert(getSuccess != null);
+    assert(getFailure != null);
+    assert(fetchInProgress != null);
+    assert(fetchSuccess != null);
+    assert(fetchFailure != null);
+    return fetchSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result inital(),
+    Result getInProgress(),
+    Result getSuccess(List<Character> characters),
+    Result getFailure(AppFailure failure),
+    Result fetchInProgress(),
+    Result fetchSuccess(),
+    Result fetchFailure(AppFailure failure),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (fetchSuccess != null) {
+      return fetchSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result inital(_Initial value),
+    @required Result getInProgress(_GetInProgress value),
+    @required Result getSuccess(_GetSuccess value),
+    @required Result getFailure(_GetFailure value),
+    @required Result fetchInProgress(_FetchInProgress value),
+    @required Result fetchSuccess(_FetchSuccess value),
+    @required Result fetchFailure(_FetchFailure value),
+  }) {
+    assert(inital != null);
+    assert(getInProgress != null);
+    assert(getSuccess != null);
+    assert(getFailure != null);
+    assert(fetchInProgress != null);
+    assert(fetchSuccess != null);
+    assert(fetchFailure != null);
+    return fetchSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result inital(_Initial value),
+    Result getInProgress(_GetInProgress value),
+    Result getSuccess(_GetSuccess value),
+    Result getFailure(_GetFailure value),
+    Result fetchInProgress(_FetchInProgress value),
+    Result fetchSuccess(_FetchSuccess value),
+    Result fetchFailure(_FetchFailure value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (fetchSuccess != null) {
+      return fetchSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FetchSuccess implements CharacterListState {
+  const factory _FetchSuccess() = _$_FetchSuccess;
+}
+
+abstract class _$FetchFailureCopyWith<$Res> {
+  factory _$FetchFailureCopyWith(
+          _FetchFailure value, $Res Function(_FetchFailure) then) =
+      __$FetchFailureCopyWithImpl<$Res>;
+  $Res call({AppFailure failure});
+
+  $AppFailureCopyWith<$Res> get failure;
+}
+
+class __$FetchFailureCopyWithImpl<$Res>
+    extends _$CharacterListStateCopyWithImpl<$Res>
+    implements _$FetchFailureCopyWith<$Res> {
+  __$FetchFailureCopyWithImpl(
+      _FetchFailure _value, $Res Function(_FetchFailure) _then)
+      : super(_value, (v) => _then(v as _FetchFailure));
+
+  @override
+  _FetchFailure get _value => super._value as _FetchFailure;
+
+  @override
+  $Res call({
+    Object failure = freezed,
+  }) {
+    return _then(_FetchFailure(
+      failure: failure == freezed ? _value.failure : failure as AppFailure,
+    ));
+  }
+
+  @override
+  $AppFailureCopyWith<$Res> get failure {
+    if (_value.failure == null) {
+      return null;
+    }
+    return $AppFailureCopyWith<$Res>(_value.failure, (value) {
+      return _then(_value.copyWith(failure: value));
+    });
+  }
+}
+
+class _$_FetchFailure implements _FetchFailure {
+  const _$_FetchFailure({@required this.failure}) : assert(failure != null);
+
+  @override
+  final AppFailure failure;
+
+  @override
+  String toString() {
+    return 'CharacterListState.fetchFailure(failure: $failure)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _FetchFailure &&
+            (identical(other.failure, failure) ||
+                const DeepCollectionEquality().equals(other.failure, failure)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+
+  @override
+  _$FetchFailureCopyWith<_FetchFailure> get copyWith =>
+      __$FetchFailureCopyWithImpl<_FetchFailure>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result inital(),
+    @required Result getInProgress(),
+    @required Result getSuccess(List<Character> characters),
+    @required Result getFailure(AppFailure failure),
+    @required Result fetchInProgress(),
+    @required Result fetchSuccess(),
+    @required Result fetchFailure(AppFailure failure),
+  }) {
+    assert(inital != null);
+    assert(getInProgress != null);
+    assert(getSuccess != null);
+    assert(getFailure != null);
+    assert(fetchInProgress != null);
+    assert(fetchSuccess != null);
+    assert(fetchFailure != null);
+    return fetchFailure(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result inital(),
+    Result getInProgress(),
+    Result getSuccess(List<Character> characters),
+    Result getFailure(AppFailure failure),
+    Result fetchInProgress(),
+    Result fetchSuccess(),
+    Result fetchFailure(AppFailure failure),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (fetchFailure != null) {
+      return fetchFailure(failure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result inital(_Initial value),
+    @required Result getInProgress(_GetInProgress value),
+    @required Result getSuccess(_GetSuccess value),
+    @required Result getFailure(_GetFailure value),
+    @required Result fetchInProgress(_FetchInProgress value),
+    @required Result fetchSuccess(_FetchSuccess value),
+    @required Result fetchFailure(_FetchFailure value),
+  }) {
+    assert(inital != null);
+    assert(getInProgress != null);
+    assert(getSuccess != null);
+    assert(getFailure != null);
+    assert(fetchInProgress != null);
+    assert(fetchSuccess != null);
+    assert(fetchFailure != null);
+    return fetchFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result inital(_Initial value),
+    Result getInProgress(_GetInProgress value),
+    Result getSuccess(_GetSuccess value),
+    Result getFailure(_GetFailure value),
+    Result fetchInProgress(_FetchInProgress value),
+    Result fetchSuccess(_FetchSuccess value),
+    Result fetchFailure(_FetchFailure value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (fetchFailure != null) {
+      return fetchFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FetchFailure implements CharacterListState {
+  const factory _FetchFailure({@required AppFailure failure}) = _$_FetchFailure;
+
+  AppFailure get failure;
+  _$FetchFailureCopyWith<_FetchFailure> get copyWith;
 }

@@ -4,6 +4,7 @@ import 'package:sqflite/sqflite.dart';
 
 import 'core/enums/realm.dart';
 import 'data/character/models/character.dart';
+import 'data/tip/models/tip.dart';
 
 Future<void> onConfigure(Database db) async {
   await db.execute('PRAGMA foreign_keys = ON');
@@ -16,6 +17,25 @@ Future<void> onCreate(Database db, int version) async {
 }
 
 void _createTablesV1(Batch batch) {
+  _createTipTableV1(batch);
+  _createCharacterTableV1(batch);
+}
+
+void _createTipTableV1(Batch batch) {
+  for (final region in Realm.values) {
+    batch.execute(
+      '''
+      CREATE TABLE ${region.value}_${Tip.tableName} (
+        tip TEXT,
+        weight REAL,
+        category TEXT
+      )
+      ''',
+    );
+  }
+}
+
+void _createCharacterTableV1(Batch batch) {
   for (final region in Realm.values) {
     batch.execute(
       '''

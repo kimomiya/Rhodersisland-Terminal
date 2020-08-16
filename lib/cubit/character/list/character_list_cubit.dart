@@ -9,7 +9,7 @@ import '../../../data/character/models/character.dart';
 part 'character_list_cubit.freezed.dart';
 part 'character_list_state.dart';
 
-@injectable
+@lazySingleton
 class CharacterListCubit extends Cubit<CharacterListState> {
   CharacterListCubit(this._repository) : super(const _Initial());
 
@@ -23,6 +23,17 @@ class CharacterListCubit extends Cubit<CharacterListState> {
     failureOrCharacters.fold(
       (failure) => emit(_GetFailure(failure: failure)),
       (characters) => emit(_GetSuccess(characters: characters)),
+    );
+  }
+
+  Future<void> fetchCharacterList() async {
+    emit(const _FetchInProgress());
+
+    final failureOrVoid = await _repository.fetchCharacterList();
+
+    failureOrVoid.fold(
+      (failure) => emit(_FetchFailure(failure: failure)),
+      (_) => emit(const _FetchSuccess()),
     );
   }
 }

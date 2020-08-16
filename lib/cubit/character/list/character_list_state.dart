@@ -13,4 +13,12 @@ abstract class CharacterListState with _$CharacterListState {
   const factory CharacterListState.getFailure({
     @required AppFailure failure,
   }) = _GetFailure;
+
+  const factory CharacterListState.fetchInProgress() = _FetchInProgress;
+
+  const factory CharacterListState.fetchSuccess() = _FetchSuccess;
+
+  const factory CharacterListState.fetchFailure({
+    @required AppFailure failure,
+  }) = _FetchFailure;
 }

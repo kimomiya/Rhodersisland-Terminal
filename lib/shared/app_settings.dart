@@ -1,4 +1,5 @@
 import 'package:injectable/injectable.dart';
+import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../core/enums/language.dart';
@@ -7,6 +8,7 @@ import '../core/enums/realm.dart';
 const _isTutorialFinishedKey = 'is_tutorial_finished';
 const _displayLanguageKey = 'display_language';
 const _serverRealmKey = 'server_name';
+const _lastUpdatedDateKey = 'last_updated_date';
 
 abstract class AppSettings {
   bool getIsTutorialFinished();
@@ -20,6 +22,10 @@ abstract class AppSettings {
   Realm getServerRealm();
 
   Future<void> setServerRealm(Realm realm);
+
+  String getLastUpdatedDate();
+
+  Future<void> setLastUpdatedDate();
 }
 
 @LazySingleton(as: AppSettings)
@@ -58,5 +64,16 @@ class AppSettingsImpl implements AppSettings {
   @override
   Future<void> setServerRealm(Realm realm) async {
     await prefs.setString(_serverRealmKey, realm.value);
+  }
+
+  @override
+  String getLastUpdatedDate() {
+    return prefs.getString(_lastUpdatedDateKey);
+  }
+
+  @override
+  Future<void> setLastUpdatedDate() async {
+    final now = DateFormat.yMd().add_Hms().format(DateTime.now());
+    await prefs.setString(_lastUpdatedDateKey, now);
   }
 }

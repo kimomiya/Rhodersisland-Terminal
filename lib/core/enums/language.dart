@@ -8,7 +8,7 @@ enum Language {
 extension LanguageValue on Language {
   static Language of(String value) => Language.values.firstWhere(
         (lang) => lang.value == value,
-        orElse: () => null,
+        orElse: () => Language.zh_CN,
       );
 }
 

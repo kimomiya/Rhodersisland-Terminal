@@ -9,7 +9,7 @@ enum Realm {
 extension RealmValue on Realm {
   static Realm of(String value) => Realm.values.firstWhere(
         (region) => region.value == value,
-        orElse: () => null,
+        orElse: () => Realm.zh_CN,
       );
 }
 

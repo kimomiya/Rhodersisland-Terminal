@@ -6,47 +6,47 @@ import 'package:injectable/injectable.dart';
 import '../../core/app_failure.dart';
 import '../../shared/logger.dart';
 import '../core/network_info.dart';
-import 'data_sources/character_local_data_source.dart';
-import 'data_sources/character_remote_data_source.dart';
-import 'models/character.dart';
+import 'data_sources/tip_local_data_source.dart';
+import 'data_sources/tip_remote_data_source.dart';
+import 'models/tip.dart';
 
-abstract class CharacterRepository {
-  Future<Either<AppFailure, List<Character>>> getCharacterList();
+abstract class TipRepository {
+  Future<Either<AppFailure, Tip>> getRandomTip();
 
-  Future<Either<AppFailure, Unit>> fetchCharacterList();
+  Future<Either<AppFailure, Unit>> fetchTips();
 }
 
-@LazySingleton(as: CharacterRepository)
-class CharacterRepositoryImpl implements CharacterRepository {
-  const CharacterRepositoryImpl({
+@LazySingleton(as: TipRepository)
+class TipRepositoryImpl implements TipRepository {
+  const TipRepositoryImpl({
     @required this.remoteDataSource,
     @required this.localDataSource,
     @required this.networkInfo,
   });
 
-  final CharacterRemoteDataSource remoteDataSource;
-  final CharacterLocalDataSource localDataSource;
+  final TipRemoteDataSource remoteDataSource;
+  final TipLocalDataSource localDataSource;
   final NetworkInfo networkInfo;
 
   @override
-  Future<Either<AppFailure, List<Character>>> getCharacterList() async {
+  Future<Either<AppFailure, Tip>> getRandomTip() async {
     try {
-      final characters = await localDataSource.getCharacterList();
-      return right(characters);
+      final tip = await localDataSource.getRandomTip();
+      return right(tip);
     } catch (e) {
       return left(const AppFailure.noCachedData());
     }
   }
 
   @override
-  Future<Either<AppFailure, Unit>> fetchCharacterList() async {
+  Future<Either<AppFailure, Unit>> fetchTips() async {
     try {
       if (!await networkInfo.isConnected) {
         return left(const AppFailure.networkUnreachable());
       }
 
-      final characters = await remoteDataSource.fetchCharacterList();
-      await localDataSource.saveCharacterList(characters);
+      final tips = await remoteDataSource.fetchTips();
+      await localDataSource.saveTips(tips);
       return right(unit);
     } on DioError catch (e) {
       logger.e(e.message, e);

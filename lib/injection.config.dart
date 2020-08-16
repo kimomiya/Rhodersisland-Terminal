@@ -17,7 +17,11 @@ import 'data/character/data_sources/character_local_data_source.dart';
 import 'data/character/data_sources/character_remote_data_source.dart';
 import 'data/character/character_repository.dart';
 import 'data/core/network_info.dart';
+import 'cubit/prefetch/prefetch_cubit.dart';
 import 'injection.dart';
+import 'data/tip/data_sources/tip_local_data_source.dart';
+import 'data/tip/data_sources/tip_remote_data_source.dart';
+import 'data/tip/tip_repository.dart';
 
 /// adds generated dependencies
 /// to the provided [GetIt] instance
@@ -48,8 +52,22 @@ Future<GetIt> $initGetIt(
         localDataSource: get<CharacterLocalDataSource>(),
         networkInfo: get<NetworkInfo>(),
       ));
-  gh.factory<CharacterListCubit>(
+  gh.lazySingleton<TipLocalDataSource>(() => TipLocalDataSourceImpl(
+      db: get<Database>(), settings: get<AppSettings>()));
+  gh.lazySingleton<TipRemoteDataSource>(() => TipRemoteDataSourceImpl(
+      client: get<Dio>(), settings: get<AppSettings>()));
+  gh.lazySingleton<TipRepository>(() => TipRepositoryImpl(
+        remoteDataSource: get<TipRemoteDataSource>(),
+        localDataSource: get<TipLocalDataSource>(),
+        networkInfo: get<NetworkInfo>(),
+      ));
+  gh.lazySingleton<CharacterListCubit>(
       () => CharacterListCubit(get<CharacterRepository>()));
+  gh.lazySingleton<PrefetchCubit>(() => PrefetchCubit(
+        get<AppSettings>(),
+        get<TipRepository>(),
+        get<CharacterRepository>(),
+      ));
   return get;
 }
 

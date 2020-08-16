@@ -26,9 +26,8 @@ class CharacterLocalDataSourceImpl implements CharacterLocalDataSource {
 
   @override
   Future<Character> getCharacterBy(String id) async {
-    final realm = settings.getServerRealm();
     final results = await db.query(
-      '${realm.value}_${Character.tableName}',
+      _tableName,
       where: 'id = ?',
       whereArgs: <dynamic>[id],
     );
@@ -50,11 +49,11 @@ class CharacterLocalDataSourceImpl implements CharacterLocalDataSource {
 
   @override
   Future<void> saveCharacterList(List<Character> characters) async {
-    final realm = settings.getServerRealm();
+    final sqls = <Future<void>>[];
     for (final char in characters) {
-      db.execute(
+      sqls.add(db.execute(
         '''
-        REPLACE INTO ${'${realm.value}_${Character.tableName}'} (
+        REPLACE INTO $_tableName (
           id, name, description, canUseGeneralPotentialItem,
           potentialItemId, team, displayNumber, appellation,
           position, tagList, displayLogo, itemUsage, itemDesc,
@@ -82,7 +81,14 @@ class CharacterLocalDataSourceImpl implements CharacterLocalDataSource {
           char.rarity,
           char.profession,
         ],
-      );
+      ));
     }
+
+    await Future.wait(sqls);
+  }
+
+  String get _tableName {
+    final realm = settings.getServerRealm();
+    return '${realm.value}_${Character.tableName}';
   }
 }
