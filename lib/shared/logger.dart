@@ -2,6 +2,9 @@ import 'package:logger/logger.dart';
 
 final logger = Logger(
   filter: DevelopmentFilter(),
-  printer: PrettyPrinter(printTime: true),
+  printer: PrettyPrinter(
+    methodCount: 1,
+    printTime: true,
+  ),
   output: ConsoleOutput(),
 );

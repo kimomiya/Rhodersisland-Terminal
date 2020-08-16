@@ -11,6 +11,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
 
   auto_route: ^0.6.7
   bloc: ^6.0.1
@@ -24,6 +26,7 @@ dependencies:
   get_it: ^4.0.4
   injectable: ^1.0.4
   intl: ^0.16.1
+  intl_translation: ^0.17.10
   json_annotation: ^3.0.1
   loading_indicator: ^1.2.0
   logger: ^0.9.2
@@ -52,3 +55,5 @@ flutter:
   assets:
     - assets/images/logo/
 
+flutter_intl:
+  enabled: true

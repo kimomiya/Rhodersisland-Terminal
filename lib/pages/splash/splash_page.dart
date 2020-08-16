@@ -6,6 +6,7 @@ import 'package:loading_indicator/loading_indicator.dart';
 import 'package:styled_widget/styled_widget.dart';
 
 import '../../cubit/prefetch/prefetch_cubit.dart';
+import '../../generated/l10n.dart';
 import '../../injection.dart';
 import '../router.gr.dart';
 
@@ -26,30 +27,20 @@ class SplashPage extends StatelessWidget {
   }
 }
 
-class _ContentView extends StatefulWidget {
+class _ContentView extends StatelessWidget {
   const _ContentView({Key key}) : super(key: key);
 
   @override
-  _ContentViewState createState() => _ContentViewState();
-}
-
-class _ContentViewState extends State<_ContentView> {
-  @override
-  void initState() {
-    super.initState();
-
-    context.bloc<PrefetchCubit>().fetchData();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    context.bloc<PrefetchCubit>().fetchData();
+
     return BlocListener<PrefetchCubit, PrefetchState>(
       listener: _listenCubitState,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           _buildLogo(),
-          _buildLoadingView(),
+          _buildLoadingView(context),
         ],
       ),
     );
@@ -70,7 +61,7 @@ class _ContentViewState extends State<_ContentView> {
     ).center().padding(top: 180);
   }
 
-  Widget _buildLoadingView() {
+  Widget _buildLoadingView(BuildContext context) {
     return Column(
       children: [
         LoadingIndicator(
@@ -78,14 +69,24 @@ class _ContentViewState extends State<_ContentView> {
           color: const Color(0xFF0F0F0F),
         ).constrained(height: 88.h.toDouble(), width: 88.h.toDouble()),
         SizedBox(height: 64.h.toDouble()),
-        const Text(
-          'Connecting to the neural network of Rhodes Island.',
+        Text(
+          S.of(context).splashLoading,
           textAlign: TextAlign.center,
         ).textColor(Colors.grey[700]).fontSize(30.sp.toDouble()),
+        SizedBox(height: 40.h.toDouble()),
+        BlocBuilder<PrefetchCubit, PrefetchState>(
+          builder: (context, state) {
+            return state.maybeMap(
+              fetchInProgress: (_) => Text(
+                S.of(context).splashLoadingTip,
+                textAlign: TextAlign.center,
+              ).textColor(Colors.grey),
+              orElse: () => Container(),
+            );
+          },
+        ),
+        const SizedBox(height: kToolbarHeight),
       ],
-    ).center().padding(
-          horizontal: 60.w.toDouble(),
-          bottom: ScreenUtil.bottomBarHeight + kToolbarHeight,
-        );
+    ).padding(horizontal: 60.w.toDouble(), bottom: ScreenUtil.bottomBarHeight);
   }
 }

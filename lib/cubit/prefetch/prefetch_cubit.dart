@@ -9,7 +9,7 @@ import '../../shared/app_settings.dart';
 part 'prefetch_cubit.freezed.dart';
 part 'prefetch_state.dart';
 
-@lazySingleton
+@injectable
 class PrefetchCubit extends Cubit<PrefetchState> {
   PrefetchCubit(
     this._settings,
@@ -22,13 +22,13 @@ class PrefetchCubit extends Cubit<PrefetchState> {
   final CharacterRepository _charRepository;
 
   Future<void> fetchData() async {
-    emit(const _FetchInProgress());
-
     if (_settings.getLastUpdatedDate().isNotEmpty) {
       await Future<void>.delayed(const Duration(seconds: 1));
       emit(const _FetchSuccess());
       return;
     }
+
+    emit(const _FetchInProgress());
 
     final results = await Future.wait([
       _tipRepository.fetchTips(),

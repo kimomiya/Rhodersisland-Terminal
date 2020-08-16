@@ -1,6 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
+import 'core/enums/language.dart';
+import 'cubit/settings/settings_cubit.dart';
+import 'generated/l10n.dart';
 import 'injection.dart' as di;
 import 'pages/router.gr.dart';
 
@@ -9,14 +14,16 @@ Future<void> main() async {
 
   await di.configure();
 
-  runApp(RhodesislandTerminal());
+  runApp(const RhodesislandTerminal());
 }
 
 class RhodesislandTerminal extends StatelessWidget {
+  const RhodesislandTerminal({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Rhodesisland Terminal',
+      onGenerateTitle: (context) => S.of(context).appTitle,
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -25,6 +32,13 @@ class RhodesislandTerminal extends StatelessWidget {
         initialRoute: '/',
         router: Router(),
       ),
+      localizationsDelegates: const [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: S.delegate.supportedLocales,
       debugShowCheckedModeBanner: false,
     );
   }

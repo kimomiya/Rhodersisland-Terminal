@@ -63,7 +63,7 @@ Future<GetIt> $initGetIt(
       ));
   gh.lazySingleton<CharacterListCubit>(
       () => CharacterListCubit(get<CharacterRepository>()));
-  gh.lazySingleton<PrefetchCubit>(() => PrefetchCubit(
+  gh.factory<PrefetchCubit>(() => PrefetchCubit(
         get<AppSettings>(),
         get<TipRepository>(),
         get<CharacterRepository>(),

@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 enum Language {
   en_US,
   ja_JP,
@@ -32,22 +34,22 @@ extension LanguageValues on Language {
     }
   }
 
-  String get name {
+  Locale get locale {
     switch (this) {
       case Language.en_US:
-        return 'English';
+        return const Locale('en', 'US');
 
       case Language.ja_JP:
-        return '日本語';
+        return const Locale('ja', 'JP');
 
       case Language.zh_CN:
-        return '简体中文';
+        return const Locale('zh', 'CN');
 
       case Language.zh_TW:
-        return '繁体中文';
+        return const Locale('zh', 'TW');
 
       default:
-        return '';
+        return const Locale('zh', 'CN');
     }
   }
 }
