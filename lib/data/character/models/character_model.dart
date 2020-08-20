@@ -1,11 +1,11 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'character.freezed.dart';
-part 'character.g.dart';
+part 'character_model.freezed.dart';
+part 'character_model.g.dart';
 
 @freezed
-abstract class Character with _$Character {
-  const factory Character({
+abstract class CharacterModel with _$CharacterModel {
+  const factory CharacterModel({
     /// ID
     @JsonKey(defaultValue: '') String id,
 
@@ -77,20 +77,20 @@ abstract class Character with _$Character {
 
     /// 技能提升消耗
     // @JsonKey(defaultValue: <dynamic>[]) List<dynamic> allSkillLvlup,
-  }) = _Character;
+  }) = _CharacterModel;
 
-  factory Character.fromJson(Map<String, dynamic> json) {
-    return _$CharacterFromJson(json);
+  factory CharacterModel.fromJson(Map<String, dynamic> json) {
+    return _$CharacterModelFromJson(json);
   }
 
-  factory Character.fromMap(Map<String, dynamic> map) {
+  factory CharacterModel.fromMap(Map<String, dynamic> map) {
     final canUseGeneralPotentialItem = map['canUseGeneralPotentialItem'] as int;
     map['canUseGeneralPotentialItem'] = canUseGeneralPotentialItem == 1;
 
     final tagList = map['tagList'] as String;
     map['tagList'] = tagList.split(',');
 
-    return Character.fromJson(map);
+    return CharacterModel.fromJson(map);
   }
 
   static const String tableName = 'Character';

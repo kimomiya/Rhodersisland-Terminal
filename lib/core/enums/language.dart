@@ -4,7 +4,6 @@ enum Language {
   en_US,
   ja_JP,
   zh_CN,
-  zh_TW,
 }
 
 extension LanguageValue on Language {
@@ -26,9 +25,6 @@ extension LanguageValues on Language {
       case Language.zh_CN:
         return 'zh_CN';
 
-      case Language.zh_TW:
-        return 'zh_TW';
-
       default:
         return '';
     }
@@ -44,9 +40,6 @@ extension LanguageValues on Language {
 
       case Language.zh_CN:
         return const Locale('zh', 'CN');
-
-      case Language.zh_TW:
-        return const Locale('zh', 'TW');
 
       default:
         return const Locale('zh', 'CN');

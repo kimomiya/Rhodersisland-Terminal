@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'character.dart';
+part of 'character_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Character _$_$_CharacterFromJson(Map<String, dynamic> json) {
-  return _$_Character(
+_$_CharacterModel _$_$_CharacterModelFromJson(Map<String, dynamic> json) {
+  return _$_CharacterModel(
     id: json['id'] as String ?? '',
     name: json['name'] as String ?? '',
     description: json['description'] as String ?? '',
@@ -30,7 +30,7 @@ _$_Character _$_$_CharacterFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_CharacterToJson(_$_Character instance) =>
+Map<String, dynamic> _$_$_CharacterModelToJson(_$_CharacterModel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

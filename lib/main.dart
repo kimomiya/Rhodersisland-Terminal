@@ -20,7 +20,7 @@ class RhodesislandTerminal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      onGenerateTitle: (context) => S.of(context).appTitle,
+      onGenerateTitle: (context) => S.of(context).title,
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,

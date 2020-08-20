@@ -23,7 +23,7 @@ class _$CharacterListStateTearOff {
   }
 
 // ignore: unused_element
-  _GetSuccess getSuccess({@required List<Character> characters}) {
+  _GetSuccess getSuccess({@required List<CharacterModel> characters}) {
     return _GetSuccess(
       characters: characters,
     );
@@ -62,7 +62,7 @@ mixin _$CharacterListState {
   Result when<Result extends Object>({
     @required Result inital(),
     @required Result getInProgress(),
-    @required Result getSuccess(List<Character> characters),
+    @required Result getSuccess(List<CharacterModel> characters),
     @required Result getFailure(AppFailure failure),
     @required Result fetchInProgress(),
     @required Result fetchSuccess(),
@@ -72,7 +72,7 @@ mixin _$CharacterListState {
   Result maybeWhen<Result extends Object>({
     Result inital(),
     Result getInProgress(),
-    Result getSuccess(List<Character> characters),
+    Result getSuccess(List<CharacterModel> characters),
     Result getFailure(AppFailure failure),
     Result fetchInProgress(),
     Result fetchSuccess(),
@@ -153,7 +153,7 @@ class _$_Initial implements _Initial {
   Result when<Result extends Object>({
     @required Result inital(),
     @required Result getInProgress(),
-    @required Result getSuccess(List<Character> characters),
+    @required Result getSuccess(List<CharacterModel> characters),
     @required Result getFailure(AppFailure failure),
     @required Result fetchInProgress(),
     @required Result fetchSuccess(),
@@ -174,7 +174,7 @@ class _$_Initial implements _Initial {
   Result maybeWhen<Result extends Object>({
     Result inital(),
     Result getInProgress(),
-    Result getSuccess(List<Character> characters),
+    Result getSuccess(List<CharacterModel> characters),
     Result getFailure(AppFailure failure),
     Result fetchInProgress(),
     Result fetchSuccess(),
@@ -271,7 +271,7 @@ class _$_GetInProgress implements _GetInProgress {
   Result when<Result extends Object>({
     @required Result inital(),
     @required Result getInProgress(),
-    @required Result getSuccess(List<Character> characters),
+    @required Result getSuccess(List<CharacterModel> characters),
     @required Result getFailure(AppFailure failure),
     @required Result fetchInProgress(),
     @required Result fetchSuccess(),
@@ -292,7 +292,7 @@ class _$_GetInProgress implements _GetInProgress {
   Result maybeWhen<Result extends Object>({
     Result inital(),
     Result getInProgress(),
-    Result getSuccess(List<Character> characters),
+    Result getSuccess(List<CharacterModel> characters),
     Result getFailure(AppFailure failure),
     Result fetchInProgress(),
     Result fetchSuccess(),
@@ -355,7 +355,7 @@ abstract class _$GetSuccessCopyWith<$Res> {
   factory _$GetSuccessCopyWith(
           _GetSuccess value, $Res Function(_GetSuccess) then) =
       __$GetSuccessCopyWithImpl<$Res>;
-  $Res call({List<Character> characters});
+  $Res call({List<CharacterModel> characters});
 }
 
 class __$GetSuccessCopyWithImpl<$Res>
@@ -375,7 +375,7 @@ class __$GetSuccessCopyWithImpl<$Res>
     return _then(_GetSuccess(
       characters: characters == freezed
           ? _value.characters
-          : characters as List<Character>,
+          : characters as List<CharacterModel>,
     ));
   }
 }
@@ -384,7 +384,7 @@ class _$_GetSuccess implements _GetSuccess {
   const _$_GetSuccess({@required this.characters}) : assert(characters != null);
 
   @override
-  final List<Character> characters;
+  final List<CharacterModel> characters;
 
   @override
   String toString() {
@@ -413,7 +413,7 @@ class _$_GetSuccess implements _GetSuccess {
   Result when<Result extends Object>({
     @required Result inital(),
     @required Result getInProgress(),
-    @required Result getSuccess(List<Character> characters),
+    @required Result getSuccess(List<CharacterModel> characters),
     @required Result getFailure(AppFailure failure),
     @required Result fetchInProgress(),
     @required Result fetchSuccess(),
@@ -434,7 +434,7 @@ class _$_GetSuccess implements _GetSuccess {
   Result maybeWhen<Result extends Object>({
     Result inital(),
     Result getInProgress(),
-    Result getSuccess(List<Character> characters),
+    Result getSuccess(List<CharacterModel> characters),
     Result getFailure(AppFailure failure),
     Result fetchInProgress(),
     Result fetchSuccess(),
@@ -490,10 +490,10 @@ class _$_GetSuccess implements _GetSuccess {
 }
 
 abstract class _GetSuccess implements CharacterListState {
-  const factory _GetSuccess({@required List<Character> characters}) =
+  const factory _GetSuccess({@required List<CharacterModel> characters}) =
       _$_GetSuccess;
 
-  List<Character> get characters;
+  List<CharacterModel> get characters;
   _$GetSuccessCopyWith<_GetSuccess> get copyWith;
 }
 
@@ -568,7 +568,7 @@ class _$_GetFailure implements _GetFailure {
   Result when<Result extends Object>({
     @required Result inital(),
     @required Result getInProgress(),
-    @required Result getSuccess(List<Character> characters),
+    @required Result getSuccess(List<CharacterModel> characters),
     @required Result getFailure(AppFailure failure),
     @required Result fetchInProgress(),
     @required Result fetchSuccess(),
@@ -589,7 +589,7 @@ class _$_GetFailure implements _GetFailure {
   Result maybeWhen<Result extends Object>({
     Result inital(),
     Result getInProgress(),
-    Result getSuccess(List<Character> characters),
+    Result getSuccess(List<CharacterModel> characters),
     Result getFailure(AppFailure failure),
     Result fetchInProgress(),
     Result fetchSuccess(),
@@ -689,7 +689,7 @@ class _$_FetchInProgress implements _FetchInProgress {
   Result when<Result extends Object>({
     @required Result inital(),
     @required Result getInProgress(),
-    @required Result getSuccess(List<Character> characters),
+    @required Result getSuccess(List<CharacterModel> characters),
     @required Result getFailure(AppFailure failure),
     @required Result fetchInProgress(),
     @required Result fetchSuccess(),
@@ -710,7 +710,7 @@ class _$_FetchInProgress implements _FetchInProgress {
   Result maybeWhen<Result extends Object>({
     Result inital(),
     Result getInProgress(),
-    Result getSuccess(List<Character> characters),
+    Result getSuccess(List<CharacterModel> characters),
     Result getFailure(AppFailure failure),
     Result fetchInProgress(),
     Result fetchSuccess(),
@@ -807,7 +807,7 @@ class _$_FetchSuccess implements _FetchSuccess {
   Result when<Result extends Object>({
     @required Result inital(),
     @required Result getInProgress(),
-    @required Result getSuccess(List<Character> characters),
+    @required Result getSuccess(List<CharacterModel> characters),
     @required Result getFailure(AppFailure failure),
     @required Result fetchInProgress(),
     @required Result fetchSuccess(),
@@ -828,7 +828,7 @@ class _$_FetchSuccess implements _FetchSuccess {
   Result maybeWhen<Result extends Object>({
     Result inital(),
     Result getInProgress(),
-    Result getSuccess(List<Character> characters),
+    Result getSuccess(List<CharacterModel> characters),
     Result getFailure(AppFailure failure),
     Result fetchInProgress(),
     Result fetchSuccess(),
@@ -958,7 +958,7 @@ class _$_FetchFailure implements _FetchFailure {
   Result when<Result extends Object>({
     @required Result inital(),
     @required Result getInProgress(),
-    @required Result getSuccess(List<Character> characters),
+    @required Result getSuccess(List<CharacterModel> characters),
     @required Result getFailure(AppFailure failure),
     @required Result fetchInProgress(),
     @required Result fetchSuccess(),
@@ -979,7 +979,7 @@ class _$_FetchFailure implements _FetchFailure {
   Result maybeWhen<Result extends Object>({
     Result inital(),
     Result getInProgress(),
-    Result getSuccess(List<Character> characters),
+    Result getSuccess(List<CharacterModel> characters),
     Result getFailure(AppFailure failure),
     Result fetchInProgress(),
     Result fetchSuccess(),

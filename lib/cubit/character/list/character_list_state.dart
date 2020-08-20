@@ -7,7 +7,7 @@ abstract class CharacterListState with _$CharacterListState {
   const factory CharacterListState.getInProgress() = _GetInProgress;
 
   const factory CharacterListState.getSuccess({
-    @required List<Character> characters,
+    @required List<CharacterModel> characters,
   }) = _GetSuccess;
 
   const factory CharacterListState.getFailure({

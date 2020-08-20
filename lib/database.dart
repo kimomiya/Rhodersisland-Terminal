@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:sqflite/sqflite.dart';
 
 import 'core/enums/realm.dart';
-import 'data/character/models/character.dart';
+import 'data/character/models/character_model.dart';
 import 'data/tip/models/tip.dart';
 
 Future<void> onConfigure(Database db) async {
@@ -39,7 +39,7 @@ void _createCharacterTableV1(Batch batch) {
   for (final region in Realm.values) {
     batch.execute(
       '''
-      CREATE TABLE ${region.value}_${Character.tableName} (
+      CREATE TABLE ${region.value}_${CharacterModel.tableName} (
         id TEXT PRIMARY KEY,
         name TEXT,
         description TEXT,

@@ -4,14 +4,14 @@ import 'package:sqflite/sqflite.dart';
 
 import '../../../core/enums/realm.dart';
 import '../../../shared/app_settings.dart';
-import '../models/character.dart';
+import '../models/character_model.dart';
 
 abstract class CharacterLocalDataSource {
-  Future<Character> getCharacterBy(String id);
+  Future<CharacterModel> getCharacterBy(String id);
 
-  Future<List<Character>> getCharacterList();
+  Future<List<CharacterModel>> getCharacterList();
 
-  Future<void> saveCharacterList(List<Character> characters);
+  Future<void> saveCharacterList(List<CharacterModel> characters);
 }
 
 @LazySingleton(as: CharacterLocalDataSource)
@@ -25,30 +25,32 @@ class CharacterLocalDataSourceImpl implements CharacterLocalDataSource {
   final AppSettings settings;
 
   @override
-  Future<Character> getCharacterBy(String id) async {
+  Future<CharacterModel> getCharacterBy(String id) async {
     final results = await db.query(
       _tableName,
       where: 'id = ?',
       whereArgs: <dynamic>[id],
     );
-    return Character.fromMap(results.first);
+    return CharacterModel.fromMap(results.first);
   }
 
   @override
-  Future<List<Character>> getCharacterList() async {
+  Future<List<CharacterModel>> getCharacterList() async {
     final realm = settings.getServerRealm();
-    final results = await db.query('${realm.value}_${Character.tableName}');
+    final results = await db.query(
+      '${realm.value}_${CharacterModel.tableName}',
+    );
 
-    final characters = <Character>[];
+    final characters = <CharacterModel>[];
     for (final item in results) {
-      characters.add(Character.fromMap(item));
+      characters.add(CharacterModel.fromMap(item));
     }
 
     return characters;
   }
 
   @override
-  Future<void> saveCharacterList(List<Character> characters) async {
+  Future<void> saveCharacterList(List<CharacterModel> characters) async {
     final sqls = <Future<void>>[];
     for (final char in characters) {
       sqls.add(db.execute(
@@ -89,6 +91,6 @@ class CharacterLocalDataSourceImpl implements CharacterLocalDataSource {
 
   String get _tableName {
     final realm = settings.getServerRealm();
-    return '${realm.value}_${Character.tableName}';
+    return '${realm.value}_${CharacterModel.tableName}';
   }
 }

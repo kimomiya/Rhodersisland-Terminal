@@ -1,22 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
-part of 'character.dart';
+part of 'character_model.dart';
 
 // **************************************************************************
 // FreezedGenerator
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
-Character _$CharacterFromJson(Map<String, dynamic> json) {
-  return _Character.fromJson(json);
+CharacterModel _$CharacterModelFromJson(Map<String, dynamic> json) {
+  return _CharacterModel.fromJson(json);
 }
 
-class _$CharacterTearOff {
-  const _$CharacterTearOff();
+class _$CharacterModelTearOff {
+  const _$CharacterModelTearOff();
 
 // ignore: unused_element
-  _Character call(
+  _CharacterModel call(
       {@JsonKey(defaultValue: '') String id,
       @JsonKey(defaultValue: '') String name,
       @JsonKey(defaultValue: '') String description,
@@ -35,7 +35,7 @@ class _$CharacterTearOff {
       @JsonKey(defaultValue: -1) int maxPotentialLevel,
       @JsonKey(defaultValue: -1) int rarity,
       @JsonKey(defaultValue: '') String profession}) {
-    return _Character(
+    return _CharacterModel(
       id: id,
       name: name,
       description: description,
@@ -59,9 +59,9 @@ class _$CharacterTearOff {
 }
 
 // ignore: unused_element
-const $Character = _$CharacterTearOff();
+const $CharacterModel = _$CharacterModelTearOff();
 
-mixin _$Character {
+mixin _$CharacterModel {
   @JsonKey(defaultValue: '')
   String get id;
   @JsonKey(defaultValue: '')
@@ -100,12 +100,13 @@ mixin _$Character {
   String get profession;
 
   Map<String, dynamic> toJson();
-  $CharacterCopyWith<Character> get copyWith;
+  $CharacterModelCopyWith<CharacterModel> get copyWith;
 }
 
-abstract class $CharacterCopyWith<$Res> {
-  factory $CharacterCopyWith(Character value, $Res Function(Character) then) =
-      _$CharacterCopyWithImpl<$Res>;
+abstract class $CharacterModelCopyWith<$Res> {
+  factory $CharacterModelCopyWith(
+          CharacterModel value, $Res Function(CharacterModel) then) =
+      _$CharacterModelCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(defaultValue: '') String id,
       @JsonKey(defaultValue: '') String name,
@@ -127,12 +128,13 @@ abstract class $CharacterCopyWith<$Res> {
       @JsonKey(defaultValue: '') String profession});
 }
 
-class _$CharacterCopyWithImpl<$Res> implements $CharacterCopyWith<$Res> {
-  _$CharacterCopyWithImpl(this._value, this._then);
+class _$CharacterModelCopyWithImpl<$Res>
+    implements $CharacterModelCopyWith<$Res> {
+  _$CharacterModelCopyWithImpl(this._value, this._then);
 
-  final Character _value;
+  final CharacterModel _value;
   // ignore: unused_field
-  final $Res Function(Character) _then;
+  final $Res Function(CharacterModel) _then;
 
   @override
   $Res call({
@@ -192,10 +194,11 @@ class _$CharacterCopyWithImpl<$Res> implements $CharacterCopyWith<$Res> {
   }
 }
 
-abstract class _$CharacterCopyWith<$Res> implements $CharacterCopyWith<$Res> {
-  factory _$CharacterCopyWith(
-          _Character value, $Res Function(_Character) then) =
-      __$CharacterCopyWithImpl<$Res>;
+abstract class _$CharacterModelCopyWith<$Res>
+    implements $CharacterModelCopyWith<$Res> {
+  factory _$CharacterModelCopyWith(
+          _CharacterModel value, $Res Function(_CharacterModel) then) =
+      __$CharacterModelCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(defaultValue: '') String id,
@@ -218,13 +221,15 @@ abstract class _$CharacterCopyWith<$Res> implements $CharacterCopyWith<$Res> {
       @JsonKey(defaultValue: '') String profession});
 }
 
-class __$CharacterCopyWithImpl<$Res> extends _$CharacterCopyWithImpl<$Res>
-    implements _$CharacterCopyWith<$Res> {
-  __$CharacterCopyWithImpl(_Character _value, $Res Function(_Character) _then)
-      : super(_value, (v) => _then(v as _Character));
+class __$CharacterModelCopyWithImpl<$Res>
+    extends _$CharacterModelCopyWithImpl<$Res>
+    implements _$CharacterModelCopyWith<$Res> {
+  __$CharacterModelCopyWithImpl(
+      _CharacterModel _value, $Res Function(_CharacterModel) _then)
+      : super(_value, (v) => _then(v as _CharacterModel));
 
   @override
-  _Character get _value => super._value as _Character;
+  _CharacterModel get _value => super._value as _CharacterModel;
 
   @override
   $Res call({
@@ -247,7 +252,7 @@ class __$CharacterCopyWithImpl<$Res> extends _$CharacterCopyWithImpl<$Res>
     Object rarity = freezed,
     Object profession = freezed,
   }) {
-    return _then(_Character(
+    return _then(_CharacterModel(
       id: id == freezed ? _value.id : id as String,
       name: name == freezed ? _value.name : name as String,
       description:
@@ -285,8 +290,8 @@ class __$CharacterCopyWithImpl<$Res> extends _$CharacterCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
-class _$_Character implements _Character {
-  const _$_Character(
+class _$_CharacterModel implements _CharacterModel {
+  const _$_CharacterModel(
       {@JsonKey(defaultValue: '') this.id,
       @JsonKey(defaultValue: '') this.name,
       @JsonKey(defaultValue: '') this.description,
@@ -306,8 +311,8 @@ class _$_Character implements _Character {
       @JsonKey(defaultValue: -1) this.rarity,
       @JsonKey(defaultValue: '') this.profession});
 
-  factory _$_Character.fromJson(Map<String, dynamic> json) =>
-      _$_$_CharacterFromJson(json);
+  factory _$_CharacterModel.fromJson(Map<String, dynamic> json) =>
+      _$_$_CharacterModelFromJson(json);
 
   @override
   @JsonKey(defaultValue: '')
@@ -366,13 +371,13 @@ class _$_Character implements _Character {
 
   @override
   String toString() {
-    return 'Character(id: $id, name: $name, description: $description, canUseGeneralPotentialItem: $canUseGeneralPotentialItem, potentialItemId: $potentialItemId, team: $team, displayNumber: $displayNumber, tokenKey: $tokenKey, appellation: $appellation, position: $position, tagList: $tagList, displayLogo: $displayLogo, itemUsage: $itemUsage, itemDesc: $itemDesc, itemObtainApproach: $itemObtainApproach, maxPotentialLevel: $maxPotentialLevel, rarity: $rarity, profession: $profession)';
+    return 'CharacterModel(id: $id, name: $name, description: $description, canUseGeneralPotentialItem: $canUseGeneralPotentialItem, potentialItemId: $potentialItemId, team: $team, displayNumber: $displayNumber, tokenKey: $tokenKey, appellation: $appellation, position: $position, tagList: $tagList, displayLogo: $displayLogo, itemUsage: $itemUsage, itemDesc: $itemDesc, itemObtainApproach: $itemObtainApproach, maxPotentialLevel: $maxPotentialLevel, rarity: $rarity, profession: $profession)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Character &&
+        (other is _CharacterModel &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.name, name) ||
@@ -449,17 +454,17 @@ class _$_Character implements _Character {
       const DeepCollectionEquality().hash(profession);
 
   @override
-  _$CharacterCopyWith<_Character> get copyWith =>
-      __$CharacterCopyWithImpl<_Character>(this, _$identity);
+  _$CharacterModelCopyWith<_CharacterModel> get copyWith =>
+      __$CharacterModelCopyWithImpl<_CharacterModel>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_CharacterToJson(this);
+    return _$_$_CharacterModelToJson(this);
   }
 }
 
-abstract class _Character implements Character {
-  const factory _Character(
+abstract class _CharacterModel implements CharacterModel {
+  const factory _CharacterModel(
       {@JsonKey(defaultValue: '') String id,
       @JsonKey(defaultValue: '') String name,
       @JsonKey(defaultValue: '') String description,
@@ -477,10 +482,10 @@ abstract class _Character implements Character {
       @JsonKey(defaultValue: '') String itemObtainApproach,
       @JsonKey(defaultValue: -1) int maxPotentialLevel,
       @JsonKey(defaultValue: -1) int rarity,
-      @JsonKey(defaultValue: '') String profession}) = _$_Character;
+      @JsonKey(defaultValue: '') String profession}) = _$_CharacterModel;
 
-  factory _Character.fromJson(Map<String, dynamic> json) =
-      _$_Character.fromJson;
+  factory _CharacterModel.fromJson(Map<String, dynamic> json) =
+      _$_CharacterModel.fromJson;
 
   @override
   @JsonKey(defaultValue: '')
@@ -537,5 +542,5 @@ abstract class _Character implements Character {
   @JsonKey(defaultValue: '')
   String get profession;
   @override
-  _$CharacterCopyWith<_Character> get copyWith;
+  _$CharacterModelCopyWith<_CharacterModel> get copyWith;
 }
