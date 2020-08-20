@@ -54,39 +54,53 @@ class _ContentView extends StatelessWidget {
   }
 
   Widget _buildLogo() {
-    return Image.asset(
+    final logo = Image.asset(
       'assets/images/logo/logo_rhodes.png',
       width: ScreenUtil.screenWidth * 0.618,
       fit: BoxFit.fitWidth,
-    ).center().padding(top: 180);
+    );
+    return logo.center().padding(top: 180);
   }
 
   Widget _buildLoadingView(BuildContext context) {
-    return Column(
+    final indicator = LoadingIndicator(
+      indicatorType: Indicator.ballRotateChase,
+      color: const Color(0xFF0F0F0F),
+    );
+    final loadingText = Text(
+      S.of(context).splashLoading,
+      textAlign: TextAlign.center,
+    );
+    final loadingTip = Text(
+      S.of(context).splashLoadingTip,
+      textAlign: TextAlign.center,
+    );
+    final loadingView = Column(
       children: [
-        LoadingIndicator(
-          indicatorType: Indicator.ballRotateChase,
-          color: const Color(0xFF0F0F0F),
-        ).constrained(height: 88.h.toDouble(), width: 88.h.toDouble()),
-        SizedBox(height: 64.h.toDouble()),
-        Text(
-          S.of(context).splashLoading,
-          textAlign: TextAlign.center,
-        ).textColor(Colors.grey[700]).fontSize(30.sp.toDouble()),
-        SizedBox(height: 40.h.toDouble()),
-        BlocBuilder<PrefetchCubit, PrefetchState>(
-          builder: (context, state) {
-            return state.maybeMap(
-              fetchInProgress: (_) => Text(
-                S.of(context).splashLoadingTip,
-                textAlign: TextAlign.center,
-              ).textColor(Colors.grey),
-              orElse: () => Container(),
-            );
-          },
+        indicator.constrained(
+          height: 88.h.toDouble(),
+          width: 88.h.toDouble(),
+        ),
+        SizedBox(height: 48.h.toDouble()),
+        loadingText.textColor(Colors.grey[700]).fontSize(30.sp.toDouble()),
+        SizedBox(height: 48.h.toDouble()),
+        SizedBox(
+          height: 28.h.toDouble(),
+          child: BlocBuilder<PrefetchCubit, PrefetchState>(
+            builder: (context, state) {
+              return state.maybeMap(
+                fetchInProgress: (_) => loadingTip.textColor(Colors.grey),
+                orElse: () => Container(),
+              );
+            },
+          ),
         ),
         const SizedBox(height: kToolbarHeight),
       ],
-    ).padding(horizontal: 60.w.toDouble(), bottom: ScreenUtil.bottomBarHeight);
+    );
+    return loadingView.padding(
+      horizontal: 60.w.toDouble(),
+      bottom: ScreenUtil.bottomBarHeight,
+    );
   }
 }

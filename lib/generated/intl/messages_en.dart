@@ -25,6 +25,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "home" : MessageLookupByLibrary.simpleMessage("Home"),
     "lang" : MessageLookupByLibrary.simpleMessage("English"),
     "splashLoading" : MessageLookupByLibrary.simpleMessage("Connecting to the neural network of Rhodes Island."),
-    "splashLoadingTip" : MessageLookupByLibrary.simpleMessage("The first launch may take a long time")
+    "splashLoadingTip" : MessageLookupByLibrary.simpleMessage("The first launch may take a long time.")
   };
 }

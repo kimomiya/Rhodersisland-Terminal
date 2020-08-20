@@ -63,10 +63,10 @@ class S {
     );
   }
 
-  /// `The first launch may take a long time`
+  /// `The first launch may take a long time.`
   String get splashLoadingTip {
     return Intl.message(
-      'The first launch may take a long time',
+      'The first launch may take a long time.',
       name: 'splashLoadingTip',
       desc: '',
       args: [],
