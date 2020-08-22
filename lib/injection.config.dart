@@ -18,6 +18,7 @@ import 'data/character/data_sources/character_remote_data_source.dart';
 import 'data/character/character_repository.dart';
 import 'data/core/network_info.dart';
 import 'cubit/prefetch/prefetch_cubit.dart';
+import 'cubit/character/recruitment/recruitment_cubit.dart';
 import 'injection.dart';
 import 'data/tip/data_sources/tip_local_data_source.dart';
 import 'data/tip/data_sources/tip_remote_data_source.dart';
@@ -52,6 +53,8 @@ Future<GetIt> $initGetIt(
         localDataSource: get<CharacterLocalDataSource>(),
         networkInfo: get<NetworkInfo>(),
       ));
+  gh.lazySingleton<RecruitmentCubit>(
+      () => RecruitmentCubit(get<CharacterRepository>()));
   gh.lazySingleton<TipLocalDataSource>(() => TipLocalDataSourceImpl(
       db: get<Database>(), settings: get<AppSettings>()));
   gh.lazySingleton<TipRemoteDataSource>(() => TipRemoteDataSourceImpl(

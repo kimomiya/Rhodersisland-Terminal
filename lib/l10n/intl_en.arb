@@ -5,6 +5,8 @@
   "splashLoading": "Connecting to the neural network of Rhodes Island.",
   "splashLoadingTip": "The first launch may take a long time.",
   "home": "Home",
+  "recruit": "Recruit",
+  "rarity": "Rarity",
   "profession": "Profession",
   "warrior": "Guard",
   "sniper": "Sniper",
@@ -36,5 +38,6 @@
   "fastRedeploy": "Fast-Redeploy",
   "shift": "Shift",
   "summon": "Summon",
-  "robot": "Robot"
+  "robot": "Robot",
+  "reset": "Reset"
 }

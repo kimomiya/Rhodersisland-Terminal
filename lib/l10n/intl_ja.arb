@@ -5,6 +5,8 @@
   "splashLoading": "ニューラルコネクターに接続中",
   "splashLoadingTip": "初回起動時には時間がかかる場合があります",
   "home": "ホーム",
+  "recruit": "公開求人",
+  "rarity": "レア度",
   "profession": "職業",
   "warrior": "前衛タイプ",
   "sniper": "狙撃タイプ",
@@ -12,7 +14,7 @@
   "medic": "医療タイプ",
   "supporter": "補助タイプ",
   "caster": "術師タイプ",
-  "special": "特殊タイプ",
+  "specialist": "特殊タイプ",
   "pioneer": "先鋒タイプ",
   "position": "位置",
   "melee": "近距離",
@@ -36,5 +38,6 @@
   "fastRedeploy": "高速再配置",
   "shift": "強制移動",
   "summon": "召喚",
-  "robot": "ロボット"
+  "robot": "ロボット",
+  "reset": "リセット"
 }

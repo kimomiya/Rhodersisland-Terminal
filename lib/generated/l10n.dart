@@ -93,6 +93,26 @@ class S {
     );
   }
 
+  /// `Recruit`
+  String get recruit {
+    return Intl.message(
+      'Recruit',
+      name: 'recruit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rarity`
+  String get rarity {
+    return Intl.message(
+      'Rarity',
+      name: 'rarity',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Profession`
   String get profession {
     return Intl.message(
@@ -408,6 +428,16 @@ class S {
     return Intl.message(
       'Robot',
       name: 'robot',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset`
+  String get reset {
+    return Intl.message(
+      'Reset',
+      name: 'reset',
       desc: '',
       args: [],
     );

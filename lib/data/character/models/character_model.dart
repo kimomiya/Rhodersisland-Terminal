@@ -1,5 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../entities/character_lite.dart';
+
 part 'character_model.freezed.dart';
 part 'character_model.g.dart';
 
@@ -30,7 +32,7 @@ abstract class CharacterModel with _$CharacterModel {
     /// 召唤物ID
     @JsonKey(defaultValue: '') String tokenKey,
 
-    /// 英文名
+    /// 代号
     @JsonKey(defaultValue: '') String appellation,
 
     /// 部署位
@@ -84,14 +86,32 @@ abstract class CharacterModel with _$CharacterModel {
   }
 
   factory CharacterModel.fromMap(Map<String, dynamic> map) {
-    final canUseGeneralPotentialItem = map['canUseGeneralPotentialItem'] as int;
-    map['canUseGeneralPotentialItem'] = canUseGeneralPotentialItem == 1;
+    final json = Map<String, dynamic>.from(map);
+    final canUseGeneralPotentialItem =
+        json['canUseGeneralPotentialItem'] as int;
+    json['canUseGeneralPotentialItem'] = canUseGeneralPotentialItem == 1;
 
-    final tagList = map['tagList'] as String;
-    map['tagList'] = tagList.split(',');
+    final tagList = json['tagList'] as String;
+    json['tagList'] = tagList.split(',');
 
-    return CharacterModel.fromJson(map);
+    return CharacterModel.fromJson(json);
   }
 
   static const String tableName = 'Character';
+}
+
+extension CharacterModelTransfer on CharacterModel {
+  CharacterLite toLite() {
+    return CharacterLite(
+      id: id,
+      name: name,
+      team: team,
+      appellation: appellation,
+      position: position,
+      tagList: tagList,
+      itemObtainApproach: itemObtainApproach,
+      rarity: rarity,
+      profession: profession,
+    );
+  }
 }

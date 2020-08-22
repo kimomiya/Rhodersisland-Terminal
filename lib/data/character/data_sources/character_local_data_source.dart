@@ -9,7 +9,7 @@ import '../models/character_model.dart';
 abstract class CharacterLocalDataSource {
   Future<CharacterModel> getCharacterBy(String id);
 
-  Future<List<CharacterModel>> getCharacterList();
+  Future<List<CharacterModel>> getOperatorList();
 
   Future<void> saveCharacterList(List<CharacterModel> characters);
 }
@@ -35,10 +35,12 @@ class CharacterLocalDataSourceImpl implements CharacterLocalDataSource {
   }
 
   @override
-  Future<List<CharacterModel>> getCharacterList() async {
+  Future<List<CharacterModel>> getOperatorList() async {
     final realm = settings.getServerRealm();
     final results = await db.query(
       '${realm.value}_${CharacterModel.tableName}',
+      where: 'id LIKE ?',
+      whereArgs: <dynamic>['char_%'],
     );
 
     final characters = <CharacterModel>[];

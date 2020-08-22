@@ -5,6 +5,8 @@
   "splashLoading": "正在尝试取得神经连接",
   "splashLoadingTip": "首次加载可能需要较长时间",
   "home": "首页",
+  "recruit": "公开招募",
+  "rarity": "稀有度",
   "profession": "职业",
   "warrior": "近卫干员",
   "sniper": "狙击干员",
@@ -12,7 +14,7 @@
   "medic": "医疗干员",
   "supporter": "辅助干员",
   "caster": "术师干员",
-  "special": "特种干员",
+  "specialist": "特种干员",
   "pioneer": "先锋干员",
   "position": "位置",
   "melee": "近战位",
@@ -36,5 +38,6 @@
   "fastRedeploy": "快速复活",
   "shift": "位移",
   "summon": "召唤",
-  "robot": "支援机械"
+  "robot": "支援机械",
+  "reset": "重置"
 }

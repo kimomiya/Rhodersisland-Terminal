@@ -8,10 +8,11 @@ import '../../shared/logger.dart';
 import '../core/network_info.dart';
 import 'data_sources/character_local_data_source.dart';
 import 'data_sources/character_remote_data_source.dart';
+import 'entities/character_lite.dart';
 import 'models/character_model.dart';
 
 abstract class CharacterRepository {
-  Future<Either<AppFailure, List<CharacterModel>>> getCharacterList();
+  Future<Either<AppFailure, List<CharacterLite>>> getOperatorList();
 
   Future<Either<AppFailure, Unit>> fetchCharacterList();
 }
@@ -29,11 +30,13 @@ class CharacterRepositoryImpl implements CharacterRepository {
   final NetworkInfo networkInfo;
 
   @override
-  Future<Either<AppFailure, List<CharacterModel>>> getCharacterList() async {
+  Future<Either<AppFailure, List<CharacterLite>>> getOperatorList() async {
     try {
-      final characters = await localDataSource.getCharacterList();
-      return right(characters);
+      final characters = await localDataSource.getOperatorList();
+      return right(characters.map((model) => model.toLite()).toList());
     } catch (e) {
+      logger.e(e.message, e);
+
       return left(const AppFailure.noCachedData());
     }
   }

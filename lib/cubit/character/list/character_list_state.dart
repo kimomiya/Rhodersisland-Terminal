@@ -4,16 +4,6 @@ part of 'character_list_cubit.dart';
 abstract class CharacterListState with _$CharacterListState {
   const factory CharacterListState.inital() = _Initial;
 
-  const factory CharacterListState.getInProgress() = _GetInProgress;
-
-  const factory CharacterListState.getSuccess({
-    @required List<CharacterModel> characters,
-  }) = _GetSuccess;
-
-  const factory CharacterListState.getFailure({
-    @required AppFailure failure,
-  }) = _GetFailure;
-
   const factory CharacterListState.fetchInProgress() = _FetchInProgress;
 
   const factory CharacterListState.fetchSuccess() = _FetchSuccess;

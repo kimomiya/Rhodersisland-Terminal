@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:loading_indicator/loading_indicator.dart';
 import 'package:styled_widget/styled_widget.dart';
 
+import '../../core/images/images.dart';
 import '../../cubit/prefetch/prefetch_cubit.dart';
 import '../../generated/l10n.dart';
 import '../../injection.dart';
@@ -55,7 +56,7 @@ class _ContentView extends StatelessWidget {
 
   Widget _buildLogo() {
     final logo = Image.asset(
-      'assets/images/logo/logo_rhodes.png',
+      Images.logo,
       width: ScreenUtil.screenWidth * 0.618,
       fit: BoxFit.fitWidth,
     );
