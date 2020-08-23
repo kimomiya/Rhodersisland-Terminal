@@ -12,9 +12,9 @@ import 'entities/character_lite.dart';
 import 'models/character_model.dart';
 
 abstract class CharacterRepository {
-  Future<Either<AppFailure, List<CharacterLite>>> getOperatorList();
-
   Future<Either<AppFailure, Unit>> fetchCharacterList();
+
+  Future<Either<AppFailure, List<CharacterLite>>> getOperators();
 }
 
 @LazySingleton(as: CharacterRepository)
@@ -28,18 +28,6 @@ class CharacterRepositoryImpl implements CharacterRepository {
   final CharacterRemoteDataSource remoteDataSource;
   final CharacterLocalDataSource localDataSource;
   final NetworkInfo networkInfo;
-
-  @override
-  Future<Either<AppFailure, List<CharacterLite>>> getOperatorList() async {
-    try {
-      final characters = await localDataSource.getOperatorList();
-      return right(characters.map((model) => model.toLite()).toList());
-    } catch (e) {
-      logger.e(e.message, e);
-
-      return left(const AppFailure.noCachedData());
-    }
-  }
 
   @override
   Future<Either<AppFailure, Unit>> fetchCharacterList() async {
@@ -67,6 +55,18 @@ class CharacterRepositoryImpl implements CharacterRepository {
         code: 500,
         description: 'Unhandled Error',
       ));
+    }
+  }
+
+  @override
+  Future<Either<AppFailure, List<CharacterLite>>> getOperators() async {
+    try {
+      final operators = await localDataSource.getOperators();
+      return right(operators.map((model) => model.toLite()).toList());
+    } catch (e) {
+      logger.e(e.message, e);
+
+      return left(const AppFailure.noCachedData());
     }
   }
 }

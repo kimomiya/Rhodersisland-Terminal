@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 enum Rarity {
   one,
   two,
@@ -5,6 +7,13 @@ enum Rarity {
   four,
   five,
   six,
+}
+
+extension RarityValue on Rarity {
+  static Rarity of(int value) => Rarity.values.firstWhere(
+        (rarity) => rarity.value == value,
+        orElse: () => Rarity.one,
+      );
 }
 
 extension RarityValues on Rarity {
@@ -29,7 +38,32 @@ extension RarityValues on Rarity {
         return 5;
 
       default:
-        return -1;
+        return 1;
+    }
+  }
+
+  Color get color {
+    switch (this) {
+      case Rarity.one:
+        return Colors.black;
+
+      case Rarity.two:
+        return const Color(0xFF9D9D9D);
+
+      case Rarity.three:
+        return const Color(0xFF4D7455);
+
+      case Rarity.four:
+        return const Color(0xFF8650AC);
+
+      case Rarity.five:
+        return const Color(0xFFFF8000);
+
+      case Rarity.six:
+        return const Color(0xFFAA0000);
+
+      default:
+        return Colors.black;
     }
   }
 }

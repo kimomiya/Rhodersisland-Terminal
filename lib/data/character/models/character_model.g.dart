@@ -23,7 +23,10 @@ _$_CharacterModel _$_$_CharacterModelFromJson(Map<String, dynamic> json) {
     displayLogo: json['displayLogo'] as String ?? '',
     itemUsage: json['itemUsage'] as String ?? '',
     itemDesc: json['itemDesc'] as String ?? '',
-    itemObtainApproach: json['itemObtainApproach'] as String ?? '',
+    itemObtainApproach: (json['itemObtainApproach'] as List)
+            ?.map((e) => e as String)
+            ?.toList() ??
+        [],
     maxPotentialLevel: json['maxPotentialLevel'] as int ?? -1,
     rarity: json['rarity'] as int ?? -1,
     profession: json['profession'] as String ?? '',

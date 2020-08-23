@@ -7,11 +7,11 @@ import '../../../shared/app_settings.dart';
 import '../models/character_model.dart';
 
 abstract class CharacterLocalDataSource {
+  Future<void> saveCharacterList(List<CharacterModel> characters);
+
   Future<CharacterModel> getCharacterBy(String id);
 
-  Future<List<CharacterModel>> getOperatorList();
-
-  Future<void> saveCharacterList(List<CharacterModel> characters);
+  Future<List<CharacterModel>> getOperators();
 }
 
 @LazySingleton(as: CharacterLocalDataSource)
@@ -23,33 +23,6 @@ class CharacterLocalDataSourceImpl implements CharacterLocalDataSource {
 
   final Database db;
   final AppSettings settings;
-
-  @override
-  Future<CharacterModel> getCharacterBy(String id) async {
-    final results = await db.query(
-      _tableName,
-      where: 'id = ?',
-      whereArgs: <dynamic>[id],
-    );
-    return CharacterModel.fromMap(results.first);
-  }
-
-  @override
-  Future<List<CharacterModel>> getOperatorList() async {
-    final realm = settings.getServerRealm();
-    final results = await db.query(
-      '${realm.value}_${CharacterModel.tableName}',
-      where: 'id LIKE ?',
-      whereArgs: <dynamic>['char_%'],
-    );
-
-    final characters = <CharacterModel>[];
-    for (final item in results) {
-      characters.add(CharacterModel.fromMap(item));
-    }
-
-    return characters;
-  }
 
   @override
   Future<void> saveCharacterList(List<CharacterModel> characters) async {
@@ -90,6 +63,35 @@ class CharacterLocalDataSourceImpl implements CharacterLocalDataSource {
 
     await Future.wait(sqls);
   }
+
+  @override
+  Future<CharacterModel> getCharacterBy(String id) async {
+    final results = await db.query(
+      _tableName,
+      where: 'id = ?',
+      whereArgs: <dynamic>[id],
+    );
+    return CharacterModel.fromMap(results.first);
+  }
+
+  @override
+  Future<List<CharacterModel>> getOperators() async {
+    final realm = settings.getServerRealm();
+    final results = await db.query(
+      '${realm.value}_${CharacterModel.tableName}',
+      where: 'id LIKE ?',
+      whereArgs: <dynamic>['char_%'],
+    );
+
+    final characters = <CharacterModel>[];
+    for (final item in results) {
+      characters.add(CharacterModel.fromMap(item));
+    }
+
+    return characters;
+  }
+
+  //* Computed Properties
 
   String get _tableName {
     final realm = settings.getServerRealm();

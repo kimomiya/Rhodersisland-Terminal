@@ -3,6 +3,10 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../core/app_failure.dart';
+import '../../../core/enums/character/experience.dart';
+import '../../../core/enums/character/position.dart';
+import '../../../core/enums/character/profession.dart';
+import '../../../core/enums/character/tag.dart';
 import '../../../data/character/character_repository.dart';
 import '../../../data/character/entities/character_lite.dart';
 
@@ -15,14 +19,32 @@ class RecruitmentCubit extends Cubit<RecruitmentState> {
 
   final CharacterRepository _repository;
 
-  Future<void> getOperatorList() async {
-    emit(const _GetOperatorInProgress());
+  Future<void> getOperators() async {
+    emit(const _GetOperatorsInProgress());
 
-    final failureOrOperators = await _repository.getOperatorList();
+    final failureOrOperators = await _repository.getOperators();
 
     failureOrOperators.fold(
-      (failure) => emit(_GetOperatorFailure(failure: failure)),
-      (operators) => emit(_GetOperatorSuccess(operators: operators)),
+      (failure) => emit(_GetOperatorsFailure(failure: failure)),
+      (operators) => emit(_GetOperatorsSuccess(operators: operators)),
     );
   }
+
+  void selectPosition(bool selected, Position position) {
+    emit(_PositionSelected(selected: selected, position: position));
+  }
+
+  void selectExperience(bool selected, Experience experience) {
+    emit(_ExperienceSelected(selected: selected, experience: experience));
+  }
+
+  void selectProfession(bool selected, Profession profession) {
+    emit(_ProfessionSelected(selected: selected, profession: profession));
+  }
+
+  void selectTag(bool selected, Tag tag) {
+    emit(_TagSelected(selected: selected, tag: tag));
+  }
+
+  void resetSelection() => emit(const _SelectionReseted());
 }

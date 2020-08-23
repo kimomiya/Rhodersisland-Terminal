@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:styled_widget/styled_widget.dart';
 
@@ -7,6 +8,7 @@ import '../../../core/enums/character/position.dart';
 import '../../../core/enums/character/profession.dart';
 import '../../../core/enums/character/tag.dart';
 import '../../../core/images/images.dart';
+import '../../../cubit/character/recruitment/recruitment_cubit.dart';
 import '../../../generated/l10n.dart';
 
 class FilterDrawer extends StatefulWidget {
@@ -16,20 +18,12 @@ class FilterDrawer extends StatefulWidget {
     @required this.initExperiences,
     @required this.initProfessions,
     @required this.initTags,
-    @required this.onPositionSelected,
-    @required this.onExperienceSelected,
-    @required this.onProfessionSelected,
-    @required this.onTagSelected,
   }) : super(key: key);
 
   final List<Position> initPositions;
   final List<Experience> initExperiences;
   final List<Profession> initProfessions;
   final List<Tag> initTags;
-  final void Function(List<Position> positions) onPositionSelected;
-  final void Function(List<Experience> experiences) onExperienceSelected;
-  final void Function(List<Profession> professions) onProfessionSelected;
-  final void Function(List<Tag> tags) onTagSelected;
 
   @override
   _FilterDrawerState createState() => _FilterDrawerState(
@@ -37,10 +31,6 @@ class FilterDrawer extends StatefulWidget {
         initExperiences,
         initProfessions,
         initTags,
-        onPositionSelected,
-        onExperienceSelected,
-        onProfessionSelected,
-        onTagSelected,
       );
 }
 
@@ -50,21 +40,12 @@ class _FilterDrawerState extends State<FilterDrawer> {
     List<Experience> initExperiences,
     List<Profession> initProfessions,
     List<Tag> initTags,
-    this.onPositionSelected,
-    this.onExperienceSelected,
-    this.onProfessionSelected,
-    this.onTagSelected,
   ) {
     _selectedPositions.addAll(initPositions);
     _selectedExperiences.addAll(initExperiences);
     _selectedProfessions.addAll(initProfessions);
     _selectedTags.addAll(initTags);
   }
-
-  final void Function(List<Position> positions) onPositionSelected;
-  final void Function(List<Experience> experiences) onExperienceSelected;
-  final void Function(List<Profession> professions) onProfessionSelected;
-  final void Function(List<Tag> tags) onTagSelected;
 
   final _selectedPositions = <Position>[];
   final _selectedExperiences = <Experience>[];
@@ -99,6 +80,8 @@ class _FilterDrawerState extends State<FilterDrawer> {
     );
   }
 
+  //* Components
+
   Widget _buildHeader(S intl) {
     return DrawerHeader(
       child: Column(
@@ -124,14 +107,16 @@ class _FilterDrawerState extends State<FilterDrawer> {
       return _ChoiceChip(
         label: position.translate(S.of(context)),
         onSelected: (_) {
-          setState(() {
-            if (selected) {
-              _selectedPositions.remove(position);
-            } else {
-              _selectedPositions.add(position);
+          if (selected) {
+            _selectedPositions.remove(position);
+          } else {
+            if (_isMaxSelected) {
+              return;
             }
-          });
-          onPositionSelected(_selectedPositions);
+            _selectedPositions.add(position);
+          }
+          context.bloc<RecruitmentCubit>().selectPosition(selected, position);
+          setState(() {});
         },
         selected: selected,
       );
@@ -159,14 +144,18 @@ class _FilterDrawerState extends State<FilterDrawer> {
       return _ChoiceChip(
         label: experience.translate(S.of(context)),
         onSelected: (_) {
-          setState(() {
-            if (selected) {
-              _selectedExperiences.remove(experience);
-            } else {
-              _selectedExperiences.add(experience);
+          if (selected) {
+            _selectedExperiences.remove(experience);
+          } else {
+            if (_isMaxSelected) {
+              return;
             }
-          });
-          onExperienceSelected(_selectedExperiences);
+            _selectedExperiences.add(experience);
+          }
+          context
+              .bloc<RecruitmentCubit>()
+              .selectExperience(selected, experience);
+          setState(() {});
         },
         selected: selected,
       );
@@ -194,14 +183,18 @@ class _FilterDrawerState extends State<FilterDrawer> {
       return _ChoiceChip(
         label: profession.translate(S.of(context)),
         onSelected: (_) {
-          setState(() {
-            if (selected) {
-              _selectedProfessions.remove(profession);
-            } else {
-              _selectedProfessions.add(profession);
+          if (selected) {
+            _selectedProfessions.remove(profession);
+          } else {
+            if (_isMaxSelected) {
+              return;
             }
-          });
-          onProfessionSelected(_selectedProfessions);
+            _selectedProfessions.add(profession);
+          }
+          context
+              .bloc<RecruitmentCubit>()
+              .selectProfession(selected, profession);
+          setState(() {});
         },
         selected: selected,
       );
@@ -229,14 +222,16 @@ class _FilterDrawerState extends State<FilterDrawer> {
       return _ChoiceChip(
         label: tag.translate(S.of(context)),
         onSelected: (_) {
-          setState(() {
-            if (selected) {
-              _selectedTags.remove(tag);
-            } else {
-              _selectedTags.add(tag);
+          if (selected) {
+            _selectedTags.remove(tag);
+          } else {
+            if (_isMaxSelected) {
+              return;
             }
-          });
-          onTagSelected(_selectedTags);
+            _selectedTags.add(tag);
+          }
+          context.bloc<RecruitmentCubit>().selectTag(selected, tag);
+          setState(() {});
         },
         selected: selected,
       );
@@ -267,15 +262,21 @@ class _FilterDrawerState extends State<FilterDrawer> {
           _selectedProfessions.clear();
           _selectedTags.clear();
         });
-
-        onPositionSelected([]);
-        onExperienceSelected([]);
-        onProfessionSelected([]);
-        onTagSelected([]);
+        context.bloc<RecruitmentCubit>().resetSelection();
       },
       color: Colors.redAccent,
       text: intl.reset,
     );
+  }
+
+  //* Computed Properties
+
+  bool get _isMaxSelected {
+    final selectedCount = _selectedPositions.length +
+        _selectedExperiences.length +
+        _selectedProfessions.length +
+        _selectedTags.length;
+    return selectedCount >= 3;
   }
 }
 

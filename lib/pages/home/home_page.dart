@@ -1,6 +1,10 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:styled_widget/styled_widget.dart';
 
+import '../../core/constants/recruitment.dart';
 import '../../core/enums/character/experience.dart';
 import '../../core/enums/character/position.dart';
 import '../../core/enums/character/profession.dart';
@@ -8,6 +12,7 @@ import '../../core/enums/character/rarity.dart';
 import '../../core/enums/character/tag.dart';
 import '../../cubit/character/recruitment/recruitment_cubit.dart';
 import '../../data/character/entities/character_lite.dart';
+import '../../generated/l10n.dart';
 import '../../injection.dart';
 import 'widgets/widgets.dart';
 
@@ -32,10 +37,9 @@ class _ContentView extends StatefulWidget {
 
 class _ContentViewState extends State<_ContentView> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-  final _listKey = GlobalKey<AnimatedListState>();
 
   final _operators = <CharacterLite>[];
-  final _filteredOperators = <CharacterLite>[];
+  final _filteredOperators = <List<String>, List<CharacterLite>>{};
 
   final _selectedRarities = <Rarity>[];
   final _selectedPositions = <Position>[];
@@ -47,7 +51,7 @@ class _ContentViewState extends State<_ContentView> {
   void initState() {
     super.initState();
 
-    context.bloc<RecruitmentCubit>().getOperatorList();
+    context.bloc<RecruitmentCubit>().getOperators();
   }
 
   @override
@@ -64,10 +68,6 @@ class _ContentViewState extends State<_ContentView> {
         initExperiences: _selectedExperiences,
         initProfessions: _selectedProfessions,
         initTags: _selectedTags,
-        onPositionSelected: _onPositionSelected,
-        onExperienceSelected: _onExperienceSelected,
-        onProfessionSelected: _onProfessionSelected,
-        onTagSelected: _onTagSelected,
       ),
     );
   }
@@ -78,9 +78,26 @@ class _ContentViewState extends State<_ContentView> {
     return BlocListener<RecruitmentCubit, RecruitmentState>(
       listener: (context, state) {
         state.maybeMap(
-          getOperatorInProgress: (_) {},
-          getOperatorSuccess: (state) => _operators.addAll(state.operators),
-          getOperatorFailure: (state) => print(state.failure),
+          getOperatorsInProgress: (_) {},
+          getOperatorsSuccess: (state) => _filterByRecruitment(state.operators),
+          getOperatorsFailure: (state) => print(state.failure),
+          positionSelected: (state) => _onPositionSelected(
+            state.selected,
+            state.position,
+          ),
+          experienceSelected: (state) => _onExperienceSelected(
+            state.selected,
+            state.experience,
+          ),
+          professionSelected: (state) => _onProfessionSelected(
+            state.selected,
+            state.profession,
+          ),
+          tagSelected: (state) => _onTagSelected(
+            state.selected,
+            state.tag,
+          ),
+          selectionReseted: (_) => _onSelectionReset(),
           orElse: () {},
         );
       },
@@ -93,42 +110,155 @@ class _ContentViewState extends State<_ContentView> {
   }
 
   Widget _buildResultList() {
-    return Expanded(
-      child: AnimatedList(
-        key: _listKey,
-        itemBuilder: (context, index, animation) {
-          return ListTile(
-            title: Text(_filteredOperators[index].name),
+    final itemBuilder = (BuildContext context, int index) {
+      final filteredKey = _filteredKeys[index];
+
+      final buildItemChip = (CharacterLite op) {
+        final rarity = RarityValue.of(op.rarity);
+        return ColoredChip(
+          label: op.name,
+          backgroundColor: rarity.color,
+          onPressed: () {
+            // TODO(hiei): show detail page
+            print(op.id);
+          },
+        );
+      };
+
+      final filteredOperators = _filteredOperators[filteredKey];
+      final header = Wrap(
+        spacing: 16.w.toDouble(),
+        children: [
+          for (final item in filteredKey) ColoredChip(label: item),
+        ],
+      );
+      final body = Wrap(
+        spacing: 16.w.toDouble(),
+        children: [
+          for (final op in filteredOperators) buildItemChip(op),
+        ],
+      );
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [header, body],
+      ).padding(horizontal: 12.w.toDouble()).card(
+            margin: EdgeInsets.symmetric(
+              vertical: 8.h.toDouble(),
+              horizontal: 16.w.toDouble(),
+            ),
           );
-        },
-        initialItemCount: _filteredOperators.length,
+    };
+
+    return Expanded(
+      child: ListView.builder(
+        itemBuilder: itemBuilder,
+        itemCount: _filteredKeys.length,
       ),
     );
   }
 
+  //* Computed Properties
+
+  List<List<String>> get _filteredKeys => _filteredOperators.keys.toList()
+    ..sort((prev, next) => next.length.compareTo(prev.length));
+
   //* Event Methods
 
-  void _onPositionSelected(List<Position> positions) {
-    _selectedPositions.replaceRange(0, _selectedPositions.length, positions);
+  void _onPositionSelected(bool selected, Position position) {
+    setState(() {
+      if (selected) {
+        _selectedPositions.remove(position);
+      } else {
+        _selectedPositions.add(position);
+      }
+    });
   }
 
-  void _onExperienceSelected(List<Experience> experiences) {
-    _selectedExperiences.replaceRange(
-      0,
-      _selectedExperiences.length,
-      experiences,
-    );
+  void _onExperienceSelected(bool selected, Experience experience) {
+    setState(() {
+      if (selected) {
+        _selectedExperiences.remove(experience);
+      } else {
+        _selectedExperiences.add(experience);
+      }
+    });
   }
 
-  void _onProfessionSelected(List<Profession> professions) {
-    _selectedProfessions.replaceRange(
-      0,
-      _selectedProfessions.length,
-      professions,
-    );
+  void _onProfessionSelected(bool selected, Profession profession) {
+    setState(() {
+      if (selected) {
+        _selectedProfessions.remove(profession);
+      } else {
+        _selectedProfessions.add(profession);
+      }
+    });
   }
 
-  void _onTagSelected(List<Tag> tags) {
-    _selectedTags.replaceRange(0, _selectedTags.length, tags);
+  void _onTagSelected(bool selected, Tag tag) {
+    if (selected) {
+      _selectedTags.remove(tag);
+    } else {
+      _selectedTags.add(tag);
+    }
+
+    _filterByTag(selected, tag);
+  }
+
+  void _onSelectionReset() {
+    _selectedPositions.clear();
+    _selectedExperiences.clear();
+    _selectedProfessions.clear();
+    _selectedTags.clear();
+    setState(() => _filteredOperators.clear());
+  }
+
+  //* Helper Methods
+
+  void _filterByRecruitment(List<CharacterLite> operators) {
+    // TODO(chenxi): waiting i18n implementation
+    final recruitableOperators = operators
+        .where((op) => recruitableOperatorsNameCN.contains(op.name))
+        .toList();
+    _operators.clear();
+    setState(() => _operators.addAll(recruitableOperators));
+  }
+
+  void _filterByTag(bool selected, Tag tag) {
+    final intl = S.of(context);
+    final filterKey = [tag.translate(intl)];
+    if (selected) {
+      setState(() {
+        _filteredOperators.removeWhere(
+          (key, value) => key.contains(filterKey.first),
+        );
+      });
+    } else {
+      // 过滤单Tag
+      final oneTagOps =
+          _operators.where((op) => op.tagList.contains(filterKey.first));
+      final filteredByOne = <List<String>, List<CharacterLite>>{};
+      if (oneTagOps.isNotEmpty) {
+        filteredByOne[filterKey] = oneTagOps.toList();
+      }
+
+      // 过滤多Tag
+      final filteredByMulti = <List<String>, List<CharacterLite>>{};
+      for (final key in _filteredOperators.keys) {
+        final multiTagOps = _filteredOperators[key]
+            .where((op) => op.tagList.contains(filterKey.first));
+        if (multiTagOps.isNotEmpty) {
+          filteredByMulti[[...key, ...filterKey]] = multiTagOps.toList();
+        }
+      }
+
+      if (filteredByOne.isNotEmpty || filteredByMulti.isNotEmpty) {
+        setState(() {
+          _filteredOperators.addAll({
+            ...filteredByOne,
+            ...filteredByMulti,
+          });
+        });
+      }
+    }
   }
 }

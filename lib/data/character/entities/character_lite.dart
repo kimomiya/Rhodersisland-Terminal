@@ -24,7 +24,7 @@ abstract class CharacterLite with _$CharacterLite {
     @required List<String> tagList,
 
     /// 获取方式
-    @required String itemObtainApproach,
+    @required List<String> itemObtainApproach,
 
     /// 稀有度
     @required int rarity,

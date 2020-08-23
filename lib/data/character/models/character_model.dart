@@ -51,7 +51,7 @@ abstract class CharacterModel with _$CharacterModel {
     @JsonKey(defaultValue: '') String itemDesc,
 
     /// 获取方式
-    @JsonKey(defaultValue: '') String itemObtainApproach,
+    @JsonKey(defaultValue: <String>[]) List<String> itemObtainApproach,
 
     /// 最大潜能数
     @JsonKey(defaultValue: -1) int maxPotentialLevel,
@@ -93,6 +93,9 @@ abstract class CharacterModel with _$CharacterModel {
 
     final tagList = json['tagList'] as String;
     json['tagList'] = tagList.split(',');
+
+    final itemObtainApproach = json['itemObtainApproach'] as String;
+    json['itemObtainApproach'] = itemObtainApproach.split(',');
 
     return CharacterModel.fromJson(json);
   }

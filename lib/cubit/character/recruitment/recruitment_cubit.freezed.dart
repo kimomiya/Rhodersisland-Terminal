@@ -18,23 +18,63 @@ class _$RecruitmentStateTearOff {
   }
 
 // ignore: unused_element
-  _GetOperatorInProgress getOperatorInProgress() {
-    return const _GetOperatorInProgress();
+  _GetOperatorsInProgress getOperatorsInProgress() {
+    return const _GetOperatorsInProgress();
   }
 
 // ignore: unused_element
-  _GetOperatorSuccess getOperatorSuccess(
+  _GetOperatorsSuccess getOperatorsSuccess(
       {@required List<CharacterLite> operators}) {
-    return _GetOperatorSuccess(
+    return _GetOperatorsSuccess(
       operators: operators,
     );
   }
 
 // ignore: unused_element
-  _GetOperatorFailure getOperatorFailure({@required AppFailure failure}) {
-    return _GetOperatorFailure(
+  _GetOperatorsFailure getOperatorsFailure({@required AppFailure failure}) {
+    return _GetOperatorsFailure(
       failure: failure,
     );
+  }
+
+// ignore: unused_element
+  _PositionSelected positionSelected(
+      {@required bool selected, @required Position position}) {
+    return _PositionSelected(
+      selected: selected,
+      position: position,
+    );
+  }
+
+// ignore: unused_element
+  _ExperienceSelected experienceSelected(
+      {@required bool selected, @required Experience experience}) {
+    return _ExperienceSelected(
+      selected: selected,
+      experience: experience,
+    );
+  }
+
+// ignore: unused_element
+  _ProfessionSelected professionSelected(
+      {@required bool selected, @required Profession profession}) {
+    return _ProfessionSelected(
+      selected: selected,
+      profession: profession,
+    );
+  }
+
+// ignore: unused_element
+  _TagSelected tagSelected({@required bool selected, @required Tag tag}) {
+    return _TagSelected(
+      selected: selected,
+      tag: tag,
+    );
+  }
+
+// ignore: unused_element
+  _SelectionReseted selectionReseted() {
+    return const _SelectionReseted();
   }
 }
 
@@ -45,31 +85,51 @@ mixin _$RecruitmentState {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result inital(),
-    @required Result getOperatorInProgress(),
-    @required Result getOperatorSuccess(List<CharacterLite> operators),
-    @required Result getOperatorFailure(AppFailure failure),
+    @required Result getOperatorsInProgress(),
+    @required Result getOperatorsSuccess(List<CharacterLite> operators),
+    @required Result getOperatorsFailure(AppFailure failure),
+    @required Result positionSelected(bool selected, Position position),
+    @required Result experienceSelected(bool selected, Experience experience),
+    @required Result professionSelected(bool selected, Profession profession),
+    @required Result tagSelected(bool selected, Tag tag),
+    @required Result selectionReseted(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result inital(),
-    Result getOperatorInProgress(),
-    Result getOperatorSuccess(List<CharacterLite> operators),
-    Result getOperatorFailure(AppFailure failure),
+    Result getOperatorsInProgress(),
+    Result getOperatorsSuccess(List<CharacterLite> operators),
+    Result getOperatorsFailure(AppFailure failure),
+    Result positionSelected(bool selected, Position position),
+    Result experienceSelected(bool selected, Experience experience),
+    Result professionSelected(bool selected, Profession profession),
+    Result tagSelected(bool selected, Tag tag),
+    Result selectionReseted(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result inital(_Initial value),
-    @required Result getOperatorInProgress(_GetOperatorInProgress value),
-    @required Result getOperatorSuccess(_GetOperatorSuccess value),
-    @required Result getOperatorFailure(_GetOperatorFailure value),
+    @required Result getOperatorsInProgress(_GetOperatorsInProgress value),
+    @required Result getOperatorsSuccess(_GetOperatorsSuccess value),
+    @required Result getOperatorsFailure(_GetOperatorsFailure value),
+    @required Result positionSelected(_PositionSelected value),
+    @required Result experienceSelected(_ExperienceSelected value),
+    @required Result professionSelected(_ProfessionSelected value),
+    @required Result tagSelected(_TagSelected value),
+    @required Result selectionReseted(_SelectionReseted value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result inital(_Initial value),
-    Result getOperatorInProgress(_GetOperatorInProgress value),
-    Result getOperatorSuccess(_GetOperatorSuccess value),
-    Result getOperatorFailure(_GetOperatorFailure value),
+    Result getOperatorsInProgress(_GetOperatorsInProgress value),
+    Result getOperatorsSuccess(_GetOperatorsSuccess value),
+    Result getOperatorsFailure(_GetOperatorsFailure value),
+    Result positionSelected(_PositionSelected value),
+    Result experienceSelected(_ExperienceSelected value),
+    Result professionSelected(_ProfessionSelected value),
+    Result tagSelected(_TagSelected value),
+    Result selectionReseted(_SelectionReseted value),
     @required Result orElse(),
   });
 }
@@ -123,14 +183,24 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result inital(),
-    @required Result getOperatorInProgress(),
-    @required Result getOperatorSuccess(List<CharacterLite> operators),
-    @required Result getOperatorFailure(AppFailure failure),
+    @required Result getOperatorsInProgress(),
+    @required Result getOperatorsSuccess(List<CharacterLite> operators),
+    @required Result getOperatorsFailure(AppFailure failure),
+    @required Result positionSelected(bool selected, Position position),
+    @required Result experienceSelected(bool selected, Experience experience),
+    @required Result professionSelected(bool selected, Profession profession),
+    @required Result tagSelected(bool selected, Tag tag),
+    @required Result selectionReseted(),
   }) {
     assert(inital != null);
-    assert(getOperatorInProgress != null);
-    assert(getOperatorSuccess != null);
-    assert(getOperatorFailure != null);
+    assert(getOperatorsInProgress != null);
+    assert(getOperatorsSuccess != null);
+    assert(getOperatorsFailure != null);
+    assert(positionSelected != null);
+    assert(experienceSelected != null);
+    assert(professionSelected != null);
+    assert(tagSelected != null);
+    assert(selectionReseted != null);
     return inital();
   }
 
@@ -138,9 +208,14 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result inital(),
-    Result getOperatorInProgress(),
-    Result getOperatorSuccess(List<CharacterLite> operators),
-    Result getOperatorFailure(AppFailure failure),
+    Result getOperatorsInProgress(),
+    Result getOperatorsSuccess(List<CharacterLite> operators),
+    Result getOperatorsFailure(AppFailure failure),
+    Result positionSelected(bool selected, Position position),
+    Result experienceSelected(bool selected, Experience experience),
+    Result professionSelected(bool selected, Profession profession),
+    Result tagSelected(bool selected, Tag tag),
+    Result selectionReseted(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -154,14 +229,24 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result inital(_Initial value),
-    @required Result getOperatorInProgress(_GetOperatorInProgress value),
-    @required Result getOperatorSuccess(_GetOperatorSuccess value),
-    @required Result getOperatorFailure(_GetOperatorFailure value),
+    @required Result getOperatorsInProgress(_GetOperatorsInProgress value),
+    @required Result getOperatorsSuccess(_GetOperatorsSuccess value),
+    @required Result getOperatorsFailure(_GetOperatorsFailure value),
+    @required Result positionSelected(_PositionSelected value),
+    @required Result experienceSelected(_ExperienceSelected value),
+    @required Result professionSelected(_ProfessionSelected value),
+    @required Result tagSelected(_TagSelected value),
+    @required Result selectionReseted(_SelectionReseted value),
   }) {
     assert(inital != null);
-    assert(getOperatorInProgress != null);
-    assert(getOperatorSuccess != null);
-    assert(getOperatorFailure != null);
+    assert(getOperatorsInProgress != null);
+    assert(getOperatorsSuccess != null);
+    assert(getOperatorsFailure != null);
+    assert(positionSelected != null);
+    assert(experienceSelected != null);
+    assert(professionSelected != null);
+    assert(tagSelected != null);
+    assert(selectionReseted != null);
     return inital(this);
   }
 
@@ -169,9 +254,14 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result inital(_Initial value),
-    Result getOperatorInProgress(_GetOperatorInProgress value),
-    Result getOperatorSuccess(_GetOperatorSuccess value),
-    Result getOperatorFailure(_GetOperatorFailure value),
+    Result getOperatorsInProgress(_GetOperatorsInProgress value),
+    Result getOperatorsSuccess(_GetOperatorsSuccess value),
+    Result getOperatorsFailure(_GetOperatorsFailure value),
+    Result positionSelected(_PositionSelected value),
+    Result experienceSelected(_ExperienceSelected value),
+    Result professionSelected(_ProfessionSelected value),
+    Result tagSelected(_TagSelected value),
+    Result selectionReseted(_SelectionReseted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -186,34 +276,34 @@ abstract class _Initial implements RecruitmentState {
   const factory _Initial() = _$_Initial;
 }
 
-abstract class _$GetOperatorInProgressCopyWith<$Res> {
-  factory _$GetOperatorInProgressCopyWith(_GetOperatorInProgress value,
-          $Res Function(_GetOperatorInProgress) then) =
-      __$GetOperatorInProgressCopyWithImpl<$Res>;
+abstract class _$GetOperatorsInProgressCopyWith<$Res> {
+  factory _$GetOperatorsInProgressCopyWith(_GetOperatorsInProgress value,
+          $Res Function(_GetOperatorsInProgress) then) =
+      __$GetOperatorsInProgressCopyWithImpl<$Res>;
 }
 
-class __$GetOperatorInProgressCopyWithImpl<$Res>
+class __$GetOperatorsInProgressCopyWithImpl<$Res>
     extends _$RecruitmentStateCopyWithImpl<$Res>
-    implements _$GetOperatorInProgressCopyWith<$Res> {
-  __$GetOperatorInProgressCopyWithImpl(_GetOperatorInProgress _value,
-      $Res Function(_GetOperatorInProgress) _then)
-      : super(_value, (v) => _then(v as _GetOperatorInProgress));
+    implements _$GetOperatorsInProgressCopyWith<$Res> {
+  __$GetOperatorsInProgressCopyWithImpl(_GetOperatorsInProgress _value,
+      $Res Function(_GetOperatorsInProgress) _then)
+      : super(_value, (v) => _then(v as _GetOperatorsInProgress));
 
   @override
-  _GetOperatorInProgress get _value => super._value as _GetOperatorInProgress;
+  _GetOperatorsInProgress get _value => super._value as _GetOperatorsInProgress;
 }
 
-class _$_GetOperatorInProgress implements _GetOperatorInProgress {
-  const _$_GetOperatorInProgress();
+class _$_GetOperatorsInProgress implements _GetOperatorsInProgress {
+  const _$_GetOperatorsInProgress();
 
   @override
   String toString() {
-    return 'RecruitmentState.getOperatorInProgress()';
+    return 'RecruitmentState.getOperatorsInProgress()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _GetOperatorInProgress);
+    return identical(this, other) || (other is _GetOperatorsInProgress);
   }
 
   @override
@@ -223,29 +313,44 @@ class _$_GetOperatorInProgress implements _GetOperatorInProgress {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result inital(),
-    @required Result getOperatorInProgress(),
-    @required Result getOperatorSuccess(List<CharacterLite> operators),
-    @required Result getOperatorFailure(AppFailure failure),
+    @required Result getOperatorsInProgress(),
+    @required Result getOperatorsSuccess(List<CharacterLite> operators),
+    @required Result getOperatorsFailure(AppFailure failure),
+    @required Result positionSelected(bool selected, Position position),
+    @required Result experienceSelected(bool selected, Experience experience),
+    @required Result professionSelected(bool selected, Profession profession),
+    @required Result tagSelected(bool selected, Tag tag),
+    @required Result selectionReseted(),
   }) {
     assert(inital != null);
-    assert(getOperatorInProgress != null);
-    assert(getOperatorSuccess != null);
-    assert(getOperatorFailure != null);
-    return getOperatorInProgress();
+    assert(getOperatorsInProgress != null);
+    assert(getOperatorsSuccess != null);
+    assert(getOperatorsFailure != null);
+    assert(positionSelected != null);
+    assert(experienceSelected != null);
+    assert(professionSelected != null);
+    assert(tagSelected != null);
+    assert(selectionReseted != null);
+    return getOperatorsInProgress();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result inital(),
-    Result getOperatorInProgress(),
-    Result getOperatorSuccess(List<CharacterLite> operators),
-    Result getOperatorFailure(AppFailure failure),
+    Result getOperatorsInProgress(),
+    Result getOperatorsSuccess(List<CharacterLite> operators),
+    Result getOperatorsFailure(AppFailure failure),
+    Result positionSelected(bool selected, Position position),
+    Result experienceSelected(bool selected, Experience experience),
+    Result professionSelected(bool selected, Profession profession),
+    Result tagSelected(bool selected, Tag tag),
+    Result selectionReseted(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (getOperatorInProgress != null) {
-      return getOperatorInProgress();
+    if (getOperatorsInProgress != null) {
+      return getOperatorsInProgress();
     }
     return orElse();
   }
@@ -254,60 +359,75 @@ class _$_GetOperatorInProgress implements _GetOperatorInProgress {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result inital(_Initial value),
-    @required Result getOperatorInProgress(_GetOperatorInProgress value),
-    @required Result getOperatorSuccess(_GetOperatorSuccess value),
-    @required Result getOperatorFailure(_GetOperatorFailure value),
+    @required Result getOperatorsInProgress(_GetOperatorsInProgress value),
+    @required Result getOperatorsSuccess(_GetOperatorsSuccess value),
+    @required Result getOperatorsFailure(_GetOperatorsFailure value),
+    @required Result positionSelected(_PositionSelected value),
+    @required Result experienceSelected(_ExperienceSelected value),
+    @required Result professionSelected(_ProfessionSelected value),
+    @required Result tagSelected(_TagSelected value),
+    @required Result selectionReseted(_SelectionReseted value),
   }) {
     assert(inital != null);
-    assert(getOperatorInProgress != null);
-    assert(getOperatorSuccess != null);
-    assert(getOperatorFailure != null);
-    return getOperatorInProgress(this);
+    assert(getOperatorsInProgress != null);
+    assert(getOperatorsSuccess != null);
+    assert(getOperatorsFailure != null);
+    assert(positionSelected != null);
+    assert(experienceSelected != null);
+    assert(professionSelected != null);
+    assert(tagSelected != null);
+    assert(selectionReseted != null);
+    return getOperatorsInProgress(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result inital(_Initial value),
-    Result getOperatorInProgress(_GetOperatorInProgress value),
-    Result getOperatorSuccess(_GetOperatorSuccess value),
-    Result getOperatorFailure(_GetOperatorFailure value),
+    Result getOperatorsInProgress(_GetOperatorsInProgress value),
+    Result getOperatorsSuccess(_GetOperatorsSuccess value),
+    Result getOperatorsFailure(_GetOperatorsFailure value),
+    Result positionSelected(_PositionSelected value),
+    Result experienceSelected(_ExperienceSelected value),
+    Result professionSelected(_ProfessionSelected value),
+    Result tagSelected(_TagSelected value),
+    Result selectionReseted(_SelectionReseted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (getOperatorInProgress != null) {
-      return getOperatorInProgress(this);
+    if (getOperatorsInProgress != null) {
+      return getOperatorsInProgress(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetOperatorInProgress implements RecruitmentState {
-  const factory _GetOperatorInProgress() = _$_GetOperatorInProgress;
+abstract class _GetOperatorsInProgress implements RecruitmentState {
+  const factory _GetOperatorsInProgress() = _$_GetOperatorsInProgress;
 }
 
-abstract class _$GetOperatorSuccessCopyWith<$Res> {
-  factory _$GetOperatorSuccessCopyWith(
-          _GetOperatorSuccess value, $Res Function(_GetOperatorSuccess) then) =
-      __$GetOperatorSuccessCopyWithImpl<$Res>;
+abstract class _$GetOperatorsSuccessCopyWith<$Res> {
+  factory _$GetOperatorsSuccessCopyWith(_GetOperatorsSuccess value,
+          $Res Function(_GetOperatorsSuccess) then) =
+      __$GetOperatorsSuccessCopyWithImpl<$Res>;
   $Res call({List<CharacterLite> operators});
 }
 
-class __$GetOperatorSuccessCopyWithImpl<$Res>
+class __$GetOperatorsSuccessCopyWithImpl<$Res>
     extends _$RecruitmentStateCopyWithImpl<$Res>
-    implements _$GetOperatorSuccessCopyWith<$Res> {
-  __$GetOperatorSuccessCopyWithImpl(
-      _GetOperatorSuccess _value, $Res Function(_GetOperatorSuccess) _then)
-      : super(_value, (v) => _then(v as _GetOperatorSuccess));
+    implements _$GetOperatorsSuccessCopyWith<$Res> {
+  __$GetOperatorsSuccessCopyWithImpl(
+      _GetOperatorsSuccess _value, $Res Function(_GetOperatorsSuccess) _then)
+      : super(_value, (v) => _then(v as _GetOperatorsSuccess));
 
   @override
-  _GetOperatorSuccess get _value => super._value as _GetOperatorSuccess;
+  _GetOperatorsSuccess get _value => super._value as _GetOperatorsSuccess;
 
   @override
   $Res call({
     Object operators = freezed,
   }) {
-    return _then(_GetOperatorSuccess(
+    return _then(_GetOperatorsSuccess(
       operators: operators == freezed
           ? _value.operators
           : operators as List<CharacterLite>,
@@ -315,8 +435,8 @@ class __$GetOperatorSuccessCopyWithImpl<$Res>
   }
 }
 
-class _$_GetOperatorSuccess implements _GetOperatorSuccess {
-  const _$_GetOperatorSuccess({@required this.operators})
+class _$_GetOperatorsSuccess implements _GetOperatorsSuccess {
+  const _$_GetOperatorsSuccess({@required this.operators})
       : assert(operators != null);
 
   @override
@@ -324,13 +444,13 @@ class _$_GetOperatorSuccess implements _GetOperatorSuccess {
 
   @override
   String toString() {
-    return 'RecruitmentState.getOperatorSuccess(operators: $operators)';
+    return 'RecruitmentState.getOperatorsSuccess(operators: $operators)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _GetOperatorSuccess &&
+        (other is _GetOperatorsSuccess &&
             (identical(other.operators, operators) ||
                 const DeepCollectionEquality()
                     .equals(other.operators, operators)));
@@ -341,36 +461,52 @@ class _$_GetOperatorSuccess implements _GetOperatorSuccess {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(operators);
 
   @override
-  _$GetOperatorSuccessCopyWith<_GetOperatorSuccess> get copyWith =>
-      __$GetOperatorSuccessCopyWithImpl<_GetOperatorSuccess>(this, _$identity);
+  _$GetOperatorsSuccessCopyWith<_GetOperatorsSuccess> get copyWith =>
+      __$GetOperatorsSuccessCopyWithImpl<_GetOperatorsSuccess>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result inital(),
-    @required Result getOperatorInProgress(),
-    @required Result getOperatorSuccess(List<CharacterLite> operators),
-    @required Result getOperatorFailure(AppFailure failure),
+    @required Result getOperatorsInProgress(),
+    @required Result getOperatorsSuccess(List<CharacterLite> operators),
+    @required Result getOperatorsFailure(AppFailure failure),
+    @required Result positionSelected(bool selected, Position position),
+    @required Result experienceSelected(bool selected, Experience experience),
+    @required Result professionSelected(bool selected, Profession profession),
+    @required Result tagSelected(bool selected, Tag tag),
+    @required Result selectionReseted(),
   }) {
     assert(inital != null);
-    assert(getOperatorInProgress != null);
-    assert(getOperatorSuccess != null);
-    assert(getOperatorFailure != null);
-    return getOperatorSuccess(operators);
+    assert(getOperatorsInProgress != null);
+    assert(getOperatorsSuccess != null);
+    assert(getOperatorsFailure != null);
+    assert(positionSelected != null);
+    assert(experienceSelected != null);
+    assert(professionSelected != null);
+    assert(tagSelected != null);
+    assert(selectionReseted != null);
+    return getOperatorsSuccess(operators);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result inital(),
-    Result getOperatorInProgress(),
-    Result getOperatorSuccess(List<CharacterLite> operators),
-    Result getOperatorFailure(AppFailure failure),
+    Result getOperatorsInProgress(),
+    Result getOperatorsSuccess(List<CharacterLite> operators),
+    Result getOperatorsFailure(AppFailure failure),
+    Result positionSelected(bool selected, Position position),
+    Result experienceSelected(bool selected, Experience experience),
+    Result professionSelected(bool selected, Profession profession),
+    Result tagSelected(bool selected, Tag tag),
+    Result selectionReseted(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (getOperatorSuccess != null) {
-      return getOperatorSuccess(operators);
+    if (getOperatorsSuccess != null) {
+      return getOperatorsSuccess(operators);
     }
     return orElse();
   }
@@ -379,66 +515,81 @@ class _$_GetOperatorSuccess implements _GetOperatorSuccess {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result inital(_Initial value),
-    @required Result getOperatorInProgress(_GetOperatorInProgress value),
-    @required Result getOperatorSuccess(_GetOperatorSuccess value),
-    @required Result getOperatorFailure(_GetOperatorFailure value),
+    @required Result getOperatorsInProgress(_GetOperatorsInProgress value),
+    @required Result getOperatorsSuccess(_GetOperatorsSuccess value),
+    @required Result getOperatorsFailure(_GetOperatorsFailure value),
+    @required Result positionSelected(_PositionSelected value),
+    @required Result experienceSelected(_ExperienceSelected value),
+    @required Result professionSelected(_ProfessionSelected value),
+    @required Result tagSelected(_TagSelected value),
+    @required Result selectionReseted(_SelectionReseted value),
   }) {
     assert(inital != null);
-    assert(getOperatorInProgress != null);
-    assert(getOperatorSuccess != null);
-    assert(getOperatorFailure != null);
-    return getOperatorSuccess(this);
+    assert(getOperatorsInProgress != null);
+    assert(getOperatorsSuccess != null);
+    assert(getOperatorsFailure != null);
+    assert(positionSelected != null);
+    assert(experienceSelected != null);
+    assert(professionSelected != null);
+    assert(tagSelected != null);
+    assert(selectionReseted != null);
+    return getOperatorsSuccess(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result inital(_Initial value),
-    Result getOperatorInProgress(_GetOperatorInProgress value),
-    Result getOperatorSuccess(_GetOperatorSuccess value),
-    Result getOperatorFailure(_GetOperatorFailure value),
+    Result getOperatorsInProgress(_GetOperatorsInProgress value),
+    Result getOperatorsSuccess(_GetOperatorsSuccess value),
+    Result getOperatorsFailure(_GetOperatorsFailure value),
+    Result positionSelected(_PositionSelected value),
+    Result experienceSelected(_ExperienceSelected value),
+    Result professionSelected(_ProfessionSelected value),
+    Result tagSelected(_TagSelected value),
+    Result selectionReseted(_SelectionReseted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (getOperatorSuccess != null) {
-      return getOperatorSuccess(this);
+    if (getOperatorsSuccess != null) {
+      return getOperatorsSuccess(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetOperatorSuccess implements RecruitmentState {
-  const factory _GetOperatorSuccess({@required List<CharacterLite> operators}) =
-      _$_GetOperatorSuccess;
+abstract class _GetOperatorsSuccess implements RecruitmentState {
+  const factory _GetOperatorsSuccess(
+      {@required List<CharacterLite> operators}) = _$_GetOperatorsSuccess;
 
   List<CharacterLite> get operators;
-  _$GetOperatorSuccessCopyWith<_GetOperatorSuccess> get copyWith;
+  _$GetOperatorsSuccessCopyWith<_GetOperatorsSuccess> get copyWith;
 }
 
-abstract class _$GetOperatorFailureCopyWith<$Res> {
-  factory _$GetOperatorFailureCopyWith(
-          _GetOperatorFailure value, $Res Function(_GetOperatorFailure) then) =
-      __$GetOperatorFailureCopyWithImpl<$Res>;
+abstract class _$GetOperatorsFailureCopyWith<$Res> {
+  factory _$GetOperatorsFailureCopyWith(_GetOperatorsFailure value,
+          $Res Function(_GetOperatorsFailure) then) =
+      __$GetOperatorsFailureCopyWithImpl<$Res>;
   $Res call({AppFailure failure});
 
   $AppFailureCopyWith<$Res> get failure;
 }
 
-class __$GetOperatorFailureCopyWithImpl<$Res>
+class __$GetOperatorsFailureCopyWithImpl<$Res>
     extends _$RecruitmentStateCopyWithImpl<$Res>
-    implements _$GetOperatorFailureCopyWith<$Res> {
-  __$GetOperatorFailureCopyWithImpl(
-      _GetOperatorFailure _value, $Res Function(_GetOperatorFailure) _then)
-      : super(_value, (v) => _then(v as _GetOperatorFailure));
+    implements _$GetOperatorsFailureCopyWith<$Res> {
+  __$GetOperatorsFailureCopyWithImpl(
+      _GetOperatorsFailure _value, $Res Function(_GetOperatorsFailure) _then)
+      : super(_value, (v) => _then(v as _GetOperatorsFailure));
 
   @override
-  _GetOperatorFailure get _value => super._value as _GetOperatorFailure;
+  _GetOperatorsFailure get _value => super._value as _GetOperatorsFailure;
 
   @override
   $Res call({
     Object failure = freezed,
   }) {
-    return _then(_GetOperatorFailure(
+    return _then(_GetOperatorsFailure(
       failure: failure == freezed ? _value.failure : failure as AppFailure,
     ));
   }
@@ -454,8 +605,8 @@ class __$GetOperatorFailureCopyWithImpl<$Res>
   }
 }
 
-class _$_GetOperatorFailure implements _GetOperatorFailure {
-  const _$_GetOperatorFailure({@required this.failure})
+class _$_GetOperatorsFailure implements _GetOperatorsFailure {
+  const _$_GetOperatorsFailure({@required this.failure})
       : assert(failure != null);
 
   @override
@@ -463,13 +614,13 @@ class _$_GetOperatorFailure implements _GetOperatorFailure {
 
   @override
   String toString() {
-    return 'RecruitmentState.getOperatorFailure(failure: $failure)';
+    return 'RecruitmentState.getOperatorsFailure(failure: $failure)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _GetOperatorFailure &&
+        (other is _GetOperatorsFailure &&
             (identical(other.failure, failure) ||
                 const DeepCollectionEquality().equals(other.failure, failure)));
   }
@@ -479,36 +630,52 @@ class _$_GetOperatorFailure implements _GetOperatorFailure {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @override
-  _$GetOperatorFailureCopyWith<_GetOperatorFailure> get copyWith =>
-      __$GetOperatorFailureCopyWithImpl<_GetOperatorFailure>(this, _$identity);
+  _$GetOperatorsFailureCopyWith<_GetOperatorsFailure> get copyWith =>
+      __$GetOperatorsFailureCopyWithImpl<_GetOperatorsFailure>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result inital(),
-    @required Result getOperatorInProgress(),
-    @required Result getOperatorSuccess(List<CharacterLite> operators),
-    @required Result getOperatorFailure(AppFailure failure),
+    @required Result getOperatorsInProgress(),
+    @required Result getOperatorsSuccess(List<CharacterLite> operators),
+    @required Result getOperatorsFailure(AppFailure failure),
+    @required Result positionSelected(bool selected, Position position),
+    @required Result experienceSelected(bool selected, Experience experience),
+    @required Result professionSelected(bool selected, Profession profession),
+    @required Result tagSelected(bool selected, Tag tag),
+    @required Result selectionReseted(),
   }) {
     assert(inital != null);
-    assert(getOperatorInProgress != null);
-    assert(getOperatorSuccess != null);
-    assert(getOperatorFailure != null);
-    return getOperatorFailure(failure);
+    assert(getOperatorsInProgress != null);
+    assert(getOperatorsSuccess != null);
+    assert(getOperatorsFailure != null);
+    assert(positionSelected != null);
+    assert(experienceSelected != null);
+    assert(professionSelected != null);
+    assert(tagSelected != null);
+    assert(selectionReseted != null);
+    return getOperatorsFailure(failure);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result inital(),
-    Result getOperatorInProgress(),
-    Result getOperatorSuccess(List<CharacterLite> operators),
-    Result getOperatorFailure(AppFailure failure),
+    Result getOperatorsInProgress(),
+    Result getOperatorsSuccess(List<CharacterLite> operators),
+    Result getOperatorsFailure(AppFailure failure),
+    Result positionSelected(bool selected, Position position),
+    Result experienceSelected(bool selected, Experience experience),
+    Result professionSelected(bool selected, Profession profession),
+    Result tagSelected(bool selected, Tag tag),
+    Result selectionReseted(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (getOperatorFailure != null) {
-      return getOperatorFailure(failure);
+    if (getOperatorsFailure != null) {
+      return getOperatorsFailure(failure);
     }
     return orElse();
   }
@@ -517,38 +684,861 @@ class _$_GetOperatorFailure implements _GetOperatorFailure {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result inital(_Initial value),
-    @required Result getOperatorInProgress(_GetOperatorInProgress value),
-    @required Result getOperatorSuccess(_GetOperatorSuccess value),
-    @required Result getOperatorFailure(_GetOperatorFailure value),
+    @required Result getOperatorsInProgress(_GetOperatorsInProgress value),
+    @required Result getOperatorsSuccess(_GetOperatorsSuccess value),
+    @required Result getOperatorsFailure(_GetOperatorsFailure value),
+    @required Result positionSelected(_PositionSelected value),
+    @required Result experienceSelected(_ExperienceSelected value),
+    @required Result professionSelected(_ProfessionSelected value),
+    @required Result tagSelected(_TagSelected value),
+    @required Result selectionReseted(_SelectionReseted value),
   }) {
     assert(inital != null);
-    assert(getOperatorInProgress != null);
-    assert(getOperatorSuccess != null);
-    assert(getOperatorFailure != null);
-    return getOperatorFailure(this);
+    assert(getOperatorsInProgress != null);
+    assert(getOperatorsSuccess != null);
+    assert(getOperatorsFailure != null);
+    assert(positionSelected != null);
+    assert(experienceSelected != null);
+    assert(professionSelected != null);
+    assert(tagSelected != null);
+    assert(selectionReseted != null);
+    return getOperatorsFailure(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result inital(_Initial value),
-    Result getOperatorInProgress(_GetOperatorInProgress value),
-    Result getOperatorSuccess(_GetOperatorSuccess value),
-    Result getOperatorFailure(_GetOperatorFailure value),
+    Result getOperatorsInProgress(_GetOperatorsInProgress value),
+    Result getOperatorsSuccess(_GetOperatorsSuccess value),
+    Result getOperatorsFailure(_GetOperatorsFailure value),
+    Result positionSelected(_PositionSelected value),
+    Result experienceSelected(_ExperienceSelected value),
+    Result professionSelected(_ProfessionSelected value),
+    Result tagSelected(_TagSelected value),
+    Result selectionReseted(_SelectionReseted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (getOperatorFailure != null) {
-      return getOperatorFailure(this);
+    if (getOperatorsFailure != null) {
+      return getOperatorsFailure(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetOperatorFailure implements RecruitmentState {
-  const factory _GetOperatorFailure({@required AppFailure failure}) =
-      _$_GetOperatorFailure;
+abstract class _GetOperatorsFailure implements RecruitmentState {
+  const factory _GetOperatorsFailure({@required AppFailure failure}) =
+      _$_GetOperatorsFailure;
 
   AppFailure get failure;
-  _$GetOperatorFailureCopyWith<_GetOperatorFailure> get copyWith;
+  _$GetOperatorsFailureCopyWith<_GetOperatorsFailure> get copyWith;
+}
+
+abstract class _$PositionSelectedCopyWith<$Res> {
+  factory _$PositionSelectedCopyWith(
+          _PositionSelected value, $Res Function(_PositionSelected) then) =
+      __$PositionSelectedCopyWithImpl<$Res>;
+  $Res call({bool selected, Position position});
+}
+
+class __$PositionSelectedCopyWithImpl<$Res>
+    extends _$RecruitmentStateCopyWithImpl<$Res>
+    implements _$PositionSelectedCopyWith<$Res> {
+  __$PositionSelectedCopyWithImpl(
+      _PositionSelected _value, $Res Function(_PositionSelected) _then)
+      : super(_value, (v) => _then(v as _PositionSelected));
+
+  @override
+  _PositionSelected get _value => super._value as _PositionSelected;
+
+  @override
+  $Res call({
+    Object selected = freezed,
+    Object position = freezed,
+  }) {
+    return _then(_PositionSelected(
+      selected: selected == freezed ? _value.selected : selected as bool,
+      position: position == freezed ? _value.position : position as Position,
+    ));
+  }
+}
+
+class _$_PositionSelected implements _PositionSelected {
+  const _$_PositionSelected({@required this.selected, @required this.position})
+      : assert(selected != null),
+        assert(position != null);
+
+  @override
+  final bool selected;
+  @override
+  final Position position;
+
+  @override
+  String toString() {
+    return 'RecruitmentState.positionSelected(selected: $selected, position: $position)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _PositionSelected &&
+            (identical(other.selected, selected) ||
+                const DeepCollectionEquality()
+                    .equals(other.selected, selected)) &&
+            (identical(other.position, position) ||
+                const DeepCollectionEquality()
+                    .equals(other.position, position)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(selected) ^
+      const DeepCollectionEquality().hash(position);
+
+  @override
+  _$PositionSelectedCopyWith<_PositionSelected> get copyWith =>
+      __$PositionSelectedCopyWithImpl<_PositionSelected>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result inital(),
+    @required Result getOperatorsInProgress(),
+    @required Result getOperatorsSuccess(List<CharacterLite> operators),
+    @required Result getOperatorsFailure(AppFailure failure),
+    @required Result positionSelected(bool selected, Position position),
+    @required Result experienceSelected(bool selected, Experience experience),
+    @required Result professionSelected(bool selected, Profession profession),
+    @required Result tagSelected(bool selected, Tag tag),
+    @required Result selectionReseted(),
+  }) {
+    assert(inital != null);
+    assert(getOperatorsInProgress != null);
+    assert(getOperatorsSuccess != null);
+    assert(getOperatorsFailure != null);
+    assert(positionSelected != null);
+    assert(experienceSelected != null);
+    assert(professionSelected != null);
+    assert(tagSelected != null);
+    assert(selectionReseted != null);
+    return positionSelected(selected, position);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result inital(),
+    Result getOperatorsInProgress(),
+    Result getOperatorsSuccess(List<CharacterLite> operators),
+    Result getOperatorsFailure(AppFailure failure),
+    Result positionSelected(bool selected, Position position),
+    Result experienceSelected(bool selected, Experience experience),
+    Result professionSelected(bool selected, Profession profession),
+    Result tagSelected(bool selected, Tag tag),
+    Result selectionReseted(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (positionSelected != null) {
+      return positionSelected(selected, position);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result inital(_Initial value),
+    @required Result getOperatorsInProgress(_GetOperatorsInProgress value),
+    @required Result getOperatorsSuccess(_GetOperatorsSuccess value),
+    @required Result getOperatorsFailure(_GetOperatorsFailure value),
+    @required Result positionSelected(_PositionSelected value),
+    @required Result experienceSelected(_ExperienceSelected value),
+    @required Result professionSelected(_ProfessionSelected value),
+    @required Result tagSelected(_TagSelected value),
+    @required Result selectionReseted(_SelectionReseted value),
+  }) {
+    assert(inital != null);
+    assert(getOperatorsInProgress != null);
+    assert(getOperatorsSuccess != null);
+    assert(getOperatorsFailure != null);
+    assert(positionSelected != null);
+    assert(experienceSelected != null);
+    assert(professionSelected != null);
+    assert(tagSelected != null);
+    assert(selectionReseted != null);
+    return positionSelected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result inital(_Initial value),
+    Result getOperatorsInProgress(_GetOperatorsInProgress value),
+    Result getOperatorsSuccess(_GetOperatorsSuccess value),
+    Result getOperatorsFailure(_GetOperatorsFailure value),
+    Result positionSelected(_PositionSelected value),
+    Result experienceSelected(_ExperienceSelected value),
+    Result professionSelected(_ProfessionSelected value),
+    Result tagSelected(_TagSelected value),
+    Result selectionReseted(_SelectionReseted value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (positionSelected != null) {
+      return positionSelected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PositionSelected implements RecruitmentState {
+  const factory _PositionSelected(
+      {@required bool selected,
+      @required Position position}) = _$_PositionSelected;
+
+  bool get selected;
+  Position get position;
+  _$PositionSelectedCopyWith<_PositionSelected> get copyWith;
+}
+
+abstract class _$ExperienceSelectedCopyWith<$Res> {
+  factory _$ExperienceSelectedCopyWith(
+          _ExperienceSelected value, $Res Function(_ExperienceSelected) then) =
+      __$ExperienceSelectedCopyWithImpl<$Res>;
+  $Res call({bool selected, Experience experience});
+}
+
+class __$ExperienceSelectedCopyWithImpl<$Res>
+    extends _$RecruitmentStateCopyWithImpl<$Res>
+    implements _$ExperienceSelectedCopyWith<$Res> {
+  __$ExperienceSelectedCopyWithImpl(
+      _ExperienceSelected _value, $Res Function(_ExperienceSelected) _then)
+      : super(_value, (v) => _then(v as _ExperienceSelected));
+
+  @override
+  _ExperienceSelected get _value => super._value as _ExperienceSelected;
+
+  @override
+  $Res call({
+    Object selected = freezed,
+    Object experience = freezed,
+  }) {
+    return _then(_ExperienceSelected(
+      selected: selected == freezed ? _value.selected : selected as bool,
+      experience:
+          experience == freezed ? _value.experience : experience as Experience,
+    ));
+  }
+}
+
+class _$_ExperienceSelected implements _ExperienceSelected {
+  const _$_ExperienceSelected(
+      {@required this.selected, @required this.experience})
+      : assert(selected != null),
+        assert(experience != null);
+
+  @override
+  final bool selected;
+  @override
+  final Experience experience;
+
+  @override
+  String toString() {
+    return 'RecruitmentState.experienceSelected(selected: $selected, experience: $experience)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ExperienceSelected &&
+            (identical(other.selected, selected) ||
+                const DeepCollectionEquality()
+                    .equals(other.selected, selected)) &&
+            (identical(other.experience, experience) ||
+                const DeepCollectionEquality()
+                    .equals(other.experience, experience)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(selected) ^
+      const DeepCollectionEquality().hash(experience);
+
+  @override
+  _$ExperienceSelectedCopyWith<_ExperienceSelected> get copyWith =>
+      __$ExperienceSelectedCopyWithImpl<_ExperienceSelected>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result inital(),
+    @required Result getOperatorsInProgress(),
+    @required Result getOperatorsSuccess(List<CharacterLite> operators),
+    @required Result getOperatorsFailure(AppFailure failure),
+    @required Result positionSelected(bool selected, Position position),
+    @required Result experienceSelected(bool selected, Experience experience),
+    @required Result professionSelected(bool selected, Profession profession),
+    @required Result tagSelected(bool selected, Tag tag),
+    @required Result selectionReseted(),
+  }) {
+    assert(inital != null);
+    assert(getOperatorsInProgress != null);
+    assert(getOperatorsSuccess != null);
+    assert(getOperatorsFailure != null);
+    assert(positionSelected != null);
+    assert(experienceSelected != null);
+    assert(professionSelected != null);
+    assert(tagSelected != null);
+    assert(selectionReseted != null);
+    return experienceSelected(selected, experience);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result inital(),
+    Result getOperatorsInProgress(),
+    Result getOperatorsSuccess(List<CharacterLite> operators),
+    Result getOperatorsFailure(AppFailure failure),
+    Result positionSelected(bool selected, Position position),
+    Result experienceSelected(bool selected, Experience experience),
+    Result professionSelected(bool selected, Profession profession),
+    Result tagSelected(bool selected, Tag tag),
+    Result selectionReseted(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (experienceSelected != null) {
+      return experienceSelected(selected, experience);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result inital(_Initial value),
+    @required Result getOperatorsInProgress(_GetOperatorsInProgress value),
+    @required Result getOperatorsSuccess(_GetOperatorsSuccess value),
+    @required Result getOperatorsFailure(_GetOperatorsFailure value),
+    @required Result positionSelected(_PositionSelected value),
+    @required Result experienceSelected(_ExperienceSelected value),
+    @required Result professionSelected(_ProfessionSelected value),
+    @required Result tagSelected(_TagSelected value),
+    @required Result selectionReseted(_SelectionReseted value),
+  }) {
+    assert(inital != null);
+    assert(getOperatorsInProgress != null);
+    assert(getOperatorsSuccess != null);
+    assert(getOperatorsFailure != null);
+    assert(positionSelected != null);
+    assert(experienceSelected != null);
+    assert(professionSelected != null);
+    assert(tagSelected != null);
+    assert(selectionReseted != null);
+    return experienceSelected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result inital(_Initial value),
+    Result getOperatorsInProgress(_GetOperatorsInProgress value),
+    Result getOperatorsSuccess(_GetOperatorsSuccess value),
+    Result getOperatorsFailure(_GetOperatorsFailure value),
+    Result positionSelected(_PositionSelected value),
+    Result experienceSelected(_ExperienceSelected value),
+    Result professionSelected(_ProfessionSelected value),
+    Result tagSelected(_TagSelected value),
+    Result selectionReseted(_SelectionReseted value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (experienceSelected != null) {
+      return experienceSelected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ExperienceSelected implements RecruitmentState {
+  const factory _ExperienceSelected(
+      {@required bool selected,
+      @required Experience experience}) = _$_ExperienceSelected;
+
+  bool get selected;
+  Experience get experience;
+  _$ExperienceSelectedCopyWith<_ExperienceSelected> get copyWith;
+}
+
+abstract class _$ProfessionSelectedCopyWith<$Res> {
+  factory _$ProfessionSelectedCopyWith(
+          _ProfessionSelected value, $Res Function(_ProfessionSelected) then) =
+      __$ProfessionSelectedCopyWithImpl<$Res>;
+  $Res call({bool selected, Profession profession});
+}
+
+class __$ProfessionSelectedCopyWithImpl<$Res>
+    extends _$RecruitmentStateCopyWithImpl<$Res>
+    implements _$ProfessionSelectedCopyWith<$Res> {
+  __$ProfessionSelectedCopyWithImpl(
+      _ProfessionSelected _value, $Res Function(_ProfessionSelected) _then)
+      : super(_value, (v) => _then(v as _ProfessionSelected));
+
+  @override
+  _ProfessionSelected get _value => super._value as _ProfessionSelected;
+
+  @override
+  $Res call({
+    Object selected = freezed,
+    Object profession = freezed,
+  }) {
+    return _then(_ProfessionSelected(
+      selected: selected == freezed ? _value.selected : selected as bool,
+      profession:
+          profession == freezed ? _value.profession : profession as Profession,
+    ));
+  }
+}
+
+class _$_ProfessionSelected implements _ProfessionSelected {
+  const _$_ProfessionSelected(
+      {@required this.selected, @required this.profession})
+      : assert(selected != null),
+        assert(profession != null);
+
+  @override
+  final bool selected;
+  @override
+  final Profession profession;
+
+  @override
+  String toString() {
+    return 'RecruitmentState.professionSelected(selected: $selected, profession: $profession)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ProfessionSelected &&
+            (identical(other.selected, selected) ||
+                const DeepCollectionEquality()
+                    .equals(other.selected, selected)) &&
+            (identical(other.profession, profession) ||
+                const DeepCollectionEquality()
+                    .equals(other.profession, profession)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(selected) ^
+      const DeepCollectionEquality().hash(profession);
+
+  @override
+  _$ProfessionSelectedCopyWith<_ProfessionSelected> get copyWith =>
+      __$ProfessionSelectedCopyWithImpl<_ProfessionSelected>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result inital(),
+    @required Result getOperatorsInProgress(),
+    @required Result getOperatorsSuccess(List<CharacterLite> operators),
+    @required Result getOperatorsFailure(AppFailure failure),
+    @required Result positionSelected(bool selected, Position position),
+    @required Result experienceSelected(bool selected, Experience experience),
+    @required Result professionSelected(bool selected, Profession profession),
+    @required Result tagSelected(bool selected, Tag tag),
+    @required Result selectionReseted(),
+  }) {
+    assert(inital != null);
+    assert(getOperatorsInProgress != null);
+    assert(getOperatorsSuccess != null);
+    assert(getOperatorsFailure != null);
+    assert(positionSelected != null);
+    assert(experienceSelected != null);
+    assert(professionSelected != null);
+    assert(tagSelected != null);
+    assert(selectionReseted != null);
+    return professionSelected(selected, profession);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result inital(),
+    Result getOperatorsInProgress(),
+    Result getOperatorsSuccess(List<CharacterLite> operators),
+    Result getOperatorsFailure(AppFailure failure),
+    Result positionSelected(bool selected, Position position),
+    Result experienceSelected(bool selected, Experience experience),
+    Result professionSelected(bool selected, Profession profession),
+    Result tagSelected(bool selected, Tag tag),
+    Result selectionReseted(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (professionSelected != null) {
+      return professionSelected(selected, profession);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result inital(_Initial value),
+    @required Result getOperatorsInProgress(_GetOperatorsInProgress value),
+    @required Result getOperatorsSuccess(_GetOperatorsSuccess value),
+    @required Result getOperatorsFailure(_GetOperatorsFailure value),
+    @required Result positionSelected(_PositionSelected value),
+    @required Result experienceSelected(_ExperienceSelected value),
+    @required Result professionSelected(_ProfessionSelected value),
+    @required Result tagSelected(_TagSelected value),
+    @required Result selectionReseted(_SelectionReseted value),
+  }) {
+    assert(inital != null);
+    assert(getOperatorsInProgress != null);
+    assert(getOperatorsSuccess != null);
+    assert(getOperatorsFailure != null);
+    assert(positionSelected != null);
+    assert(experienceSelected != null);
+    assert(professionSelected != null);
+    assert(tagSelected != null);
+    assert(selectionReseted != null);
+    return professionSelected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result inital(_Initial value),
+    Result getOperatorsInProgress(_GetOperatorsInProgress value),
+    Result getOperatorsSuccess(_GetOperatorsSuccess value),
+    Result getOperatorsFailure(_GetOperatorsFailure value),
+    Result positionSelected(_PositionSelected value),
+    Result experienceSelected(_ExperienceSelected value),
+    Result professionSelected(_ProfessionSelected value),
+    Result tagSelected(_TagSelected value),
+    Result selectionReseted(_SelectionReseted value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (professionSelected != null) {
+      return professionSelected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ProfessionSelected implements RecruitmentState {
+  const factory _ProfessionSelected(
+      {@required bool selected,
+      @required Profession profession}) = _$_ProfessionSelected;
+
+  bool get selected;
+  Profession get profession;
+  _$ProfessionSelectedCopyWith<_ProfessionSelected> get copyWith;
+}
+
+abstract class _$TagSelectedCopyWith<$Res> {
+  factory _$TagSelectedCopyWith(
+          _TagSelected value, $Res Function(_TagSelected) then) =
+      __$TagSelectedCopyWithImpl<$Res>;
+  $Res call({bool selected, Tag tag});
+}
+
+class __$TagSelectedCopyWithImpl<$Res>
+    extends _$RecruitmentStateCopyWithImpl<$Res>
+    implements _$TagSelectedCopyWith<$Res> {
+  __$TagSelectedCopyWithImpl(
+      _TagSelected _value, $Res Function(_TagSelected) _then)
+      : super(_value, (v) => _then(v as _TagSelected));
+
+  @override
+  _TagSelected get _value => super._value as _TagSelected;
+
+  @override
+  $Res call({
+    Object selected = freezed,
+    Object tag = freezed,
+  }) {
+    return _then(_TagSelected(
+      selected: selected == freezed ? _value.selected : selected as bool,
+      tag: tag == freezed ? _value.tag : tag as Tag,
+    ));
+  }
+}
+
+class _$_TagSelected implements _TagSelected {
+  const _$_TagSelected({@required this.selected, @required this.tag})
+      : assert(selected != null),
+        assert(tag != null);
+
+  @override
+  final bool selected;
+  @override
+  final Tag tag;
+
+  @override
+  String toString() {
+    return 'RecruitmentState.tagSelected(selected: $selected, tag: $tag)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _TagSelected &&
+            (identical(other.selected, selected) ||
+                const DeepCollectionEquality()
+                    .equals(other.selected, selected)) &&
+            (identical(other.tag, tag) ||
+                const DeepCollectionEquality().equals(other.tag, tag)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(selected) ^
+      const DeepCollectionEquality().hash(tag);
+
+  @override
+  _$TagSelectedCopyWith<_TagSelected> get copyWith =>
+      __$TagSelectedCopyWithImpl<_TagSelected>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result inital(),
+    @required Result getOperatorsInProgress(),
+    @required Result getOperatorsSuccess(List<CharacterLite> operators),
+    @required Result getOperatorsFailure(AppFailure failure),
+    @required Result positionSelected(bool selected, Position position),
+    @required Result experienceSelected(bool selected, Experience experience),
+    @required Result professionSelected(bool selected, Profession profession),
+    @required Result tagSelected(bool selected, Tag tag),
+    @required Result selectionReseted(),
+  }) {
+    assert(inital != null);
+    assert(getOperatorsInProgress != null);
+    assert(getOperatorsSuccess != null);
+    assert(getOperatorsFailure != null);
+    assert(positionSelected != null);
+    assert(experienceSelected != null);
+    assert(professionSelected != null);
+    assert(tagSelected != null);
+    assert(selectionReseted != null);
+    return tagSelected(selected, tag);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result inital(),
+    Result getOperatorsInProgress(),
+    Result getOperatorsSuccess(List<CharacterLite> operators),
+    Result getOperatorsFailure(AppFailure failure),
+    Result positionSelected(bool selected, Position position),
+    Result experienceSelected(bool selected, Experience experience),
+    Result professionSelected(bool selected, Profession profession),
+    Result tagSelected(bool selected, Tag tag),
+    Result selectionReseted(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (tagSelected != null) {
+      return tagSelected(selected, tag);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result inital(_Initial value),
+    @required Result getOperatorsInProgress(_GetOperatorsInProgress value),
+    @required Result getOperatorsSuccess(_GetOperatorsSuccess value),
+    @required Result getOperatorsFailure(_GetOperatorsFailure value),
+    @required Result positionSelected(_PositionSelected value),
+    @required Result experienceSelected(_ExperienceSelected value),
+    @required Result professionSelected(_ProfessionSelected value),
+    @required Result tagSelected(_TagSelected value),
+    @required Result selectionReseted(_SelectionReseted value),
+  }) {
+    assert(inital != null);
+    assert(getOperatorsInProgress != null);
+    assert(getOperatorsSuccess != null);
+    assert(getOperatorsFailure != null);
+    assert(positionSelected != null);
+    assert(experienceSelected != null);
+    assert(professionSelected != null);
+    assert(tagSelected != null);
+    assert(selectionReseted != null);
+    return tagSelected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result inital(_Initial value),
+    Result getOperatorsInProgress(_GetOperatorsInProgress value),
+    Result getOperatorsSuccess(_GetOperatorsSuccess value),
+    Result getOperatorsFailure(_GetOperatorsFailure value),
+    Result positionSelected(_PositionSelected value),
+    Result experienceSelected(_ExperienceSelected value),
+    Result professionSelected(_ProfessionSelected value),
+    Result tagSelected(_TagSelected value),
+    Result selectionReseted(_SelectionReseted value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (tagSelected != null) {
+      return tagSelected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _TagSelected implements RecruitmentState {
+  const factory _TagSelected({@required bool selected, @required Tag tag}) =
+      _$_TagSelected;
+
+  bool get selected;
+  Tag get tag;
+  _$TagSelectedCopyWith<_TagSelected> get copyWith;
+}
+
+abstract class _$SelectionResetedCopyWith<$Res> {
+  factory _$SelectionResetedCopyWith(
+          _SelectionReseted value, $Res Function(_SelectionReseted) then) =
+      __$SelectionResetedCopyWithImpl<$Res>;
+}
+
+class __$SelectionResetedCopyWithImpl<$Res>
+    extends _$RecruitmentStateCopyWithImpl<$Res>
+    implements _$SelectionResetedCopyWith<$Res> {
+  __$SelectionResetedCopyWithImpl(
+      _SelectionReseted _value, $Res Function(_SelectionReseted) _then)
+      : super(_value, (v) => _then(v as _SelectionReseted));
+
+  @override
+  _SelectionReseted get _value => super._value as _SelectionReseted;
+}
+
+class _$_SelectionReseted implements _SelectionReseted {
+  const _$_SelectionReseted();
+
+  @override
+  String toString() {
+    return 'RecruitmentState.selectionReseted()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _SelectionReseted);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result inital(),
+    @required Result getOperatorsInProgress(),
+    @required Result getOperatorsSuccess(List<CharacterLite> operators),
+    @required Result getOperatorsFailure(AppFailure failure),
+    @required Result positionSelected(bool selected, Position position),
+    @required Result experienceSelected(bool selected, Experience experience),
+    @required Result professionSelected(bool selected, Profession profession),
+    @required Result tagSelected(bool selected, Tag tag),
+    @required Result selectionReseted(),
+  }) {
+    assert(inital != null);
+    assert(getOperatorsInProgress != null);
+    assert(getOperatorsSuccess != null);
+    assert(getOperatorsFailure != null);
+    assert(positionSelected != null);
+    assert(experienceSelected != null);
+    assert(professionSelected != null);
+    assert(tagSelected != null);
+    assert(selectionReseted != null);
+    return selectionReseted();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result inital(),
+    Result getOperatorsInProgress(),
+    Result getOperatorsSuccess(List<CharacterLite> operators),
+    Result getOperatorsFailure(AppFailure failure),
+    Result positionSelected(bool selected, Position position),
+    Result experienceSelected(bool selected, Experience experience),
+    Result professionSelected(bool selected, Profession profession),
+    Result tagSelected(bool selected, Tag tag),
+    Result selectionReseted(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (selectionReseted != null) {
+      return selectionReseted();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result inital(_Initial value),
+    @required Result getOperatorsInProgress(_GetOperatorsInProgress value),
+    @required Result getOperatorsSuccess(_GetOperatorsSuccess value),
+    @required Result getOperatorsFailure(_GetOperatorsFailure value),
+    @required Result positionSelected(_PositionSelected value),
+    @required Result experienceSelected(_ExperienceSelected value),
+    @required Result professionSelected(_ProfessionSelected value),
+    @required Result tagSelected(_TagSelected value),
+    @required Result selectionReseted(_SelectionReseted value),
+  }) {
+    assert(inital != null);
+    assert(getOperatorsInProgress != null);
+    assert(getOperatorsSuccess != null);
+    assert(getOperatorsFailure != null);
+    assert(positionSelected != null);
+    assert(experienceSelected != null);
+    assert(professionSelected != null);
+    assert(tagSelected != null);
+    assert(selectionReseted != null);
+    return selectionReseted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result inital(_Initial value),
+    Result getOperatorsInProgress(_GetOperatorsInProgress value),
+    Result getOperatorsSuccess(_GetOperatorsSuccess value),
+    Result getOperatorsFailure(_GetOperatorsFailure value),
+    Result positionSelected(_PositionSelected value),
+    Result experienceSelected(_ExperienceSelected value),
+    Result professionSelected(_ProfessionSelected value),
+    Result tagSelected(_TagSelected value),
+    Result selectionReseted(_SelectionReseted value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (selectionReseted != null) {
+      return selectionReseted(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SelectionReseted implements RecruitmentState {
+  const factory _SelectionReseted() = _$_SelectionReseted;
 }

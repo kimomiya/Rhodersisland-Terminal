@@ -1,9 +1,9 @@
+import 'package:flutter/material.dart';
+
 enum Realm {
   en_US,
   ja_JP,
-  ko_KR,
   zh_CN,
-  zh_TW,
 }
 
 extension RealmValue on Realm {
@@ -22,39 +22,27 @@ extension RealmValues on Realm {
       case Realm.ja_JP:
         return 'ja_JP';
 
-      case Realm.ko_KR:
-        return 'ko_KR';
-
       case Realm.zh_CN:
         return 'zh_CN';
-
-      case Realm.zh_TW:
-        return 'zh_TW';
 
       default:
         return '';
     }
   }
 
-  String get description {
+  Locale get locale {
     switch (this) {
       case Realm.en_US:
-        return '美服';
+        return const Locale('en', 'US');
 
       case Realm.ja_JP:
-        return '日服';
-
-      case Realm.ko_KR:
-        return '韩服';
+        return const Locale('ja', 'JP');
 
       case Realm.zh_CN:
-        return '国服';
-
-      case Realm.zh_TW:
-        return '台服';
+        return const Locale('zh', 'CN');
 
       default:
-        return '';
+        return const Locale('zh', 'CN');
     }
   }
 }

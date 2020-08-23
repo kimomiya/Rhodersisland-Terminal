@@ -2,11 +2,9 @@ import 'package:injectable/injectable.dart';
 import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../core/enums/language.dart';
 import '../core/enums/realm.dart';
 
 const _isTutorialFinishedKey = 'is_tutorial_finished';
-const _displayLanguageKey = 'display_language';
 const _serverRealmKey = 'server_name';
 const _lastUpdatedDateKey = 'last_updated_date';
 
@@ -14,10 +12,6 @@ abstract class AppSettings {
   bool getIsTutorialFinished();
 
   Future<void> setIsTutorialFinished();
-
-  Language getDisplayLanguage();
-
-  Future<void> setDisplayLanguage(Language language);
 
   Realm getServerRealm();
 
@@ -42,17 +36,6 @@ class AppSettingsImpl implements AppSettings {
   @override
   Future<void> setIsTutorialFinished() async {
     await prefs.setBool(_isTutorialFinishedKey, true);
-  }
-
-  @override
-  Language getDisplayLanguage() {
-    final value = prefs.getString(_displayLanguageKey);
-    return LanguageValue.of(value);
-  }
-
-  @override
-  Future<void> setDisplayLanguage(Language language) async {
-    await prefs.setString(_displayLanguageKey, language.value);
   }
 
   @override
