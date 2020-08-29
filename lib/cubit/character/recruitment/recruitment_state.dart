@@ -4,9 +4,6 @@ part of 'recruitment_cubit.dart';
 abstract class RecruitmentState with _$RecruitmentState {
   const factory RecruitmentState.inital() = _Initial;
 
-  const factory RecruitmentState.getOperatorsInProgress() =
-      _GetOperatorsInProgress;
-
   const factory RecruitmentState.getOperatorsSuccess({
     @required List<CharacterLite> operators,
   }) = _GetOperatorsSuccess;
@@ -14,6 +11,10 @@ abstract class RecruitmentState with _$RecruitmentState {
   const factory RecruitmentState.getOperatorsFailure({
     @required AppFailure failure,
   }) = _GetOperatorsFailure;
+
+  const factory RecruitmentState.recruitableOperatorsFiltered({
+    @required List<CharacterLite> operators,
+  }) = _RecruitableOperatorsFiltered;
 
   const factory RecruitmentState.positionSelected({
     @required bool selected,

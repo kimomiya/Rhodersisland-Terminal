@@ -45,7 +45,7 @@ extension RarityValues on Rarity {
   Color get color {
     switch (this) {
       case Rarity.one:
-        return Colors.black;
+        return Colors.blueGrey;
 
       case Rarity.two:
         return const Color(0xFF9D9D9D);

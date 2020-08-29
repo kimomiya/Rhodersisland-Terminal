@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../core/app_failure.dart';
+import '../../../core/constants/recruitment.dart';
 import '../../../core/enums/character/experience.dart';
 import '../../../core/enums/character/position.dart';
 import '../../../core/enums/character/profession.dart';
@@ -20,14 +21,21 @@ class RecruitmentCubit extends Cubit<RecruitmentState> {
   final CharacterRepository _repository;
 
   Future<void> getOperators() async {
-    emit(const _GetOperatorsInProgress());
-
     final failureOrOperators = await _repository.getOperators();
 
     failureOrOperators.fold(
       (failure) => emit(_GetOperatorsFailure(failure: failure)),
       (operators) => emit(_GetOperatorsSuccess(operators: operators)),
     );
+  }
+
+  void filterByRecruitment(List<CharacterLite> operators) {
+    // TODO(hiei): waiting i18n implementation
+    final recruitableOperators = operators
+        .where((op) => recruitableOperatorsNameCN.contains(op.name))
+        .toList();
+
+    emit(_RecruitableOperatorsFiltered(operators: recruitableOperators));
   }
 
   void selectPosition(bool selected, Position position) {

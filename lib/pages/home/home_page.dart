@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:styled_widget/styled_widget.dart';
 
-import '../../core/constants/recruitment.dart';
 import '../../core/enums/character/experience.dart';
 import '../../core/enums/character/position.dart';
 import '../../core/enums/character/profession.dart';
@@ -78,9 +77,16 @@ class _ContentViewState extends State<_ContentView> {
     return BlocListener<RecruitmentCubit, RecruitmentState>(
       listener: (context, state) {
         state.maybeMap(
-          getOperatorsInProgress: (_) {},
-          getOperatorsSuccess: (state) => _filterByRecruitment(state.operators),
+          getOperatorsSuccess: (state) {
+            context
+                .bloc<RecruitmentCubit>()
+                .filterByRecruitment(state.operators);
+          },
           getOperatorsFailure: (state) => print(state.failure),
+          recruitableOperatorsFiltered: (state) {
+            _operators.clear();
+            _operators.addAll(state.operators);
+          },
           positionSelected: (state) => _onPositionSelected(
             state.selected,
             state.position,
@@ -214,13 +220,17 @@ class _ContentViewState extends State<_ContentView> {
 
   //* Helper Methods
 
-  void _filterByRecruitment(List<CharacterLite> operators) {
-    // TODO(chenxi): waiting i18n implementation
-    final recruitableOperators = operators
-        .where((op) => recruitableOperatorsNameCN.contains(op.name))
-        .toList();
-    _operators.clear();
-    setState(() => _operators.addAll(recruitableOperators));
+  List<CharacterLite> _filterTop(List<CharacterLite> origin) {
+    const top = Experience.top;
+    if (_selectedExperiences.contains(top)) {
+      return origin;
+    }
+
+    final operators = List<CharacterLite>.of(origin);
+    operators.removeWhere(
+      (op) => top.rarities.contains(RarityValue.of(op.rarity)),
+    );
+    return operators;
   }
 
   void _filterByTag(bool selected, Tag tag) {
@@ -233,10 +243,21 @@ class _ContentViewState extends State<_ContentView> {
         );
       });
     } else {
+      // 过滤高资
+      final operators = _filterTop(_operators);
+
+      // 过滤小车
+      final filteredByRobot = <List<String>, List<CharacterLite>>{};
+      if (tag == Tag.robot) {
+        final robots = operators.where((op) => op.rarity == Rarity.one.value);
+        filteredByRobot[filterKey] = robots.toList();
+      }
+
       // 过滤单Tag
-      final oneTagOps =
-          _operators.where((op) => op.tagList.contains(filterKey.first));
       final filteredByOne = <List<String>, List<CharacterLite>>{};
+      final oneTagOps = operators.where(
+        (op) => op.tagList.contains(filterKey.first),
+      );
       if (oneTagOps.isNotEmpty) {
         filteredByOne[filterKey] = oneTagOps.toList();
       }
@@ -251,13 +272,13 @@ class _ContentViewState extends State<_ContentView> {
         }
       }
 
-      if (filteredByOne.isNotEmpty || filteredByMulti.isNotEmpty) {
-        setState(() {
-          _filteredOperators.addAll({
-            ...filteredByOne,
-            ...filteredByMulti,
-          });
-        });
+      final results = {
+        ...filteredByRobot,
+        ...filteredByOne,
+        ...filteredByMulti,
+      };
+      if (results.isNotEmpty) {
+        setState(() => _filteredOperators.addAll(results));
       }
     }
   }

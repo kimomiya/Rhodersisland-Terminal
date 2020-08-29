@@ -1,4 +1,7 @@
 const recruitableOperatorsNameCN = [
+  'Lancet-2',
+  'Castle-3',
+  'THRM-EX',
   '夜刀',
   '黑角',
   '巡林者',

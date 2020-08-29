@@ -16,11 +16,13 @@ class ColoredChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final defaultColor = Colors.black;
+
     if (onPressed == null) {
       return Chip(
         label: Text(label).textColor(Colors.white).fontSize(28.sp.toDouble()),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-        backgroundColor: backgroundColor ?? Colors.black,
+        backgroundColor: backgroundColor ?? defaultColor,
       );
     }
 
@@ -28,7 +30,7 @@ class ColoredChip extends StatelessWidget {
       label: Text(label).textColor(Colors.white).fontSize(28.sp.toDouble()),
       onPressed: onPressed,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-      backgroundColor: backgroundColor ?? Colors.black,
+      backgroundColor: backgroundColor ?? defaultColor,
     );
   }
 }
