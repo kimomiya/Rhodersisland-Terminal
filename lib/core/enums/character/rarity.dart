@@ -73,7 +73,7 @@ extension RarityValues on Rarity {
         return const Color(0xFF9D9D9D);
 
       case Rarity.two:
-        return Colors.blueGrey;
+        return const Color(0xFF70B04A);
 
       case Rarity.three:
         return const Color(0xFF4D7455);
@@ -85,7 +85,7 @@ extension RarityValues on Rarity {
         return const Color(0xFFFF8000);
 
       case Rarity.six:
-        return const Color(0xFFAA0000);
+        return const Color(0xFFCF6A32);
 
       default:
         return Colors.black;
