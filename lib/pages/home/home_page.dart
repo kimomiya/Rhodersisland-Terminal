@@ -144,7 +144,7 @@ class _ContentViewState extends State<_ContentView> {
     ];
   }
 
-  Widget _buildEmptyHintView() {
+  Widget get _emptyHintView {
     return Expanded(
       child: Text(S.of(context).noRecruitableHint)
           .textColor(Colors.grey)
@@ -158,7 +158,7 @@ class _ContentViewState extends State<_ContentView> {
 
   Widget _buildResultList() {
     if (_filteredKeys.isEmpty) {
-      return _buildEmptyHintView();
+      return _emptyHintView;
     }
 
     final intl = S.of(context);
@@ -172,7 +172,7 @@ class _ContentViewState extends State<_ContentView> {
       final shouldHideTop = !_selectedExperiences.contains(top);
       if (shouldHideTop) {
         final onlyTops = _filteredOperators[filterKey].every(
-          (op) => op.rarity == Rarity.six.value,
+          (op) => Experience.top.rarities.contains(RarityValue.of(op.rarity)),
         );
         if (onlyTops) {
           return Container();
@@ -241,7 +241,7 @@ class _ContentViewState extends State<_ContentView> {
     // 第一顺序：包含高资
     // 第二顺序：只包含资深
     // 第三顺序：干员数量少
-    // 第四顺序：词缀数量多
+    // 第四顺序：词缀数量少
     final topkey = S.of(context).top;
     final keysWithTop = <List<String>>[];
     final keysWithOnlySenior = <List<String>>[];
@@ -270,7 +270,7 @@ class _ContentViewState extends State<_ContentView> {
       }
 
       // 比较词缀数量
-      return next.length.compareTo(prev.length);
+      return prev.length.compareTo(next.length);
     };
     keysWithTop.sort(sortBy);
     keysWithOnlySenior.sort(sortBy);
