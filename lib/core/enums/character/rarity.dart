@@ -42,13 +42,38 @@ extension RarityValues on Rarity {
     }
   }
 
+  String get text {
+    switch (this) {
+      case Rarity.one:
+        return '★1';
+
+      case Rarity.two:
+        return '★2';
+
+      case Rarity.three:
+        return '★3';
+
+      case Rarity.four:
+        return '★4';
+
+      case Rarity.five:
+        return '★5';
+
+      case Rarity.six:
+        return '★6';
+
+      default:
+        return '';
+    }
+  }
+
   Color get color {
     switch (this) {
       case Rarity.one:
-        return Colors.blueGrey;
+        return const Color(0xFF9D9D9D);
 
       case Rarity.two:
-        return const Color(0xFF9D9D9D);
+        return Colors.blueGrey;
 
       case Rarity.three:
         return const Color(0xFF4D7455);

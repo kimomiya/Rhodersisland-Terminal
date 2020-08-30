@@ -93,6 +93,16 @@ class S {
     );
   }
 
+  /// `What is the meaning of colors?`
+  String get rarityColorsHint {
+    return Intl.message(
+      'What is the meaning of colors?',
+      name: 'rarityColorsHint',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Recruit`
   String get recruit {
     return Intl.message(
@@ -100,6 +110,16 @@ class S {
       name: 'recruit',
       desc: '',
       args: [],
+    );
+  }
+
+  /// `You can only select {num} items at most`
+  String itemSelectionLimitExceeded(Object num) {
+    return Intl.message(
+      'You can only select $num items at most',
+      name: 'itemSelectionLimitExceeded',
+      desc: '',
+      args: [num],
     );
   }
 
@@ -440,16 +460,6 @@ class S {
       name: 'reset',
       desc: '',
       args: [],
-    );
-  }
-
-  /// `You can only select {num} items at most`
-  String itemSelectionLimitExceeded(Object num) {
-    return Intl.message(
-      'You can only select $num items at most',
-      name: 'itemSelectionLimitExceeded',
-      desc: '',
-      args: [num],
     );
   }
 }

@@ -43,7 +43,6 @@ class _ContentViewState extends State<_ContentView> {
   final _operators = <CharacterLite>[];
   final _filteredOperators = <List<String>, List<CharacterLite>>{};
 
-  final _selectedRarities = <Rarity>[];
   final _selectedPositions = <Position>[];
   final _selectedExperiences = <Experience>[];
   final _selectedProfessions = <Profession>[];
@@ -112,10 +111,34 @@ class _ContentViewState extends State<_ContentView> {
       },
       child: Column(
         children: [
+          SizedBox(height: 20.h.toDouble()),
+          ..._buildHintSection(),
+          SizedBox(height: 20.h.toDouble()),
+          const Divider(height: 1, color: Colors.grey),
           _buildResultList(),
         ],
       ),
     );
+  }
+
+  List<Widget> _buildHintSection() {
+    return [
+      Wrap(
+        spacing: 20.w.toDouble(),
+        children: [
+          for (final rarity in Rarity.values)
+            ColoredChip(
+              label: rarity.text,
+              backgroundColor: rarity.color,
+            ),
+        ],
+      ),
+      SizedBox(height: 6.h.toDouble()),
+      Text(S.of(context).rarityColorsHint)
+          .textColor(Colors.grey[700])
+          .fontSize(30.sp.toDouble())
+          .bold(),
+    ];
   }
 
   Widget _buildResultList() {
@@ -164,10 +187,10 @@ class _ContentViewState extends State<_ContentView> {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [header, body],
-      ).padding(horizontal: 12.w.toDouble()).card(
+      ).padding(horizontal: 16.w.toDouble()).card(
             margin: EdgeInsets.symmetric(
-              vertical: 8.h.toDouble(),
-              horizontal: 16.w.toDouble(),
+              vertical: 16.h.toDouble(),
+              horizontal: 20.w.toDouble(),
             ),
           );
     };

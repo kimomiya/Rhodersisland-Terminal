@@ -5,7 +5,9 @@
   "splashLoading": "ニューラルコネクターに接続中",
   "splashLoadingTip": "初回起動時には時間がかかる場合があります",
   "home": "ホーム",
+  "rarityColorsHint": "色付けにはどんな意味がある？",
   "recruit": "公開求人",
+  "itemSelectionLimitExceeded": "最大{num}個まで",
   "rarity": "レア度",
   "profession": "職業",
   "warrior": "前衛タイプ",
@@ -39,6 +41,5 @@
   "shift": "強制移動",
   "summon": "召喚",
   "robot": "ロボット",
-  "reset": "リセット",
-  "itemSelectionLimitExceeded": "最大{num}個まで"
+  "reset": "リセット"
 }

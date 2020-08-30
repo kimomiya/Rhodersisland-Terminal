@@ -44,6 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "profession" : MessageLookupByLibrary.simpleMessage("職業"),
     "ranged" : MessageLookupByLibrary.simpleMessage("遠距離"),
     "rarity" : MessageLookupByLibrary.simpleMessage("レア度"),
+    "rarityColorsHint" : MessageLookupByLibrary.simpleMessage("色付けにはどんな意味がある？"),
     "recruit" : MessageLookupByLibrary.simpleMessage("公開求人"),
     "reset" : MessageLookupByLibrary.simpleMessage("リセット"),
     "robot" : MessageLookupByLibrary.simpleMessage("ロボット"),
