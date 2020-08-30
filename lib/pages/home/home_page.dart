@@ -166,7 +166,15 @@ class _ContentViewState extends State<_ContentView> {
   //* Computed Properties
 
   List<List<String>> get _filteredKeys => _filteredOperators.keys.toList()
-    ..sort((prev, next) => next.length.compareTo(prev.length));
+    ..sort((prev, next) {
+      final comparedByKey = next.length.compareTo(prev.length);
+      if (comparedByKey != 0) {
+        return comparedByKey;
+      }
+      return _filteredOperators[prev]
+          .length
+          .compareTo(_filteredOperators[next].length);
+    });
 
   //* Event Methods
 
@@ -235,6 +243,32 @@ class _ContentViewState extends State<_ContentView> {
     return operators;
   }
 
+  Map<List<String>, List<CharacterLite>> _filterByOne(
+    List<String> key,
+    List<CharacterLite> operators,
+    bool Function(CharacterLite) where,
+  ) {
+    final oneTagOps = operators.where(where).toList();
+    if (oneTagOps.isEmpty) {
+      return {};
+    }
+    return {key: oneTagOps};
+  }
+
+  Map<List<String>, List<CharacterLite>> _filterByMulti(
+    List<String> key,
+    bool Function(CharacterLite) where,
+  ) {
+    final filteredByMulti = <List<String>, List<CharacterLite>>{};
+    for (final existedKey in _filteredOperators.keys) {
+      final multiTagOps = _filteredOperators[existedKey].where(where);
+      if (multiTagOps.isNotEmpty) {
+        filteredByMulti[[...existedKey, ...key]] = multiTagOps.toList();
+      }
+    }
+    return filteredByMulti;
+  }
+
   void _filterByProfession(bool selected, Profession profession) {
     final intl = S.of(context);
     final filterKey = [profession.translate(intl)];
@@ -251,24 +285,17 @@ class _ContentViewState extends State<_ContentView> {
     final operators = _filterTop(_operators);
 
     // 过滤单类型
-    final filteredByOne = <List<String>, List<CharacterLite>>{};
-    final oneTagOps = operators.where(
+    final filteredByOne = _filterByOne(
+      filterKey,
+      operators,
       (op) => op.profession == profession.value,
     );
-    if (oneTagOps.isNotEmpty) {
-      filteredByOne[filterKey] = oneTagOps.toList();
-    }
 
     // 过滤多类型
-    final filteredByMulti = <List<String>, List<CharacterLite>>{};
-    for (final key in _filteredOperators.keys) {
-      final multiTagOps = _filteredOperators[key].where(
-        (op) => op.profession == profession.value,
-      );
-      if (multiTagOps.isNotEmpty) {
-        filteredByMulti[[...key, ...filterKey]] = multiTagOps.toList();
-      }
-    }
+    final filteredByMulti = _filterByMulti(
+      filterKey,
+      (op) => op.profession == profession.value,
+    );
 
     final results = {
       ...filteredByOne,
@@ -302,24 +329,17 @@ class _ContentViewState extends State<_ContentView> {
     }
 
     // 过滤单类型
-    final filteredByOne = <List<String>, List<CharacterLite>>{};
-    final oneTagOps = operators.where(
+    final filteredByOne = _filterByOne(
+      filterKey,
+      operators,
       (op) => op.tagList.contains(filterKey.first),
     );
-    if (oneTagOps.isNotEmpty) {
-      filteredByOne[filterKey] = oneTagOps.toList();
-    }
 
     // 过滤多类型
-    final filteredByMulti = <List<String>, List<CharacterLite>>{};
-    for (final key in _filteredOperators.keys) {
-      final multiTagOps = _filteredOperators[key].where(
-        (op) => op.tagList.contains(filterKey.first),
-      );
-      if (multiTagOps.isNotEmpty) {
-        filteredByMulti[[...key, ...filterKey]] = multiTagOps.toList();
-      }
-    }
+    final filteredByMulti = _filterByMulti(
+      filterKey,
+      (op) => op.tagList.contains(filterKey.first),
+    );
 
     final results = {
       ...filteredByRobot,
