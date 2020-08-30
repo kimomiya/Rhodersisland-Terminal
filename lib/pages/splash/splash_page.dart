@@ -49,7 +49,7 @@ class _ContentView extends StatelessWidget {
 
   void _listenCubitState(BuildContext context, PrefetchState state) {
     state.maybeMap(
-      fetchSuccess: (_) => context.navigator.push(Routes.home),
+      fetchSuccess: (_) => context.navigator.replace(Routes.home),
       fetchFailure: (failure) => print(failure),
       orElse: () {},
     );

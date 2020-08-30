@@ -13,6 +13,8 @@ import '../../cubit/character/recruitment/recruitment_cubit.dart';
 import '../../data/character/entities/character_lite.dart';
 import '../../generated/l10n.dart';
 import '../../injection.dart';
+import '../core/rhodes_app_bar.dart';
+import '../core/rhodes_drawer.dart';
 import 'widgets/widgets.dart';
 
 class HomePage extends StatelessWidget {
@@ -20,12 +22,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      bottom: false,
-      child: BlocProvider(
-        create: (_) => locator<RecruitmentCubit>(),
-        child: const _ContentView(),
-      ),
+    return BlocProvider(
+      create: (_) => locator<RecruitmentCubit>(),
+      child: const _ContentView(),
     );
   }
 }
@@ -58,12 +57,17 @@ class _ContentViewState extends State<_ContentView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: RhodesAppBar(
+        title: S.of(context).title,
+        actions: [Container()],
+      ),
       key: _scaffoldKey,
       body: _buildBody(),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.filter_list),
         onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
       ),
+      drawer: const RhodesDrawer(),
       endDrawer: FilterDrawer(
         initPositions: _selectedPositions,
         initExperiences: _selectedExperiences,
@@ -112,16 +116,16 @@ class _ContentViewState extends State<_ContentView> {
       child: Column(
         children: [
           SizedBox(height: 20.h.toDouble()),
-          ..._buildHintSection(),
+          ..._buildHintViews(),
           SizedBox(height: 20.h.toDouble()),
-          const Divider(height: 1, color: Colors.grey),
+          const Divider(height: 0.5, color: Colors.grey),
           _buildResultList(),
         ],
       ),
     );
   }
 
-  List<Widget> _buildHintSection() {
+  List<Widget> _buildHintViews() {
     return [
       Wrap(
         spacing: 20.w.toDouble(),
@@ -133,7 +137,6 @@ class _ContentViewState extends State<_ContentView> {
             ),
         ],
       ),
-      SizedBox(height: 6.h.toDouble()),
       Text(S.of(context).rarityColorsHint)
           .textColor(Colors.grey[700])
           .fontSize(28.sp.toDouble())
@@ -159,6 +162,10 @@ class _ContentViewState extends State<_ContentView> {
     }
 
     final itemBuilder = (BuildContext context, int index) {
+      if (index == _filteredKeys.length) {
+        return const SizedBox(height: kToolbarHeight + 20);
+      }
+
       final buildItemChip = (CharacterLite op) {
         const top = Experience.top;
         final rarity = RarityValue.of(op.rarity);
@@ -214,7 +221,7 @@ class _ContentViewState extends State<_ContentView> {
     return Expanded(
       child: ListView.builder(
         itemBuilder: itemBuilder,
-        itemCount: _filteredKeys.length,
+        itemCount: _filteredKeys.length + 1,
       ),
     );
   }
