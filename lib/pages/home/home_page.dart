@@ -117,10 +117,24 @@ class _ContentViewState extends State<_ContentView> {
 
   Widget _buildResultList() {
     final itemBuilder = (BuildContext context, int index) {
-      final filteredKey = _filteredKeys[index];
-
       final buildItemChip = (CharacterLite op) {
+        const top = Experience.top;
         final rarity = RarityValue.of(op.rarity);
+        final shouldHideTop = !_selectedExperiences.contains(top);
+        final isTop = top.rarities.contains(rarity);
+        if (shouldHideTop & isTop) {
+          return Container();
+        }
+
+        final isSingleKey = _filteredKeys[index].length == 1;
+        final isNotTopKey = !listEquals(
+          _filteredKeys[index],
+          [top.translate(S.of(context))],
+        );
+        if (isTop & isSingleKey & isNotTopKey) {
+          return Container();
+        }
+
         return ColoredChip(
           label: op.name,
           backgroundColor: rarity.color,
@@ -131,7 +145,9 @@ class _ContentViewState extends State<_ContentView> {
         );
       };
 
+      final filteredKey = _filteredKeys[index];
       final filteredOperators = _filteredOperators[filteredKey];
+
       final header = Wrap(
         spacing: 16.w.toDouble(),
         children: [
@@ -186,6 +202,8 @@ class _ContentViewState extends State<_ContentView> {
         _selectedPositions.add(position);
       }
     });
+
+    _filterByPosition(selected, position);
   }
 
   void _onExperienceSelected(bool selected, Experience experience) {
@@ -196,6 +214,8 @@ class _ContentViewState extends State<_ContentView> {
         _selectedExperiences.add(experience);
       }
     });
+
+    _filterByExperience(selected, experience);
   }
 
   void _onProfessionSelected(bool selected, Profession profession) {
@@ -230,19 +250,6 @@ class _ContentViewState extends State<_ContentView> {
 
   //* Helper Methods
 
-  List<CharacterLite> _filterTop(List<CharacterLite> origin) {
-    const top = Experience.top;
-    if (_selectedExperiences.contains(top)) {
-      return origin;
-    }
-
-    final operators = List<CharacterLite>.of(origin);
-    operators.removeWhere(
-      (op) => top.rarities.contains(RarityValue.of(op.rarity)),
-    );
-    return operators;
-  }
-
   Map<List<String>, List<CharacterLite>> _filterByOne(
     List<String> key,
     List<CharacterLite> operators,
@@ -269,6 +276,74 @@ class _ContentViewState extends State<_ContentView> {
     return filteredByMulti;
   }
 
+  void _filterByPosition(bool selected, Position position) {
+    final intl = S.of(context);
+    final filterKey = [position.translate(intl)];
+    if (selected) {
+      setState(() {
+        _filteredOperators.removeWhere(
+          (key, value) => key.contains(filterKey.first),
+        );
+      });
+      return;
+    }
+
+    // 过滤单类型
+    final filteredByOne = _filterByOne(
+      filterKey,
+      _operators,
+      (op) => op.position == position.value,
+    );
+
+    // 过滤多类型
+    final filteredByMulti = _filterByMulti(
+      filterKey,
+      (op) => op.position == position.value,
+    );
+
+    final results = {
+      ...filteredByOne,
+      ...filteredByMulti,
+    };
+    if (results.isNotEmpty) {
+      setState(() => _filteredOperators.addAll(results));
+    }
+  }
+
+  void _filterByExperience(bool selected, Experience experience) {
+    final intl = S.of(context);
+    final filterKey = [experience.translate(intl)];
+    if (selected) {
+      setState(() {
+        _filteredOperators.removeWhere(
+          (key, value) => key.contains(filterKey.first),
+        );
+      });
+      return;
+    }
+
+    // 过滤单类型
+    final filteredByOne = _filterByOne(
+      filterKey,
+      _operators,
+      (op) => experience.rarities.contains(RarityValue.of(op.rarity)),
+    );
+
+    // 过滤多类型
+    final filteredByMulti = _filterByMulti(
+      filterKey,
+      (op) => experience.rarities.contains(RarityValue.of(op.rarity)),
+    );
+
+    final results = {
+      ...filteredByOne,
+      ...filteredByMulti,
+    };
+    if (results.isNotEmpty) {
+      setState(() => _filteredOperators.addAll(results));
+    }
+  }
+
   void _filterByProfession(bool selected, Profession profession) {
     final intl = S.of(context);
     final filterKey = [profession.translate(intl)];
@@ -281,13 +356,10 @@ class _ContentViewState extends State<_ContentView> {
       return;
     }
 
-    // 过滤高资
-    final operators = _filterTop(_operators);
-
     // 过滤单类型
     final filteredByOne = _filterByOne(
       filterKey,
-      operators,
+      _operators,
       (op) => op.profession == profession.value,
     );
 
@@ -318,20 +390,17 @@ class _ContentViewState extends State<_ContentView> {
       return;
     }
 
-    // 过滤高资
-    final operators = _filterTop(_operators);
-
     // 过滤小车
     final filteredByRobot = <List<String>, List<CharacterLite>>{};
     if (tag == Tag.robot) {
-      final robots = operators.where((op) => op.rarity == Rarity.one.value);
+      final robots = _operators.where((op) => op.rarity == Rarity.one.value);
       filteredByRobot[filterKey] = robots.toList();
     }
 
     // 过滤单类型
     final filteredByOne = _filterByOne(
       filterKey,
-      operators,
+      _operators,
       (op) => op.tagList.contains(filterKey.first),
     );
 
