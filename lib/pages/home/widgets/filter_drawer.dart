@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oktoast/oktoast.dart';
 import 'package:styled_widget/styled_widget.dart';
 
+import '../../../core/constants/app_constants.dart';
 import '../../../core/enums/character/experience.dart';
 import '../../../core/enums/character/position.dart';
 import '../../../core/enums/character/profession.dart';
@@ -273,13 +274,12 @@ class _FilterDrawerState extends State<FilterDrawer> {
   //* Helter Mehtods
 
   bool _validateSelections() {
-    const maxSelectionCount = 3;
     final selectionCount = _selectedPositions.length +
         _selectedExperiences.length +
         _selectedProfessions.length +
         _selectedTags.length;
-    if (selectionCount >= maxSelectionCount) {
-      showToast(S.of(context).itemSelectionLimitExceeded(3));
+    if (selectionCount >= maxTagSelectionCount) {
+      showToast(S.of(context).itemSelectionLimitExceeded(maxTagSelectionCount));
       return false;
     }
     return true;

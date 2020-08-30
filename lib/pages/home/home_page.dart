@@ -229,35 +229,44 @@ class _ContentViewState extends State<_ContentView> {
   //* Computed Properties
 
   List<List<String>> get _filteredKeys {
-    // 第一顺序：优先显示包含高资的结果
-    // 第二顺序：优先显示词缀数量多的结果
-    // 第三顺序：优先显示干员数量少的结果
-    final keys = _filteredOperators.keys.toList();
+    // 第一顺序：包含高资
+    // 第二顺序：只包含资深
+    // 第三顺序：干员数量少
+    // 第四顺序：词缀数量多
     final topkey = S.of(context).top;
     final keysWithTop = <List<String>>[];
-    final keysWithoutTop = <List<String>>[];
-    for (final key in keys) {
+    final keysWithOnlySenior = <List<String>>[];
+    final keysWithNormal = <List<String>>[];
+    for (final key in _filteredOperators.keys) {
       if (key.contains(topkey)) {
         keysWithTop.add(key);
-      } else {
-        keysWithoutTop.add(key);
+        continue;
       }
+      final operators = _filteredOperators[key];
+      if (operators.every((op) => op.rarity == Rarity.five.value)) {
+        keysWithOnlySenior.add(key);
+        continue;
+      }
+      keysWithNormal.add(key);
     }
 
-    final sortByLengthDesc = (List<String> prev, List<String> next) {
-      final comparedByKey = next.length.compareTo(prev.length);
-      if (comparedByKey != 0) {
-        return comparedByKey;
-      }
-
+    final sortBy = (List<String> prev, List<String> next) {
       final prevOperator = _filteredOperators[prev];
       final nextOperator = _filteredOperators[next];
-      return prevOperator.length.compareTo(nextOperator.length);
-    };
-    keysWithTop.sort(sortByLengthDesc);
-    keysWithoutTop.sort(sortByLengthDesc);
 
-    return [...keysWithTop, ...keysWithoutTop];
+      // 比较干员数量
+      final opsComparison = prevOperator.length.compareTo(nextOperator.length);
+      if (opsComparison != 0) {
+        return opsComparison;
+      }
+
+      // 比较词缀数量
+      return next.length.compareTo(prev.length);
+    };
+    keysWithTop.sort(sortBy);
+    keysWithOnlySenior.sort(sortBy);
+    keysWithNormal.sort(sortBy);
+    return [...keysWithTop, ...keysWithOnlySenior, ...keysWithNormal];
   }
 
   //* Event Methods
