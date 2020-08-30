@@ -20,9 +20,12 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => locator<RecruitmentCubit>(),
-      child: const _ContentView(),
+    return SafeArea(
+      bottom: false,
+      child: BlocProvider(
+        create: (_) => locator<RecruitmentCubit>(),
+        child: const _ContentView(),
+      ),
     );
   }
 }
@@ -126,12 +129,10 @@ class _ContentViewState extends State<_ContentView> {
           return Container();
         }
 
-        final isSingleKey = _filteredKeys[index].length == 1;
-        final isNotTopKey = !listEquals(
-          _filteredKeys[index],
-          [top.translate(S.of(context))],
+        final isNotTopKey = !_filteredKeys[index].contains(
+          top.translate(S.of(context)),
         );
-        if (isTop & isSingleKey & isNotTopKey) {
+        if (isTop & isNotTopKey) {
           return Container();
         }
 
@@ -181,16 +182,29 @@ class _ContentViewState extends State<_ContentView> {
 
   //* Computed Properties
 
-  List<List<String>> get _filteredKeys => _filteredOperators.keys.toList()
-    ..sort((prev, next) {
-      final comparedByKey = next.length.compareTo(prev.length);
-      if (comparedByKey != 0) {
-        return comparedByKey;
+  List<List<String>> get _filteredKeys {
+    // 第一顺序：优先显示包含高资的结果
+    // 第二顺序：优先显示词缀数量多的结果
+    final keys = _filteredOperators.keys.toList();
+    final topkey = S.of(context).top;
+    final keysWithTop = <List<String>>[];
+    final keysWithoutTop = <List<String>>[];
+    for (final key in keys) {
+      if (key.contains(topkey)) {
+        keysWithTop.add(key);
+      } else {
+        keysWithoutTop.add(key);
       }
-      return _filteredOperators[prev]
-          .length
-          .compareTo(_filteredOperators[next].length);
-    });
+    }
+
+    final sortByLengthDesc = (List<String> prev, List<String> next) {
+      return next.length.compareTo(prev.length);
+    };
+    keysWithTop.sort(sortByLengthDesc);
+    keysWithoutTop.sort(sortByLengthDesc);
+
+    return [...keysWithTop, ...keysWithoutTop];
+  }
 
   //* Event Methods
 
