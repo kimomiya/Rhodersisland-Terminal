@@ -70,13 +70,13 @@ extension RarityValues on Rarity {
   Color get color {
     switch (this) {
       case Rarity.one:
-        return const Color(0xFF9D9D9D);
+        return const Color(0xFF606060);
 
       case Rarity.two:
-        return const Color(0xFF70B04A);
+        return const Color(0xFF9D9D9D);
 
       case Rarity.three:
-        return const Color(0xFF4D7455);
+        return const Color(0xFF70B04A);
 
       case Rarity.four:
         return const Color(0xFF8650AC);

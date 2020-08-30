@@ -16,7 +16,7 @@ class ColoredChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bgColor = backgroundColor ?? Colors.brown[700];
+    final bgColor = backgroundColor ?? const Color(0xFF424242);
 
     if (onPressed == null) {
       return Chip(
