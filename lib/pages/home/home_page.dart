@@ -208,6 +208,7 @@ class _ContentViewState extends State<_ContentView> {
   List<List<String>> get _filteredKeys {
     // 第一顺序：优先显示包含高资的结果
     // 第二顺序：优先显示词缀数量多的结果
+    // 第三顺序：优先显示干员数量少的结果
     final keys = _filteredOperators.keys.toList();
     final topkey = S.of(context).top;
     final keysWithTop = <List<String>>[];
@@ -221,7 +222,14 @@ class _ContentViewState extends State<_ContentView> {
     }
 
     final sortByLengthDesc = (List<String> prev, List<String> next) {
-      return next.length.compareTo(prev.length);
+      final comparedByKey = next.length.compareTo(prev.length);
+      if (comparedByKey != 0) {
+        return comparedByKey;
+      }
+
+      final prevOperator = _filteredOperators[prev];
+      final nextOperator = _filteredOperators[next];
+      return prevOperator.length.compareTo(nextOperator.length);
     };
     keysWithTop.sort(sortByLengthDesc);
     keysWithoutTop.sort(sortByLengthDesc);
