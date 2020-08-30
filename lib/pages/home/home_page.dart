@@ -198,6 +198,8 @@ class _ContentViewState extends State<_ContentView> {
         _selectedProfessions.add(profession);
       }
     });
+
+    _filterByProfession(selected, profession);
   }
 
   void _onTagSelected(bool selected, Tag tag) {
@@ -233,6 +235,50 @@ class _ContentViewState extends State<_ContentView> {
     return operators;
   }
 
+  void _filterByProfession(bool selected, Profession profession) {
+    final intl = S.of(context);
+    final filterKey = [profession.translate(intl)];
+    if (selected) {
+      setState(() {
+        _filteredOperators.removeWhere(
+          (key, value) => key.contains(filterKey.first),
+        );
+      });
+      return;
+    }
+
+    // 过滤高资
+    final operators = _filterTop(_operators);
+
+    // 过滤单类型
+    final filteredByOne = <List<String>, List<CharacterLite>>{};
+    final oneTagOps = operators.where(
+      (op) => op.profession == profession.value,
+    );
+    if (oneTagOps.isNotEmpty) {
+      filteredByOne[filterKey] = oneTagOps.toList();
+    }
+
+    // 过滤多类型
+    final filteredByMulti = <List<String>, List<CharacterLite>>{};
+    for (final key in _filteredOperators.keys) {
+      final multiTagOps = _filteredOperators[key].where(
+        (op) => op.profession == profession.value,
+      );
+      if (multiTagOps.isNotEmpty) {
+        filteredByMulti[[...key, ...filterKey]] = multiTagOps.toList();
+      }
+    }
+
+    final results = {
+      ...filteredByOne,
+      ...filteredByMulti,
+    };
+    if (results.isNotEmpty) {
+      setState(() => _filteredOperators.addAll(results));
+    }
+  }
+
   void _filterByTag(bool selected, Tag tag) {
     final intl = S.of(context);
     final filterKey = [tag.translate(intl)];
@@ -242,44 +288,46 @@ class _ContentViewState extends State<_ContentView> {
           (key, value) => key.contains(filterKey.first),
         );
       });
-    } else {
-      // 过滤高资
-      final operators = _filterTop(_operators);
+      return;
+    }
 
-      // 过滤小车
-      final filteredByRobot = <List<String>, List<CharacterLite>>{};
-      if (tag == Tag.robot) {
-        final robots = operators.where((op) => op.rarity == Rarity.one.value);
-        filteredByRobot[filterKey] = robots.toList();
-      }
+    // 过滤高资
+    final operators = _filterTop(_operators);
 
-      // 过滤单Tag
-      final filteredByOne = <List<String>, List<CharacterLite>>{};
-      final oneTagOps = operators.where(
+    // 过滤小车
+    final filteredByRobot = <List<String>, List<CharacterLite>>{};
+    if (tag == Tag.robot) {
+      final robots = operators.where((op) => op.rarity == Rarity.one.value);
+      filteredByRobot[filterKey] = robots.toList();
+    }
+
+    // 过滤单类型
+    final filteredByOne = <List<String>, List<CharacterLite>>{};
+    final oneTagOps = operators.where(
+      (op) => op.tagList.contains(filterKey.first),
+    );
+    if (oneTagOps.isNotEmpty) {
+      filteredByOne[filterKey] = oneTagOps.toList();
+    }
+
+    // 过滤多类型
+    final filteredByMulti = <List<String>, List<CharacterLite>>{};
+    for (final key in _filteredOperators.keys) {
+      final multiTagOps = _filteredOperators[key].where(
         (op) => op.tagList.contains(filterKey.first),
       );
-      if (oneTagOps.isNotEmpty) {
-        filteredByOne[filterKey] = oneTagOps.toList();
+      if (multiTagOps.isNotEmpty) {
+        filteredByMulti[[...key, ...filterKey]] = multiTagOps.toList();
       }
+    }
 
-      // 过滤多Tag
-      final filteredByMulti = <List<String>, List<CharacterLite>>{};
-      for (final key in _filteredOperators.keys) {
-        final multiTagOps = _filteredOperators[key]
-            .where((op) => op.tagList.contains(filterKey.first));
-        if (multiTagOps.isNotEmpty) {
-          filteredByMulti[[...key, ...filterKey]] = multiTagOps.toList();
-        }
-      }
-
-      final results = {
-        ...filteredByRobot,
-        ...filteredByOne,
-        ...filteredByMulti,
-      };
-      if (results.isNotEmpty) {
-        setState(() => _filteredOperators.addAll(results));
-      }
+    final results = {
+      ...filteredByRobot,
+      ...filteredByOne,
+      ...filteredByMulti,
+    };
+    if (results.isNotEmpty) {
+      setState(() => _filteredOperators.addAll(results));
     }
   }
 }
