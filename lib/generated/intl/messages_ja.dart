@@ -38,6 +38,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "lang" : MessageLookupByLibrary.simpleMessage("日本語"),
     "medic" : MessageLookupByLibrary.simpleMessage("医療タイプ"),
     "melee" : MessageLookupByLibrary.simpleMessage("近距離"),
+    "noRecruitableHint" : MessageLookupByLibrary.simpleMessage("募集可能なオペレーターをすべて見つけましょう！"),
     "nuker" : MessageLookupByLibrary.simpleMessage("爆発力"),
     "pioneer" : MessageLookupByLibrary.simpleMessage("先鋒タイプ"),
     "position" : MessageLookupByLibrary.simpleMessage("位置"),

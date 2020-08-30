@@ -6,6 +6,7 @@
   "splashLoadingTip": "The first launch may take a long time.",
   "home": "Home",
   "rarityColorsHint": "What is the meaning of colors?",
+  "noRecruitableHint": "You can find all recruitable operators!",
   "recruit": "Recruit",
   "itemSelectionLimitExceeded": "You can only select {num} items at most",
   "rarity": "Rarity",

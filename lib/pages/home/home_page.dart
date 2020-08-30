@@ -136,12 +136,28 @@ class _ContentViewState extends State<_ContentView> {
       SizedBox(height: 6.h.toDouble()),
       Text(S.of(context).rarityColorsHint)
           .textColor(Colors.grey[700])
-          .fontSize(30.sp.toDouble())
+          .fontSize(28.sp.toDouble())
           .bold(),
     ];
   }
 
+  Widget _buildEmptyHintView() {
+    return Expanded(
+      child: Text(S.of(context).noRecruitableHint)
+          .textColor(Colors.grey)
+          .fontSize(32.sp.toDouble())
+          .bold()
+          .textAlignment(TextAlign.center)
+          .padding(horizontal: 40.w.toDouble())
+          .center(),
+    );
+  }
+
   Widget _buildResultList() {
+    if (_filteredKeys.isEmpty) {
+      return _buildEmptyHintView();
+    }
+
     final itemBuilder = (BuildContext context, int index) {
       final buildItemChip = (CharacterLite op) {
         const top = Experience.top;

@@ -103,6 +103,16 @@ class S {
     );
   }
 
+  /// `You can find all recruitable operators!`
+  String get noRecruitableHint {
+    return Intl.message(
+      'You can find all recruitable operators!',
+      name: 'noRecruitableHint',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Recruit`
   String get recruit {
     return Intl.message(

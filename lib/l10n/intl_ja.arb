@@ -6,6 +6,7 @@
   "splashLoadingTip": "初回起動時には時間がかかる場合があります",
   "home": "ホーム",
   "rarityColorsHint": "色付けにはどんな意味がある？",
+  "noRecruitableHint": "募集可能なオペレーターをすべて見つけましょう！",
   "recruit": "公開求人",
   "itemSelectionLimitExceeded": "最大{num}個まで",
   "rarity": "レア度",

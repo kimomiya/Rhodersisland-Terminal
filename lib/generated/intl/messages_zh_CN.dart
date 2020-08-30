@@ -38,6 +38,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "lang" : MessageLookupByLibrary.simpleMessage("简体中文"),
     "medic" : MessageLookupByLibrary.simpleMessage("医疗干员"),
     "melee" : MessageLookupByLibrary.simpleMessage("近战位"),
+    "noRecruitableHint" : MessageLookupByLibrary.simpleMessage("找出所有可以被招募到的干员吧！"),
     "nuker" : MessageLookupByLibrary.simpleMessage("爆发"),
     "pioneer" : MessageLookupByLibrary.simpleMessage("先锋干员"),
     "position" : MessageLookupByLibrary.simpleMessage("位置"),
