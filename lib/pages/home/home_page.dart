@@ -161,23 +161,32 @@ class _ContentViewState extends State<_ContentView> {
       return _buildEmptyHintView();
     }
 
+    final intl = S.of(context);
     final itemBuilder = (BuildContext context, int index) {
       if (index == _filteredKeys.length) {
         return const SizedBox(height: kToolbarHeight + 20);
       }
 
+      const top = Experience.top;
+      final filterKey = _filteredKeys[index];
+      final shouldHideTop = !_selectedExperiences.contains(top);
+      if (shouldHideTop) {
+        final onlyTops = _filteredOperators[filterKey].every(
+          (op) => op.rarity == Rarity.six.value,
+        );
+        if (onlyTops) {
+          return Container();
+        }
+      }
+
       final buildItemChip = (CharacterLite op) {
-        const top = Experience.top;
         final rarity = RarityValue.of(op.rarity);
-        final shouldHideTop = !_selectedExperiences.contains(top);
         final isTop = top.rarities.contains(rarity);
         if (shouldHideTop & isTop) {
           return Container();
         }
 
-        final isNotTopKey = !_filteredKeys[index].contains(
-          top.translate(S.of(context)),
-        );
+        final isNotTopKey = !filterKey.contains(top.translate(intl));
         if (isTop & isNotTopKey) {
           return Container();
         }
