@@ -34,6 +34,9 @@ class RecruitmentCubit extends Cubit<RecruitmentState> {
     final recruitableOperators = operators
         .where((op) => recruitableOperatorsNameCN.contains(op.name))
         .toList();
+    recruitableOperators.sort(
+      (prev, next) => next.rarity.compareTo(prev.rarity),
+    );
 
     emit(_RecruitableOperatorsFiltered(operators: recruitableOperators));
   }

@@ -39,5 +39,6 @@
   "shift": "強制移動",
   "summon": "召喚",
   "robot": "ロボット",
-  "reset": "リセット"
+  "reset": "リセット",
+  "itemSelectionLimitExceeded": "最大{num}個まで"
 }

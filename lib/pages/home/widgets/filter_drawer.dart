@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:oktoast/oktoast.dart';
 import 'package:styled_widget/styled_widget.dart';
 
 import '../../../core/enums/character/experience.dart';
@@ -105,12 +106,12 @@ class _FilterDrawerState extends State<FilterDrawer> {
     final buildChip = (Position position) {
       final selected = _selectedPositions.contains(position);
       return _ChoiceChip(
-        label: position.translate(S.of(context)),
+        label: position.translate(intl),
         onSelected: (_) {
           if (selected) {
             _selectedPositions.remove(position);
           } else {
-            if (_isMaxSelected) {
+            if (!_validateSelections()) {
               return;
             }
             _selectedPositions.add(position);
@@ -142,12 +143,12 @@ class _FilterDrawerState extends State<FilterDrawer> {
     final buildChip = (Experience experience) {
       final selected = _selectedExperiences.contains(experience);
       return _ChoiceChip(
-        label: experience.translate(S.of(context)),
+        label: experience.translate(intl),
         onSelected: (_) {
           if (selected) {
             _selectedExperiences.remove(experience);
           } else {
-            if (_isMaxSelected) {
+            if (!_validateSelections()) {
               return;
             }
             _selectedExperiences.add(experience);
@@ -181,12 +182,12 @@ class _FilterDrawerState extends State<FilterDrawer> {
     final buildChip = (Profession profession) {
       final selected = _selectedProfessions.contains(profession);
       return _ChoiceChip(
-        label: profession.translate(S.of(context)),
+        label: profession.translate(intl),
         onSelected: (_) {
           if (selected) {
             _selectedProfessions.remove(profession);
           } else {
-            if (_isMaxSelected) {
+            if (!_validateSelections()) {
               return;
             }
             _selectedProfessions.add(profession);
@@ -220,12 +221,12 @@ class _FilterDrawerState extends State<FilterDrawer> {
     final buildChip = (Tag tag) {
       final selected = _selectedTags.contains(tag);
       return _ChoiceChip(
-        label: tag.translate(S.of(context)),
+        label: tag.translate(intl),
         onSelected: (_) {
           if (selected) {
             _selectedTags.remove(tag);
           } else {
-            if (_isMaxSelected) {
+            if (!_validateSelections()) {
               return;
             }
             _selectedTags.add(tag);
@@ -269,14 +270,19 @@ class _FilterDrawerState extends State<FilterDrawer> {
     );
   }
 
-  //* Computed Properties
+  //* Helter Mehtods
 
-  bool get _isMaxSelected {
-    final selectedCount = _selectedPositions.length +
+  bool _validateSelections() {
+    const maxSelectionCount = 3;
+    final selectionCount = _selectedPositions.length +
         _selectedExperiences.length +
         _selectedProfessions.length +
         _selectedTags.length;
-    return selectedCount >= 3;
+    if (selectionCount >= maxSelectionCount) {
+      showToast(S.of(context).itemSelectionLimitExceeded(3));
+      return false;
+    }
+    return true;
   }
 }
 

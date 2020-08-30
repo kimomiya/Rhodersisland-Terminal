@@ -39,5 +39,6 @@
   "shift": "位移",
   "summon": "召唤",
   "robot": "支援机械",
-  "reset": "重置"
+  "reset": "重置",
+  "itemSelectionLimitExceeded": "最多只能选择{num}项"
 }

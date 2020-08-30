@@ -19,6 +19,8 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ja';
 
+  static m0(num) => "最大${num}個まで";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "aoe" : MessageLookupByLibrary.simpleMessage("範囲攻撃"),
@@ -32,6 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "fastRedeploy" : MessageLookupByLibrary.simpleMessage("高速再配置"),
     "healing" : MessageLookupByLibrary.simpleMessage("治療"),
     "home" : MessageLookupByLibrary.simpleMessage("ホーム"),
+    "itemSelectionLimitExceeded" : m0,
     "lang" : MessageLookupByLibrary.simpleMessage("日本語"),
     "medic" : MessageLookupByLibrary.simpleMessage("医療タイプ"),
     "melee" : MessageLookupByLibrary.simpleMessage("近距離"),

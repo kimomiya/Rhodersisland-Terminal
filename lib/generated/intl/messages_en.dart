@@ -19,6 +19,8 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static m0(num) => "You can only select ${num} items at most";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "aoe" : MessageLookupByLibrary.simpleMessage("Aoe"),
@@ -32,6 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "fastRedeploy" : MessageLookupByLibrary.simpleMessage("Fast-Redeploy"),
     "healing" : MessageLookupByLibrary.simpleMessage("Healing"),
     "home" : MessageLookupByLibrary.simpleMessage("Home"),
+    "itemSelectionLimitExceeded" : m0,
     "lang" : MessageLookupByLibrary.simpleMessage("English"),
     "medic" : MessageLookupByLibrary.simpleMessage("Medic"),
     "melee" : MessageLookupByLibrary.simpleMessage("Melee"),

@@ -442,6 +442,16 @@ class S {
       args: [],
     );
   }
+
+  /// `You can only select {num} items at most`
+  String itemSelectionLimitExceeded(Object num) {
+    return Intl.message(
+      'You can only select $num items at most',
+      name: 'itemSelectionLimitExceeded',
+      desc: '',
+      args: [num],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

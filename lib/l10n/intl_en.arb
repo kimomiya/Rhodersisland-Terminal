@@ -39,5 +39,6 @@
   "shift": "Shift",
   "summon": "Summon",
   "robot": "Robot",
-  "reset": "Reset"
+  "reset": "Reset",
+  "itemSelectionLimitExceeded": "You can only select {num} items at most"
 }
