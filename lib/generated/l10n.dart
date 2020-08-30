@@ -103,10 +103,10 @@ class S {
     );
   }
 
-  /// `You can find all recruitable operators!`
+  /// `There's still lots of work that needs to be done, Doctor. You can't rest now!`
   String get noRecruitableHint {
     return Intl.message(
-      'You can find all recruitable operators!',
+      'There\'s still lots of work that needs to be done, Doctor. You can\'t rest now!',
       name: 'noRecruitableHint',
       desc: '',
       args: [],

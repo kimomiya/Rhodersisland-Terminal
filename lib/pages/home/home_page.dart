@@ -148,7 +148,7 @@ class _ContentViewState extends State<_ContentView> {
           .fontSize(32.sp.toDouble())
           .bold()
           .textAlignment(TextAlign.center)
-          .padding(horizontal: 40.w.toDouble())
+          .padding(horizontal: 48.w.toDouble())
           .center(),
     );
   }

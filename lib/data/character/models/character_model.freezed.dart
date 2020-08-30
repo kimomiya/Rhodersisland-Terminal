@@ -31,7 +31,7 @@ class _$CharacterModelTearOff {
       @JsonKey(defaultValue: '') String displayLogo,
       @JsonKey(defaultValue: '') String itemUsage,
       @JsonKey(defaultValue: '') String itemDesc,
-      @JsonKey(defaultValue: <String>[]) List<String> itemObtainApproach,
+      @JsonKey(defaultValue: '') String itemObtainApproach,
       @JsonKey(defaultValue: -1) int maxPotentialLevel,
       @JsonKey(defaultValue: -1) int rarity,
       @JsonKey(defaultValue: '') String profession}) {
@@ -90,8 +90,8 @@ mixin _$CharacterModel {
   String get itemUsage;
   @JsonKey(defaultValue: '')
   String get itemDesc;
-  @JsonKey(defaultValue: <String>[])
-  List<String> get itemObtainApproach;
+  @JsonKey(defaultValue: '')
+  String get itemObtainApproach;
   @JsonKey(defaultValue: -1)
   int get maxPotentialLevel;
   @JsonKey(defaultValue: -1)
@@ -122,7 +122,7 @@ abstract class $CharacterModelCopyWith<$Res> {
       @JsonKey(defaultValue: '') String displayLogo,
       @JsonKey(defaultValue: '') String itemUsage,
       @JsonKey(defaultValue: '') String itemDesc,
-      @JsonKey(defaultValue: <String>[]) List<String> itemObtainApproach,
+      @JsonKey(defaultValue: '') String itemObtainApproach,
       @JsonKey(defaultValue: -1) int maxPotentialLevel,
       @JsonKey(defaultValue: -1) int rarity,
       @JsonKey(defaultValue: '') String profession});
@@ -183,7 +183,7 @@ class _$CharacterModelCopyWithImpl<$Res>
       itemDesc: itemDesc == freezed ? _value.itemDesc : itemDesc as String,
       itemObtainApproach: itemObtainApproach == freezed
           ? _value.itemObtainApproach
-          : itemObtainApproach as List<String>,
+          : itemObtainApproach as String,
       maxPotentialLevel: maxPotentialLevel == freezed
           ? _value.maxPotentialLevel
           : maxPotentialLevel as int,
@@ -215,7 +215,7 @@ abstract class _$CharacterModelCopyWith<$Res>
       @JsonKey(defaultValue: '') String displayLogo,
       @JsonKey(defaultValue: '') String itemUsage,
       @JsonKey(defaultValue: '') String itemDesc,
-      @JsonKey(defaultValue: <String>[]) List<String> itemObtainApproach,
+      @JsonKey(defaultValue: '') String itemObtainApproach,
       @JsonKey(defaultValue: -1) int maxPotentialLevel,
       @JsonKey(defaultValue: -1) int rarity,
       @JsonKey(defaultValue: '') String profession});
@@ -278,7 +278,7 @@ class __$CharacterModelCopyWithImpl<$Res>
       itemDesc: itemDesc == freezed ? _value.itemDesc : itemDesc as String,
       itemObtainApproach: itemObtainApproach == freezed
           ? _value.itemObtainApproach
-          : itemObtainApproach as List<String>,
+          : itemObtainApproach as String,
       maxPotentialLevel: maxPotentialLevel == freezed
           ? _value.maxPotentialLevel
           : maxPotentialLevel as int,
@@ -306,7 +306,7 @@ class _$_CharacterModel implements _CharacterModel {
       @JsonKey(defaultValue: '') this.displayLogo,
       @JsonKey(defaultValue: '') this.itemUsage,
       @JsonKey(defaultValue: '') this.itemDesc,
-      @JsonKey(defaultValue: <String>[]) this.itemObtainApproach,
+      @JsonKey(defaultValue: '') this.itemObtainApproach,
       @JsonKey(defaultValue: -1) this.maxPotentialLevel,
       @JsonKey(defaultValue: -1) this.rarity,
       @JsonKey(defaultValue: '') this.profession});
@@ -357,8 +357,8 @@ class _$_CharacterModel implements _CharacterModel {
   @JsonKey(defaultValue: '')
   final String itemDesc;
   @override
-  @JsonKey(defaultValue: <String>[])
-  final List<String> itemObtainApproach;
+  @JsonKey(defaultValue: '')
+  final String itemObtainApproach;
   @override
   @JsonKey(defaultValue: -1)
   final int maxPotentialLevel;
@@ -479,7 +479,7 @@ abstract class _CharacterModel implements CharacterModel {
       @JsonKey(defaultValue: '') String displayLogo,
       @JsonKey(defaultValue: '') String itemUsage,
       @JsonKey(defaultValue: '') String itemDesc,
-      @JsonKey(defaultValue: <String>[]) List<String> itemObtainApproach,
+      @JsonKey(defaultValue: '') String itemObtainApproach,
       @JsonKey(defaultValue: -1) int maxPotentialLevel,
       @JsonKey(defaultValue: -1) int rarity,
       @JsonKey(defaultValue: '') String profession}) = _$_CharacterModel;
@@ -530,8 +530,8 @@ abstract class _CharacterModel implements CharacterModel {
   @JsonKey(defaultValue: '')
   String get itemDesc;
   @override
-  @JsonKey(defaultValue: <String>[])
-  List<String> get itemObtainApproach;
+  @JsonKey(defaultValue: '')
+  String get itemObtainApproach;
   @override
   @JsonKey(defaultValue: -1)
   int get maxPotentialLevel;

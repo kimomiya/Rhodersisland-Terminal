@@ -20,7 +20,7 @@ class _$CharacterLiteTearOff {
       @required String appellation,
       @required String position,
       @required List<String> tagList,
-      @required List<String> itemObtainApproach,
+      @required String itemObtainApproach,
       @required int rarity,
       @required String profession}) {
     return _CharacterLite(
@@ -47,7 +47,7 @@ mixin _$CharacterLite {
   String get appellation;
   String get position;
   List<String> get tagList;
-  List<String> get itemObtainApproach;
+  String get itemObtainApproach;
   int get rarity;
   String get profession;
 
@@ -65,7 +65,7 @@ abstract class $CharacterLiteCopyWith<$Res> {
       String appellation,
       String position,
       List<String> tagList,
-      List<String> itemObtainApproach,
+      String itemObtainApproach,
       int rarity,
       String profession});
 }
@@ -100,7 +100,7 @@ class _$CharacterLiteCopyWithImpl<$Res>
       tagList: tagList == freezed ? _value.tagList : tagList as List<String>,
       itemObtainApproach: itemObtainApproach == freezed
           ? _value.itemObtainApproach
-          : itemObtainApproach as List<String>,
+          : itemObtainApproach as String,
       rarity: rarity == freezed ? _value.rarity : rarity as int,
       profession:
           profession == freezed ? _value.profession : profession as String,
@@ -121,7 +121,7 @@ abstract class _$CharacterLiteCopyWith<$Res>
       String appellation,
       String position,
       List<String> tagList,
-      List<String> itemObtainApproach,
+      String itemObtainApproach,
       int rarity,
       String profession});
 }
@@ -158,7 +158,7 @@ class __$CharacterLiteCopyWithImpl<$Res>
       tagList: tagList == freezed ? _value.tagList : tagList as List<String>,
       itemObtainApproach: itemObtainApproach == freezed
           ? _value.itemObtainApproach
-          : itemObtainApproach as List<String>,
+          : itemObtainApproach as String,
       rarity: rarity == freezed ? _value.rarity : rarity as int,
       profession:
           profession == freezed ? _value.profession : profession as String,
@@ -200,7 +200,7 @@ class _$_CharacterLite implements _CharacterLite {
   @override
   final List<String> tagList;
   @override
-  final List<String> itemObtainApproach;
+  final String itemObtainApproach;
   @override
   final int rarity;
   @override
@@ -266,7 +266,7 @@ abstract class _CharacterLite implements CharacterLite {
       @required String appellation,
       @required String position,
       @required List<String> tagList,
-      @required List<String> itemObtainApproach,
+      @required String itemObtainApproach,
       @required int rarity,
       @required String profession}) = _$_CharacterLite;
 
@@ -283,7 +283,7 @@ abstract class _CharacterLite implements CharacterLite {
   @override
   List<String> get tagList;
   @override
-  List<String> get itemObtainApproach;
+  String get itemObtainApproach;
   @override
   int get rarity;
   @override

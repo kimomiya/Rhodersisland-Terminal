@@ -38,7 +38,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "lang" : MessageLookupByLibrary.simpleMessage("English"),
     "medic" : MessageLookupByLibrary.simpleMessage("Medic"),
     "melee" : MessageLookupByLibrary.simpleMessage("Melee"),
-    "noRecruitableHint" : MessageLookupByLibrary.simpleMessage("You can find all recruitable operators!"),
+    "noRecruitableHint" : MessageLookupByLibrary.simpleMessage("There\'s still lots of work that needs to be done, Doctor. You can\'t rest now!"),
     "nuker" : MessageLookupByLibrary.simpleMessage("Nuker"),
     "pioneer" : MessageLookupByLibrary.simpleMessage("Vanguard"),
     "position" : MessageLookupByLibrary.simpleMessage("Position"),

@@ -50,6 +50,7 @@ class _ContentView extends StatelessWidget {
   void _listenCubitState(BuildContext context, PrefetchState state) {
     state.maybeMap(
       fetchSuccess: (_) => context.navigator.push(Routes.home),
+      fetchFailure: (failure) => print(failure),
       orElse: () {},
     );
   }
@@ -64,18 +65,23 @@ class _ContentView extends StatelessWidget {
   }
 
   Widget _buildLoadingView(BuildContext context) {
+    final intl = S.of(context);
+
     final indicator = LoadingIndicator(
       indicatorType: Indicator.ballRotateChase,
       color: const Color(0xFF0F0F0F),
     );
+
     final loadingText = Text(
-      S.of(context).splashLoading,
+      intl.splashLoading,
       textAlign: TextAlign.center,
-    );
+    ).textColor(Colors.grey[700]).fontSize(30.sp.toDouble());
+
     final loadingTip = Text(
-      S.of(context).splashLoadingTip,
+      intl.splashLoadingTip,
       textAlign: TextAlign.center,
-    );
+    ).textColor(Colors.grey);
+
     final loadingView = Column(
       children: [
         indicator.constrained(
@@ -83,14 +89,14 @@ class _ContentView extends StatelessWidget {
           width: 88.h.toDouble(),
         ),
         SizedBox(height: 48.h.toDouble()),
-        loadingText.textColor(Colors.grey[700]).fontSize(30.sp.toDouble()),
+        loadingText,
         SizedBox(height: 48.h.toDouble()),
         SizedBox(
-          height: 28.h.toDouble(),
+          height: 36.h.toDouble(),
           child: BlocBuilder<PrefetchCubit, PrefetchState>(
             builder: (context, state) {
               return state.maybeMap(
-                fetchInProgress: (_) => loadingTip.textColor(Colors.grey),
+                fetchInProgress: (_) => loadingTip,
                 orElse: () => Container(),
               );
             },
