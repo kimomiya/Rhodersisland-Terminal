@@ -81,38 +81,7 @@ class _ContentViewState extends State<_ContentView> {
 
   Widget _buildBody() {
     return BlocListener<RecruitmentCubit, RecruitmentState>(
-      listener: (context, state) {
-        state.maybeMap(
-          getOperatorsSuccess: (state) {
-            context
-                .bloc<RecruitmentCubit>()
-                .filterByRecruitment(state.operators);
-          },
-          getOperatorsFailure: (state) => print(state.failure),
-          recruitableOperatorsFiltered: (state) {
-            _operators.clear();
-            _operators.addAll(state.operators);
-          },
-          positionSelected: (state) => _onPositionSelected(
-            state.selected,
-            state.position,
-          ),
-          experienceSelected: (state) => _onExperienceSelected(
-            state.selected,
-            state.experience,
-          ),
-          professionSelected: (state) => _onProfessionSelected(
-            state.selected,
-            state.profession,
-          ),
-          tagSelected: (state) => _onTagSelected(
-            state.selected,
-            state.tag,
-          ),
-          selectionReseted: (_) => _onSelectionReset(),
-          orElse: () {},
-        );
-      },
+      listener: _listenBlocState,
       child: Column(
         children: [
           SizedBox(height: 20.h.toDouble()),
@@ -143,6 +112,39 @@ class _ContentViewState extends State<_ContentView> {
           .bold(),
     ];
   }
+
+  void _listenBlocState(BuildContext context, RecruitmentState state) {
+    state.maybeMap(
+      getOperatorsSuccess: (state) {
+        context.bloc<RecruitmentCubit>().filterByRecruitment(state.operators);
+      },
+      getOperatorsFailure: (state) => print(state.failure),
+      recruitableOperatorsFiltered: (state) {
+        _operators.clear();
+        _operators.addAll(state.operators);
+      },
+      positionSelected: (state) => _onPositionSelected(
+        state.selected,
+        state.position,
+      ),
+      experienceSelected: (state) => _onExperienceSelected(
+        state.selected,
+        state.experience,
+      ),
+      professionSelected: (state) => _onProfessionSelected(
+        state.selected,
+        state.profession,
+      ),
+      tagSelected: (state) => _onTagSelected(
+        state.selected,
+        state.tag,
+      ),
+      selectionReseted: (_) => _onSelectionReset(),
+      orElse: () {},
+    );
+  }
+
+  //* Components
 
   Widget get _emptyHintView {
     return Expanded(
@@ -244,7 +246,7 @@ class _ContentViewState extends State<_ContentView> {
     // 第四顺序：词缀数量少
     final topkey = S.of(context).top;
     final keysWithTop = <List<String>>[];
-    final keysWithOnlySenior = <List<String>>[];
+    final keysWithSenior = <List<String>>[];
     final keysWithNormal = <List<String>>[];
     for (final key in _filteredOperators.keys) {
       if (key.contains(topkey)) {
@@ -252,16 +254,25 @@ class _ContentViewState extends State<_ContentView> {
         continue;
       }
       final operators = _filteredOperators[key];
-      if (operators.every((op) => op.rarity == Rarity.five.value)) {
-        keysWithOnlySenior.add(key);
+      if (operators.every((op) => op.rarity >= Rarity.five.value)) {
+        keysWithSenior.add(key);
         continue;
       }
       keysWithNormal.add(key);
     }
 
     final sortBy = (List<String> prev, List<String> next) {
-      final prevOperator = _filteredOperators[prev];
-      final nextOperator = _filteredOperators[next];
+      final prevOperator = [..._filteredOperators[prev]];
+      final nextOperator = [..._filteredOperators[next]];
+      final isTop = (CharacterLite op) => Experience.top.rarities.contains(
+            RarityValue.of(op.rarity),
+          );
+      if (!prev.contains(topkey)) {
+        prevOperator.removeWhere(isTop);
+      }
+      if (!next.contains(topkey)) {
+        nextOperator.removeWhere(isTop);
+      }
 
       // 比较干员数量
       final opsComparison = prevOperator.length.compareTo(nextOperator.length);
@@ -273,9 +284,9 @@ class _ContentViewState extends State<_ContentView> {
       return prev.length.compareTo(next.length);
     };
     keysWithTop.sort(sortBy);
-    keysWithOnlySenior.sort(sortBy);
+    keysWithSenior.sort(sortBy);
     keysWithNormal.sort(sortBy);
-    return [...keysWithTop, ...keysWithOnlySenior, ...keysWithNormal];
+    return [...keysWithTop, ...keysWithSenior, ...keysWithNormal];
   }
 
   //* Event Methods
