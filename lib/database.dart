@@ -13,7 +13,7 @@ Future<void> onConfigure(Database db) async {
 Future<void> onCreate(Database db, int version) async {
   final batch = db.batch();
   _createTablesV1(batch);
-  await batch.commit();
+  await batch.commit(noResult: true);
 }
 
 void _createTablesV1(Batch batch) {
