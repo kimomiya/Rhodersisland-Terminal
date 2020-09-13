@@ -53,6 +53,26 @@ class S {
     );
   }
 
+  /// `Network is unreachable. Please try again later.`
+  String get networkUnreachable {
+    return Intl.message(
+      'Network is unreachable. Please try again later.',
+      name: 'networkUnreachable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unable to connect to the remote server. Please try again later.`
+  String get remoteServerError {
+    return Intl.message(
+      'Unable to connect to the remote server. Please try again later.',
+      name: 'remoteServerError',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Splash`
   String get splash {
     return Intl.message(
@@ -478,6 +498,16 @@ class S {
     return Intl.message(
       'CharacterDex',
       name: 'characterDex',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No data found. Please make sure the local data is up to date.`
+  String get noCharacterData {
+    return Intl.message(
+      'No data found. Please make sure the local data is up to date.',
+      name: 'noCharacterData',
       desc: '',
       args: [],
     );

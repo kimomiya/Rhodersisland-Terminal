@@ -1,6 +1,8 @@
 {
   "lang": "English",
   "title": "Rhodesisland Terminal",
+  "networkUnreachable": "Network is unreachable. Please try again later.",
+  "remoteServerError": "Unable to connect to the remote server. Please try again later.",
   "splash": "Splash",
   "splashLoading": "Connecting to the neural network of Rhodes Island.",
   "splashLoadingTip": "The first launch may take a long time.",
@@ -43,5 +45,6 @@
   "summon": "Summon",
   "robot": "Robot",
   "reset": "Reset",
-  "characterDex": "CharacterDex"
+  "characterDex": "CharacterDex",
+  "noCharacterData": "No data found. Please make sure the local data is up to date."
 }

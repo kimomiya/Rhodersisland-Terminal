@@ -12,6 +12,7 @@ import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'shared/app_settings.dart';
+import 'cubit/character/character_cubit.dart';
 import 'cubit/character/list/character_list_cubit.dart';
 import 'data/character/data_sources/character_local_data_source.dart';
 import 'data/character/data_sources/character_remote_data_source.dart';
@@ -64,6 +65,7 @@ Future<GetIt> $initGetIt(
         localDataSource: get<TipLocalDataSource>(),
         networkInfo: get<NetworkInfo>(),
       ));
+  gh.factory<CharacterCubit>(() => CharacterCubit(get<CharacterRepository>()));
   gh.lazySingleton<CharacterListCubit>(
       () => CharacterListCubit(get<CharacterRepository>()));
   gh.factory<PrefetchCubit>(() => PrefetchCubit(

@@ -1,6 +1,8 @@
 {
   "lang": "日本語",
   "title": "ロドス・アイランド　ターミナル",
+  "networkUnreachable": "ネットワークに接続されていません。インタネット接続を確認してください。",
+  "remoteServerError": "サーバーに接続できません。しばらくたってから再度お試しください。",
   "splash": "スプラッシュ",
   "splashLoading": "ニューラルコネクターに接続中",
   "splashLoadingTip": "初回起動時には時間がかかる場合があります",
@@ -43,5 +45,6 @@
   "summon": "召喚",
   "robot": "ロボット",
   "reset": "リセット",
-  "characterDex": "キャラ一覧"
+  "characterDex": "キャラ一覧",
+  "noCharacterData": "このキャラの情報はありません。ローカルデータを更新してみてください。"
 }

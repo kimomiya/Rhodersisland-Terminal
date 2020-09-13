@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../entities/character.dart';
 import '../entities/character_lite.dart';
 
 part 'character_model.freezed.dart';
@@ -106,6 +107,25 @@ extension CharacterModelTransfer on CharacterModel {
       id: id,
       name: name,
       team: team,
+      appellation: appellation,
+      position: position,
+      tagList: tagList,
+      itemObtainApproach: itemObtainApproach,
+      rarity: rarity,
+      profession: profession,
+    );
+  }
+
+  Character toDomain() {
+    return Character(
+      id: id,
+      name: name,
+      description: description,
+      canUseGeneralPotentialItem: canUseGeneralPotentialItem,
+      potentialItemId: potentialItemId,
+      team: team,
+      displayNumber: displayNumber,
+      tokenKey: tokenKey,
       appellation: appellation,
       position: position,
       tagList: tagList,

@@ -8,6 +8,7 @@ import '../../shared/logger.dart';
 import '../core/network_info.dart';
 import 'data_sources/character_local_data_source.dart';
 import 'data_sources/character_remote_data_source.dart';
+import 'entities/character.dart';
 import 'entities/character_lite.dart';
 import 'models/character_model.dart';
 
@@ -15,6 +16,8 @@ abstract class CharacterRepository {
   Future<Either<AppFailure, Unit>> fetchCharacterList();
 
   Future<Either<AppFailure, List<CharacterLite>>> getOperators();
+
+  Future<Either<AppFailure, Character>> getCharacterBy(String id);
 }
 
 @LazySingleton(as: CharacterRepository)
@@ -63,6 +66,18 @@ class CharacterRepositoryImpl implements CharacterRepository {
     try {
       final operators = await localDataSource.getOperators();
       return right(operators.map((model) => model.toLite()).toList());
+    } catch (e) {
+      logger.e(e.message, e);
+
+      return left(const AppFailure.noCachedData());
+    }
+  }
+
+  @override
+  Future<Either<AppFailure, Character>> getCharacterBy(String id) async {
+    try {
+      final character = await localDataSource.getCharacterBy(id);
+      return right(character.toDomain());
     } catch (e) {
       logger.e(e.message, e);
 
