@@ -42,5 +42,6 @@
   "shift": "強制移動",
   "summon": "召喚",
   "robot": "ロボット",
-  "reset": "リセット"
+  "reset": "リセット",
+  "characterDex": "キャラ一覧"
 }

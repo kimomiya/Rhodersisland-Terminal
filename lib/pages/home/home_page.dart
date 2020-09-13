@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,6 +16,7 @@ import '../../generated/l10n.dart';
 import '../../injection.dart';
 import '../core/rhodes_app_bar.dart';
 import '../core/rhodes_drawer.dart';
+import '../router.gr.dart';
 import 'widgets/widgets.dart';
 
 class HomePage extends StatelessWidget {
@@ -196,10 +198,10 @@ class _ContentViewState extends State<_ContentView> {
         return ColoredChip(
           label: op.name,
           backgroundColor: rarity.color,
-          onPressed: () {
-            // TODO(hiei): show detail page
-            print(op.id);
-          },
+          onPressed: () => context.navigator.push(
+            Routes.character,
+            arguments: CharacterPageArguments(id: op.id),
+          ),
         );
       };
 

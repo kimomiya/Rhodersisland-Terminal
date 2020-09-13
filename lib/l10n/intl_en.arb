@@ -42,5 +42,6 @@
   "shift": "Shift",
   "summon": "Summon",
   "robot": "Robot",
-  "reset": "Reset"
+  "reset": "Reset",
+  "characterDex": "CharacterDex"
 }

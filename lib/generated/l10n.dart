@@ -472,6 +472,16 @@ class S {
       args: [],
     );
   }
+
+  /// `CharacterDex`
+  String get characterDex {
+    return Intl.message(
+      'CharacterDex',
+      name: 'characterDex',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

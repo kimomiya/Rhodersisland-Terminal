@@ -65,9 +65,9 @@ class _FilterDrawerState extends State<FilterDrawer> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              _buildPositionFilter(intl),
-              paddingBox,
               _buildExperienceFilter(intl),
+              paddingBox,
+              _buildPositionFilter(intl),
               paddingBox,
               _buildProfessionFilter(intl),
               paddingBox,

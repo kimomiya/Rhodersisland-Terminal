@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static _notInlinedMessages(_) => <String, Function> {
     "aoe" : MessageLookupByLibrary.simpleMessage("範囲攻撃"),
     "caster" : MessageLookupByLibrary.simpleMessage("術師タイプ"),
+    "characterDex" : MessageLookupByLibrary.simpleMessage("キャラ一覧"),
     "crowdControl" : MessageLookupByLibrary.simpleMessage("牽制"),
     "debuff" : MessageLookupByLibrary.simpleMessage("弱化"),
     "defense" : MessageLookupByLibrary.simpleMessage("防御"),
