@@ -16,7 +16,7 @@ class SplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(context, width: 750, height: 1334);
+    ScreenUtil.init(designSize: const Size(750, 1334));
 
     return Scaffold(
       body: BlocProvider(
@@ -61,7 +61,7 @@ class _ContentView extends StatelessWidget {
   Widget _buildLogo() {
     final logo = Image.asset(
       Images.logo,
-      width: ScreenUtil.screenWidth * 0.618,
+      width: ScreenUtil().screenWidth * 0.618,
       fit: BoxFit.fitWidth,
     );
     return logo.center().padding(top: 180);
@@ -110,7 +110,7 @@ class _ContentView extends StatelessWidget {
     );
     return loadingView.padding(
       horizontal: 60.w.toDouble(),
-      bottom: ScreenUtil.bottomBarHeight,
+      bottom: ScreenUtil().bottomBarHeight,
     );
   }
 }
