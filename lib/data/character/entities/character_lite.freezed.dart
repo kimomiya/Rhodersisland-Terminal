@@ -9,6 +9,7 @@ part of 'character_lite.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$CharacterLiteTearOff {
   const _$CharacterLiteTearOff();
 
@@ -37,23 +38,43 @@ class _$CharacterLiteTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $CharacterLite = _$CharacterLiteTearOff();
 
+/// @nodoc
 mixin _$CharacterLite {
+  /// ID
   String get id;
+
+  /// 名称
   String get name;
+
+  /// 阵营ID
   int get team;
+
+  /// 代号
   String get appellation;
+
+  /// 部署位
   String get position;
+
+  /// 标签
   List<String> get tagList;
+
+  /// 获取方式
   String get itemObtainApproach;
+
+  /// 稀有度
   int get rarity;
+
+  /// 职业
   String get profession;
 
   $CharacterLiteCopyWith<CharacterLite> get copyWith;
 }
 
+/// @nodoc
 abstract class $CharacterLiteCopyWith<$Res> {
   factory $CharacterLiteCopyWith(
           CharacterLite value, $Res Function(CharacterLite) then) =
@@ -70,6 +91,7 @@ abstract class $CharacterLiteCopyWith<$Res> {
       String profession});
 }
 
+/// @nodoc
 class _$CharacterLiteCopyWithImpl<$Res>
     implements $CharacterLiteCopyWith<$Res> {
   _$CharacterLiteCopyWithImpl(this._value, this._then);
@@ -108,6 +130,7 @@ class _$CharacterLiteCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$CharacterLiteCopyWith<$Res>
     implements $CharacterLiteCopyWith<$Res> {
   factory _$CharacterLiteCopyWith(
@@ -126,6 +149,7 @@ abstract class _$CharacterLiteCopyWith<$Res>
       String profession});
 }
 
+/// @nodoc
 class __$CharacterLiteCopyWithImpl<$Res>
     extends _$CharacterLiteCopyWithImpl<$Res>
     implements _$CharacterLiteCopyWith<$Res> {
@@ -166,6 +190,7 @@ class __$CharacterLiteCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_CharacterLite implements _CharacterLite {
   const _$_CharacterLite(
       {@required this.id,
@@ -188,22 +213,40 @@ class _$_CharacterLite implements _CharacterLite {
         assert(profession != null);
 
   @override
+
+  /// ID
   final String id;
   @override
+
+  /// 名称
   final String name;
   @override
+
+  /// 阵营ID
   final int team;
   @override
+
+  /// 代号
   final String appellation;
   @override
+
+  /// 部署位
   final String position;
   @override
+
+  /// 标签
   final List<String> tagList;
   @override
+
+  /// 获取方式
   final String itemObtainApproach;
   @override
+
+  /// 稀有度
   final int rarity;
   @override
+
+  /// 职业
   final String profession;
 
   @override
@@ -271,22 +314,40 @@ abstract class _CharacterLite implements CharacterLite {
       @required String profession}) = _$_CharacterLite;
 
   @override
+
+  /// ID
   String get id;
   @override
+
+  /// 名称
   String get name;
   @override
+
+  /// 阵营ID
   int get team;
   @override
+
+  /// 代号
   String get appellation;
   @override
+
+  /// 部署位
   String get position;
   @override
+
+  /// 标签
   List<String> get tagList;
   @override
+
+  /// 获取方式
   String get itemObtainApproach;
   @override
+
+  /// 稀有度
   int get rarity;
   @override
+
+  /// 职业
   String get profession;
   @override
   _$CharacterLiteCopyWith<_CharacterLite> get copyWith;

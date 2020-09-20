@@ -9,6 +9,7 @@ part of 'prefetch_cubit.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$PrefetchStateTearOff {
   const _$PrefetchStateTearOff();
 
@@ -33,9 +34,11 @@ class _$PrefetchStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $PrefetchState = _$PrefetchStateTearOff();
 
+/// @nodoc
 mixin _$PrefetchState {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -69,12 +72,14 @@ mixin _$PrefetchState {
   });
 }
 
+/// @nodoc
 abstract class $PrefetchStateCopyWith<$Res> {
   factory $PrefetchStateCopyWith(
           PrefetchState value, $Res Function(PrefetchState) then) =
       _$PrefetchStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$PrefetchStateCopyWithImpl<$Res>
     implements $PrefetchStateCopyWith<$Res> {
   _$PrefetchStateCopyWithImpl(this._value, this._then);
@@ -84,11 +89,13 @@ class _$PrefetchStateCopyWithImpl<$Res>
   final $Res Function(PrefetchState) _then;
 }
 
+/// @nodoc
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InitialCopyWithImpl<$Res> extends _$PrefetchStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
@@ -98,6 +105,7 @@ class __$InitialCopyWithImpl<$Res> extends _$PrefetchStateCopyWithImpl<$Res>
   _Initial get _value => super._value as _Initial;
 }
 
+/// @nodoc
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -181,12 +189,14 @@ abstract class _Initial implements PrefetchState {
   const factory _Initial() = _$_Initial;
 }
 
+/// @nodoc
 abstract class _$FetchInProgressCopyWith<$Res> {
   factory _$FetchInProgressCopyWith(
           _FetchInProgress value, $Res Function(_FetchInProgress) then) =
       __$FetchInProgressCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$FetchInProgressCopyWithImpl<$Res>
     extends _$PrefetchStateCopyWithImpl<$Res>
     implements _$FetchInProgressCopyWith<$Res> {
@@ -198,6 +208,7 @@ class __$FetchInProgressCopyWithImpl<$Res>
   _FetchInProgress get _value => super._value as _FetchInProgress;
 }
 
+/// @nodoc
 class _$_FetchInProgress implements _FetchInProgress {
   const _$_FetchInProgress();
 
@@ -281,12 +292,14 @@ abstract class _FetchInProgress implements PrefetchState {
   const factory _FetchInProgress() = _$_FetchInProgress;
 }
 
+/// @nodoc
 abstract class _$FetchSuccessCopyWith<$Res> {
   factory _$FetchSuccessCopyWith(
           _FetchSuccess value, $Res Function(_FetchSuccess) then) =
       __$FetchSuccessCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$FetchSuccessCopyWithImpl<$Res>
     extends _$PrefetchStateCopyWithImpl<$Res>
     implements _$FetchSuccessCopyWith<$Res> {
@@ -298,6 +311,7 @@ class __$FetchSuccessCopyWithImpl<$Res>
   _FetchSuccess get _value => super._value as _FetchSuccess;
 }
 
+/// @nodoc
 class _$_FetchSuccess implements _FetchSuccess {
   const _$_FetchSuccess();
 
@@ -381,12 +395,14 @@ abstract class _FetchSuccess implements PrefetchState {
   const factory _FetchSuccess() = _$_FetchSuccess;
 }
 
+/// @nodoc
 abstract class _$FetchFailureCopyWith<$Res> {
   factory _$FetchFailureCopyWith(
           _FetchFailure value, $Res Function(_FetchFailure) then) =
       __$FetchFailureCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$FetchFailureCopyWithImpl<$Res>
     extends _$PrefetchStateCopyWithImpl<$Res>
     implements _$FetchFailureCopyWith<$Res> {
@@ -398,6 +414,7 @@ class __$FetchFailureCopyWithImpl<$Res>
   _FetchFailure get _value => super._value as _FetchFailure;
 }
 
+/// @nodoc
 class _$_FetchFailure implements _FetchFailure {
   const _$_FetchFailure();
 

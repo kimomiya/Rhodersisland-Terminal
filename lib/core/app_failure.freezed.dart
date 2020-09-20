@@ -9,6 +9,7 @@ part of 'app_failure.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$AppFailureTearOff {
   const _$AppFailureTearOff();
 
@@ -32,9 +33,11 @@ class _$AppFailureTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $AppFailure = _$AppFailureTearOff();
 
+/// @nodoc
 mixin _$AppFailure {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -64,12 +67,14 @@ mixin _$AppFailure {
   });
 }
 
+/// @nodoc
 abstract class $AppFailureCopyWith<$Res> {
   factory $AppFailureCopyWith(
           AppFailure value, $Res Function(AppFailure) then) =
       _$AppFailureCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$AppFailureCopyWithImpl<$Res> implements $AppFailureCopyWith<$Res> {
   _$AppFailureCopyWithImpl(this._value, this._then);
 
@@ -78,12 +83,14 @@ class _$AppFailureCopyWithImpl<$Res> implements $AppFailureCopyWith<$Res> {
   final $Res Function(AppFailure) _then;
 }
 
+/// @nodoc
 abstract class $NetworkUnreachableCopyWith<$Res> {
   factory $NetworkUnreachableCopyWith(
           NetworkUnreachable value, $Res Function(NetworkUnreachable) then) =
       _$NetworkUnreachableCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$NetworkUnreachableCopyWithImpl<$Res>
     extends _$AppFailureCopyWithImpl<$Res>
     implements $NetworkUnreachableCopyWith<$Res> {
@@ -95,6 +102,7 @@ class _$NetworkUnreachableCopyWithImpl<$Res>
   NetworkUnreachable get _value => super._value as NetworkUnreachable;
 }
 
+/// @nodoc
 class _$NetworkUnreachable implements NetworkUnreachable {
   const _$NetworkUnreachable();
 
@@ -172,6 +180,7 @@ abstract class NetworkUnreachable implements AppFailure {
   const factory NetworkUnreachable() = _$NetworkUnreachable;
 }
 
+/// @nodoc
 abstract class $RemoteServerErrorCopyWith<$Res> {
   factory $RemoteServerErrorCopyWith(
           RemoteServerError value, $Res Function(RemoteServerError) then) =
@@ -179,6 +188,7 @@ abstract class $RemoteServerErrorCopyWith<$Res> {
   $Res call({int code, String description});
 }
 
+/// @nodoc
 class _$RemoteServerErrorCopyWithImpl<$Res>
     extends _$AppFailureCopyWithImpl<$Res>
     implements $RemoteServerErrorCopyWith<$Res> {
@@ -202,6 +212,7 @@ class _$RemoteServerErrorCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$RemoteServerError implements RemoteServerError {
   const _$RemoteServerError({@required this.code, @required this.description})
       : assert(code != null),
@@ -304,12 +315,14 @@ abstract class RemoteServerError implements AppFailure {
   $RemoteServerErrorCopyWith<RemoteServerError> get copyWith;
 }
 
+/// @nodoc
 abstract class $NoCachedDataCopyWith<$Res> {
   factory $NoCachedDataCopyWith(
           NoCachedData value, $Res Function(NoCachedData) then) =
       _$NoCachedDataCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$NoCachedDataCopyWithImpl<$Res> extends _$AppFailureCopyWithImpl<$Res>
     implements $NoCachedDataCopyWith<$Res> {
   _$NoCachedDataCopyWithImpl(
@@ -320,6 +333,7 @@ class _$NoCachedDataCopyWithImpl<$Res> extends _$AppFailureCopyWithImpl<$Res>
   NoCachedData get _value => super._value as NoCachedData;
 }
 
+/// @nodoc
 class _$NoCachedData implements NoCachedData {
   const _$NoCachedData();
 

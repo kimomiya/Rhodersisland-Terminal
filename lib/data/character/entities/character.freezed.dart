@@ -9,6 +9,7 @@ part of 'character.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$CharacterTearOff {
   const _$CharacterTearOff();
 
@@ -55,36 +56,74 @@ class _$CharacterTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $Character = _$CharacterTearOff();
 
+/// @nodoc
 mixin _$Character {
+  /// ID
   String get id;
+
+  /// 名称
   String get name;
+
+  /// 特性
   String get description;
+
+  /// 是否可使用通用信物提升潜能
   bool get canUseGeneralPotentialItem;
+
+  /// 信物ID
   String get potentialItemId;
+
+  /// 阵营ID
   int get team;
+
+  /// 展示序号
   String get displayNumber;
+
+  /// 召唤物ID
   String get tokenKey;
+
+  /// 代号
   String get appellation;
+
+  /// 部署位
   String get position;
+
+  /// 标签
   List<String> get tagList;
+
+  /// 阵营标识
   @JsonKey(defaultValue: '')
   String get displayLogo;
+
+  /// 简介
   @JsonKey(defaultValue: '')
   String get itemUsage;
+
+  /// 简介补充
   @JsonKey(defaultValue: '')
   String get itemDesc;
+
+  /// 获取方式
   String get itemObtainApproach;
+
+  /// 最大潜能数
   @JsonKey(defaultValue: -1)
   int get maxPotentialLevel;
+
+  /// 稀有度
   int get rarity;
+
+  /// 职业
   String get profession;
 
   $CharacterCopyWith<Character> get copyWith;
 }
 
+/// @nodoc
 abstract class $CharacterCopyWith<$Res> {
   factory $CharacterCopyWith(Character value, $Res Function(Character) then) =
       _$CharacterCopyWithImpl<$Res>;
@@ -109,6 +148,7 @@ abstract class $CharacterCopyWith<$Res> {
       String profession});
 }
 
+/// @nodoc
 class _$CharacterCopyWithImpl<$Res> implements $CharacterCopyWith<$Res> {
   _$CharacterCopyWithImpl(this._value, this._then);
 
@@ -174,6 +214,7 @@ class _$CharacterCopyWithImpl<$Res> implements $CharacterCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$CharacterCopyWith<$Res> implements $CharacterCopyWith<$Res> {
   factory _$CharacterCopyWith(
           _Character value, $Res Function(_Character) then) =
@@ -200,6 +241,7 @@ abstract class _$CharacterCopyWith<$Res> implements $CharacterCopyWith<$Res> {
       String profession});
 }
 
+/// @nodoc
 class __$CharacterCopyWithImpl<$Res> extends _$CharacterCopyWithImpl<$Res>
     implements _$CharacterCopyWith<$Res> {
   __$CharacterCopyWithImpl(_Character _value, $Res Function(_Character) _then)
@@ -266,6 +308,7 @@ class __$CharacterCopyWithImpl<$Res> extends _$CharacterCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_Character implements _Character {
   const _$_Character(
       {@required this.id,
@@ -302,44 +345,80 @@ class _$_Character implements _Character {
         assert(profession != null);
 
   @override
+
+  /// ID
   final String id;
   @override
+
+  /// 名称
   final String name;
   @override
+
+  /// 特性
   final String description;
   @override
+
+  /// 是否可使用通用信物提升潜能
   final bool canUseGeneralPotentialItem;
   @override
+
+  /// 信物ID
   final String potentialItemId;
   @override
+
+  /// 阵营ID
   final int team;
   @override
+
+  /// 展示序号
   final String displayNumber;
   @override
+
+  /// 召唤物ID
   final String tokenKey;
   @override
+
+  /// 代号
   final String appellation;
   @override
+
+  /// 部署位
   final String position;
   @override
+
+  /// 标签
   final List<String> tagList;
   @override
+
+  /// 阵营标识
   @JsonKey(defaultValue: '')
   final String displayLogo;
   @override
+
+  /// 简介
   @JsonKey(defaultValue: '')
   final String itemUsage;
   @override
+
+  /// 简介补充
   @JsonKey(defaultValue: '')
   final String itemDesc;
   @override
+
+  /// 获取方式
   final String itemObtainApproach;
   @override
+
+  /// 最大潜能数
   @JsonKey(defaultValue: -1)
   final int maxPotentialLevel;
   @override
+
+  /// 稀有度
   final int rarity;
   @override
+
+  /// 职业
   final String profession;
 
   @override
@@ -453,44 +532,80 @@ abstract class _Character implements Character {
       @required String profession}) = _$_Character;
 
   @override
+
+  /// ID
   String get id;
   @override
+
+  /// 名称
   String get name;
   @override
+
+  /// 特性
   String get description;
   @override
+
+  /// 是否可使用通用信物提升潜能
   bool get canUseGeneralPotentialItem;
   @override
+
+  /// 信物ID
   String get potentialItemId;
   @override
+
+  /// 阵营ID
   int get team;
   @override
+
+  /// 展示序号
   String get displayNumber;
   @override
+
+  /// 召唤物ID
   String get tokenKey;
   @override
+
+  /// 代号
   String get appellation;
   @override
+
+  /// 部署位
   String get position;
   @override
+
+  /// 标签
   List<String> get tagList;
   @override
+
+  /// 阵营标识
   @JsonKey(defaultValue: '')
   String get displayLogo;
   @override
+
+  /// 简介
   @JsonKey(defaultValue: '')
   String get itemUsage;
   @override
+
+  /// 简介补充
   @JsonKey(defaultValue: '')
   String get itemDesc;
   @override
+
+  /// 获取方式
   String get itemObtainApproach;
   @override
+
+  /// 最大潜能数
   @JsonKey(defaultValue: -1)
   int get maxPotentialLevel;
   @override
+
+  /// 稀有度
   int get rarity;
   @override
+
+  /// 职业
   String get profession;
   @override
   _$CharacterCopyWith<_Character> get copyWith;

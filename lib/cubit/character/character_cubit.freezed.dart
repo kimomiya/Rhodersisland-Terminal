@@ -9,6 +9,7 @@ part of 'character_cubit.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$CharacterStateTearOff {
   const _$CharacterStateTearOff();
 
@@ -37,9 +38,11 @@ class _$CharacterStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $CharacterState = _$CharacterStateTearOff();
 
+/// @nodoc
 mixin _$CharacterState {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -73,12 +76,14 @@ mixin _$CharacterState {
   });
 }
 
+/// @nodoc
 abstract class $CharacterStateCopyWith<$Res> {
   factory $CharacterStateCopyWith(
           CharacterState value, $Res Function(CharacterState) then) =
       _$CharacterStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$CharacterStateCopyWithImpl<$Res>
     implements $CharacterStateCopyWith<$Res> {
   _$CharacterStateCopyWithImpl(this._value, this._then);
@@ -88,11 +93,13 @@ class _$CharacterStateCopyWithImpl<$Res>
   final $Res Function(CharacterState) _then;
 }
 
+/// @nodoc
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InitialCopyWithImpl<$Res> extends _$CharacterStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
@@ -102,6 +109,7 @@ class __$InitialCopyWithImpl<$Res> extends _$CharacterStateCopyWithImpl<$Res>
   _Initial get _value => super._value as _Initial;
 }
 
+/// @nodoc
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -185,12 +193,14 @@ abstract class _Initial implements CharacterState {
   const factory _Initial() = _$_Initial;
 }
 
+/// @nodoc
 abstract class _$GetCharacterInProgressCopyWith<$Res> {
   factory _$GetCharacterInProgressCopyWith(_GetCharacterInProgress value,
           $Res Function(_GetCharacterInProgress) then) =
       __$GetCharacterInProgressCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$GetCharacterInProgressCopyWithImpl<$Res>
     extends _$CharacterStateCopyWithImpl<$Res>
     implements _$GetCharacterInProgressCopyWith<$Res> {
@@ -202,6 +212,7 @@ class __$GetCharacterInProgressCopyWithImpl<$Res>
   _GetCharacterInProgress get _value => super._value as _GetCharacterInProgress;
 }
 
+/// @nodoc
 class _$_GetCharacterInProgress implements _GetCharacterInProgress {
   const _$_GetCharacterInProgress();
 
@@ -285,6 +296,7 @@ abstract class _GetCharacterInProgress implements CharacterState {
   const factory _GetCharacterInProgress() = _$_GetCharacterInProgress;
 }
 
+/// @nodoc
 abstract class _$GetCharacterSuccessCopyWith<$Res> {
   factory _$GetCharacterSuccessCopyWith(_GetCharacterSuccess value,
           $Res Function(_GetCharacterSuccess) then) =
@@ -294,6 +306,7 @@ abstract class _$GetCharacterSuccessCopyWith<$Res> {
   $CharacterCopyWith<$Res> get character;
 }
 
+/// @nodoc
 class __$GetCharacterSuccessCopyWithImpl<$Res>
     extends _$CharacterStateCopyWithImpl<$Res>
     implements _$GetCharacterSuccessCopyWith<$Res> {
@@ -324,6 +337,7 @@ class __$GetCharacterSuccessCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_GetCharacterSuccess implements _GetCharacterSuccess {
   const _$_GetCharacterSuccess(this.character) : assert(character != null);
 
@@ -424,6 +438,7 @@ abstract class _GetCharacterSuccess implements CharacterState {
   _$GetCharacterSuccessCopyWith<_GetCharacterSuccess> get copyWith;
 }
 
+/// @nodoc
 abstract class _$GetCharacterFailureCopyWith<$Res> {
   factory _$GetCharacterFailureCopyWith(_GetCharacterFailure value,
           $Res Function(_GetCharacterFailure) then) =
@@ -433,6 +448,7 @@ abstract class _$GetCharacterFailureCopyWith<$Res> {
   $AppFailureCopyWith<$Res> get failure;
 }
 
+/// @nodoc
 class __$GetCharacterFailureCopyWithImpl<$Res>
     extends _$CharacterStateCopyWithImpl<$Res>
     implements _$GetCharacterFailureCopyWith<$Res> {
@@ -463,6 +479,7 @@ class __$GetCharacterFailureCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_GetCharacterFailure implements _GetCharacterFailure {
   const _$_GetCharacterFailure(this.failure) : assert(failure != null);
 

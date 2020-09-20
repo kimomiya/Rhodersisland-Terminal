@@ -12,6 +12,7 @@ CharacterModel _$CharacterModelFromJson(Map<String, dynamic> json) {
   return _CharacterModel.fromJson(json);
 }
 
+/// @nodoc
 class _$CharacterModelTearOff {
   const _$CharacterModelTearOff();
 
@@ -56,46 +57,88 @@ class _$CharacterModelTearOff {
       profession: profession,
     );
   }
+
+// ignore: unused_element
+  CharacterModel fromJson(Map<String, Object> json) {
+    return CharacterModel.fromJson(json);
+  }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $CharacterModel = _$CharacterModelTearOff();
 
+/// @nodoc
 mixin _$CharacterModel {
+  /// ID
   @JsonKey(defaultValue: '')
   String get id;
+
+  /// 名称
   @JsonKey(defaultValue: '')
   String get name;
+
+  /// 特性
   @JsonKey(defaultValue: '')
   String get description;
+
+  /// 是否可使用通用信物提升潜能
   @JsonKey(defaultValue: true)
   bool get canUseGeneralPotentialItem;
+
+  /// 信物ID
   @JsonKey(defaultValue: '')
   String get potentialItemId;
+
+  /// 阵营ID
   @JsonKey(defaultValue: -1)
   int get team;
+
+  /// 展示序号
   @JsonKey(defaultValue: '')
   String get displayNumber;
+
+  /// 召唤物ID
   @JsonKey(defaultValue: '')
   String get tokenKey;
+
+  /// 代号
   @JsonKey(defaultValue: '')
   String get appellation;
+
+  /// 部署位
   @JsonKey(defaultValue: '')
   String get position;
+
+  /// 标签
   @JsonKey(defaultValue: <String>[])
   List<String> get tagList;
+
+  /// 阵营标识
   @JsonKey(defaultValue: '')
   String get displayLogo;
+
+  /// 简介
   @JsonKey(defaultValue: '')
   String get itemUsage;
+
+  /// 简介补充
   @JsonKey(defaultValue: '')
   String get itemDesc;
+
+  /// 获取方式
   @JsonKey(defaultValue: '')
   String get itemObtainApproach;
+
+  /// 最大潜能数
   @JsonKey(defaultValue: -1)
   int get maxPotentialLevel;
+
+  /// 稀有度
   @JsonKey(defaultValue: -1)
   int get rarity;
+
+  /// 职业
   @JsonKey(defaultValue: '')
   String get profession;
 
@@ -103,6 +146,7 @@ mixin _$CharacterModel {
   $CharacterModelCopyWith<CharacterModel> get copyWith;
 }
 
+/// @nodoc
 abstract class $CharacterModelCopyWith<$Res> {
   factory $CharacterModelCopyWith(
           CharacterModel value, $Res Function(CharacterModel) then) =
@@ -128,6 +172,7 @@ abstract class $CharacterModelCopyWith<$Res> {
       @JsonKey(defaultValue: '') String profession});
 }
 
+/// @nodoc
 class _$CharacterModelCopyWithImpl<$Res>
     implements $CharacterModelCopyWith<$Res> {
   _$CharacterModelCopyWithImpl(this._value, this._then);
@@ -194,6 +239,7 @@ class _$CharacterModelCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$CharacterModelCopyWith<$Res>
     implements $CharacterModelCopyWith<$Res> {
   factory _$CharacterModelCopyWith(
@@ -221,6 +267,7 @@ abstract class _$CharacterModelCopyWith<$Res>
       @JsonKey(defaultValue: '') String profession});
 }
 
+/// @nodoc
 class __$CharacterModelCopyWithImpl<$Res>
     extends _$CharacterModelCopyWithImpl<$Res>
     implements _$CharacterModelCopyWith<$Res> {
@@ -290,6 +337,8 @@ class __$CharacterModelCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+
+/// @nodoc
 class _$_CharacterModel implements _CharacterModel {
   const _$_CharacterModel(
       {@JsonKey(defaultValue: '') this.id,
@@ -315,57 +364,93 @@ class _$_CharacterModel implements _CharacterModel {
       _$_$_CharacterModelFromJson(json);
 
   @override
+
+  /// ID
   @JsonKey(defaultValue: '')
   final String id;
   @override
+
+  /// 名称
   @JsonKey(defaultValue: '')
   final String name;
   @override
+
+  /// 特性
   @JsonKey(defaultValue: '')
   final String description;
   @override
+
+  /// 是否可使用通用信物提升潜能
   @JsonKey(defaultValue: true)
   final bool canUseGeneralPotentialItem;
   @override
+
+  /// 信物ID
   @JsonKey(defaultValue: '')
   final String potentialItemId;
   @override
+
+  /// 阵营ID
   @JsonKey(defaultValue: -1)
   final int team;
   @override
+
+  /// 展示序号
   @JsonKey(defaultValue: '')
   final String displayNumber;
   @override
+
+  /// 召唤物ID
   @JsonKey(defaultValue: '')
   final String tokenKey;
   @override
+
+  /// 代号
   @JsonKey(defaultValue: '')
   final String appellation;
   @override
+
+  /// 部署位
   @JsonKey(defaultValue: '')
   final String position;
   @override
+
+  /// 标签
   @JsonKey(defaultValue: <String>[])
   final List<String> tagList;
   @override
+
+  /// 阵营标识
   @JsonKey(defaultValue: '')
   final String displayLogo;
   @override
+
+  /// 简介
   @JsonKey(defaultValue: '')
   final String itemUsage;
   @override
+
+  /// 简介补充
   @JsonKey(defaultValue: '')
   final String itemDesc;
   @override
+
+  /// 获取方式
   @JsonKey(defaultValue: '')
   final String itemObtainApproach;
   @override
+
+  /// 最大潜能数
   @JsonKey(defaultValue: -1)
   final int maxPotentialLevel;
   @override
+
+  /// 稀有度
   @JsonKey(defaultValue: -1)
   final int rarity;
   @override
+
+  /// 职业
   @JsonKey(defaultValue: '')
   final String profession;
 
@@ -488,57 +573,93 @@ abstract class _CharacterModel implements CharacterModel {
       _$_CharacterModel.fromJson;
 
   @override
+
+  /// ID
   @JsonKey(defaultValue: '')
   String get id;
   @override
+
+  /// 名称
   @JsonKey(defaultValue: '')
   String get name;
   @override
+
+  /// 特性
   @JsonKey(defaultValue: '')
   String get description;
   @override
+
+  /// 是否可使用通用信物提升潜能
   @JsonKey(defaultValue: true)
   bool get canUseGeneralPotentialItem;
   @override
+
+  /// 信物ID
   @JsonKey(defaultValue: '')
   String get potentialItemId;
   @override
+
+  /// 阵营ID
   @JsonKey(defaultValue: -1)
   int get team;
   @override
+
+  /// 展示序号
   @JsonKey(defaultValue: '')
   String get displayNumber;
   @override
+
+  /// 召唤物ID
   @JsonKey(defaultValue: '')
   String get tokenKey;
   @override
+
+  /// 代号
   @JsonKey(defaultValue: '')
   String get appellation;
   @override
+
+  /// 部署位
   @JsonKey(defaultValue: '')
   String get position;
   @override
+
+  /// 标签
   @JsonKey(defaultValue: <String>[])
   List<String> get tagList;
   @override
+
+  /// 阵营标识
   @JsonKey(defaultValue: '')
   String get displayLogo;
   @override
+
+  /// 简介
   @JsonKey(defaultValue: '')
   String get itemUsage;
   @override
+
+  /// 简介补充
   @JsonKey(defaultValue: '')
   String get itemDesc;
   @override
+
+  /// 获取方式
   @JsonKey(defaultValue: '')
   String get itemObtainApproach;
   @override
+
+  /// 最大潜能数
   @JsonKey(defaultValue: -1)
   int get maxPotentialLevel;
   @override
+
+  /// 稀有度
   @JsonKey(defaultValue: -1)
   int get rarity;
   @override
+
+  /// 职业
   @JsonKey(defaultValue: '')
   String get profession;
   @override

@@ -9,6 +9,7 @@ part of 'character_list_cubit.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$CharacterListStateTearOff {
   const _$CharacterListStateTearOff();
 
@@ -35,9 +36,11 @@ class _$CharacterListStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $CharacterListState = _$CharacterListStateTearOff();
 
+/// @nodoc
 mixin _$CharacterListState {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -71,12 +74,14 @@ mixin _$CharacterListState {
   });
 }
 
+/// @nodoc
 abstract class $CharacterListStateCopyWith<$Res> {
   factory $CharacterListStateCopyWith(
           CharacterListState value, $Res Function(CharacterListState) then) =
       _$CharacterListStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$CharacterListStateCopyWithImpl<$Res>
     implements $CharacterListStateCopyWith<$Res> {
   _$CharacterListStateCopyWithImpl(this._value, this._then);
@@ -86,11 +91,13 @@ class _$CharacterListStateCopyWithImpl<$Res>
   final $Res Function(CharacterListState) _then;
 }
 
+/// @nodoc
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InitialCopyWithImpl<$Res>
     extends _$CharacterListStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
@@ -101,6 +108,7 @@ class __$InitialCopyWithImpl<$Res>
   _Initial get _value => super._value as _Initial;
 }
 
+/// @nodoc
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -184,12 +192,14 @@ abstract class _Initial implements CharacterListState {
   const factory _Initial() = _$_Initial;
 }
 
+/// @nodoc
 abstract class _$FetchInProgressCopyWith<$Res> {
   factory _$FetchInProgressCopyWith(
           _FetchInProgress value, $Res Function(_FetchInProgress) then) =
       __$FetchInProgressCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$FetchInProgressCopyWithImpl<$Res>
     extends _$CharacterListStateCopyWithImpl<$Res>
     implements _$FetchInProgressCopyWith<$Res> {
@@ -201,6 +211,7 @@ class __$FetchInProgressCopyWithImpl<$Res>
   _FetchInProgress get _value => super._value as _FetchInProgress;
 }
 
+/// @nodoc
 class _$_FetchInProgress implements _FetchInProgress {
   const _$_FetchInProgress();
 
@@ -284,12 +295,14 @@ abstract class _FetchInProgress implements CharacterListState {
   const factory _FetchInProgress() = _$_FetchInProgress;
 }
 
+/// @nodoc
 abstract class _$FetchSuccessCopyWith<$Res> {
   factory _$FetchSuccessCopyWith(
           _FetchSuccess value, $Res Function(_FetchSuccess) then) =
       __$FetchSuccessCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$FetchSuccessCopyWithImpl<$Res>
     extends _$CharacterListStateCopyWithImpl<$Res>
     implements _$FetchSuccessCopyWith<$Res> {
@@ -301,6 +314,7 @@ class __$FetchSuccessCopyWithImpl<$Res>
   _FetchSuccess get _value => super._value as _FetchSuccess;
 }
 
+/// @nodoc
 class _$_FetchSuccess implements _FetchSuccess {
   const _$_FetchSuccess();
 
@@ -384,6 +398,7 @@ abstract class _FetchSuccess implements CharacterListState {
   const factory _FetchSuccess() = _$_FetchSuccess;
 }
 
+/// @nodoc
 abstract class _$FetchFailureCopyWith<$Res> {
   factory _$FetchFailureCopyWith(
           _FetchFailure value, $Res Function(_FetchFailure) then) =
@@ -393,6 +408,7 @@ abstract class _$FetchFailureCopyWith<$Res> {
   $AppFailureCopyWith<$Res> get failure;
 }
 
+/// @nodoc
 class __$FetchFailureCopyWithImpl<$Res>
     extends _$CharacterListStateCopyWithImpl<$Res>
     implements _$FetchFailureCopyWith<$Res> {
@@ -423,6 +439,7 @@ class __$FetchFailureCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_FetchFailure implements _FetchFailure {
   const _$_FetchFailure({@required this.failure}) : assert(failure != null);
 

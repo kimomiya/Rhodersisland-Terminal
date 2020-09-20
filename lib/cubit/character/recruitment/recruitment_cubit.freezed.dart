@@ -9,6 +9,7 @@ part of 'recruitment_cubit.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$RecruitmentStateTearOff {
   const _$RecruitmentStateTearOff();
 
@@ -81,9 +82,11 @@ class _$RecruitmentStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $RecruitmentState = _$RecruitmentStateTearOff();
 
+/// @nodoc
 mixin _$RecruitmentState {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -140,12 +143,14 @@ mixin _$RecruitmentState {
   });
 }
 
+/// @nodoc
 abstract class $RecruitmentStateCopyWith<$Res> {
   factory $RecruitmentStateCopyWith(
           RecruitmentState value, $Res Function(RecruitmentState) then) =
       _$RecruitmentStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$RecruitmentStateCopyWithImpl<$Res>
     implements $RecruitmentStateCopyWith<$Res> {
   _$RecruitmentStateCopyWithImpl(this._value, this._then);
@@ -155,11 +160,13 @@ class _$RecruitmentStateCopyWithImpl<$Res>
   final $Res Function(RecruitmentState) _then;
 }
 
+/// @nodoc
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InitialCopyWithImpl<$Res> extends _$RecruitmentStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
@@ -169,6 +176,7 @@ class __$InitialCopyWithImpl<$Res> extends _$RecruitmentStateCopyWithImpl<$Res>
   _Initial get _value => super._value as _Initial;
 }
 
+/// @nodoc
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -285,6 +293,7 @@ abstract class _Initial implements RecruitmentState {
   const factory _Initial() = _$_Initial;
 }
 
+/// @nodoc
 abstract class _$GetOperatorsSuccessCopyWith<$Res> {
   factory _$GetOperatorsSuccessCopyWith(_GetOperatorsSuccess value,
           $Res Function(_GetOperatorsSuccess) then) =
@@ -292,6 +301,7 @@ abstract class _$GetOperatorsSuccessCopyWith<$Res> {
   $Res call({List<CharacterLite> operators});
 }
 
+/// @nodoc
 class __$GetOperatorsSuccessCopyWithImpl<$Res>
     extends _$RecruitmentStateCopyWithImpl<$Res>
     implements _$GetOperatorsSuccessCopyWith<$Res> {
@@ -314,6 +324,7 @@ class __$GetOperatorsSuccessCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_GetOperatorsSuccess implements _GetOperatorsSuccess {
   const _$_GetOperatorsSuccess({@required this.operators})
       : assert(operators != null);
@@ -448,6 +459,7 @@ abstract class _GetOperatorsSuccess implements RecruitmentState {
   _$GetOperatorsSuccessCopyWith<_GetOperatorsSuccess> get copyWith;
 }
 
+/// @nodoc
 abstract class _$GetOperatorsFailureCopyWith<$Res> {
   factory _$GetOperatorsFailureCopyWith(_GetOperatorsFailure value,
           $Res Function(_GetOperatorsFailure) then) =
@@ -457,6 +469,7 @@ abstract class _$GetOperatorsFailureCopyWith<$Res> {
   $AppFailureCopyWith<$Res> get failure;
 }
 
+/// @nodoc
 class __$GetOperatorsFailureCopyWithImpl<$Res>
     extends _$RecruitmentStateCopyWithImpl<$Res>
     implements _$GetOperatorsFailureCopyWith<$Res> {
@@ -487,6 +500,7 @@ class __$GetOperatorsFailureCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_GetOperatorsFailure implements _GetOperatorsFailure {
   const _$_GetOperatorsFailure({@required this.failure})
       : assert(failure != null);
@@ -620,6 +634,7 @@ abstract class _GetOperatorsFailure implements RecruitmentState {
   _$GetOperatorsFailureCopyWith<_GetOperatorsFailure> get copyWith;
 }
 
+/// @nodoc
 abstract class _$RecruitableOperatorsFilteredCopyWith<$Res> {
   factory _$RecruitableOperatorsFilteredCopyWith(
           _RecruitableOperatorsFiltered value,
@@ -628,6 +643,7 @@ abstract class _$RecruitableOperatorsFilteredCopyWith<$Res> {
   $Res call({List<CharacterLite> operators});
 }
 
+/// @nodoc
 class __$RecruitableOperatorsFilteredCopyWithImpl<$Res>
     extends _$RecruitmentStateCopyWithImpl<$Res>
     implements _$RecruitableOperatorsFilteredCopyWith<$Res> {
@@ -652,6 +668,7 @@ class __$RecruitableOperatorsFilteredCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_RecruitableOperatorsFiltered implements _RecruitableOperatorsFiltered {
   const _$_RecruitableOperatorsFiltered({@required this.operators})
       : assert(operators != null);
@@ -788,6 +805,7 @@ abstract class _RecruitableOperatorsFiltered implements RecruitmentState {
       get copyWith;
 }
 
+/// @nodoc
 abstract class _$PositionSelectedCopyWith<$Res> {
   factory _$PositionSelectedCopyWith(
           _PositionSelected value, $Res Function(_PositionSelected) then) =
@@ -795,6 +813,7 @@ abstract class _$PositionSelectedCopyWith<$Res> {
   $Res call({bool selected, Position position});
 }
 
+/// @nodoc
 class __$PositionSelectedCopyWithImpl<$Res>
     extends _$RecruitmentStateCopyWithImpl<$Res>
     implements _$PositionSelectedCopyWith<$Res> {
@@ -817,6 +836,7 @@ class __$PositionSelectedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_PositionSelected implements _PositionSelected {
   const _$_PositionSelected({@required this.selected, @required this.position})
       : assert(selected != null),
@@ -960,6 +980,7 @@ abstract class _PositionSelected implements RecruitmentState {
   _$PositionSelectedCopyWith<_PositionSelected> get copyWith;
 }
 
+/// @nodoc
 abstract class _$ExperienceSelectedCopyWith<$Res> {
   factory _$ExperienceSelectedCopyWith(
           _ExperienceSelected value, $Res Function(_ExperienceSelected) then) =
@@ -967,6 +988,7 @@ abstract class _$ExperienceSelectedCopyWith<$Res> {
   $Res call({bool selected, Experience experience});
 }
 
+/// @nodoc
 class __$ExperienceSelectedCopyWithImpl<$Res>
     extends _$RecruitmentStateCopyWithImpl<$Res>
     implements _$ExperienceSelectedCopyWith<$Res> {
@@ -990,6 +1012,7 @@ class __$ExperienceSelectedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_ExperienceSelected implements _ExperienceSelected {
   const _$_ExperienceSelected(
       {@required this.selected, @required this.experience})
@@ -1134,6 +1157,7 @@ abstract class _ExperienceSelected implements RecruitmentState {
   _$ExperienceSelectedCopyWith<_ExperienceSelected> get copyWith;
 }
 
+/// @nodoc
 abstract class _$ProfessionSelectedCopyWith<$Res> {
   factory _$ProfessionSelectedCopyWith(
           _ProfessionSelected value, $Res Function(_ProfessionSelected) then) =
@@ -1141,6 +1165,7 @@ abstract class _$ProfessionSelectedCopyWith<$Res> {
   $Res call({bool selected, Profession profession});
 }
 
+/// @nodoc
 class __$ProfessionSelectedCopyWithImpl<$Res>
     extends _$RecruitmentStateCopyWithImpl<$Res>
     implements _$ProfessionSelectedCopyWith<$Res> {
@@ -1164,6 +1189,7 @@ class __$ProfessionSelectedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_ProfessionSelected implements _ProfessionSelected {
   const _$_ProfessionSelected(
       {@required this.selected, @required this.profession})
@@ -1308,6 +1334,7 @@ abstract class _ProfessionSelected implements RecruitmentState {
   _$ProfessionSelectedCopyWith<_ProfessionSelected> get copyWith;
 }
 
+/// @nodoc
 abstract class _$TagSelectedCopyWith<$Res> {
   factory _$TagSelectedCopyWith(
           _TagSelected value, $Res Function(_TagSelected) then) =
@@ -1315,6 +1342,7 @@ abstract class _$TagSelectedCopyWith<$Res> {
   $Res call({bool selected, Tag tag});
 }
 
+/// @nodoc
 class __$TagSelectedCopyWithImpl<$Res>
     extends _$RecruitmentStateCopyWithImpl<$Res>
     implements _$TagSelectedCopyWith<$Res> {
@@ -1337,6 +1365,7 @@ class __$TagSelectedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_TagSelected implements _TagSelected {
   const _$_TagSelected({@required this.selected, @required this.tag})
       : assert(selected != null),
@@ -1478,12 +1507,14 @@ abstract class _TagSelected implements RecruitmentState {
   _$TagSelectedCopyWith<_TagSelected> get copyWith;
 }
 
+/// @nodoc
 abstract class _$SelectionResetedCopyWith<$Res> {
   factory _$SelectionResetedCopyWith(
           _SelectionReseted value, $Res Function(_SelectionReseted) then) =
       __$SelectionResetedCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$SelectionResetedCopyWithImpl<$Res>
     extends _$RecruitmentStateCopyWithImpl<$Res>
     implements _$SelectionResetedCopyWith<$Res> {
@@ -1495,6 +1526,7 @@ class __$SelectionResetedCopyWithImpl<$Res>
   _SelectionReseted get _value => super._value as _SelectionReseted;
 }
 
+/// @nodoc
 class _$_SelectionReseted implements _SelectionReseted {
   const _$_SelectionReseted();
 

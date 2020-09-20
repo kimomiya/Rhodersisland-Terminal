@@ -12,6 +12,7 @@ Tip _$TipFromJson(Map<String, dynamic> json) {
   return _Tip.fromJson(json);
 }
 
+/// @nodoc
 class _$TipTearOff {
   const _$TipTearOff();
 
@@ -26,11 +27,18 @@ class _$TipTearOff {
       category: category,
     );
   }
+
+// ignore: unused_element
+  Tip fromJson(Map<String, Object> json) {
+    return Tip.fromJson(json);
+  }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $Tip = _$TipTearOff();
 
+/// @nodoc
 mixin _$Tip {
   @JsonKey(defaultValue: '')
   String get tip;
@@ -43,6 +51,7 @@ mixin _$Tip {
   $TipCopyWith<Tip> get copyWith;
 }
 
+/// @nodoc
 abstract class $TipCopyWith<$Res> {
   factory $TipCopyWith(Tip value, $Res Function(Tip) then) =
       _$TipCopyWithImpl<$Res>;
@@ -52,6 +61,7 @@ abstract class $TipCopyWith<$Res> {
       @JsonKey(defaultValue: '') String category});
 }
 
+/// @nodoc
 class _$TipCopyWithImpl<$Res> implements $TipCopyWith<$Res> {
   _$TipCopyWithImpl(this._value, this._then);
 
@@ -73,6 +83,7 @@ class _$TipCopyWithImpl<$Res> implements $TipCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$TipCopyWith<$Res> implements $TipCopyWith<$Res> {
   factory _$TipCopyWith(_Tip value, $Res Function(_Tip) then) =
       __$TipCopyWithImpl<$Res>;
@@ -83,6 +94,7 @@ abstract class _$TipCopyWith<$Res> implements $TipCopyWith<$Res> {
       @JsonKey(defaultValue: '') String category});
 }
 
+/// @nodoc
 class __$TipCopyWithImpl<$Res> extends _$TipCopyWithImpl<$Res>
     implements _$TipCopyWith<$Res> {
   __$TipCopyWithImpl(_Tip _value, $Res Function(_Tip) _then)
@@ -106,6 +118,8 @@ class __$TipCopyWithImpl<$Res> extends _$TipCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+
+/// @nodoc
 class _$_Tip implements _Tip {
   const _$_Tip(
       {@JsonKey(defaultValue: '') this.tip,
