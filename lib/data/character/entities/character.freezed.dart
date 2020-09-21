@@ -26,11 +26,11 @@ class _$CharacterTearOff {
       @required String appellation,
       @required String position,
       @required List<String> tagList,
-      @JsonKey(defaultValue: '') String displayLogo,
-      @JsonKey(defaultValue: '') String itemUsage,
-      @JsonKey(defaultValue: '') String itemDesc,
+      @required String displayLogo,
+      @required String itemUsage,
+      @required String itemDesc,
       @required String itemObtainApproach,
-      @JsonKey(defaultValue: -1) int maxPotentialLevel,
+      @required int maxPotentialLevel,
       @required int rarity,
       @required String profession}) {
     return _Character(
@@ -96,22 +96,18 @@ mixin _$Character {
   List<String> get tagList;
 
   /// 阵营标识
-  @JsonKey(defaultValue: '')
   String get displayLogo;
 
   /// 简介
-  @JsonKey(defaultValue: '')
   String get itemUsage;
 
   /// 简介补充
-  @JsonKey(defaultValue: '')
   String get itemDesc;
 
   /// 获取方式
   String get itemObtainApproach;
 
   /// 最大潜能数
-  @JsonKey(defaultValue: -1)
   int get maxPotentialLevel;
 
   /// 稀有度
@@ -139,11 +135,11 @@ abstract class $CharacterCopyWith<$Res> {
       String appellation,
       String position,
       List<String> tagList,
-      @JsonKey(defaultValue: '') String displayLogo,
-      @JsonKey(defaultValue: '') String itemUsage,
-      @JsonKey(defaultValue: '') String itemDesc,
+      String displayLogo,
+      String itemUsage,
+      String itemDesc,
       String itemObtainApproach,
-      @JsonKey(defaultValue: -1) int maxPotentialLevel,
+      int maxPotentialLevel,
       int rarity,
       String profession});
 }
@@ -232,11 +228,11 @@ abstract class _$CharacterCopyWith<$Res> implements $CharacterCopyWith<$Res> {
       String appellation,
       String position,
       List<String> tagList,
-      @JsonKey(defaultValue: '') String displayLogo,
-      @JsonKey(defaultValue: '') String itemUsage,
-      @JsonKey(defaultValue: '') String itemDesc,
+      String displayLogo,
+      String itemUsage,
+      String itemDesc,
       String itemObtainApproach,
-      @JsonKey(defaultValue: -1) int maxPotentialLevel,
+      int maxPotentialLevel,
       int rarity,
       String profession});
 }
@@ -322,11 +318,11 @@ class _$_Character implements _Character {
       @required this.appellation,
       @required this.position,
       @required this.tagList,
-      @JsonKey(defaultValue: '') this.displayLogo,
-      @JsonKey(defaultValue: '') this.itemUsage,
-      @JsonKey(defaultValue: '') this.itemDesc,
+      @required this.displayLogo,
+      @required this.itemUsage,
+      @required this.itemDesc,
       @required this.itemObtainApproach,
-      @JsonKey(defaultValue: -1) this.maxPotentialLevel,
+      @required this.maxPotentialLevel,
       @required this.rarity,
       @required this.profession})
       : assert(id != null),
@@ -340,7 +336,11 @@ class _$_Character implements _Character {
         assert(appellation != null),
         assert(position != null),
         assert(tagList != null),
+        assert(displayLogo != null),
+        assert(itemUsage != null),
+        assert(itemDesc != null),
         assert(itemObtainApproach != null),
+        assert(maxPotentialLevel != null),
         assert(rarity != null),
         assert(profession != null);
 
@@ -391,17 +391,14 @@ class _$_Character implements _Character {
   @override
 
   /// 阵营标识
-  @JsonKey(defaultValue: '')
   final String displayLogo;
   @override
 
   /// 简介
-  @JsonKey(defaultValue: '')
   final String itemUsage;
   @override
 
   /// 简介补充
-  @JsonKey(defaultValue: '')
   final String itemDesc;
   @override
 
@@ -410,7 +407,6 @@ class _$_Character implements _Character {
   @override
 
   /// 最大潜能数
-  @JsonKey(defaultValue: -1)
   final int maxPotentialLevel;
   @override
 
@@ -523,11 +519,11 @@ abstract class _Character implements Character {
       @required String appellation,
       @required String position,
       @required List<String> tagList,
-      @JsonKey(defaultValue: '') String displayLogo,
-      @JsonKey(defaultValue: '') String itemUsage,
-      @JsonKey(defaultValue: '') String itemDesc,
+      @required String displayLogo,
+      @required String itemUsage,
+      @required String itemDesc,
       @required String itemObtainApproach,
-      @JsonKey(defaultValue: -1) int maxPotentialLevel,
+      @required int maxPotentialLevel,
       @required int rarity,
       @required String profession}) = _$_Character;
 
@@ -578,17 +574,14 @@ abstract class _Character implements Character {
   @override
 
   /// 阵营标识
-  @JsonKey(defaultValue: '')
   String get displayLogo;
   @override
 
   /// 简介
-  @JsonKey(defaultValue: '')
   String get itemUsage;
   @override
 
   /// 简介补充
-  @JsonKey(defaultValue: '')
   String get itemDesc;
   @override
 
@@ -597,7 +590,6 @@ abstract class _Character implements Character {
   @override
 
   /// 最大潜能数
-  @JsonKey(defaultValue: -1)
   int get maxPotentialLevel;
   @override
 

@@ -39,19 +39,19 @@ abstract class Character with _$Character {
     @required List<String> tagList,
 
     /// 阵营标识
-    @JsonKey(defaultValue: '') String displayLogo,
+    @required String displayLogo,
 
     /// 简介
-    @JsonKey(defaultValue: '') String itemUsage,
+    @required String itemUsage,
 
     /// 简介补充
-    @JsonKey(defaultValue: '') String itemDesc,
+    @required String itemDesc,
 
     /// 获取方式
     @required String itemObtainApproach,
 
     /// 最大潜能数
-    @JsonKey(defaultValue: -1) int maxPotentialLevel,
+    @required int maxPotentialLevel,
 
     /// 稀有度
     @required int rarity,

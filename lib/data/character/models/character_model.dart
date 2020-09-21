@@ -129,7 +129,11 @@ extension CharacterModelTransfer on CharacterModel {
       appellation: appellation,
       position: position,
       tagList: tagList,
+      displayLogo: displayLogo,
+      itemUsage: itemUsage,
+      itemDesc: itemDesc,
       itemObtainApproach: itemObtainApproach,
+      maxPotentialLevel: maxPotentialLevel,
       rarity: rarity,
       profession: profession,
     );
