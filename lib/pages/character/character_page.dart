@@ -9,8 +9,8 @@ import '../../cubit/character/character_cubit.dart';
 import '../../data/character/entities/character.dart';
 import '../../generated/l10n.dart';
 import '../../injection.dart';
-import '../core/char_rarity_view.dart';
 import '../core/rhodes_app_bar.dart';
+import 'widgets/index.dart';
 
 class CharacterPage extends StatelessWidget {
   const CharacterPage({
@@ -68,15 +68,28 @@ class _ContentViewState extends State<_ContentView> {
           if (_character != null)
             Positioned.fill(
               child: SingleChildScrollView(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24.w.toDouble()),
-                  child: Column(
-                    children: [
-                      _buildProfile(),
-                      Text(_character.description),
-                    ],
-                  ),
-                ),
+                child: Column(
+                  children: [
+                    _buildProfile(),
+                    CharInformationCard(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Text(
+                            '特性',
+                            style: TextStyle(
+                              fontSize: 32.sp.toDouble(),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          CharDescriptionText(
+                            description: _character.description,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ).padding(horizontal: 24.w.toDouble()),
               ),
             ),
           if (_isProcessing) const CircularProgressIndicator().center(),
@@ -109,17 +122,26 @@ class _ContentViewState extends State<_ContentView> {
   //* Widgets
 
   Widget _buildProfile() {
-    return Container(
-      height: 300.h.toDouble(),
-      child: Row(
+    return CharInformationCard(
+      child: Column(
         children: [
-          Expanded(
-            flex: 3,
-            child: _buildAvatar(),
+          Container(
+            height: 300.h.toDouble(),
+            child: Row(
+              children: [
+                Expanded(flex: 3, child: _buildAvatar()),
+                Expanded(flex: 4, child: _buildBasicInfo()),
+              ],
+            ),
           ),
-          Expanded(
-            flex: 4,
-            child: _buildBasicInfo(),
+          Text(_character.itemUsage),
+          SizedBox(height: 4.h.toDouble()),
+          Text(
+            _character.itemDesc,
+            style: const TextStyle(
+              color: Colors.grey,
+              fontStyle: FontStyle.italic,
+            ),
           ),
         ],
       ),
@@ -127,15 +149,17 @@ class _ContentViewState extends State<_ContentView> {
   }
 
   Widget _buildAvatar() {
-    return Padding(
-      padding: EdgeInsets.only(right: 24.w.toDouble()),
-      child: CachedNetworkImage(
-        imageUrl: avatarURL(id),
-        placeholder: (context, url) =>
-            const CircularProgressIndicator().center(),
-        fit: BoxFit.fitWidth,
+    return CachedNetworkImage(
+      imageUrl: avatarURL(id),
+      imageBuilder: (context, image) => FittedBox(
+        child: CircleAvatar(
+          backgroundColor: Colors.grey.withOpacity(0.3),
+          backgroundImage: image,
+        ),
       ),
-    );
+      progressIndicatorBuilder: (context, url, progress) =>
+          CircularProgressIndicator(value: progress.progress).center(),
+    ).padding(right: 24.w.toDouble());
   }
 
   Widget _buildBasicInfo() {
@@ -148,10 +172,8 @@ class _ContentViewState extends State<_ContentView> {
       fit: BoxFit.fitHeight,
     );
 
-    final rarity = Padding(
-      padding: EdgeInsets.symmetric(vertical: 12.h.toDouble()),
-      child: CharRarityView(rarity: _character.rarity),
-    );
+    final rarity = CharRarityView(rarity: _character.rarity)
+        .padding(vertical: 12.h.toDouble());
 
     final appellation = Text(
       _character.appellation,
