@@ -16,7 +16,7 @@ class SplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(designSize: const Size(750, 1334));
+    ScreenUtil.init(context, designSize: const Size(750, 1334));
 
     return Scaffold(
       body: BlocProvider(
