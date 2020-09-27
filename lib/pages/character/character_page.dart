@@ -71,23 +71,7 @@ class _ContentViewState extends State<_ContentView> {
                 child: Column(
                   children: [
                     _buildProfile(),
-                    CharInformationCard(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Text(
-                            '特性',
-                            style: TextStyle(
-                              fontSize: 32.sp.toDouble(),
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          CharDescriptionText(
-                            description: _character.description,
-                          ),
-                        ],
-                      ),
-                    ),
+                    _buildDescription(),
                   ],
                 ).padding(horizontal: 24.w.toDouble()),
               ),
@@ -208,6 +192,26 @@ class _ContentViewState extends State<_ContentView> {
                 ],
               ),
             ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildDescription() {
+    return CharInformationCard(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(
+            '特性',
+            style: TextStyle(
+              fontSize: 32.sp.toDouble(),
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          CharDescriptionText(
+            description: _character.description,
           ),
         ],
       ),
