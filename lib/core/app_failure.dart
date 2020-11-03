@@ -4,12 +4,12 @@ part 'app_failure.freezed.dart';
 
 @freezed
 abstract class AppFailure with _$AppFailure {
-  const factory AppFailure.networkUnreachable() = NetworkUnreachable;
+  const factory AppFailure.networkUnreachable() = _NetworkUnreachable;
 
   const factory AppFailure.remoteServerError({
     @required int code,
     @required String description,
-  }) = RemoteServerError;
+  }) = _RemoteServerError;
 
-  const factory AppFailure.noCachedData() = NoCachedData;
+  const factory AppFailure.noCachedData() = _NoCachedData;
 }

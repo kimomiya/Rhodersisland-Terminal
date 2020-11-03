@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:oktoast/oktoast.dart';
 
 import 'generated/l10n.dart';
@@ -12,7 +13,7 @@ Future<void> main() async {
 
   await di.configure();
 
-  runApp(const RhodesislandTerminal());
+  runApp(const ProviderScope(child: RhodesislandTerminal()));
 }
 
 class RhodesislandTerminal extends StatelessWidget {

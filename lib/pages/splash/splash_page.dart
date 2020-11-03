@@ -1,14 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:loading_indicator/loading_indicator.dart';
 import 'package:styled_widget/styled_widget.dart';
 
 import '../../core/images/images.dart';
-import '../../cubit/prefetch/prefetch_cubit.dart';
 import '../../generated/l10n.dart';
-import '../../injection.dart';
+import '../../providers/prefetch_provider.dart';
 import '../router.gr.dart';
 
 class SplashPage extends StatelessWidget {
@@ -19,10 +18,7 @@ class SplashPage extends StatelessWidget {
     ScreenUtil.init(context, designSize: const Size(750, 1334));
 
     return Scaffold(
-      body: BlocProvider(
-        create: (_) => locator<PrefetchCubit>(),
-        child: const _ContentView(),
-      ),
+      body: const _ContentView(),
       backgroundColor: Colors.grey[50],
     );
   }
@@ -33,10 +29,11 @@ class _ContentView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.bloc<PrefetchCubit>().fetchData();
+    context.read(prefetchProvider).execute();
 
-    return BlocListener<PrefetchCubit, PrefetchState>(
-      listener: _listenCubitState,
+    return ProviderListener<PrefetchNotifier>(
+      onChange: _onNotifierChanged,
+      provider: prefetchProvider,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -47,16 +44,20 @@ class _ContentView extends StatelessWidget {
     );
   }
 
-  void _listenCubitState(BuildContext context, PrefetchState state) {
-    state.maybeMap(
-      fetchSuccess: (_) => context.navigator.replace(Routes.home),
-      fetchFailure: (failure) {
-        // TODO(hiei): show retry dialog
-        print(failure);
-      },
-      orElse: () {},
-    );
+  void _onNotifierChanged(BuildContext context, PrefetchNotifier notifier) {
+    if (notifier.isCompleted) {
+      context.navigator.replace(Routes.home);
+    }
+
+    if (notifier.failure == null) {
+      return;
+    }
+
+    // TODO(Hiei): waiting error handling
+    print(notifier.failure.toString());
   }
+
+  //* Components
 
   Widget _buildLogo() {
     final logo = Image.asset(
@@ -65,6 +66,22 @@ class _ContentView extends StatelessWidget {
       fit: BoxFit.fitWidth,
     );
     return logo.center().padding(top: 180);
+  }
+
+  Widget _buildLoadingTip(BuildContext context) {
+    return Consumer(
+      builder: (context, watch, _) {
+        final prefetch = watch(prefetchProvider);
+
+        if (prefetch.isFetching) {
+          return Text(
+            S.of(context).splashLoadingTip,
+            textAlign: TextAlign.center,
+          ).textColor(Colors.grey);
+        }
+        return Container();
+      },
+    );
   }
 
   Widget _buildLoadingView(BuildContext context) {
@@ -80,31 +97,13 @@ class _ContentView extends StatelessWidget {
       textAlign: TextAlign.center,
     ).textColor(Colors.grey[700]).fontSize(30.sp.toDouble());
 
-    final loadingTip = Text(
-      intl.splashLoadingTip,
-      textAlign: TextAlign.center,
-    ).textColor(Colors.grey);
-
     final loadingView = Column(
       children: [
-        indicator.constrained(
-          height: 88.h.toDouble(),
-          width: 88.h.toDouble(),
-        ),
+        indicator.constrained(height: 88.h.toDouble(), width: 88.h.toDouble()),
         SizedBox(height: 48.h.toDouble()),
         loadingText,
         SizedBox(height: 48.h.toDouble()),
-        SizedBox(
-          height: 36.h.toDouble(),
-          child: BlocBuilder<PrefetchCubit, PrefetchState>(
-            builder: (context, state) {
-              return state.maybeMap(
-                fetchInProgress: (_) => loadingTip,
-                orElse: () => Container(),
-              );
-            },
-          ),
-        ),
+        SizedBox(height: 36.h.toDouble(), child: _buildLoadingTip(context)),
         const SizedBox(height: kToolbarHeight),
       ],
     );

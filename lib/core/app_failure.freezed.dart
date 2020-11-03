@@ -14,22 +14,22 @@ class _$AppFailureTearOff {
   const _$AppFailureTearOff();
 
 // ignore: unused_element
-  NetworkUnreachable networkUnreachable() {
-    return const NetworkUnreachable();
+  _NetworkUnreachable networkUnreachable() {
+    return const _NetworkUnreachable();
   }
 
 // ignore: unused_element
-  RemoteServerError remoteServerError(
+  _RemoteServerError remoteServerError(
       {@required int code, @required String description}) {
-    return RemoteServerError(
+    return _RemoteServerError(
       code: code,
       description: description,
     );
   }
 
 // ignore: unused_element
-  NoCachedData noCachedData() {
-    return const NoCachedData();
+  _NoCachedData noCachedData() {
+    return const _NoCachedData();
   }
 }
 
@@ -54,15 +54,15 @@ mixin _$AppFailure {
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result networkUnreachable(NetworkUnreachable value),
-    @required Result remoteServerError(RemoteServerError value),
-    @required Result noCachedData(NoCachedData value),
+    @required Result networkUnreachable(_NetworkUnreachable value),
+    @required Result remoteServerError(_RemoteServerError value),
+    @required Result noCachedData(_NoCachedData value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result networkUnreachable(NetworkUnreachable value),
-    Result remoteServerError(RemoteServerError value),
-    Result noCachedData(NoCachedData value),
+    Result networkUnreachable(_NetworkUnreachable value),
+    Result remoteServerError(_RemoteServerError value),
+    Result noCachedData(_NoCachedData value),
     @required Result orElse(),
   });
 }
@@ -84,27 +84,27 @@ class _$AppFailureCopyWithImpl<$Res> implements $AppFailureCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $NetworkUnreachableCopyWith<$Res> {
-  factory $NetworkUnreachableCopyWith(
-          NetworkUnreachable value, $Res Function(NetworkUnreachable) then) =
-      _$NetworkUnreachableCopyWithImpl<$Res>;
+abstract class _$NetworkUnreachableCopyWith<$Res> {
+  factory _$NetworkUnreachableCopyWith(
+          _NetworkUnreachable value, $Res Function(_NetworkUnreachable) then) =
+      __$NetworkUnreachableCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$NetworkUnreachableCopyWithImpl<$Res>
+class __$NetworkUnreachableCopyWithImpl<$Res>
     extends _$AppFailureCopyWithImpl<$Res>
-    implements $NetworkUnreachableCopyWith<$Res> {
-  _$NetworkUnreachableCopyWithImpl(
-      NetworkUnreachable _value, $Res Function(NetworkUnreachable) _then)
-      : super(_value, (v) => _then(v as NetworkUnreachable));
+    implements _$NetworkUnreachableCopyWith<$Res> {
+  __$NetworkUnreachableCopyWithImpl(
+      _NetworkUnreachable _value, $Res Function(_NetworkUnreachable) _then)
+      : super(_value, (v) => _then(v as _NetworkUnreachable));
 
   @override
-  NetworkUnreachable get _value => super._value as NetworkUnreachable;
+  _NetworkUnreachable get _value => super._value as _NetworkUnreachable;
 }
 
 /// @nodoc
-class _$NetworkUnreachable implements NetworkUnreachable {
-  const _$NetworkUnreachable();
+class _$_NetworkUnreachable implements _NetworkUnreachable {
+  const _$_NetworkUnreachable();
 
   @override
   String toString() {
@@ -113,7 +113,7 @@ class _$NetworkUnreachable implements NetworkUnreachable {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is NetworkUnreachable);
+    return identical(this, other) || (other is _NetworkUnreachable);
   }
 
   @override
@@ -150,9 +150,9 @@ class _$NetworkUnreachable implements NetworkUnreachable {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result networkUnreachable(NetworkUnreachable value),
-    @required Result remoteServerError(RemoteServerError value),
-    @required Result noCachedData(NoCachedData value),
+    @required Result networkUnreachable(_NetworkUnreachable value),
+    @required Result remoteServerError(_RemoteServerError value),
+    @required Result noCachedData(_NoCachedData value),
   }) {
     assert(networkUnreachable != null);
     assert(remoteServerError != null);
@@ -163,9 +163,9 @@ class _$NetworkUnreachable implements NetworkUnreachable {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result networkUnreachable(NetworkUnreachable value),
-    Result remoteServerError(RemoteServerError value),
-    Result noCachedData(NoCachedData value),
+    Result networkUnreachable(_NetworkUnreachable value),
+    Result remoteServerError(_RemoteServerError value),
+    Result noCachedData(_NoCachedData value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -176,35 +176,35 @@ class _$NetworkUnreachable implements NetworkUnreachable {
   }
 }
 
-abstract class NetworkUnreachable implements AppFailure {
-  const factory NetworkUnreachable() = _$NetworkUnreachable;
+abstract class _NetworkUnreachable implements AppFailure {
+  const factory _NetworkUnreachable() = _$_NetworkUnreachable;
 }
 
 /// @nodoc
-abstract class $RemoteServerErrorCopyWith<$Res> {
-  factory $RemoteServerErrorCopyWith(
-          RemoteServerError value, $Res Function(RemoteServerError) then) =
-      _$RemoteServerErrorCopyWithImpl<$Res>;
+abstract class _$RemoteServerErrorCopyWith<$Res> {
+  factory _$RemoteServerErrorCopyWith(
+          _RemoteServerError value, $Res Function(_RemoteServerError) then) =
+      __$RemoteServerErrorCopyWithImpl<$Res>;
   $Res call({int code, String description});
 }
 
 /// @nodoc
-class _$RemoteServerErrorCopyWithImpl<$Res>
+class __$RemoteServerErrorCopyWithImpl<$Res>
     extends _$AppFailureCopyWithImpl<$Res>
-    implements $RemoteServerErrorCopyWith<$Res> {
-  _$RemoteServerErrorCopyWithImpl(
-      RemoteServerError _value, $Res Function(RemoteServerError) _then)
-      : super(_value, (v) => _then(v as RemoteServerError));
+    implements _$RemoteServerErrorCopyWith<$Res> {
+  __$RemoteServerErrorCopyWithImpl(
+      _RemoteServerError _value, $Res Function(_RemoteServerError) _then)
+      : super(_value, (v) => _then(v as _RemoteServerError));
 
   @override
-  RemoteServerError get _value => super._value as RemoteServerError;
+  _RemoteServerError get _value => super._value as _RemoteServerError;
 
   @override
   $Res call({
     Object code = freezed,
     Object description = freezed,
   }) {
-    return _then(RemoteServerError(
+    return _then(_RemoteServerError(
       code: code == freezed ? _value.code : code as int,
       description:
           description == freezed ? _value.description : description as String,
@@ -213,8 +213,8 @@ class _$RemoteServerErrorCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$RemoteServerError implements RemoteServerError {
-  const _$RemoteServerError({@required this.code, @required this.description})
+class _$_RemoteServerError implements _RemoteServerError {
+  const _$_RemoteServerError({@required this.code, @required this.description})
       : assert(code != null),
         assert(description != null);
 
@@ -231,7 +231,7 @@ class _$RemoteServerError implements RemoteServerError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is RemoteServerError &&
+        (other is _RemoteServerError &&
             (identical(other.code, code) ||
                 const DeepCollectionEquality().equals(other.code, code)) &&
             (identical(other.description, description) ||
@@ -246,8 +246,8 @@ class _$RemoteServerError implements RemoteServerError {
       const DeepCollectionEquality().hash(description);
 
   @override
-  $RemoteServerErrorCopyWith<RemoteServerError> get copyWith =>
-      _$RemoteServerErrorCopyWithImpl<RemoteServerError>(this, _$identity);
+  _$RemoteServerErrorCopyWith<_RemoteServerError> get copyWith =>
+      __$RemoteServerErrorCopyWithImpl<_RemoteServerError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -280,9 +280,9 @@ class _$RemoteServerError implements RemoteServerError {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result networkUnreachable(NetworkUnreachable value),
-    @required Result remoteServerError(RemoteServerError value),
-    @required Result noCachedData(NoCachedData value),
+    @required Result networkUnreachable(_NetworkUnreachable value),
+    @required Result remoteServerError(_RemoteServerError value),
+    @required Result noCachedData(_NoCachedData value),
   }) {
     assert(networkUnreachable != null);
     assert(remoteServerError != null);
@@ -293,9 +293,9 @@ class _$RemoteServerError implements RemoteServerError {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result networkUnreachable(NetworkUnreachable value),
-    Result remoteServerError(RemoteServerError value),
-    Result noCachedData(NoCachedData value),
+    Result networkUnreachable(_NetworkUnreachable value),
+    Result remoteServerError(_RemoteServerError value),
+    Result noCachedData(_NoCachedData value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -306,36 +306,37 @@ class _$RemoteServerError implements RemoteServerError {
   }
 }
 
-abstract class RemoteServerError implements AppFailure {
-  const factory RemoteServerError(
-      {@required int code, @required String description}) = _$RemoteServerError;
+abstract class _RemoteServerError implements AppFailure {
+  const factory _RemoteServerError(
+      {@required int code,
+      @required String description}) = _$_RemoteServerError;
 
   int get code;
   String get description;
-  $RemoteServerErrorCopyWith<RemoteServerError> get copyWith;
+  _$RemoteServerErrorCopyWith<_RemoteServerError> get copyWith;
 }
 
 /// @nodoc
-abstract class $NoCachedDataCopyWith<$Res> {
-  factory $NoCachedDataCopyWith(
-          NoCachedData value, $Res Function(NoCachedData) then) =
-      _$NoCachedDataCopyWithImpl<$Res>;
+abstract class _$NoCachedDataCopyWith<$Res> {
+  factory _$NoCachedDataCopyWith(
+          _NoCachedData value, $Res Function(_NoCachedData) then) =
+      __$NoCachedDataCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$NoCachedDataCopyWithImpl<$Res> extends _$AppFailureCopyWithImpl<$Res>
-    implements $NoCachedDataCopyWith<$Res> {
-  _$NoCachedDataCopyWithImpl(
-      NoCachedData _value, $Res Function(NoCachedData) _then)
-      : super(_value, (v) => _then(v as NoCachedData));
+class __$NoCachedDataCopyWithImpl<$Res> extends _$AppFailureCopyWithImpl<$Res>
+    implements _$NoCachedDataCopyWith<$Res> {
+  __$NoCachedDataCopyWithImpl(
+      _NoCachedData _value, $Res Function(_NoCachedData) _then)
+      : super(_value, (v) => _then(v as _NoCachedData));
 
   @override
-  NoCachedData get _value => super._value as NoCachedData;
+  _NoCachedData get _value => super._value as _NoCachedData;
 }
 
 /// @nodoc
-class _$NoCachedData implements NoCachedData {
-  const _$NoCachedData();
+class _$_NoCachedData implements _NoCachedData {
+  const _$_NoCachedData();
 
   @override
   String toString() {
@@ -344,7 +345,7 @@ class _$NoCachedData implements NoCachedData {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is NoCachedData);
+    return identical(this, other) || (other is _NoCachedData);
   }
 
   @override
@@ -381,9 +382,9 @@ class _$NoCachedData implements NoCachedData {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result networkUnreachable(NetworkUnreachable value),
-    @required Result remoteServerError(RemoteServerError value),
-    @required Result noCachedData(NoCachedData value),
+    @required Result networkUnreachable(_NetworkUnreachable value),
+    @required Result remoteServerError(_RemoteServerError value),
+    @required Result noCachedData(_NoCachedData value),
   }) {
     assert(networkUnreachable != null);
     assert(remoteServerError != null);
@@ -394,9 +395,9 @@ class _$NoCachedData implements NoCachedData {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result networkUnreachable(NetworkUnreachable value),
-    Result remoteServerError(RemoteServerError value),
-    Result noCachedData(NoCachedData value),
+    Result networkUnreachable(_NetworkUnreachable value),
+    Result remoteServerError(_RemoteServerError value),
+    Result noCachedData(_NoCachedData value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -407,6 +408,6 @@ class _$NoCachedData implements NoCachedData {
   }
 }
 
-abstract class NoCachedData implements AppFailure {
-  const factory NoCachedData() = _$NoCachedData;
+abstract class _NoCachedData implements AppFailure {
+  const factory _NoCachedData() = _$_NoCachedData;
 }
