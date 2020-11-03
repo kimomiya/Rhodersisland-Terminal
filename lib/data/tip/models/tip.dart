@@ -11,9 +11,7 @@ abstract class Tip with _$Tip {
     @JsonKey(defaultValue: '') String category,
   }) = _Tip;
 
-  factory Tip.fromJson(Map<String, dynamic> json) {
-    return _$TipFromJson(json);
-  }
+  factory Tip.fromJson(Map<String, dynamic> json) => _$TipFromJson(json);
 
   static const String tableName = 'Tip';
 }

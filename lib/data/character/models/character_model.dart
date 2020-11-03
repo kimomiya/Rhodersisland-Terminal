@@ -82,9 +82,8 @@ abstract class CharacterModel with _$CharacterModel {
     // @JsonKey(defaultValue: <dynamic>[]) List<dynamic> allSkillLvlup,
   }) = _CharacterModel;
 
-  factory CharacterModel.fromJson(Map<String, dynamic> json) {
-    return _$CharacterModelFromJson(json);
-  }
+  factory CharacterModel.fromJson(Map<String, dynamic> json) =>
+      _$CharacterModelFromJson(json);
 
   factory CharacterModel.fromMap(Map<String, dynamic> map) {
     final json = Map<String, dynamic>.from(map);
