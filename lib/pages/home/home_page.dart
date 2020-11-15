@@ -53,7 +53,7 @@ class _ContentViewState extends State<_ContentView> {
   void initState() {
     super.initState();
 
-    context.bloc<RecruitmentCubit>().getOperators();
+    context.read<RecruitmentCubit>().getOperators();
   }
 
   @override
@@ -118,7 +118,7 @@ class _ContentViewState extends State<_ContentView> {
   void _listenBlocState(BuildContext context, RecruitmentState state) {
     state.maybeMap(
       getOperatorsSuccess: (state) {
-        context.bloc<RecruitmentCubit>().filterByRecruitment(state.operators);
+        context.read<RecruitmentCubit>().filterByRecruitment(state.operators);
       },
       getOperatorsFailure: (state) => print(state.failure),
       recruitableOperatorsFiltered: (state) {

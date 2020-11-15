@@ -117,7 +117,7 @@ class _FilterDrawerState extends State<FilterDrawer> {
             }
             _selectedPositions.add(position);
           }
-          context.bloc<RecruitmentCubit>().selectPosition(selected, position);
+          context.read<RecruitmentCubit>().selectPosition(selected, position);
           setState(() {});
         },
         selected: selected,
@@ -155,7 +155,7 @@ class _FilterDrawerState extends State<FilterDrawer> {
             _selectedExperiences.add(experience);
           }
           context
-              .bloc<RecruitmentCubit>()
+              .read<RecruitmentCubit>()
               .selectExperience(selected, experience);
           setState(() {});
         },
@@ -194,7 +194,7 @@ class _FilterDrawerState extends State<FilterDrawer> {
             _selectedProfessions.add(profession);
           }
           context
-              .bloc<RecruitmentCubit>()
+              .read<RecruitmentCubit>()
               .selectProfession(selected, profession);
           setState(() {});
         },
@@ -232,7 +232,7 @@ class _FilterDrawerState extends State<FilterDrawer> {
             }
             _selectedTags.add(tag);
           }
-          context.bloc<RecruitmentCubit>().selectTag(selected, tag);
+          context.read<RecruitmentCubit>().selectTag(selected, tag);
           setState(() {});
         },
         selected: selected,
@@ -264,7 +264,7 @@ class _FilterDrawerState extends State<FilterDrawer> {
           _selectedProfessions.clear();
           _selectedTags.clear();
         });
-        context.bloc<RecruitmentCubit>().resetSelection();
+        context.read<RecruitmentCubit>().resetSelection();
       },
       color: Colors.redAccent,
       text: intl.reset,

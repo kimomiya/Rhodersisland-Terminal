@@ -56,7 +56,7 @@ class _ContentViewState extends State<_ContentView> {
   void initState() {
     super.initState();
 
-    context.bloc<CharacterCubit>().getCharacterBy(id);
+    context.read<CharacterCubit>().getCharacterBy(id);
   }
 
   @override
