@@ -5,8 +5,10 @@ import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:sqflite/sqlite_api.dart';
+import 'package:path/path.dart';
 
-import 'database.dart';
+import 'core/constants/app_constants.dart';
+import 'database.dart' as database;
 import 'injection.config.dart';
 
 final locator = GetIt.instance;
@@ -24,18 +26,18 @@ abstract class RegisterModule {
 
   @preResolve
   @lazySingleton
-  Future<Database> get db => openDatabase(
-        'rhodesisland_terminal.db',
-        version: 1,
-        onConfigure: onConfigure,
-        onCreate: onCreate,
+  Future<Database> get db async => openDatabase(
+        join(await getDatabasesPath(), databaseName),
+        version: databaseVersion,
+        onConfigure: database.onConfigure,
+        onCreate: database.onCreate,
       );
 
   @lazySingleton
   Dio get client => Dio(BaseOptions(
-        connectTimeout: 60 * 1000,
-        receiveTimeout: 60 * 1000,
-        sendTimeout: 60 * 1000,
+        connectTimeout: networkTimeout,
+        receiveTimeout: networkTimeout,
+        sendTimeout: networkTimeout,
         baseUrl:
             'https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master',
       ));
