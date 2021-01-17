@@ -15,11 +15,12 @@ class SplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(context, designSize: const Size(750, 1334));
-
-    return Scaffold(
-      body: const _ContentView(),
-      backgroundColor: Colors.grey[50],
+    return ScreenUtilInit(
+      child: Scaffold(
+        body: const _ContentView(),
+        backgroundColor: Colors.grey[50],
+      ),
+      designSize: const Size(750, 1334),
     );
   }
 }
