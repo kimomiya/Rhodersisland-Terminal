@@ -2,12 +2,13 @@ import 'package:connectivity/connectivity.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
+import 'package:path/path.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:sqflite/sqlite_api.dart';
-import 'package:path/path.dart';
 
 import 'core/constants/app_constants.dart';
+import 'data/core/interceptors.dart';
 import 'database.dart' as database;
 import 'injection.config.dart';
 
@@ -34,13 +35,16 @@ abstract class RegisterModule {
       );
 
   @lazySingleton
-  Dio get client => Dio(BaseOptions(
-        connectTimeout: networkTimeout,
-        receiveTimeout: networkTimeout,
-        sendTimeout: networkTimeout,
-        baseUrl:
-            'https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master',
-      ));
+  Dio get client {
+    final options = BaseOptions(
+      connectTimeout: networkTimeout,
+      receiveTimeout: networkTimeout,
+      sendTimeout: networkTimeout,
+      baseUrl:
+          'https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master',
+    );
+    return Dio(options)..addInterceptors();
+  }
 
   @lazySingleton
   Connectivity get connectivity => Connectivity();

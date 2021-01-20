@@ -43,8 +43,6 @@ class CharacterRepositoryImpl implements CharacterRepository {
       await localDataSource.saveCharacterList(characters);
       return right(unit);
     } on DioError catch (e) {
-      logger.e(e.message, e);
-
       final code = e.response?.statusCode ?? 500;
       final description = e.response?.statusMessage ?? 'Unhandled Error';
       return left(AppFailure.remoteServerError(
@@ -67,7 +65,7 @@ class CharacterRepositoryImpl implements CharacterRepository {
       final operators = await localDataSource.getOperators();
       return right(operators.map((model) => model.toLite()).toList());
     } catch (e) {
-      logger.e(e.message, e);
+      logger.e(e.toString(), e);
 
       return left(const AppFailure.noCachedData());
     }
@@ -79,7 +77,7 @@ class CharacterRepositoryImpl implements CharacterRepository {
       final character = await localDataSource.getCharacterBy(id);
       return right(character.toDomain());
     } catch (e) {
-      logger.e(e.message, e);
+      logger.e(e.toString(), e);
 
       return left(const AppFailure.noCachedData());
     }
