@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:sqflite/sqflite.dart';
 
 import 'core/enums/realm.dart';
-import 'data/character/models/character_model.dart';
+import 'infrastructure/character/models/character_model.dart';
 
 Future<void> onConfigure(Database db) async {
   await db.execute('PRAGMA foreign_keys = ON');

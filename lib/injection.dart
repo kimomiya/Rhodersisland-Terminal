@@ -8,8 +8,8 @@ import 'package:sqflite/sqflite.dart';
 import 'package:sqflite/sqlite_api.dart';
 
 import 'core/constants/app_constants.dart';
-import 'data/core/interceptors.dart';
 import 'database.dart' as database;
+import 'infrastructure/core/interceptors.dart';
 import 'injection.config.dart';
 
 final locator = GetIt.instance;

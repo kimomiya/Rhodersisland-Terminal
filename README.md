@@ -1,6 +1,6 @@
-# Rhodesisland Terminal
+# Rhodes Island Terminal
 
-A new Flutter project.
+Apple Pie!
 
 ## Getting Started
 
