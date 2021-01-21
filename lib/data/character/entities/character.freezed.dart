@@ -116,6 +116,7 @@ mixin _$Character {
   /// 职业
   String get profession;
 
+  @JsonKey(ignore: true)
   $CharacterCopyWith<Character> get copyWith;
 }
 
@@ -501,6 +502,7 @@ class _$_Character implements _Character {
       const DeepCollectionEquality().hash(rarity) ^
       const DeepCollectionEquality().hash(profession);
 
+  @JsonKey(ignore: true)
   @override
   _$CharacterCopyWith<_Character> get copyWith =>
       __$CharacterCopyWithImpl<_Character>(this, _$identity);
@@ -600,5 +602,6 @@ abstract class _Character implements Character {
   /// 职业
   String get profession;
   @override
+  @JsonKey(ignore: true)
   _$CharacterCopyWith<_Character> get copyWith;
 }

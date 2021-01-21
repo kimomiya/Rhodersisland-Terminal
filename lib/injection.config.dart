@@ -12,14 +12,10 @@ import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'shared/app_settings.dart';
-import 'cubit/character/character_cubit.dart';
-import 'cubit/character/list/character_list_cubit.dart';
 import 'data/character/data_sources/character_local_data_source.dart';
 import 'data/character/data_sources/character_remote_data_source.dart';
 import 'data/character/character_repository.dart';
 import 'data/core/network_info.dart';
-import 'providers/prefetch_provider.dart';
-import 'cubit/character/recruitment/recruitment_cubit.dart';
 import 'injection.dart';
 
 /// adds generated dependencies
@@ -33,12 +29,12 @@ Future<GetIt> $initGetIt(
   final gh = GetItHelper(get, environment, environmentFilter);
   final registerModule = _$RegisterModule();
   gh.lazySingleton<Connectivity>(() => registerModule.connectivity);
-  final database = await registerModule.db;
-  gh.lazySingleton<Database>(() => database);
+  final resolvedDatabase = await registerModule.db;
+  gh.lazySingleton<Database>(() => resolvedDatabase);
   gh.lazySingleton<Dio>(() => registerModule.client);
   gh.lazySingleton<NetworkInfo>(() => NetworkInfoImpl(get<Connectivity>()));
-  final sharedPreferences = await registerModule.prefs;
-  gh.lazySingleton<SharedPreferences>(() => sharedPreferences);
+  final resolvedSharedPreferences = await registerModule.prefs;
+  gh.lazySingleton<SharedPreferences>(() => resolvedSharedPreferences);
   gh.lazySingleton<AppSettings>(
       () => AppSettingsImpl(get<SharedPreferences>()));
   gh.lazySingleton<CharacterLocalDataSource>(() => CharacterLocalDataSourceImpl(
@@ -51,13 +47,6 @@ Future<GetIt> $initGetIt(
         localDataSource: get<CharacterLocalDataSource>(),
         networkInfo: get<NetworkInfo>(),
       ));
-  gh.factory<PrefetchNotifier>(
-      () => PrefetchNotifier(get<CharacterRepository>()));
-  gh.lazySingleton<RecruitmentCubit>(
-      () => RecruitmentCubit(get<CharacterRepository>()));
-  gh.factory<CharacterCubit>(() => CharacterCubit(get<CharacterRepository>()));
-  gh.lazySingleton<CharacterListCubit>(
-      () => CharacterListCubit(get<CharacterRepository>()));
   return get;
 }
 

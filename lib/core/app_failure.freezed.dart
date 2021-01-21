@@ -40,30 +40,30 @@ const $AppFailure = _$AppFailureTearOff();
 /// @nodoc
 mixin _$AppFailure {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result networkUnreachable(),
-    @required Result remoteServerError(int code, String description),
-    @required Result noCachedData(),
+  TResult when<TResult extends Object>({
+    @required TResult networkUnreachable(),
+    @required TResult remoteServerError(int code, String description),
+    @required TResult noCachedData(),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result networkUnreachable(),
-    Result remoteServerError(int code, String description),
-    Result noCachedData(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult networkUnreachable(),
+    TResult remoteServerError(int code, String description),
+    TResult noCachedData(),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result networkUnreachable(_NetworkUnreachable value),
-    @required Result remoteServerError(_RemoteServerError value),
-    @required Result noCachedData(_NoCachedData value),
+  TResult map<TResult extends Object>({
+    @required TResult networkUnreachable(_NetworkUnreachable value),
+    @required TResult remoteServerError(_RemoteServerError value),
+    @required TResult noCachedData(_NoCachedData value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result networkUnreachable(_NetworkUnreachable value),
-    Result remoteServerError(_RemoteServerError value),
-    Result noCachedData(_NoCachedData value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult networkUnreachable(_NetworkUnreachable value),
+    TResult remoteServerError(_RemoteServerError value),
+    TResult noCachedData(_NoCachedData value),
+    @required TResult orElse(),
   });
 }
 
@@ -121,10 +121,10 @@ class _$_NetworkUnreachable implements _NetworkUnreachable {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result networkUnreachable(),
-    @required Result remoteServerError(int code, String description),
-    @required Result noCachedData(),
+  TResult when<TResult extends Object>({
+    @required TResult networkUnreachable(),
+    @required TResult remoteServerError(int code, String description),
+    @required TResult noCachedData(),
   }) {
     assert(networkUnreachable != null);
     assert(remoteServerError != null);
@@ -134,11 +134,11 @@ class _$_NetworkUnreachable implements _NetworkUnreachable {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result networkUnreachable(),
-    Result remoteServerError(int code, String description),
-    Result noCachedData(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult networkUnreachable(),
+    TResult remoteServerError(int code, String description),
+    TResult noCachedData(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (networkUnreachable != null) {
@@ -149,10 +149,10 @@ class _$_NetworkUnreachable implements _NetworkUnreachable {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result networkUnreachable(_NetworkUnreachable value),
-    @required Result remoteServerError(_RemoteServerError value),
-    @required Result noCachedData(_NoCachedData value),
+  TResult map<TResult extends Object>({
+    @required TResult networkUnreachable(_NetworkUnreachable value),
+    @required TResult remoteServerError(_RemoteServerError value),
+    @required TResult noCachedData(_NoCachedData value),
   }) {
     assert(networkUnreachable != null);
     assert(remoteServerError != null);
@@ -162,11 +162,11 @@ class _$_NetworkUnreachable implements _NetworkUnreachable {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result networkUnreachable(_NetworkUnreachable value),
-    Result remoteServerError(_RemoteServerError value),
-    Result noCachedData(_NoCachedData value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult networkUnreachable(_NetworkUnreachable value),
+    TResult remoteServerError(_RemoteServerError value),
+    TResult noCachedData(_NoCachedData value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (networkUnreachable != null) {
@@ -245,16 +245,17 @@ class _$_RemoteServerError implements _RemoteServerError {
       const DeepCollectionEquality().hash(code) ^
       const DeepCollectionEquality().hash(description);
 
+  @JsonKey(ignore: true)
   @override
   _$RemoteServerErrorCopyWith<_RemoteServerError> get copyWith =>
       __$RemoteServerErrorCopyWithImpl<_RemoteServerError>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result networkUnreachable(),
-    @required Result remoteServerError(int code, String description),
-    @required Result noCachedData(),
+  TResult when<TResult extends Object>({
+    @required TResult networkUnreachable(),
+    @required TResult remoteServerError(int code, String description),
+    @required TResult noCachedData(),
   }) {
     assert(networkUnreachable != null);
     assert(remoteServerError != null);
@@ -264,11 +265,11 @@ class _$_RemoteServerError implements _RemoteServerError {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result networkUnreachable(),
-    Result remoteServerError(int code, String description),
-    Result noCachedData(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult networkUnreachable(),
+    TResult remoteServerError(int code, String description),
+    TResult noCachedData(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (remoteServerError != null) {
@@ -279,10 +280,10 @@ class _$_RemoteServerError implements _RemoteServerError {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result networkUnreachable(_NetworkUnreachable value),
-    @required Result remoteServerError(_RemoteServerError value),
-    @required Result noCachedData(_NoCachedData value),
+  TResult map<TResult extends Object>({
+    @required TResult networkUnreachable(_NetworkUnreachable value),
+    @required TResult remoteServerError(_RemoteServerError value),
+    @required TResult noCachedData(_NoCachedData value),
   }) {
     assert(networkUnreachable != null);
     assert(remoteServerError != null);
@@ -292,11 +293,11 @@ class _$_RemoteServerError implements _RemoteServerError {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result networkUnreachable(_NetworkUnreachable value),
-    Result remoteServerError(_RemoteServerError value),
-    Result noCachedData(_NoCachedData value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult networkUnreachable(_NetworkUnreachable value),
+    TResult remoteServerError(_RemoteServerError value),
+    TResult noCachedData(_NoCachedData value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (remoteServerError != null) {
@@ -313,6 +314,7 @@ abstract class _RemoteServerError implements AppFailure {
 
   int get code;
   String get description;
+  @JsonKey(ignore: true)
   _$RemoteServerErrorCopyWith<_RemoteServerError> get copyWith;
 }
 
@@ -353,10 +355,10 @@ class _$_NoCachedData implements _NoCachedData {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result networkUnreachable(),
-    @required Result remoteServerError(int code, String description),
-    @required Result noCachedData(),
+  TResult when<TResult extends Object>({
+    @required TResult networkUnreachable(),
+    @required TResult remoteServerError(int code, String description),
+    @required TResult noCachedData(),
   }) {
     assert(networkUnreachable != null);
     assert(remoteServerError != null);
@@ -366,11 +368,11 @@ class _$_NoCachedData implements _NoCachedData {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result networkUnreachable(),
-    Result remoteServerError(int code, String description),
-    Result noCachedData(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult networkUnreachable(),
+    TResult remoteServerError(int code, String description),
+    TResult noCachedData(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (noCachedData != null) {
@@ -381,10 +383,10 @@ class _$_NoCachedData implements _NoCachedData {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result networkUnreachable(_NetworkUnreachable value),
-    @required Result remoteServerError(_RemoteServerError value),
-    @required Result noCachedData(_NoCachedData value),
+  TResult map<TResult extends Object>({
+    @required TResult networkUnreachable(_NetworkUnreachable value),
+    @required TResult remoteServerError(_RemoteServerError value),
+    @required TResult noCachedData(_NoCachedData value),
   }) {
     assert(networkUnreachable != null);
     assert(remoteServerError != null);
@@ -394,11 +396,11 @@ class _$_NoCachedData implements _NoCachedData {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result networkUnreachable(_NetworkUnreachable value),
-    Result remoteServerError(_RemoteServerError value),
-    Result noCachedData(_NoCachedData value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult networkUnreachable(_NetworkUnreachable value),
+    TResult remoteServerError(_RemoteServerError value),
+    TResult noCachedData(_NoCachedData value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (noCachedData != null) {

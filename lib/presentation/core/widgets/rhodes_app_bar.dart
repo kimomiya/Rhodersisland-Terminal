@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 
 class RhodesAppBar extends StatelessWidget implements PreferredSizeWidget {
   const RhodesAppBar({
-    Key key,
-    this.title,
+    @required this.title,
     this.actions,
-  }) : super(key: key);
+  }) : super();
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);

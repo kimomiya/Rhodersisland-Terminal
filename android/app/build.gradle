@@ -37,7 +37,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "org.kimomiya.rhodesisland_terminal"
+        applicationId "org.kimomiya.rhodesIslandTerminal"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()

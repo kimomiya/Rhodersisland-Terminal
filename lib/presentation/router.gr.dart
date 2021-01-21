@@ -9,18 +9,15 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import 'character/character_page.dart';
 import 'home/home_page.dart';
 import 'splash/splash_page.dart';
 
 class Routes {
   static const String splash = '/';
   static const String home = '/home-page';
-  static const String character = '/character-page';
   static const all = <String>{
     splash,
     home,
-    character,
   };
 }
 
@@ -30,7 +27,6 @@ class Router extends RouterBase {
   final _routes = <RouteDef>[
     RouteDef(Routes.splash, page: SplashPage),
     RouteDef(Routes.home, page: HomePage),
-    RouteDef(Routes.character, page: CharacterPage),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -43,32 +39,10 @@ class Router extends RouterBase {
     },
     HomePage: (data) {
       return PageRouteBuilder<void>(
-        pageBuilder: (context, animation, secondaryAnimation) =>
-            const HomePage(),
+        pageBuilder: (context, animation, secondaryAnimation) => HomePage(),
         settings: data,
         transitionsBuilder: TransitionsBuilders.fadeIn,
       );
     },
-    CharacterPage: (data) {
-      final args = data.getArgs<CharacterPageArguments>(nullOk: false);
-      return buildAdaptivePageRoute<void>(
-        builder: (context) => CharacterPage(
-          key: args.key,
-          id: args.id,
-        ),
-        settings: data,
-      );
-    },
   };
-}
-
-/// ************************************************************************
-/// Arguments holder classes
-/// *************************************************************************
-
-/// CharacterPage arguments holder class
-class CharacterPageArguments {
-  final Key key;
-  final String id;
-  CharacterPageArguments({this.key, @required this.id});
 }

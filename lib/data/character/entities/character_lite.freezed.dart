@@ -71,6 +71,7 @@ mixin _$CharacterLite {
   /// 职业
   String get profession;
 
+  @JsonKey(ignore: true)
   $CharacterLiteCopyWith<CharacterLite> get copyWith;
 }
 
@@ -296,6 +297,7 @@ class _$_CharacterLite implements _CharacterLite {
       const DeepCollectionEquality().hash(rarity) ^
       const DeepCollectionEquality().hash(profession);
 
+  @JsonKey(ignore: true)
   @override
   _$CharacterLiteCopyWith<_CharacterLite> get copyWith =>
       __$CharacterLiteCopyWithImpl<_CharacterLite>(this, _$identity);
@@ -350,5 +352,6 @@ abstract class _CharacterLite implements CharacterLite {
   /// 职业
   String get profession;
   @override
+  @JsonKey(ignore: true)
   _$CharacterLiteCopyWith<_CharacterLite> get copyWith;
 }

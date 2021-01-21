@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class RhodesDrawer extends StatelessWidget {
-  const RhodesDrawer({Key key}) : super(key: key);
+  const RhodesDrawer();
 
   @override
   Widget build(BuildContext context) {
