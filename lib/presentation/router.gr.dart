@@ -33,7 +33,7 @@ class Router extends RouterBase {
   final _pagesMap = <Type, AutoRouteFactory>{
     SplashPage: (data) {
       return buildAdaptivePageRoute<void>(
-        builder: (context) => const SplashPage(),
+        builder: (context) => SplashPage(),
         settings: data,
       );
     },

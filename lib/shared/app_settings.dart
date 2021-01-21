@@ -1,25 +1,14 @@
 import 'package:injectable/injectable.dart';
-import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../core/enums/realm.dart';
+import '../core/enums/server.dart';
 
-const _isTutorialFinishedKey = 'is_tutorial_finished';
-const _serverRealmKey = 'server_name';
-const _lastUpdatedDateKey = 'last_updated_date';
+const _serverKey = 'game_server';
 
 abstract class AppSettings {
-  bool getIsTutorialFinished();
+  Server getServer();
 
-  Future<void> setIsTutorialFinished();
-
-  Realm getServerRealm();
-
-  Future<void> setServerRealm(Realm realm);
-
-  String getLastUpdatedDate();
-
-  Future<void> setLastUpdatedDate();
+  Future<void> setServer(Server server);
 }
 
 @LazySingleton(as: AppSettings)
@@ -29,34 +18,13 @@ class AppSettingsImpl implements AppSettings {
   final SharedPreferences prefs;
 
   @override
-  bool getIsTutorialFinished() {
-    return prefs.getBool(_isTutorialFinishedKey) ?? false;
+  Server getServer() {
+    final value = prefs.getString(_serverKey);
+    return ServerValue.of(value);
   }
 
   @override
-  Future<void> setIsTutorialFinished() async {
-    await prefs.setBool(_isTutorialFinishedKey, true);
-  }
-
-  @override
-  Realm getServerRealm() {
-    final value = prefs.getString(_serverRealmKey);
-    return RealmValue.of(value);
-  }
-
-  @override
-  Future<void> setServerRealm(Realm realm) async {
-    await prefs.setString(_serverRealmKey, realm.value);
-  }
-
-  @override
-  String getLastUpdatedDate() {
-    return prefs.getString(_lastUpdatedDateKey) ?? '';
-  }
-
-  @override
-  Future<void> setLastUpdatedDate() async {
-    final now = DateFormat.yMd().add_Hms().format(DateTime.now());
-    await prefs.setString(_lastUpdatedDateKey, now);
+  Future<void> setServer(Server server) async {
+    await prefs.setString(_serverKey, server.value);
   }
 }
