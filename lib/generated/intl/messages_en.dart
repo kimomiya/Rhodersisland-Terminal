@@ -19,57 +19,16 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static m0(num) => "You can only select ${num} items at most";
-
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
-    "aoe" : MessageLookupByLibrary.simpleMessage("Aoe"),
-    "caster" : MessageLookupByLibrary.simpleMessage("Caster"),
-    "characterDex" : MessageLookupByLibrary.simpleMessage("CharacterDex"),
-    "crowdControl" : MessageLookupByLibrary.simpleMessage("Crowd-Control"),
-    "debuff" : MessageLookupByLibrary.simpleMessage("Debuff"),
-    "defense" : MessageLookupByLibrary.simpleMessage("Defense"),
-    "dpRecovery" : MessageLookupByLibrary.simpleMessage("DP-Recovery"),
-    "dps" : MessageLookupByLibrary.simpleMessage("DPS"),
-    "experience" : MessageLookupByLibrary.simpleMessage("Experience"),
-    "fastRedeploy" : MessageLookupByLibrary.simpleMessage("Fast-Redeploy"),
-    "healing" : MessageLookupByLibrary.simpleMessage("Healing"),
+    "appTitle" : MessageLookupByLibrary.simpleMessage("Rhodes Island Terminal"),
     "home" : MessageLookupByLibrary.simpleMessage("Home"),
-    "itemSelectionLimitExceeded" : m0,
     "lang" : MessageLookupByLibrary.simpleMessage("English"),
-    "medic" : MessageLookupByLibrary.simpleMessage("Medic"),
-    "melee" : MessageLookupByLibrary.simpleMessage("Melee"),
     "networkUnreachable" : MessageLookupByLibrary.simpleMessage("Network is unreachable. Please try again later."),
-    "noCharacterData" : MessageLookupByLibrary.simpleMessage("No data found. Please make sure the local data is up to date."),
-    "noRecruitableHint" : MessageLookupByLibrary.simpleMessage("There\'s still lots of work that needs to be done, Doctor. You can\'t rest now!"),
-    "nuker" : MessageLookupByLibrary.simpleMessage("Nuker"),
-    "pioneer" : MessageLookupByLibrary.simpleMessage("Vanguard"),
-    "position" : MessageLookupByLibrary.simpleMessage("Position"),
-    "profession" : MessageLookupByLibrary.simpleMessage("Profession"),
-    "ranged" : MessageLookupByLibrary.simpleMessage("Ranged"),
-    "rarity" : MessageLookupByLibrary.simpleMessage("Rarity"),
-    "rarityColorsHint" : MessageLookupByLibrary.simpleMessage("What is the meaning of colors?"),
     "recruit" : MessageLookupByLibrary.simpleMessage("Recruit"),
     "remoteServerError" : MessageLookupByLibrary.simpleMessage("Unable to connect to the remote server. Please try again later."),
-    "reset" : MessageLookupByLibrary.simpleMessage("Reset"),
-    "robot" : MessageLookupByLibrary.simpleMessage("Robot"),
-    "senior" : MessageLookupByLibrary.simpleMessage("Senior Operator"),
-    "shift" : MessageLookupByLibrary.simpleMessage("Shift"),
-    "slow" : MessageLookupByLibrary.simpleMessage("Slow"),
-    "sniper" : MessageLookupByLibrary.simpleMessage("Sniper"),
-    "specialist" : MessageLookupByLibrary.simpleMessage("Specialist"),
     "splash" : MessageLookupByLibrary.simpleMessage("Splash"),
     "splashLoading" : MessageLookupByLibrary.simpleMessage("Connecting to the neural network of Rhodes Island."),
-    "splashLoadingTip" : MessageLookupByLibrary.simpleMessage("The first launch may take a long time."),
-    "starter" : MessageLookupByLibrary.simpleMessage("Starter"),
-    "summon" : MessageLookupByLibrary.simpleMessage("Summon"),
-    "support" : MessageLookupByLibrary.simpleMessage("Support"),
-    "supporter" : MessageLookupByLibrary.simpleMessage("Supporter"),
-    "suvival" : MessageLookupByLibrary.simpleMessage("Suvival"),
-    "tag" : MessageLookupByLibrary.simpleMessage("Tag"),
-    "tank" : MessageLookupByLibrary.simpleMessage("Defender"),
-    "title" : MessageLookupByLibrary.simpleMessage("Rhodesisland Terminal"),
-    "top" : MessageLookupByLibrary.simpleMessage("Top Operator"),
-    "warrior" : MessageLookupByLibrary.simpleMessage("Guard")
+    "splashLoadingTip" : MessageLookupByLibrary.simpleMessage("There\'s still lots of work that needs to be done, Doctor. You can\'t rest now!")
   };
 }
