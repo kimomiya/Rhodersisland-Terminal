@@ -12,6 +12,8 @@ import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'shared/app_settings.dart';
+import 'infrastructure/item/data_sources/item_local_data_source.dart';
+import 'infrastructure/item/data_sources/item_remote_data_source.dart';
 import 'infrastructure/core/network_info.dart';
 import 'injection.dart';
 
@@ -29,6 +31,10 @@ Future<GetIt> $initGetIt(
   final resolvedDatabase = await registerModule.db;
   gh.lazySingleton<Database>(() => resolvedDatabase);
   gh.lazySingleton<Dio>(() => registerModule.client);
+  gh.lazySingleton<ItemLocalDataSource>(
+      () => ItemLocalDataSourceImpl(db: get<Database>()));
+  gh.lazySingleton<ItemRemoteDataSource>(
+      () => ItemRemoteDataSourceImpl(client: get<Dio>()));
   gh.lazySingleton<NetworkInfo>(() => NetworkInfoImpl(get<Connectivity>()));
   final resolvedSharedPreferences = await registerModule.prefs;
   gh.lazySingleton<SharedPreferences>(() => resolvedSharedPreferences);

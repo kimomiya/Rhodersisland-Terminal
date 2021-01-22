@@ -40,8 +40,6 @@ abstract class RegisterModule {
       connectTimeout: networkTimeout,
       receiveTimeout: networkTimeout,
       sendTimeout: networkTimeout,
-      baseUrl:
-          'https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master',
     );
     return Dio(options)..addInterceptors();
   }

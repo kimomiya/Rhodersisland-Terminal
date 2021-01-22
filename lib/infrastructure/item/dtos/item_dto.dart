@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:kt_dart/collection.dart';
 
-import '../../domain/core/unique_id.dart';
-import '../../domain/item/entities/item.dart';
+import '../../../domain/core/unique_id.dart';
+import '../../../domain/item/entities/item.dart';
 import 'existence_dto.dart';
 
 part 'item_dto.freezed.dart';
