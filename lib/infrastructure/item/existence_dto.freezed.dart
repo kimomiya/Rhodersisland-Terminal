@@ -18,15 +18,15 @@ class _$ExistenceDtoTearOff {
 
 // ignore: unused_element
   _ExistenceDto call(
-      {String server,
-      @JsonKey(nullable: true) int closeTime,
+      {@JsonKey(nullable: true) int closeTime,
       @JsonKey(defaultValue: false) bool exist,
-      @JsonKey(nullable: true) int openTime}) {
+      @JsonKey(nullable: true) int openTime,
+      String server}) {
     return _ExistenceDto(
-      server: server,
       closeTime: closeTime,
       exist: exist,
       openTime: openTime,
+      server: server,
     );
   }
 
@@ -42,13 +42,13 @@ const $ExistenceDto = _$ExistenceDtoTearOff();
 
 /// @nodoc
 mixin _$ExistenceDto {
-  String get server;
   @JsonKey(nullable: true)
   int get closeTime;
   @JsonKey(defaultValue: false)
   bool get exist;
   @JsonKey(nullable: true)
   int get openTime;
+  String get server;
 
   Map<String, dynamic> toJson();
   @JsonKey(ignore: true)
@@ -61,10 +61,10 @@ abstract class $ExistenceDtoCopyWith<$Res> {
           ExistenceDto value, $Res Function(ExistenceDto) then) =
       _$ExistenceDtoCopyWithImpl<$Res>;
   $Res call(
-      {String server,
-      @JsonKey(nullable: true) int closeTime,
+      {@JsonKey(nullable: true) int closeTime,
       @JsonKey(defaultValue: false) bool exist,
-      @JsonKey(nullable: true) int openTime});
+      @JsonKey(nullable: true) int openTime,
+      String server});
 }
 
 /// @nodoc
@@ -77,16 +77,16 @@ class _$ExistenceDtoCopyWithImpl<$Res> implements $ExistenceDtoCopyWith<$Res> {
 
   @override
   $Res call({
-    Object server = freezed,
     Object closeTime = freezed,
     Object exist = freezed,
     Object openTime = freezed,
+    Object server = freezed,
   }) {
     return _then(_value.copyWith(
-      server: server == freezed ? _value.server : server as String,
       closeTime: closeTime == freezed ? _value.closeTime : closeTime as int,
       exist: exist == freezed ? _value.exist : exist as bool,
       openTime: openTime == freezed ? _value.openTime : openTime as int,
+      server: server == freezed ? _value.server : server as String,
     ));
   }
 }
@@ -99,10 +99,10 @@ abstract class _$ExistenceDtoCopyWith<$Res>
       __$ExistenceDtoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String server,
-      @JsonKey(nullable: true) int closeTime,
+      {@JsonKey(nullable: true) int closeTime,
       @JsonKey(defaultValue: false) bool exist,
-      @JsonKey(nullable: true) int openTime});
+      @JsonKey(nullable: true) int openTime,
+      String server});
 }
 
 /// @nodoc
@@ -117,16 +117,16 @@ class __$ExistenceDtoCopyWithImpl<$Res> extends _$ExistenceDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object server = freezed,
     Object closeTime = freezed,
     Object exist = freezed,
     Object openTime = freezed,
+    Object server = freezed,
   }) {
     return _then(_ExistenceDto(
-      server: server == freezed ? _value.server : server as String,
       closeTime: closeTime == freezed ? _value.closeTime : closeTime as int,
       exist: exist == freezed ? _value.exist : exist as bool,
       openTime: openTime == freezed ? _value.openTime : openTime as int,
+      server: server == freezed ? _value.server : server as String,
     ));
   }
 }
@@ -136,16 +136,14 @@ class __$ExistenceDtoCopyWithImpl<$Res> extends _$ExistenceDtoCopyWithImpl<$Res>
 /// @nodoc
 class _$_ExistenceDto implements _ExistenceDto {
   const _$_ExistenceDto(
-      {this.server,
-      @JsonKey(nullable: true) this.closeTime,
+      {@JsonKey(nullable: true) this.closeTime,
       @JsonKey(defaultValue: false) this.exist,
-      @JsonKey(nullable: true) this.openTime});
+      @JsonKey(nullable: true) this.openTime,
+      this.server});
 
   factory _$_ExistenceDto.fromJson(Map<String, dynamic> json) =>
       _$_$_ExistenceDtoFromJson(json);
 
-  @override
-  final String server;
   @override
   @JsonKey(nullable: true)
   final int closeTime;
@@ -155,18 +153,18 @@ class _$_ExistenceDto implements _ExistenceDto {
   @override
   @JsonKey(nullable: true)
   final int openTime;
+  @override
+  final String server;
 
   @override
   String toString() {
-    return 'ExistenceDto(server: $server, closeTime: $closeTime, exist: $exist, openTime: $openTime)';
+    return 'ExistenceDto(closeTime: $closeTime, exist: $exist, openTime: $openTime, server: $server)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ExistenceDto &&
-            (identical(other.server, server) ||
-                const DeepCollectionEquality().equals(other.server, server)) &&
             (identical(other.closeTime, closeTime) ||
                 const DeepCollectionEquality()
                     .equals(other.closeTime, closeTime)) &&
@@ -174,16 +172,18 @@ class _$_ExistenceDto implements _ExistenceDto {
                 const DeepCollectionEquality().equals(other.exist, exist)) &&
             (identical(other.openTime, openTime) ||
                 const DeepCollectionEquality()
-                    .equals(other.openTime, openTime)));
+                    .equals(other.openTime, openTime)) &&
+            (identical(other.server, server) ||
+                const DeepCollectionEquality().equals(other.server, server)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(server) ^
       const DeepCollectionEquality().hash(closeTime) ^
       const DeepCollectionEquality().hash(exist) ^
-      const DeepCollectionEquality().hash(openTime);
+      const DeepCollectionEquality().hash(openTime) ^
+      const DeepCollectionEquality().hash(server);
 
   @JsonKey(ignore: true)
   @override
@@ -198,16 +198,14 @@ class _$_ExistenceDto implements _ExistenceDto {
 
 abstract class _ExistenceDto implements ExistenceDto {
   const factory _ExistenceDto(
-      {String server,
-      @JsonKey(nullable: true) int closeTime,
+      {@JsonKey(nullable: true) int closeTime,
       @JsonKey(defaultValue: false) bool exist,
-      @JsonKey(nullable: true) int openTime}) = _$_ExistenceDto;
+      @JsonKey(nullable: true) int openTime,
+      String server}) = _$_ExistenceDto;
 
   factory _ExistenceDto.fromJson(Map<String, dynamic> json) =
       _$_ExistenceDto.fromJson;
 
-  @override
-  String get server;
   @override
   @JsonKey(nullable: true)
   int get closeTime;
@@ -217,6 +215,8 @@ abstract class _ExistenceDto implements ExistenceDto {
   @override
   @JsonKey(nullable: true)
   int get openTime;
+  @override
+  String get server;
   @override
   @JsonKey(ignore: true)
   _$ExistenceDtoCopyWith<_ExistenceDto> get copyWith;

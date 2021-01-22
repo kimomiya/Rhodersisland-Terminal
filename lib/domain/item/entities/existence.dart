@@ -10,9 +10,9 @@ part 'existence.freezed.dart';
 abstract class Existence with _$Existence implements Entity {
   const factory Existence({
     @required UniqueId id,
-    @required Server server,
     DateTime closeTime,
     @required bool exist,
     DateTime openTime,
+    @required Server server,
   }) = _Existence;
 }

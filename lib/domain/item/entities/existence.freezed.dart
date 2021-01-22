@@ -16,16 +16,16 @@ class _$ExistenceTearOff {
 // ignore: unused_element
   _Existence call(
       {@required UniqueId id,
-      @required Server server,
       DateTime closeTime,
       @required bool exist,
-      DateTime openTime}) {
+      DateTime openTime,
+      @required Server server}) {
     return _Existence(
       id: id,
-      server: server,
       closeTime: closeTime,
       exist: exist,
       openTime: openTime,
+      server: server,
     );
   }
 }
@@ -37,10 +37,10 @@ const $Existence = _$ExistenceTearOff();
 /// @nodoc
 mixin _$Existence {
   UniqueId get id;
-  Server get server;
   DateTime get closeTime;
   bool get exist;
   DateTime get openTime;
+  Server get server;
 
   @JsonKey(ignore: true)
   $ExistenceCopyWith<Existence> get copyWith;
@@ -52,10 +52,10 @@ abstract class $ExistenceCopyWith<$Res> {
       _$ExistenceCopyWithImpl<$Res>;
   $Res call(
       {UniqueId id,
-      Server server,
       DateTime closeTime,
       bool exist,
-      DateTime openTime});
+      DateTime openTime,
+      Server server});
 }
 
 /// @nodoc
@@ -69,18 +69,18 @@ class _$ExistenceCopyWithImpl<$Res> implements $ExistenceCopyWith<$Res> {
   @override
   $Res call({
     Object id = freezed,
-    Object server = freezed,
     Object closeTime = freezed,
     Object exist = freezed,
     Object openTime = freezed,
+    Object server = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as UniqueId,
-      server: server == freezed ? _value.server : server as Server,
       closeTime:
           closeTime == freezed ? _value.closeTime : closeTime as DateTime,
       exist: exist == freezed ? _value.exist : exist as bool,
       openTime: openTime == freezed ? _value.openTime : openTime as DateTime,
+      server: server == freezed ? _value.server : server as Server,
     ));
   }
 }
@@ -93,10 +93,10 @@ abstract class _$ExistenceCopyWith<$Res> implements $ExistenceCopyWith<$Res> {
   @override
   $Res call(
       {UniqueId id,
-      Server server,
       DateTime closeTime,
       bool exist,
-      DateTime openTime});
+      DateTime openTime,
+      Server server});
 }
 
 /// @nodoc
@@ -111,18 +111,18 @@ class __$ExistenceCopyWithImpl<$Res> extends _$ExistenceCopyWithImpl<$Res>
   @override
   $Res call({
     Object id = freezed,
-    Object server = freezed,
     Object closeTime = freezed,
     Object exist = freezed,
     Object openTime = freezed,
+    Object server = freezed,
   }) {
     return _then(_Existence(
       id: id == freezed ? _value.id : id as UniqueId,
-      server: server == freezed ? _value.server : server as Server,
       closeTime:
           closeTime == freezed ? _value.closeTime : closeTime as DateTime,
       exist: exist == freezed ? _value.exist : exist as bool,
       openTime: openTime == freezed ? _value.openTime : openTime as DateTime,
+      server: server == freezed ? _value.server : server as Server,
     ));
   }
 }
@@ -131,28 +131,28 @@ class __$ExistenceCopyWithImpl<$Res> extends _$ExistenceCopyWithImpl<$Res>
 class _$_Existence implements _Existence {
   const _$_Existence(
       {@required this.id,
-      @required this.server,
       this.closeTime,
       @required this.exist,
-      this.openTime})
+      this.openTime,
+      @required this.server})
       : assert(id != null),
-        assert(server != null),
-        assert(exist != null);
+        assert(exist != null),
+        assert(server != null);
 
   @override
   final UniqueId id;
-  @override
-  final Server server;
   @override
   final DateTime closeTime;
   @override
   final bool exist;
   @override
   final DateTime openTime;
+  @override
+  final Server server;
 
   @override
   String toString() {
-    return 'Existence(id: $id, server: $server, closeTime: $closeTime, exist: $exist, openTime: $openTime)';
+    return 'Existence(id: $id, closeTime: $closeTime, exist: $exist, openTime: $openTime, server: $server)';
   }
 
   @override
@@ -161,8 +161,6 @@ class _$_Existence implements _Existence {
         (other is _Existence &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.server, server) ||
-                const DeepCollectionEquality().equals(other.server, server)) &&
             (identical(other.closeTime, closeTime) ||
                 const DeepCollectionEquality()
                     .equals(other.closeTime, closeTime)) &&
@@ -170,17 +168,19 @@ class _$_Existence implements _Existence {
                 const DeepCollectionEquality().equals(other.exist, exist)) &&
             (identical(other.openTime, openTime) ||
                 const DeepCollectionEquality()
-                    .equals(other.openTime, openTime)));
+                    .equals(other.openTime, openTime)) &&
+            (identical(other.server, server) ||
+                const DeepCollectionEquality().equals(other.server, server)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(server) ^
       const DeepCollectionEquality().hash(closeTime) ^
       const DeepCollectionEquality().hash(exist) ^
-      const DeepCollectionEquality().hash(openTime);
+      const DeepCollectionEquality().hash(openTime) ^
+      const DeepCollectionEquality().hash(server);
 
   @JsonKey(ignore: true)
   @override
@@ -191,21 +191,21 @@ class _$_Existence implements _Existence {
 abstract class _Existence implements Existence {
   const factory _Existence(
       {@required UniqueId id,
-      @required Server server,
       DateTime closeTime,
       @required bool exist,
-      DateTime openTime}) = _$_Existence;
+      DateTime openTime,
+      @required Server server}) = _$_Existence;
 
   @override
   UniqueId get id;
-  @override
-  Server get server;
   @override
   DateTime get closeTime;
   @override
   bool get exist;
   @override
   DateTime get openTime;
+  @override
+  Server get server;
   @override
   @JsonKey(ignore: true)
   _$ExistenceCopyWith<_Existence> get copyWith;
