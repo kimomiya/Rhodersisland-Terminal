@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
-part of 'app_failure.dart';
+part of 'item_failure.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -10,8 +10,8 @@ part of 'app_failure.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-class _$AppFailureTearOff {
-  const _$AppFailureTearOff();
+class _$ItemFailureTearOff {
+  const _$ItemFailureTearOff();
 
 // ignore: unused_element
   _NetworkUnreachable networkUnreachable() {
@@ -35,10 +35,10 @@ class _$AppFailureTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $AppFailure = _$AppFailureTearOff();
+const $ItemFailure = _$ItemFailureTearOff();
 
 /// @nodoc
-mixin _$AppFailure {
+mixin _$ItemFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult networkUnreachable(),
@@ -68,19 +68,19 @@ mixin _$AppFailure {
 }
 
 /// @nodoc
-abstract class $AppFailureCopyWith<$Res> {
-  factory $AppFailureCopyWith(
-          AppFailure value, $Res Function(AppFailure) then) =
-      _$AppFailureCopyWithImpl<$Res>;
+abstract class $ItemFailureCopyWith<$Res> {
+  factory $ItemFailureCopyWith(
+          ItemFailure value, $Res Function(ItemFailure) then) =
+      _$ItemFailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$AppFailureCopyWithImpl<$Res> implements $AppFailureCopyWith<$Res> {
-  _$AppFailureCopyWithImpl(this._value, this._then);
+class _$ItemFailureCopyWithImpl<$Res> implements $ItemFailureCopyWith<$Res> {
+  _$ItemFailureCopyWithImpl(this._value, this._then);
 
-  final AppFailure _value;
+  final ItemFailure _value;
   // ignore: unused_field
-  final $Res Function(AppFailure) _then;
+  final $Res Function(ItemFailure) _then;
 }
 
 /// @nodoc
@@ -92,7 +92,7 @@ abstract class _$NetworkUnreachableCopyWith<$Res> {
 
 /// @nodoc
 class __$NetworkUnreachableCopyWithImpl<$Res>
-    extends _$AppFailureCopyWithImpl<$Res>
+    extends _$ItemFailureCopyWithImpl<$Res>
     implements _$NetworkUnreachableCopyWith<$Res> {
   __$NetworkUnreachableCopyWithImpl(
       _NetworkUnreachable _value, $Res Function(_NetworkUnreachable) _then)
@@ -108,7 +108,7 @@ class _$_NetworkUnreachable implements _NetworkUnreachable {
 
   @override
   String toString() {
-    return 'AppFailure.networkUnreachable()';
+    return 'ItemFailure.networkUnreachable()';
   }
 
   @override
@@ -176,7 +176,7 @@ class _$_NetworkUnreachable implements _NetworkUnreachable {
   }
 }
 
-abstract class _NetworkUnreachable implements AppFailure {
+abstract class _NetworkUnreachable implements ItemFailure {
   const factory _NetworkUnreachable() = _$_NetworkUnreachable;
 }
 
@@ -190,7 +190,7 @@ abstract class _$RemoteServerErrorCopyWith<$Res> {
 
 /// @nodoc
 class __$RemoteServerErrorCopyWithImpl<$Res>
-    extends _$AppFailureCopyWithImpl<$Res>
+    extends _$ItemFailureCopyWithImpl<$Res>
     implements _$RemoteServerErrorCopyWith<$Res> {
   __$RemoteServerErrorCopyWithImpl(
       _RemoteServerError _value, $Res Function(_RemoteServerError) _then)
@@ -225,7 +225,7 @@ class _$_RemoteServerError implements _RemoteServerError {
 
   @override
   String toString() {
-    return 'AppFailure.remoteServerError(code: $code, description: $description)';
+    return 'ItemFailure.remoteServerError(code: $code, description: $description)';
   }
 
   @override
@@ -307,7 +307,7 @@ class _$_RemoteServerError implements _RemoteServerError {
   }
 }
 
-abstract class _RemoteServerError implements AppFailure {
+abstract class _RemoteServerError implements ItemFailure {
   const factory _RemoteServerError(
       {@required int code,
       @required String description}) = _$_RemoteServerError;
@@ -326,7 +326,7 @@ abstract class _$NoCachedDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$NoCachedDataCopyWithImpl<$Res> extends _$AppFailureCopyWithImpl<$Res>
+class __$NoCachedDataCopyWithImpl<$Res> extends _$ItemFailureCopyWithImpl<$Res>
     implements _$NoCachedDataCopyWith<$Res> {
   __$NoCachedDataCopyWithImpl(
       _NoCachedData _value, $Res Function(_NoCachedData) _then)
@@ -342,7 +342,7 @@ class _$_NoCachedData implements _NoCachedData {
 
   @override
   String toString() {
-    return 'AppFailure.noCachedData()';
+    return 'ItemFailure.noCachedData()';
   }
 
   @override
@@ -410,6 +410,6 @@ class _$_NoCachedData implements _NoCachedData {
   }
 }
 
-abstract class _NoCachedData implements AppFailure {
+abstract class _NoCachedData implements ItemFailure {
   const factory _NoCachedData() = _$_NoCachedData;
 }

@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../core/enums/server.dart';
-import '../entity.dart';
-import '../unique_id.dart';
+import '../../core/entity.dart';
+import '../../core/unique_id.dart';
 
 part 'existence.freezed.dart';
 

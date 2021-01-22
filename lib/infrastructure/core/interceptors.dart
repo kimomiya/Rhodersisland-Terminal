@@ -3,7 +3,7 @@ import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 extension DioInterceptors on Dio {
   void addInterceptors() {
-    final loggerInterceptor = PrettyDioLogger();
+    final loggerInterceptor = PrettyDioLogger(responseBody: false);
     interceptors.add(loggerInterceptor);
   }
 }
