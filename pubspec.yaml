@@ -24,7 +24,7 @@ dependencies:
   font_awesome_flutter: ^8.11.0
   freezed_annotation: ^0.12.0
   fuzzy: ^0.3.0
-  get_it: ^5.0.4
+  get_it: ^5.0.6
   injectable: ^1.0.7
   intl: ^0.16.1
   intl_translation: ^0.17.10+1
@@ -45,7 +45,7 @@ dev_dependencies:
     sdk: flutter
 
   auto_route_generator: ^0.6.10
-  build_runner: ^1.10.13
+  build_runner: ^1.11.0
   freezed: ^0.12.7
   injectable_generator: ^1.0.7
   json_serializable: ^3.5.1
