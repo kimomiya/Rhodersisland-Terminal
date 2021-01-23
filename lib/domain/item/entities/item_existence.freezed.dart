@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
-part of 'existence.dart';
+part of 'item_existence.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -10,17 +10,17 @@ part of 'existence.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-class _$ExistenceTearOff {
-  const _$ExistenceTearOff();
+class _$ItemExistenceTearOff {
+  const _$ItemExistenceTearOff();
 
 // ignore: unused_element
-  _Existence call(
+  _ItemExistence call(
       {@required UniqueId id,
       DateTime closeTime,
       @required bool exist,
       DateTime openTime,
       @required Server server}) {
-    return _Existence(
+    return _ItemExistence(
       id: id,
       closeTime: closeTime,
       exist: exist,
@@ -32,10 +32,10 @@ class _$ExistenceTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $Existence = _$ExistenceTearOff();
+const $ItemExistence = _$ItemExistenceTearOff();
 
 /// @nodoc
-mixin _$Existence {
+mixin _$ItemExistence {
   UniqueId get id;
   DateTime get closeTime;
   bool get exist;
@@ -43,13 +43,14 @@ mixin _$Existence {
   Server get server;
 
   @JsonKey(ignore: true)
-  $ExistenceCopyWith<Existence> get copyWith;
+  $ItemExistenceCopyWith<ItemExistence> get copyWith;
 }
 
 /// @nodoc
-abstract class $ExistenceCopyWith<$Res> {
-  factory $ExistenceCopyWith(Existence value, $Res Function(Existence) then) =
-      _$ExistenceCopyWithImpl<$Res>;
+abstract class $ItemExistenceCopyWith<$Res> {
+  factory $ItemExistenceCopyWith(
+          ItemExistence value, $Res Function(ItemExistence) then) =
+      _$ItemExistenceCopyWithImpl<$Res>;
   $Res call(
       {UniqueId id,
       DateTime closeTime,
@@ -59,12 +60,13 @@ abstract class $ExistenceCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ExistenceCopyWithImpl<$Res> implements $ExistenceCopyWith<$Res> {
-  _$ExistenceCopyWithImpl(this._value, this._then);
+class _$ItemExistenceCopyWithImpl<$Res>
+    implements $ItemExistenceCopyWith<$Res> {
+  _$ItemExistenceCopyWithImpl(this._value, this._then);
 
-  final Existence _value;
+  final ItemExistence _value;
   // ignore: unused_field
-  final $Res Function(Existence) _then;
+  final $Res Function(ItemExistence) _then;
 
   @override
   $Res call({
@@ -86,10 +88,11 @@ class _$ExistenceCopyWithImpl<$Res> implements $ExistenceCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$ExistenceCopyWith<$Res> implements $ExistenceCopyWith<$Res> {
-  factory _$ExistenceCopyWith(
-          _Existence value, $Res Function(_Existence) then) =
-      __$ExistenceCopyWithImpl<$Res>;
+abstract class _$ItemExistenceCopyWith<$Res>
+    implements $ItemExistenceCopyWith<$Res> {
+  factory _$ItemExistenceCopyWith(
+          _ItemExistence value, $Res Function(_ItemExistence) then) =
+      __$ItemExistenceCopyWithImpl<$Res>;
   @override
   $Res call(
       {UniqueId id,
@@ -100,13 +103,15 @@ abstract class _$ExistenceCopyWith<$Res> implements $ExistenceCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ExistenceCopyWithImpl<$Res> extends _$ExistenceCopyWithImpl<$Res>
-    implements _$ExistenceCopyWith<$Res> {
-  __$ExistenceCopyWithImpl(_Existence _value, $Res Function(_Existence) _then)
-      : super(_value, (v) => _then(v as _Existence));
+class __$ItemExistenceCopyWithImpl<$Res>
+    extends _$ItemExistenceCopyWithImpl<$Res>
+    implements _$ItemExistenceCopyWith<$Res> {
+  __$ItemExistenceCopyWithImpl(
+      _ItemExistence _value, $Res Function(_ItemExistence) _then)
+      : super(_value, (v) => _then(v as _ItemExistence));
 
   @override
-  _Existence get _value => super._value as _Existence;
+  _ItemExistence get _value => super._value as _ItemExistence;
 
   @override
   $Res call({
@@ -116,7 +121,7 @@ class __$ExistenceCopyWithImpl<$Res> extends _$ExistenceCopyWithImpl<$Res>
     Object openTime = freezed,
     Object server = freezed,
   }) {
-    return _then(_Existence(
+    return _then(_ItemExistence(
       id: id == freezed ? _value.id : id as UniqueId,
       closeTime:
           closeTime == freezed ? _value.closeTime : closeTime as DateTime,
@@ -128,8 +133,8 @@ class __$ExistenceCopyWithImpl<$Res> extends _$ExistenceCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$_Existence implements _Existence {
-  const _$_Existence(
+class _$_ItemExistence implements _ItemExistence {
+  const _$_ItemExistence(
       {@required this.id,
       this.closeTime,
       @required this.exist,
@@ -152,13 +157,13 @@ class _$_Existence implements _Existence {
 
   @override
   String toString() {
-    return 'Existence(id: $id, closeTime: $closeTime, exist: $exist, openTime: $openTime, server: $server)';
+    return 'ItemExistence(id: $id, closeTime: $closeTime, exist: $exist, openTime: $openTime, server: $server)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Existence &&
+        (other is _ItemExistence &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.closeTime, closeTime) ||
@@ -184,17 +189,17 @@ class _$_Existence implements _Existence {
 
   @JsonKey(ignore: true)
   @override
-  _$ExistenceCopyWith<_Existence> get copyWith =>
-      __$ExistenceCopyWithImpl<_Existence>(this, _$identity);
+  _$ItemExistenceCopyWith<_ItemExistence> get copyWith =>
+      __$ItemExistenceCopyWithImpl<_ItemExistence>(this, _$identity);
 }
 
-abstract class _Existence implements Existence {
-  const factory _Existence(
+abstract class _ItemExistence implements ItemExistence {
+  const factory _ItemExistence(
       {@required UniqueId id,
       DateTime closeTime,
       @required bool exist,
       DateTime openTime,
-      @required Server server}) = _$_Existence;
+      @required Server server}) = _$_ItemExistence;
 
   @override
   UniqueId get id;
@@ -208,5 +213,5 @@ abstract class _Existence implements Existence {
   Server get server;
   @override
   @JsonKey(ignore: true)
-  _$ExistenceCopyWith<_Existence> get copyWith;
+  _$ItemExistenceCopyWith<_ItemExistence> get copyWith;
 }

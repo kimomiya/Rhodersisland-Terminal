@@ -3,7 +3,7 @@ import 'package:kt_dart/collection.dart';
 
 import '../../core/entity.dart';
 import '../../core/unique_id.dart';
-import 'existence.dart';
+import 'item_existence.dart';
 
 part 'item.freezed.dart';
 
@@ -13,7 +13,7 @@ abstract class Item with _$Item implements Entity {
     @required UniqueId id,
     int addTimePoint,
     @required KtMap<String, List<String>> alias,
-    @required KtList<Existence> existence,
+    @required KtList<ItemExistence> existence,
     @required String groupId,
     @required String itemType,
     @required String name,

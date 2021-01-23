@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'existence_dto.dart';
+part of 'item_existence_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ExistenceDto _$_$_ExistenceDtoFromJson(Map<String, dynamic> json) {
-  return _$_ExistenceDto(
+_$_ItemExistenceDto _$_$_ItemExistenceDtoFromJson(Map<String, dynamic> json) {
+  return _$_ItemExistenceDto(
     closeTime: json['closeTime'] as int,
     exist: json['exist'] as bool ?? false,
     openTime: json['openTime'] as int,
@@ -15,7 +15,8 @@ _$_ExistenceDto _$_$_ExistenceDtoFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_ExistenceDtoToJson(_$_ExistenceDto instance) =>
+Map<String, dynamic> _$_$_ItemExistenceDtoToJson(
+        _$_ItemExistenceDto instance) =>
     <String, dynamic>{
       'closeTime': instance.closeTime,
       'exist': instance.exist,

@@ -4,15 +4,15 @@ import '../../../core/enums/server.dart';
 import '../../core/entity.dart';
 import '../../core/unique_id.dart';
 
-part 'existence.freezed.dart';
+part 'item_existence.freezed.dart';
 
 @freezed
-abstract class Existence with _$Existence implements Entity {
-  const factory Existence({
+abstract class ItemExistence with _$ItemExistence implements Entity {
+  const factory ItemExistence({
     @required UniqueId id,
     DateTime closeTime,
     @required bool exist,
     DateTime openTime,
     @required Server server,
-  }) = _Existence;
+  }) = _ItemExistence;
 }

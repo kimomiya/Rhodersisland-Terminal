@@ -2,28 +2,28 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../core/enums/server.dart';
 import '../../../domain/core/unique_id.dart';
-import '../../../domain/item/entities/existence.dart';
+import '../../../domain/item/entities/item_existence.dart';
 import '../../../shared/extensions/int_to_datetime.dart';
 
-part 'existence_dto.freezed.dart';
-part 'existence_dto.g.dart';
+part 'item_existence_dto.freezed.dart';
+part 'item_existence_dto.g.dart';
 
 @freezed
-abstract class ExistenceDto with _$ExistenceDto {
-  const factory ExistenceDto({
+abstract class ItemExistenceDto with _$ItemExistenceDto {
+  const factory ItemExistenceDto({
     @JsonKey(nullable: true) int closeTime,
     @JsonKey(defaultValue: false) bool exist,
     @JsonKey(nullable: true) int openTime,
     String server,
-  }) = _ExistenceDto;
+  }) = _ItemExistenceDto;
 
-  factory ExistenceDto.fromJson(Map<String, dynamic> json) =>
-      _$ExistenceDtoFromJson(json);
+  factory ItemExistenceDto.fromJson(Map<String, dynamic> json) =>
+      _$ItemExistenceDtoFromJson(json);
 }
 
-extension ExistenceDtoToDomain on ExistenceDto {
-  Existence toDomain() {
-    return Existence(
+extension ItemExistenceDtoToDomain on ItemExistenceDto {
+  ItemExistence toDomain() {
+    return ItemExistence(
       id: UniqueId(),
       closeTime: closeTime?.toDateTime(),
       exist: exist,
