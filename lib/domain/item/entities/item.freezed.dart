@@ -26,7 +26,7 @@ class _$ItemTearOff {
       @required KtMap<String, List<String>> pron,
       int rarity,
       int sortId,
-      @required KtList<int> spriteCoord}) {
+      ItemSpriteCoord spriteCoord}) {
     return _Item(
       id: id,
       addTimePoint: addTimePoint,
@@ -61,7 +61,7 @@ mixin _$Item {
   KtMap<String, List<String>> get pron;
   int get rarity;
   int get sortId;
-  KtList<int> get spriteCoord;
+  ItemSpriteCoord get spriteCoord;
 
   @JsonKey(ignore: true)
   $ItemCopyWith<Item> get copyWith;
@@ -83,7 +83,9 @@ abstract class $ItemCopyWith<$Res> {
       KtMap<String, List<String>> pron,
       int rarity,
       int sortId,
-      KtList<int> spriteCoord});
+      ItemSpriteCoord spriteCoord});
+
+  $ItemSpriteCoordCopyWith<$Res> get spriteCoord;
 }
 
 /// @nodoc
@@ -130,8 +132,18 @@ class _$ItemCopyWithImpl<$Res> implements $ItemCopyWith<$Res> {
       sortId: sortId == freezed ? _value.sortId : sortId as int,
       spriteCoord: spriteCoord == freezed
           ? _value.spriteCoord
-          : spriteCoord as KtList<int>,
+          : spriteCoord as ItemSpriteCoord,
     ));
+  }
+
+  @override
+  $ItemSpriteCoordCopyWith<$Res> get spriteCoord {
+    if (_value.spriteCoord == null) {
+      return null;
+    }
+    return $ItemSpriteCoordCopyWith<$Res>(_value.spriteCoord, (value) {
+      return _then(_value.copyWith(spriteCoord: value));
+    });
   }
 }
 
@@ -152,7 +164,10 @@ abstract class _$ItemCopyWith<$Res> implements $ItemCopyWith<$Res> {
       KtMap<String, List<String>> pron,
       int rarity,
       int sortId,
-      KtList<int> spriteCoord});
+      ItemSpriteCoord spriteCoord});
+
+  @override
+  $ItemSpriteCoordCopyWith<$Res> get spriteCoord;
 }
 
 /// @nodoc
@@ -200,7 +215,7 @@ class __$ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res>
       sortId: sortId == freezed ? _value.sortId : sortId as int,
       spriteCoord: spriteCoord == freezed
           ? _value.spriteCoord
-          : spriteCoord as KtList<int>,
+          : spriteCoord as ItemSpriteCoord,
     ));
   }
 }
@@ -219,7 +234,7 @@ class _$_Item implements _Item {
       @required this.pron,
       this.rarity,
       this.sortId,
-      @required this.spriteCoord})
+      this.spriteCoord})
       : assert(id != null),
         assert(alias != null),
         assert(existence != null),
@@ -227,8 +242,7 @@ class _$_Item implements _Item {
         assert(itemType != null),
         assert(name != null),
         assert(nameI18n != null),
-        assert(pron != null),
-        assert(spriteCoord != null);
+        assert(pron != null);
 
   @override
   final UniqueId id;
@@ -253,7 +267,7 @@ class _$_Item implements _Item {
   @override
   final int sortId;
   @override
-  final KtList<int> spriteCoord;
+  final ItemSpriteCoord spriteCoord;
 
   @override
   String toString() {
@@ -331,7 +345,7 @@ abstract class _Item implements Item {
       @required KtMap<String, List<String>> pron,
       int rarity,
       int sortId,
-      @required KtList<int> spriteCoord}) = _$_Item;
+      ItemSpriteCoord spriteCoord}) = _$_Item;
 
   @override
   UniqueId get id;
@@ -356,7 +370,7 @@ abstract class _Item implements Item {
   @override
   int get sortId;
   @override
-  KtList<int> get spriteCoord;
+  ItemSpriteCoord get spriteCoord;
   @override
   @JsonKey(ignore: true)
   _$ItemCopyWith<_Item> get copyWith;

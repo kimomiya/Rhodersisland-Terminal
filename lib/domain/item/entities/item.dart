@@ -4,6 +4,7 @@ import 'package:kt_dart/collection.dart';
 import '../../core/entity.dart';
 import '../../core/unique_id.dart';
 import 'item_existence.dart';
+import 'item_sprite_coord.dart';
 
 part 'item.freezed.dart';
 
@@ -21,6 +22,6 @@ abstract class Item with _$Item implements Entity {
     @required KtMap<String, List<String>> pron,
     int rarity,
     int sortId,
-    @required KtList<int> spriteCoord,
+    ItemSpriteCoord spriteCoord,
   }) = _Item;
 }

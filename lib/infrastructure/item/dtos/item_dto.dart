@@ -3,6 +3,7 @@ import 'package:kt_dart/collection.dart';
 
 import '../../../domain/core/unique_id.dart';
 import '../../../domain/item/entities/item.dart';
+import '../../../domain/item/entities/item_sprite_coord.dart';
 import 'item_existence_dto.dart';
 
 part 'item_dto.freezed.dart';
@@ -45,7 +46,19 @@ extension ItemDtoToDomain on ItemDto {
       pron: pron.toImmutableMap(),
       rarity: rarity,
       sortId: sortId,
-      spriteCoord: spriteCoord.toImmutableList(),
+      spriteCoord: _transferSpriteCoord(),
+    );
+  }
+
+  ItemSpriteCoord _transferSpriteCoord() {
+    if (spriteCoord.isEmpty) {
+      return null;
+    }
+
+    return ItemSpriteCoord(
+      id: UniqueId(),
+      x: spriteCoord[0],
+      y: spriteCoord[1],
     );
   }
 }
