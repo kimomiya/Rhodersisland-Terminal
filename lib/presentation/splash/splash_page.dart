@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:styled_widget/styled_widget.dart';
 
-import '../core/images/images.dart';
+import '../../core/constants/asset_path.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage();
@@ -33,7 +33,7 @@ class _ContentView extends StatelessWidget {
 
   Widget _buildLogo() {
     final logo = Image.asset(
-      Images.logo,
+      logoPath,
       width: ScreenUtil().screenWidth * 0.618,
       fit: BoxFit.fitWidth,
     );
