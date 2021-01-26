@@ -3,7 +3,6 @@ import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:rhodesIslandTerminal/presentation/splash/splash_page.dart';
 
 import '../generated/l10n.dart';
 import 'router.gr.dart';
