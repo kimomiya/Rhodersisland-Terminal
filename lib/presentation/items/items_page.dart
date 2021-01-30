@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage();
+class ItemsPage extends StatelessWidget {
+  const ItemsPage();
 
   @override
   Widget build(BuildContext context) {
