@@ -6,6 +6,6 @@
   "splash": "Splash",
   "splashLoading": "Connecting to the neural network of Rhodes Island.",
   "splashLoadingTip": "There's still lots of work that needs to be done, Doctor. You can't rest now!",
-  "home": "Home",
+  "items": "Choose Item",
   "recruit": "Recruit"
 }

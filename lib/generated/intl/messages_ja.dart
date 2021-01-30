@@ -22,7 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "appTitle" : MessageLookupByLibrary.simpleMessage("ロドス・アイランド　ターミナル"),
-    "home" : MessageLookupByLibrary.simpleMessage("ホーム"),
+    "items" : MessageLookupByLibrary.simpleMessage("素材選択"),
     "lang" : MessageLookupByLibrary.simpleMessage("日本語"),
     "networkUnreachable" : MessageLookupByLibrary.simpleMessage("ネットワークに接続されていません。インタネット接続を確認してください。"),
     "recruit" : MessageLookupByLibrary.simpleMessage("公開求人"),

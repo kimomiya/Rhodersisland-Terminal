@@ -105,11 +105,11 @@ class S {
     );
   }
 
-  /// `Home`
-  String get home {
+  /// `Choose Item`
+  String get items {
     return Intl.message(
-      'Home',
-      name: 'home',
+      'Choose Item',
+      name: 'items',
       desc: '',
       args: [],
     );

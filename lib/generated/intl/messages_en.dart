@@ -22,7 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "appTitle" : MessageLookupByLibrary.simpleMessage("Rhodes Island Terminal"),
-    "home" : MessageLookupByLibrary.simpleMessage("Home"),
+    "items" : MessageLookupByLibrary.simpleMessage("Choose Item"),
     "lang" : MessageLookupByLibrary.simpleMessage("English"),
     "networkUnreachable" : MessageLookupByLibrary.simpleMessage("Network is unreachable. Please try again later."),
     "recruit" : MessageLookupByLibrary.simpleMessage("Recruit"),

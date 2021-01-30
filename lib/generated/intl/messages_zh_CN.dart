@@ -22,7 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "appTitle" : MessageLookupByLibrary.simpleMessage("罗德岛终端"),
-    "home" : MessageLookupByLibrary.simpleMessage("首页"),
+    "items" : MessageLookupByLibrary.simpleMessage("素材选择"),
     "lang" : MessageLookupByLibrary.simpleMessage("简体中文"),
     "networkUnreachable" : MessageLookupByLibrary.simpleMessage("系统检测到网络异常，请确保您的网线没有被猫咬断。"),
     "recruit" : MessageLookupByLibrary.simpleMessage("公开招募"),
