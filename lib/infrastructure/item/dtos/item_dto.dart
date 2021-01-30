@@ -14,8 +14,7 @@ abstract class ItemDto with _$ItemDto {
   const factory ItemDto({
     @JsonKey(nullable: true) int addTimePoint,
     @JsonKey(defaultValue: <dynamic>{}) Map<String, List<String>> alias,
-    @JsonKey(fromJson: _existenceFromJson, defaultValue: <ItemExistenceDto>[])
-        List<ItemExistenceDto> existence,
+    @JsonKey(fromJson: _existenceFromJson) List<ItemExistenceDto> existence,
     @JsonKey(defaultValue: '') String groupId,
     @JsonKey(required: true) String itemId,
     @JsonKey(defaultValue: '') String itemType,

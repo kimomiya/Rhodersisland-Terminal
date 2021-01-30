@@ -22,7 +22,7 @@ class _$ItemDtoTearOff {
           int addTimePoint,
       @JsonKey(defaultValue: <dynamic>{})
           Map<String, List<String>> alias,
-      @JsonKey(fromJson: _existenceFromJson, defaultValue: <ItemExistenceDto>[])
+      @JsonKey(fromJson: _existenceFromJson)
           List<ItemExistenceDto> existence,
       @JsonKey(defaultValue: '')
           String groupId,
@@ -74,7 +74,7 @@ mixin _$ItemDto {
   int get addTimePoint;
   @JsonKey(defaultValue: <dynamic>{})
   Map<String, List<String>> get alias;
-  @JsonKey(fromJson: _existenceFromJson, defaultValue: <ItemExistenceDto>[])
+  @JsonKey(fromJson: _existenceFromJson)
   List<ItemExistenceDto> get existence;
   @JsonKey(defaultValue: '')
   String get groupId;
@@ -109,7 +109,7 @@ abstract class $ItemDtoCopyWith<$Res> {
           int addTimePoint,
       @JsonKey(defaultValue: <dynamic>{})
           Map<String, List<String>> alias,
-      @JsonKey(fromJson: _existenceFromJson, defaultValue: <ItemExistenceDto>[])
+      @JsonKey(fromJson: _existenceFromJson)
           List<ItemExistenceDto> existence,
       @JsonKey(defaultValue: '')
           String groupId,
@@ -189,7 +189,7 @@ abstract class _$ItemDtoCopyWith<$Res> implements $ItemDtoCopyWith<$Res> {
           int addTimePoint,
       @JsonKey(defaultValue: <dynamic>{})
           Map<String, List<String>> alias,
-      @JsonKey(fromJson: _existenceFromJson, defaultValue: <ItemExistenceDto>[])
+      @JsonKey(fromJson: _existenceFromJson)
           List<ItemExistenceDto> existence,
       @JsonKey(defaultValue: '')
           String groupId,
@@ -265,30 +265,18 @@ class __$ItemDtoCopyWithImpl<$Res> extends _$ItemDtoCopyWithImpl<$Res>
 /// @nodoc
 class _$_ItemDto implements _ItemDto {
   const _$_ItemDto(
-      {@JsonKey(nullable: true)
-          this.addTimePoint,
-      @JsonKey(defaultValue: <dynamic>{})
-          this.alias,
-      @JsonKey(fromJson: _existenceFromJson, defaultValue: <ItemExistenceDto>[])
-          this.existence,
-      @JsonKey(defaultValue: '')
-          this.groupId,
-      @JsonKey(required: true)
-          this.itemId,
-      @JsonKey(defaultValue: '')
-          this.itemType,
-      @JsonKey(defaultValue: '')
-          this.name,
-      @JsonKey(name: 'name_i18n', defaultValue: <dynamic>{})
-          this.nameI18n,
-      @JsonKey(defaultValue: <dynamic>{})
-          this.pron,
-      @JsonKey(nullable: true)
-          this.rarity,
-      @JsonKey(nullable: true)
-          this.sortId,
-      @JsonKey(defaultValue: <int>[])
-          this.spriteCoord});
+      {@JsonKey(nullable: true) this.addTimePoint,
+      @JsonKey(defaultValue: <dynamic>{}) this.alias,
+      @JsonKey(fromJson: _existenceFromJson) this.existence,
+      @JsonKey(defaultValue: '') this.groupId,
+      @JsonKey(required: true) this.itemId,
+      @JsonKey(defaultValue: '') this.itemType,
+      @JsonKey(defaultValue: '') this.name,
+      @JsonKey(name: 'name_i18n', defaultValue: <dynamic>{}) this.nameI18n,
+      @JsonKey(defaultValue: <dynamic>{}) this.pron,
+      @JsonKey(nullable: true) this.rarity,
+      @JsonKey(nullable: true) this.sortId,
+      @JsonKey(defaultValue: <int>[]) this.spriteCoord});
 
   factory _$_ItemDto.fromJson(Map<String, dynamic> json) =>
       _$_$_ItemDtoFromJson(json);
@@ -300,7 +288,7 @@ class _$_ItemDto implements _ItemDto {
   @JsonKey(defaultValue: <dynamic>{})
   final Map<String, List<String>> alias;
   @override
-  @JsonKey(fromJson: _existenceFromJson, defaultValue: <ItemExistenceDto>[])
+  @JsonKey(fromJson: _existenceFromJson)
   final List<ItemExistenceDto> existence;
   @override
   @JsonKey(defaultValue: '')
@@ -404,7 +392,7 @@ abstract class _ItemDto implements ItemDto {
           int addTimePoint,
       @JsonKey(defaultValue: <dynamic>{})
           Map<String, List<String>> alias,
-      @JsonKey(fromJson: _existenceFromJson, defaultValue: <ItemExistenceDto>[])
+      @JsonKey(fromJson: _existenceFromJson)
           List<ItemExistenceDto> existence,
       @JsonKey(defaultValue: '')
           String groupId,
@@ -434,7 +422,7 @@ abstract class _ItemDto implements ItemDto {
   @JsonKey(defaultValue: <dynamic>{})
   Map<String, List<String>> get alias;
   @override
-  @JsonKey(fromJson: _existenceFromJson, defaultValue: <ItemExistenceDto>[])
+  @JsonKey(fromJson: _existenceFromJson)
   List<ItemExistenceDto> get existence;
   @override
   @JsonKey(defaultValue: '')
