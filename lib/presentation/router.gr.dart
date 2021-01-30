@@ -9,12 +9,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import 'items/items_page.dart';
+import 'item/items_page.dart';
 import 'splash/splash_page.dart';
 
 class Routes {
   static const String splash = '/';
-  static const String items = '/items-page';
+  static const String items = '/items';
   static const all = <String>{
     splash,
     items,

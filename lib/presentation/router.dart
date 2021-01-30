@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:auto_route/auto_route_annotations.dart';
 
-import 'items/items_page.dart';
+import 'item/items_page.dart';
 import 'splash/splash_page.dart';
 
 @AdaptiveAutoRouter(
@@ -13,6 +13,7 @@ import 'splash/splash_page.dart';
     ),
     CustomRoute<void>(
       name: 'items',
+      path: '/items',
       page: ItemsPage,
       transitionsBuilder: TransitionsBuilders.fadeIn,
     ),
