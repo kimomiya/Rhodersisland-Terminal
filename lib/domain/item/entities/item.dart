@@ -1,9 +1,10 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:kt_dart/collection.dart';
 
+import '../../../core/enums/server.dart';
+import '../../core/entities/existence.dart';
 import '../../core/entity.dart';
 import '../../core/unique_id.dart';
-import 'item_existence.dart';
 import 'item_sprite_coord.dart';
 
 part 'item.freezed.dart';
@@ -14,7 +15,7 @@ abstract class Item with _$Item implements Entity {
     @required UniqueId id,
     int addTimePoint,
     @required KtMap<String, List<String>> alias,
-    @required KtList<ItemExistence> existence,
+    @required KtMap<Server, Existence> existence,
     @required String groupId,
     @required String itemType,
     @required String name,

@@ -22,8 +22,8 @@ class _$ItemDtoTearOff {
           int addTimePoint,
       @JsonKey(defaultValue: <dynamic>{})
           Map<String, List<String>> alias,
-      @JsonKey(fromJson: _existenceFromJson)
-          List<ItemExistenceDto> existence,
+      @JsonKey(defaultValue: <dynamic>{})
+          Map<String, ExistenceDto> existence,
       @JsonKey(defaultValue: '')
           String groupId,
       @JsonKey(required: true)
@@ -74,8 +74,8 @@ mixin _$ItemDto {
   int get addTimePoint;
   @JsonKey(defaultValue: <dynamic>{})
   Map<String, List<String>> get alias;
-  @JsonKey(fromJson: _existenceFromJson)
-  List<ItemExistenceDto> get existence;
+  @JsonKey(defaultValue: <dynamic>{})
+  Map<String, ExistenceDto> get existence;
   @JsonKey(defaultValue: '')
   String get groupId;
   @JsonKey(required: true)
@@ -109,8 +109,8 @@ abstract class $ItemDtoCopyWith<$Res> {
           int addTimePoint,
       @JsonKey(defaultValue: <dynamic>{})
           Map<String, List<String>> alias,
-      @JsonKey(fromJson: _existenceFromJson)
-          List<ItemExistenceDto> existence,
+      @JsonKey(defaultValue: <dynamic>{})
+          Map<String, ExistenceDto> existence,
       @JsonKey(defaultValue: '')
           String groupId,
       @JsonKey(required: true)
@@ -161,7 +161,7 @@ class _$ItemDtoCopyWithImpl<$Res> implements $ItemDtoCopyWith<$Res> {
           alias == freezed ? _value.alias : alias as Map<String, List<String>>,
       existence: existence == freezed
           ? _value.existence
-          : existence as List<ItemExistenceDto>,
+          : existence as Map<String, ExistenceDto>,
       groupId: groupId == freezed ? _value.groupId : groupId as String,
       itemId: itemId == freezed ? _value.itemId : itemId as String,
       itemType: itemType == freezed ? _value.itemType : itemType as String,
@@ -189,8 +189,8 @@ abstract class _$ItemDtoCopyWith<$Res> implements $ItemDtoCopyWith<$Res> {
           int addTimePoint,
       @JsonKey(defaultValue: <dynamic>{})
           Map<String, List<String>> alias,
-      @JsonKey(fromJson: _existenceFromJson)
-          List<ItemExistenceDto> existence,
+      @JsonKey(defaultValue: <dynamic>{})
+          Map<String, ExistenceDto> existence,
       @JsonKey(defaultValue: '')
           String groupId,
       @JsonKey(required: true)
@@ -242,7 +242,7 @@ class __$ItemDtoCopyWithImpl<$Res> extends _$ItemDtoCopyWithImpl<$Res>
           alias == freezed ? _value.alias : alias as Map<String, List<String>>,
       existence: existence == freezed
           ? _value.existence
-          : existence as List<ItemExistenceDto>,
+          : existence as Map<String, ExistenceDto>,
       groupId: groupId == freezed ? _value.groupId : groupId as String,
       itemId: itemId == freezed ? _value.itemId : itemId as String,
       itemType: itemType == freezed ? _value.itemType : itemType as String,
@@ -267,7 +267,7 @@ class _$_ItemDto implements _ItemDto {
   const _$_ItemDto(
       {@JsonKey(nullable: true) this.addTimePoint,
       @JsonKey(defaultValue: <dynamic>{}) this.alias,
-      @JsonKey(fromJson: _existenceFromJson) this.existence,
+      @JsonKey(defaultValue: <dynamic>{}) this.existence,
       @JsonKey(defaultValue: '') this.groupId,
       @JsonKey(required: true) this.itemId,
       @JsonKey(defaultValue: '') this.itemType,
@@ -288,8 +288,8 @@ class _$_ItemDto implements _ItemDto {
   @JsonKey(defaultValue: <dynamic>{})
   final Map<String, List<String>> alias;
   @override
-  @JsonKey(fromJson: _existenceFromJson)
-  final List<ItemExistenceDto> existence;
+  @JsonKey(defaultValue: <dynamic>{})
+  final Map<String, ExistenceDto> existence;
   @override
   @JsonKey(defaultValue: '')
   final String groupId;
@@ -392,8 +392,8 @@ abstract class _ItemDto implements ItemDto {
           int addTimePoint,
       @JsonKey(defaultValue: <dynamic>{})
           Map<String, List<String>> alias,
-      @JsonKey(fromJson: _existenceFromJson)
-          List<ItemExistenceDto> existence,
+      @JsonKey(defaultValue: <dynamic>{})
+          Map<String, ExistenceDto> existence,
       @JsonKey(defaultValue: '')
           String groupId,
       @JsonKey(required: true)
@@ -422,8 +422,8 @@ abstract class _ItemDto implements ItemDto {
   @JsonKey(defaultValue: <dynamic>{})
   Map<String, List<String>> get alias;
   @override
-  @JsonKey(fromJson: _existenceFromJson)
-  List<ItemExistenceDto> get existence;
+  @JsonKey(defaultValue: <dynamic>{})
+  Map<String, ExistenceDto> get existence;
   @override
   @JsonKey(defaultValue: '')
   String get groupId;

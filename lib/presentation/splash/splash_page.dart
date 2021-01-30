@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/all.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../application/item/item_provider.dart';
-import '../../application/item/item_state.dart';
+import '../../application/prefetch/prefetch_provider.dart';
+import '../../application/prefetch/prefetch_state.dart';
 import '../../core/constants/asset_path.dart';
 import '../../generated/l10n.dart';
 import '../router.gr.dart';
@@ -30,15 +30,12 @@ class _ContentView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ProviderListener(
       onChange: _onStateChanged,
-      provider: itemsProvider.state,
+      provider: prefetchProvider.state,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           _buildLogo(),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
-            child: const SplashLoadingView(),
-          ),
+          const SplashLoadingView(),
         ],
       ),
     );
@@ -60,8 +57,8 @@ class _ContentView extends StatelessWidget {
 
   //* Event Methods
 
-  void _onStateChanged(BuildContext context, ItemState state) {
-    if (!state.items.isEmpty()) {
+  void _onStateChanged(BuildContext context, PrefetchState state) {
+    if (state.isCompleted) {
       context.navigator.replace(Routes.items);
     }
 

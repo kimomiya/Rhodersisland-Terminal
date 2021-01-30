@@ -9,13 +9,16 @@ class SplashLoadingView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        _buildIndicator(),
-        SizedBox(height: 40.h),
-        _buildConnectingText(context),
-        _buildAttentionText(context),
-      ],
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      child: Column(
+        children: [
+          _buildIndicator(),
+          _buildConnectingText(context),
+          _buildAttentionText(context),
+          const SizedBox(height: kToolbarHeight),
+        ],
+      ),
     );
   }
 
@@ -33,21 +36,21 @@ class SplashLoadingView extends StatelessWidget {
   }
 
   Widget _buildConnectingText(BuildContext context) {
-    return Text(
-      S.of(context).connecting,
-      style: TextStyle(color: Colors.grey[600], fontWeight: FontWeight.bold),
-      textAlign: TextAlign.center,
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 48.h),
+      child: Text(
+        S.of(context).connecting,
+        style: TextStyle(color: Colors.grey[600], fontWeight: FontWeight.bold),
+        textAlign: TextAlign.center,
+      ),
     );
   }
 
   Widget _buildAttentionText(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: 40.h),
-      child: Text(
-        S.of(context).amiyaAttention,
-        style: const TextStyle(color: Colors.grey),
-        textAlign: TextAlign.center,
-      ),
+    return Text(
+      S.of(context).amiyaAttention,
+      style: const TextStyle(color: Colors.grey),
+      textAlign: TextAlign.center,
     );
   }
 }

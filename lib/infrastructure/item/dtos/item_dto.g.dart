@@ -14,7 +14,14 @@ _$_ItemDto _$_$_ItemDtoFromJson(Map<String, dynamic> json) {
           (k, e) => MapEntry(k, (e as List)?.map((e) => e as String)?.toList()),
         ) ??
         {},
-    existence: _existenceFromJson(json['existence'] as Map<String, dynamic>),
+    existence: (json['existence'] as Map<String, dynamic>)?.map(
+          (k, e) => MapEntry(
+              k,
+              e == null
+                  ? null
+                  : ExistenceDto.fromJson(e as Map<String, dynamic>)),
+        ) ??
+        {},
     groupId: json['groupId'] as String ?? '',
     itemId: json['itemId'] as String,
     itemType: json['itemType'] as String ?? '',

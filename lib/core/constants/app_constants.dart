@@ -1,6 +1,6 @@
 //* System
 
-const databaseName = 'rhodesIslandTerminal.db';
+const databaseName = 'rhodes_island_terminal.db';
 const databaseVersion = 1;
 const networkTimeout = 60 * 1000;
 const penguinStatsBaseURL = 'https://penguin-stats.io/PenguinStats/api/v2';

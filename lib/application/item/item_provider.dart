@@ -1,45 +1,45 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_riverpod/all.dart';
+import 'package:injectable/injectable.dart';
 import 'package:kt_dart/collection.dart';
 
 import '../../domain/item/item_repository.dart';
 import '../../injection.dart';
 import 'item_state.dart';
 
-final itemsProvider = StateNotifierProvider(
-  (ref) => ItemsNotifier(locator<ItemRepository>()),
-);
+final itemProvider = StateNotifierProvider((ref) => locator<ItemNotifier>());
 
 final items = Provider.autoDispose(
-  (ref) => ref.watch(itemsProvider.state).items,
+  (ref) => ref.watch(itemProvider.state).items,
 );
 
 final item = Provider.autoDispose.family(
   (ref, String id) {
-    final items = ref.watch(itemsProvider.state).items;
+    final items = ref.watch(itemProvider.state).items;
     return items.firstOrNull((item) => item.id.getOrCrash() == id);
   },
 );
 
-class ItemsNotifier extends StateNotifier<ItemState> {
-  ItemsNotifier(this._repository) : super(ItemState.initial()) {
-    _fetchItems();
+@injectable
+class ItemNotifier extends StateNotifier<ItemState> {
+  ItemNotifier(this._repository) : super(ItemState.initial()) {
+    _load();
   }
 
   final ItemRepository _repository;
 
-  Future<void> _fetchItems() async {
-    state = state.copyWith(isProcessing: true, failureOption: none());
+  Future<void> _load() async {
+    state = state.copyWith(isLoading: true, failureOption: none());
 
-    final failureOrItems = await _repository.fetchItems();
+    final failureOrItems = await _repository.loadItems();
     failureOrItems.fold(
       (failure) => state = state.copyWith(
-        isProcessing: false,
+        isLoading: false,
         failureOption: optionOf(failure),
       ),
       (items) => state = state.copyWith(
         items: items,
-        isProcessing: true,
+        isLoading: true,
         failureOption: none(),
       ),
     );

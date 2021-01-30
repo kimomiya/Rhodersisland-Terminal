@@ -1,8 +1,19 @@
+import 'dart:convert';
+
 import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:sqflite/sqflite.dart';
 
-abstract class ItemLocalDataSource {}
+import '../../core/dtos/existence_dto.dart';
+import '../dtos/item_dto.dart';
+
+const _tableName = ItemDto.tableName;
+
+abstract class ItemLocalDataSource {
+  Future<void> saveItems(List<ItemDto> items);
+
+  Future<List<ItemDto>> loadItems();
+}
 
 @LazySingleton(as: ItemLocalDataSource)
 class ItemLocalDataSourceImpl implements ItemLocalDataSource {
@@ -11,4 +22,58 @@ class ItemLocalDataSourceImpl implements ItemLocalDataSource {
   });
 
   final Database db;
+
+  @override
+  Future<void> saveItems(List<ItemDto> items) async {
+    final batch = db.batch();
+
+    for (final item in items) {
+      batch.execute(
+        '''
+        REPLACE INTO $_tableName (
+          itemId, itemType, name, name_i18n,
+          alias, pron, existence, rarity,
+          addTimePoint, spriteCoord, groupId, sortId
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ''',
+        <dynamic>[
+          item.itemId,
+          item.itemType,
+          item.name,
+          jsonEncode(item.nameI18n),
+          jsonEncode(item.alias),
+          jsonEncode(item.pron),
+          jsonEncode(_transferExistence(item.existence)),
+          item.rarity,
+          item.addTimePoint,
+          jsonEncode(item.spriteCoord),
+          item.groupId,
+          item.sortId,
+        ],
+      );
+    }
+
+    await batch.commit(noResult: true);
+  }
+
+  @override
+  Future<List<ItemDto>> loadItems() async {
+    final results = await db.query(_tableName, orderBy: 'sortId');
+
+    final dtos = <ItemDto>[];
+    for (final data in results) {
+      dtos.add(ItemDto.fromQueryResult(data));
+    }
+    return dtos;
+  }
+
+  //* Helper Methods
+
+  Map<String, dynamic> _transferExistence(
+    Map<String, ExistenceDto> existence,
+  ) {
+    final map = <String, dynamic>{};
+    existence.forEach((key, value) => map[key] = value.toJson());
+    return map;
+  }
 }

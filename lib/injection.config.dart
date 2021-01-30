@@ -13,10 +13,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'shared/app_settings.dart';
 import 'infrastructure/item/data_sources/item_local_data_source.dart';
+import 'application/item/item_provider.dart';
 import 'infrastructure/item/data_sources/item_remote_data_source.dart';
 import 'domain/item/item_repository.dart';
 import 'infrastructure/item/item_repository_impl.dart';
 import 'infrastructure/core/network_info.dart';
+import 'application/prefetch/prefetch_provider.dart';
 import 'injection.dart';
 
 /// adds generated dependencies
@@ -47,6 +49,9 @@ Future<GetIt> $initGetIt(
         localDataSource: get<ItemLocalDataSource>(),
         remoteDataSource: get<ItemRemoteDataSource>(),
       ));
+  gh.factory<PrefetchNotifier>(
+      () => PrefetchNotifier(itemRepository: get<ItemRepository>()));
+  gh.factory<ItemNotifier>(() => ItemNotifier(get<ItemRepository>()));
   return get;
 }
 

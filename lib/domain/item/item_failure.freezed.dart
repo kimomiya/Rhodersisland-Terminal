@@ -28,8 +28,13 @@ class _$ItemFailureTearOff {
   }
 
 // ignore: unused_element
-  _NoCachedData noCachedData() {
-    return const _NoCachedData();
+  _UnexpectedError unexpectedError() {
+    return const _UnexpectedError();
+  }
+
+// ignore: unused_element
+  _EmptyQueryResult emptyQueryResult() {
+    return const _EmptyQueryResult();
   }
 }
 
@@ -43,26 +48,30 @@ mixin _$ItemFailure {
   TResult when<TResult extends Object>({
     @required TResult networkUnreachable(),
     @required TResult remoteServerError(int code, String description),
-    @required TResult noCachedData(),
+    @required TResult unexpectedError(),
+    @required TResult emptyQueryResult(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult networkUnreachable(),
     TResult remoteServerError(int code, String description),
-    TResult noCachedData(),
+    TResult unexpectedError(),
+    TResult emptyQueryResult(),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult networkUnreachable(_NetworkUnreachable value),
     @required TResult remoteServerError(_RemoteServerError value),
-    @required TResult noCachedData(_NoCachedData value),
+    @required TResult unexpectedError(_UnexpectedError value),
+    @required TResult emptyQueryResult(_EmptyQueryResult value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult networkUnreachable(_NetworkUnreachable value),
     TResult remoteServerError(_RemoteServerError value),
-    TResult noCachedData(_NoCachedData value),
+    TResult unexpectedError(_UnexpectedError value),
+    TResult emptyQueryResult(_EmptyQueryResult value),
     @required TResult orElse(),
   });
 }
@@ -124,11 +133,13 @@ class _$_NetworkUnreachable implements _NetworkUnreachable {
   TResult when<TResult extends Object>({
     @required TResult networkUnreachable(),
     @required TResult remoteServerError(int code, String description),
-    @required TResult noCachedData(),
+    @required TResult unexpectedError(),
+    @required TResult emptyQueryResult(),
   }) {
     assert(networkUnreachable != null);
     assert(remoteServerError != null);
-    assert(noCachedData != null);
+    assert(unexpectedError != null);
+    assert(emptyQueryResult != null);
     return networkUnreachable();
   }
 
@@ -137,7 +148,8 @@ class _$_NetworkUnreachable implements _NetworkUnreachable {
   TResult maybeWhen<TResult extends Object>({
     TResult networkUnreachable(),
     TResult remoteServerError(int code, String description),
-    TResult noCachedData(),
+    TResult unexpectedError(),
+    TResult emptyQueryResult(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -152,11 +164,13 @@ class _$_NetworkUnreachable implements _NetworkUnreachable {
   TResult map<TResult extends Object>({
     @required TResult networkUnreachable(_NetworkUnreachable value),
     @required TResult remoteServerError(_RemoteServerError value),
-    @required TResult noCachedData(_NoCachedData value),
+    @required TResult unexpectedError(_UnexpectedError value),
+    @required TResult emptyQueryResult(_EmptyQueryResult value),
   }) {
     assert(networkUnreachable != null);
     assert(remoteServerError != null);
-    assert(noCachedData != null);
+    assert(unexpectedError != null);
+    assert(emptyQueryResult != null);
     return networkUnreachable(this);
   }
 
@@ -165,7 +179,8 @@ class _$_NetworkUnreachable implements _NetworkUnreachable {
   TResult maybeMap<TResult extends Object>({
     TResult networkUnreachable(_NetworkUnreachable value),
     TResult remoteServerError(_RemoteServerError value),
-    TResult noCachedData(_NoCachedData value),
+    TResult unexpectedError(_UnexpectedError value),
+    TResult emptyQueryResult(_EmptyQueryResult value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -255,11 +270,13 @@ class _$_RemoteServerError implements _RemoteServerError {
   TResult when<TResult extends Object>({
     @required TResult networkUnreachable(),
     @required TResult remoteServerError(int code, String description),
-    @required TResult noCachedData(),
+    @required TResult unexpectedError(),
+    @required TResult emptyQueryResult(),
   }) {
     assert(networkUnreachable != null);
     assert(remoteServerError != null);
-    assert(noCachedData != null);
+    assert(unexpectedError != null);
+    assert(emptyQueryResult != null);
     return remoteServerError(code, description);
   }
 
@@ -268,7 +285,8 @@ class _$_RemoteServerError implements _RemoteServerError {
   TResult maybeWhen<TResult extends Object>({
     TResult networkUnreachable(),
     TResult remoteServerError(int code, String description),
-    TResult noCachedData(),
+    TResult unexpectedError(),
+    TResult emptyQueryResult(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -283,11 +301,13 @@ class _$_RemoteServerError implements _RemoteServerError {
   TResult map<TResult extends Object>({
     @required TResult networkUnreachable(_NetworkUnreachable value),
     @required TResult remoteServerError(_RemoteServerError value),
-    @required TResult noCachedData(_NoCachedData value),
+    @required TResult unexpectedError(_UnexpectedError value),
+    @required TResult emptyQueryResult(_EmptyQueryResult value),
   }) {
     assert(networkUnreachable != null);
     assert(remoteServerError != null);
-    assert(noCachedData != null);
+    assert(unexpectedError != null);
+    assert(emptyQueryResult != null);
     return remoteServerError(this);
   }
 
@@ -296,7 +316,8 @@ class _$_RemoteServerError implements _RemoteServerError {
   TResult maybeMap<TResult extends Object>({
     TResult networkUnreachable(_NetworkUnreachable value),
     TResult remoteServerError(_RemoteServerError value),
-    TResult noCachedData(_NoCachedData value),
+    TResult unexpectedError(_UnexpectedError value),
+    TResult emptyQueryResult(_EmptyQueryResult value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -319,35 +340,36 @@ abstract class _RemoteServerError implements ItemFailure {
 }
 
 /// @nodoc
-abstract class _$NoCachedDataCopyWith<$Res> {
-  factory _$NoCachedDataCopyWith(
-          _NoCachedData value, $Res Function(_NoCachedData) then) =
-      __$NoCachedDataCopyWithImpl<$Res>;
+abstract class _$UnexpectedErrorCopyWith<$Res> {
+  factory _$UnexpectedErrorCopyWith(
+          _UnexpectedError value, $Res Function(_UnexpectedError) then) =
+      __$UnexpectedErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$NoCachedDataCopyWithImpl<$Res> extends _$ItemFailureCopyWithImpl<$Res>
-    implements _$NoCachedDataCopyWith<$Res> {
-  __$NoCachedDataCopyWithImpl(
-      _NoCachedData _value, $Res Function(_NoCachedData) _then)
-      : super(_value, (v) => _then(v as _NoCachedData));
+class __$UnexpectedErrorCopyWithImpl<$Res>
+    extends _$ItemFailureCopyWithImpl<$Res>
+    implements _$UnexpectedErrorCopyWith<$Res> {
+  __$UnexpectedErrorCopyWithImpl(
+      _UnexpectedError _value, $Res Function(_UnexpectedError) _then)
+      : super(_value, (v) => _then(v as _UnexpectedError));
 
   @override
-  _NoCachedData get _value => super._value as _NoCachedData;
+  _UnexpectedError get _value => super._value as _UnexpectedError;
 }
 
 /// @nodoc
-class _$_NoCachedData implements _NoCachedData {
-  const _$_NoCachedData();
+class _$_UnexpectedError implements _UnexpectedError {
+  const _$_UnexpectedError();
 
   @override
   String toString() {
-    return 'ItemFailure.noCachedData()';
+    return 'ItemFailure.unexpectedError()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _NoCachedData);
+    return identical(this, other) || (other is _UnexpectedError);
   }
 
   @override
@@ -358,12 +380,14 @@ class _$_NoCachedData implements _NoCachedData {
   TResult when<TResult extends Object>({
     @required TResult networkUnreachable(),
     @required TResult remoteServerError(int code, String description),
-    @required TResult noCachedData(),
+    @required TResult unexpectedError(),
+    @required TResult emptyQueryResult(),
   }) {
     assert(networkUnreachable != null);
     assert(remoteServerError != null);
-    assert(noCachedData != null);
-    return noCachedData();
+    assert(unexpectedError != null);
+    assert(emptyQueryResult != null);
+    return unexpectedError();
   }
 
   @override
@@ -371,12 +395,13 @@ class _$_NoCachedData implements _NoCachedData {
   TResult maybeWhen<TResult extends Object>({
     TResult networkUnreachable(),
     TResult remoteServerError(int code, String description),
-    TResult noCachedData(),
+    TResult unexpectedError(),
+    TResult emptyQueryResult(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (noCachedData != null) {
-      return noCachedData();
+    if (unexpectedError != null) {
+      return unexpectedError();
     }
     return orElse();
   }
@@ -386,12 +411,14 @@ class _$_NoCachedData implements _NoCachedData {
   TResult map<TResult extends Object>({
     @required TResult networkUnreachable(_NetworkUnreachable value),
     @required TResult remoteServerError(_RemoteServerError value),
-    @required TResult noCachedData(_NoCachedData value),
+    @required TResult unexpectedError(_UnexpectedError value),
+    @required TResult emptyQueryResult(_EmptyQueryResult value),
   }) {
     assert(networkUnreachable != null);
     assert(remoteServerError != null);
-    assert(noCachedData != null);
-    return noCachedData(this);
+    assert(unexpectedError != null);
+    assert(emptyQueryResult != null);
+    return unexpectedError(this);
   }
 
   @override
@@ -399,17 +426,121 @@ class _$_NoCachedData implements _NoCachedData {
   TResult maybeMap<TResult extends Object>({
     TResult networkUnreachable(_NetworkUnreachable value),
     TResult remoteServerError(_RemoteServerError value),
-    TResult noCachedData(_NoCachedData value),
+    TResult unexpectedError(_UnexpectedError value),
+    TResult emptyQueryResult(_EmptyQueryResult value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (noCachedData != null) {
-      return noCachedData(this);
+    if (unexpectedError != null) {
+      return unexpectedError(this);
     }
     return orElse();
   }
 }
 
-abstract class _NoCachedData implements ItemFailure {
-  const factory _NoCachedData() = _$_NoCachedData;
+abstract class _UnexpectedError implements ItemFailure {
+  const factory _UnexpectedError() = _$_UnexpectedError;
+}
+
+/// @nodoc
+abstract class _$EmptyQueryResultCopyWith<$Res> {
+  factory _$EmptyQueryResultCopyWith(
+          _EmptyQueryResult value, $Res Function(_EmptyQueryResult) then) =
+      __$EmptyQueryResultCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$EmptyQueryResultCopyWithImpl<$Res>
+    extends _$ItemFailureCopyWithImpl<$Res>
+    implements _$EmptyQueryResultCopyWith<$Res> {
+  __$EmptyQueryResultCopyWithImpl(
+      _EmptyQueryResult _value, $Res Function(_EmptyQueryResult) _then)
+      : super(_value, (v) => _then(v as _EmptyQueryResult));
+
+  @override
+  _EmptyQueryResult get _value => super._value as _EmptyQueryResult;
+}
+
+/// @nodoc
+class _$_EmptyQueryResult implements _EmptyQueryResult {
+  const _$_EmptyQueryResult();
+
+  @override
+  String toString() {
+    return 'ItemFailure.emptyQueryResult()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _EmptyQueryResult);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult networkUnreachable(),
+    @required TResult remoteServerError(int code, String description),
+    @required TResult unexpectedError(),
+    @required TResult emptyQueryResult(),
+  }) {
+    assert(networkUnreachable != null);
+    assert(remoteServerError != null);
+    assert(unexpectedError != null);
+    assert(emptyQueryResult != null);
+    return emptyQueryResult();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult networkUnreachable(),
+    TResult remoteServerError(int code, String description),
+    TResult unexpectedError(),
+    TResult emptyQueryResult(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (emptyQueryResult != null) {
+      return emptyQueryResult();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult networkUnreachable(_NetworkUnreachable value),
+    @required TResult remoteServerError(_RemoteServerError value),
+    @required TResult unexpectedError(_UnexpectedError value),
+    @required TResult emptyQueryResult(_EmptyQueryResult value),
+  }) {
+    assert(networkUnreachable != null);
+    assert(remoteServerError != null);
+    assert(unexpectedError != null);
+    assert(emptyQueryResult != null);
+    return emptyQueryResult(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult networkUnreachable(_NetworkUnreachable value),
+    TResult remoteServerError(_RemoteServerError value),
+    TResult unexpectedError(_UnexpectedError value),
+    TResult emptyQueryResult(_EmptyQueryResult value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (emptyQueryResult != null) {
+      return emptyQueryResult(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EmptyQueryResult implements ItemFailure {
+  const factory _EmptyQueryResult() = _$_EmptyQueryResult;
 }

@@ -11,5 +11,7 @@ abstract class ItemFailure with _$ItemFailure {
     @required String description,
   }) = _RemoteServerError;
 
-  const factory ItemFailure.noCachedData() = _NoCachedData;
+  const factory ItemFailure.unexpectedError() = _UnexpectedError;
+
+  const factory ItemFailure.emptyQueryResult() = _EmptyQueryResult;
 }

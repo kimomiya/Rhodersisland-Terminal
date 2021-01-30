@@ -18,7 +18,7 @@ class _$ItemTearOff {
       {@required UniqueId id,
       int addTimePoint,
       @required KtMap<String, List<String>> alias,
-      @required KtList<ItemExistence> existence,
+      @required KtMap<Server, Existence> existence,
       @required String groupId,
       @required String itemType,
       @required String name,
@@ -53,7 +53,7 @@ mixin _$Item {
   UniqueId get id;
   int get addTimePoint;
   KtMap<String, List<String>> get alias;
-  KtList<ItemExistence> get existence;
+  KtMap<Server, Existence> get existence;
   String get groupId;
   String get itemType;
   String get name;
@@ -75,7 +75,7 @@ abstract class $ItemCopyWith<$Res> {
       {UniqueId id,
       int addTimePoint,
       KtMap<String, List<String>> alias,
-      KtList<ItemExistence> existence,
+      KtMap<Server, Existence> existence,
       String groupId,
       String itemType,
       String name,
@@ -120,7 +120,7 @@ class _$ItemCopyWithImpl<$Res> implements $ItemCopyWith<$Res> {
           : alias as KtMap<String, List<String>>,
       existence: existence == freezed
           ? _value.existence
-          : existence as KtList<ItemExistence>,
+          : existence as KtMap<Server, Existence>,
       groupId: groupId == freezed ? _value.groupId : groupId as String,
       itemType: itemType == freezed ? _value.itemType : itemType as String,
       name: name == freezed ? _value.name : name as String,
@@ -156,7 +156,7 @@ abstract class _$ItemCopyWith<$Res> implements $ItemCopyWith<$Res> {
       {UniqueId id,
       int addTimePoint,
       KtMap<String, List<String>> alias,
-      KtList<ItemExistence> existence,
+      KtMap<Server, Existence> existence,
       String groupId,
       String itemType,
       String name,
@@ -203,7 +203,7 @@ class __$ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res>
           : alias as KtMap<String, List<String>>,
       existence: existence == freezed
           ? _value.existence
-          : existence as KtList<ItemExistence>,
+          : existence as KtMap<Server, Existence>,
       groupId: groupId == freezed ? _value.groupId : groupId as String,
       itemType: itemType == freezed ? _value.itemType : itemType as String,
       name: name == freezed ? _value.name : name as String,
@@ -251,7 +251,7 @@ class _$_Item implements _Item {
   @override
   final KtMap<String, List<String>> alias;
   @override
-  final KtList<ItemExistence> existence;
+  final KtMap<Server, Existence> existence;
   @override
   final String groupId;
   @override
@@ -337,7 +337,7 @@ abstract class _Item implements Item {
       {@required UniqueId id,
       int addTimePoint,
       @required KtMap<String, List<String>> alias,
-      @required KtList<ItemExistence> existence,
+      @required KtMap<Server, Existence> existence,
       @required String groupId,
       @required String itemType,
       @required String name,
@@ -354,7 +354,7 @@ abstract class _Item implements Item {
   @override
   KtMap<String, List<String>> get alias;
   @override
-  KtList<ItemExistence> get existence;
+  KtMap<Server, Existence> get existence;
   @override
   String get groupId;
   @override

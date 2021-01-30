@@ -7,7 +7,7 @@ enum Server {
 
 extension ServerValue on Server {
   static Server of(String value) => Server.values.firstWhere(
-        (server) => server.value.toLowerCase() == value.toLowerCase(),
+        (server) => server.value.toLowerCase() == value?.toLowerCase(),
         orElse: () => Server.cn,
       );
 }

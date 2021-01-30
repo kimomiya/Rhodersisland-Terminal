@@ -11,13 +11,13 @@ part 'item_state.freezed.dart';
 abstract class ItemState with _$ItemState {
   const factory ItemState({
     KtList<Item> items,
-    @required bool isProcessing,
+    @required bool isLoading,
     @required Option<ItemFailure> failureOption,
   }) = _ItemState;
 
   factory ItemState.initial() => ItemState(
         items: const KtList.empty(),
-        isProcessing: false,
+        isLoading: false,
         failureOption: none(),
       );
 }

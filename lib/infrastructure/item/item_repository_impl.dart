@@ -27,11 +27,23 @@ class ItemRepositoryImpl implements ItemRepository {
   final ItemRemoteDataSource remoteDataSource;
 
   @override
-  Future<Either<ItemFailure, KtList<Item>>> fetchItems() async {
+  Future<Either<ItemFailure, Unit>> fetchAndSaveItems() async {
     return _execute(() async {
       final dtos = await remoteDataSource.fetchItems();
-      return dtos.map((dto) => dto.toDomain()).toImmutableList();
+      await localDataSource.saveItems(dtos);
+      return unit;
     });
+  }
+
+  @override
+  Future<Either<ItemFailure, KtList<Item>>> loadItems() async {
+    try {
+      final dtos = await localDataSource.loadItems();
+      return right(dtos.map((dto) => dto.toDomain()).toImmutableList());
+    } catch (e) {
+      logger.e(e.toString(), e);
+      return left(const ItemFailure.emptyQueryResult());
+    }
   }
 
   //* Helper Methods
@@ -53,10 +65,7 @@ class ItemRepositoryImpl implements ItemRepository {
       ));
     } catch (e) {
       logger.e(e.toString(), e);
-      return left(ItemFailure.remoteServerError(
-        code: internalServerError,
-        description: e.toString(),
-      ));
+      return left(const ItemFailure.unexpectedError());
     }
   }
 }

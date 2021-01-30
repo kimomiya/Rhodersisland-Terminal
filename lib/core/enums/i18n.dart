@@ -7,7 +7,7 @@ enum I18n {
 
 extension I18nValue on I18n {
   static I18n of(String value) => I18n.values.firstWhere(
-        (i18n) => i18n.value.toLowerCase() == value.toLowerCase(),
+        (i18n) => i18n.value.toLowerCase() == value?.toLowerCase(),
         orElse: () => I18n.cn,
       );
 }
