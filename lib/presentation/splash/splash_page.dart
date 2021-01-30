@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:styled_widget/styled_widget.dart';
 
 import '../../core/constants/asset_path.dart';
 
@@ -37,6 +36,9 @@ class _ContentView extends StatelessWidget {
       width: ScreenUtil().screenWidth * 0.618,
       fit: BoxFit.fitWidth,
     );
-    return logo.center().padding(top: 180);
+    return Padding(
+      padding: EdgeInsets.only(top: 180.h),
+      child: Center(child: logo),
+    );
   }
 }
