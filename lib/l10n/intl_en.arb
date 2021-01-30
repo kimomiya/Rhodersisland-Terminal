@@ -4,8 +4,8 @@
   "networkUnreachable": "Network is unreachable. Please try again later.",
   "remoteServerError": "Unable to connect to the remote server. Please try again later.",
   "splash": "Splash",
-  "splashLoading": "Connecting to the neural network of Rhodes Island.",
-  "splashLoadingTip": "There's still lots of work that needs to be done, Doctor. You can't rest now!",
+  "connecting": "Connecting to the neural network of Rhodes Island",
+  "amiyaAttention": "There's still lots of work that needs to be done, Doctor. You can't rest now!",
   "items": "Choose Item",
   "recruit": "Recruit"
 }

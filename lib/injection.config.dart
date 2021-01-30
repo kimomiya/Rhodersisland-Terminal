@@ -37,14 +37,16 @@ Future<GetIt> $initGetIt(
       () => ItemLocalDataSourceImpl(db: get<Database>()));
   gh.lazySingleton<ItemRemoteDataSource>(
       () => ItemRemoteDataSourceImpl(client: get<Dio>()));
-  gh.lazySingleton<ItemRepository>(() => ItemRepositoryImpl(
-      localDataSource: get<ItemLocalDataSource>(),
-      remoteDataSource: get<ItemRemoteDataSource>()));
   gh.lazySingleton<NetworkInfo>(() => NetworkInfoImpl(get<Connectivity>()));
   final resolvedSharedPreferences = await registerModule.prefs;
   gh.lazySingleton<SharedPreferences>(() => resolvedSharedPreferences);
   gh.lazySingleton<AppSettings>(
       () => AppSettingsImpl(get<SharedPreferences>()));
+  gh.lazySingleton<ItemRepository>(() => ItemRepositoryImpl(
+        networkInfo: get<NetworkInfo>(),
+        localDataSource: get<ItemLocalDataSource>(),
+        remoteDataSource: get<ItemRemoteDataSource>(),
+      ));
   return get;
 }
 

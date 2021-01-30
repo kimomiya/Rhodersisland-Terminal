@@ -21,14 +21,14 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "amiyaAttention" : MessageLookupByLibrary.simpleMessage("There\'s still lots of work that needs to be done, Doctor. You can\'t rest now!"),
     "appTitle" : MessageLookupByLibrary.simpleMessage("Rhodes Island Terminal"),
+    "connecting" : MessageLookupByLibrary.simpleMessage("Connecting to the neural network of Rhodes Island"),
     "items" : MessageLookupByLibrary.simpleMessage("Choose Item"),
     "lang" : MessageLookupByLibrary.simpleMessage("English"),
     "networkUnreachable" : MessageLookupByLibrary.simpleMessage("Network is unreachable. Please try again later."),
     "recruit" : MessageLookupByLibrary.simpleMessage("Recruit"),
     "remoteServerError" : MessageLookupByLibrary.simpleMessage("Unable to connect to the remote server. Please try again later."),
-    "splash" : MessageLookupByLibrary.simpleMessage("Splash"),
-    "splashLoading" : MessageLookupByLibrary.simpleMessage("Connecting to the neural network of Rhodes Island."),
-    "splashLoadingTip" : MessageLookupByLibrary.simpleMessage("There\'s still lots of work that needs to be done, Doctor. You can\'t rest now!")
+    "splash" : MessageLookupByLibrary.simpleMessage("Splash")
   };
 }

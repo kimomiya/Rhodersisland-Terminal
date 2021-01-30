@@ -21,14 +21,14 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "amiyaAttention" : MessageLookupByLibrary.simpleMessage("博士，您还有许多事情需要处理。现在还不能休息哦。"),
     "appTitle" : MessageLookupByLibrary.simpleMessage("罗德岛终端"),
+    "connecting" : MessageLookupByLibrary.simpleMessage("正在尝试取得神经连接"),
     "items" : MessageLookupByLibrary.simpleMessage("素材选择"),
     "lang" : MessageLookupByLibrary.simpleMessage("简体中文"),
     "networkUnreachable" : MessageLookupByLibrary.simpleMessage("系统检测到网络异常，请确保您的网线没有被猫咬断。"),
     "recruit" : MessageLookupByLibrary.simpleMessage("公开招募"),
     "remoteServerError" : MessageLookupByLibrary.simpleMessage("服务器软体不稳定，请稍后重试。"),
-    "splash" : MessageLookupByLibrary.simpleMessage("加载页"),
-    "splashLoading" : MessageLookupByLibrary.simpleMessage("正在尝试取得神经连接"),
-    "splashLoadingTip" : MessageLookupByLibrary.simpleMessage("博士，您还有许多事情需要处理。现在还不能休息哦。")
+    "splash" : MessageLookupByLibrary.simpleMessage("加载页")
   };
 }

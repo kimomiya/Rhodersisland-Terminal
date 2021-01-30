@@ -21,14 +21,14 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "amiyaAttention" : MessageLookupByLibrary.simpleMessage("ドクター、終わってない仕事がたくさんありますから、まだ休んじゃだめですよ。"),
     "appTitle" : MessageLookupByLibrary.simpleMessage("ロドス・アイランド　ターミナル"),
+    "connecting" : MessageLookupByLibrary.simpleMessage("ニューラルコネクターに接続中"),
     "items" : MessageLookupByLibrary.simpleMessage("素材選択"),
     "lang" : MessageLookupByLibrary.simpleMessage("日本語"),
     "networkUnreachable" : MessageLookupByLibrary.simpleMessage("ネットワークに接続されていません。インタネット接続を確認してください。"),
     "recruit" : MessageLookupByLibrary.simpleMessage("公開求人"),
     "remoteServerError" : MessageLookupByLibrary.simpleMessage("サーバーに接続できません。しばらくたってから再度お試しください。"),
-    "splash" : MessageLookupByLibrary.simpleMessage("スプラッシュ"),
-    "splashLoading" : MessageLookupByLibrary.simpleMessage("ニューラルコネクターに接続中"),
-    "splashLoadingTip" : MessageLookupByLibrary.simpleMessage("ドクター、終わってない仕事がたくさんありますから、まだ休んじゃだめですよ。")
+    "splash" : MessageLookupByLibrary.simpleMessage("スプラッシュ")
   };
 }

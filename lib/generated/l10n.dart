@@ -85,21 +85,21 @@ class S {
     );
   }
 
-  /// `Connecting to the neural network of Rhodes Island.`
-  String get splashLoading {
+  /// `Connecting to the neural network of Rhodes Island`
+  String get connecting {
     return Intl.message(
-      'Connecting to the neural network of Rhodes Island.',
-      name: 'splashLoading',
+      'Connecting to the neural network of Rhodes Island',
+      name: 'connecting',
       desc: '',
       args: [],
     );
   }
 
   /// `There's still lots of work that needs to be done, Doctor. You can't rest now!`
-  String get splashLoadingTip {
+  String get amiyaAttention {
     return Intl.message(
       'There\'s still lots of work that needs to be done, Doctor. You can\'t rest now!',
-      name: 'splashLoadingTip',
+      name: 'amiyaAttention',
       desc: '',
       args: [],
     );
