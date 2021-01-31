@@ -34,6 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "networkUnreachable" : MessageLookupByLibrary.simpleMessage("ネットワークに接続されていません。インタネット接続を確認してください。"),
     "recruit" : MessageLookupByLibrary.simpleMessage("公開求人"),
     "remoteServerError" : MessageLookupByLibrary.simpleMessage("サーバーに接続できません。しばらくたってから再度お試しください。"),
-    "splash" : MessageLookupByLibrary.simpleMessage("スプラッシュ")
+    "splash" : MessageLookupByLibrary.simpleMessage("スプラッシュ"),
+    "uncategorized" : MessageLookupByLibrary.simpleMessage("未分類")
   };
 }

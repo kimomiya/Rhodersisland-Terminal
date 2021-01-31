@@ -24,7 +24,7 @@ _$_ItemDto _$_$_ItemDtoFromJson(Map<String, dynamic> json) {
         {},
     groupId: json['groupId'] as String ?? '',
     itemId: json['itemId'] as String,
-    itemType: json['itemType'] as String ?? '',
+    type: json['itemType'] as String ?? '',
     name: json['name'] as String ?? '',
     nameI18n: (json['name_i18n'] as Map<String, dynamic>)?.map(
           (k, e) => MapEntry(k, e as String),
@@ -48,7 +48,7 @@ Map<String, dynamic> _$_$_ItemDtoToJson(_$_ItemDto instance) =>
       'existence': instance.existence,
       'groupId': instance.groupId,
       'itemId': instance.itemId,
-      'itemType': instance.itemType,
+      'itemType': instance.type,
       'name': instance.name,
       'name_i18n': instance.nameI18n,
       'pron': instance.pron,

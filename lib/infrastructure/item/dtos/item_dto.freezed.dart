@@ -28,8 +28,8 @@ class _$ItemDtoTearOff {
           String groupId,
       @JsonKey(required: true)
           String itemId,
-      @JsonKey(defaultValue: '')
-          String itemType,
+      @JsonKey(name: 'itemType', defaultValue: '')
+          String type,
       @JsonKey(defaultValue: '')
           String name,
       @JsonKey(name: 'name_i18n', defaultValue: <dynamic>{})
@@ -48,7 +48,7 @@ class _$ItemDtoTearOff {
       existence: existence,
       groupId: groupId,
       itemId: itemId,
-      itemType: itemType,
+      type: type,
       name: name,
       nameI18n: nameI18n,
       pron: pron,
@@ -80,8 +80,8 @@ mixin _$ItemDto {
   String get groupId;
   @JsonKey(required: true)
   String get itemId;
-  @JsonKey(defaultValue: '')
-  String get itemType;
+  @JsonKey(name: 'itemType', defaultValue: '')
+  String get type;
   @JsonKey(defaultValue: '')
   String get name;
   @JsonKey(name: 'name_i18n', defaultValue: <dynamic>{})
@@ -115,8 +115,8 @@ abstract class $ItemDtoCopyWith<$Res> {
           String groupId,
       @JsonKey(required: true)
           String itemId,
-      @JsonKey(defaultValue: '')
-          String itemType,
+      @JsonKey(name: 'itemType', defaultValue: '')
+          String type,
       @JsonKey(defaultValue: '')
           String name,
       @JsonKey(name: 'name_i18n', defaultValue: <dynamic>{})
@@ -146,7 +146,7 @@ class _$ItemDtoCopyWithImpl<$Res> implements $ItemDtoCopyWith<$Res> {
     Object existence = freezed,
     Object groupId = freezed,
     Object itemId = freezed,
-    Object itemType = freezed,
+    Object type = freezed,
     Object name = freezed,
     Object nameI18n = freezed,
     Object pron = freezed,
@@ -164,7 +164,7 @@ class _$ItemDtoCopyWithImpl<$Res> implements $ItemDtoCopyWith<$Res> {
           : existence as Map<String, ExistenceDto>,
       groupId: groupId == freezed ? _value.groupId : groupId as String,
       itemId: itemId == freezed ? _value.itemId : itemId as String,
-      itemType: itemType == freezed ? _value.itemType : itemType as String,
+      type: type == freezed ? _value.type : type as String,
       name: name == freezed ? _value.name : name as String,
       nameI18n: nameI18n == freezed
           ? _value.nameI18n
@@ -195,8 +195,8 @@ abstract class _$ItemDtoCopyWith<$Res> implements $ItemDtoCopyWith<$Res> {
           String groupId,
       @JsonKey(required: true)
           String itemId,
-      @JsonKey(defaultValue: '')
-          String itemType,
+      @JsonKey(name: 'itemType', defaultValue: '')
+          String type,
       @JsonKey(defaultValue: '')
           String name,
       @JsonKey(name: 'name_i18n', defaultValue: <dynamic>{})
@@ -227,7 +227,7 @@ class __$ItemDtoCopyWithImpl<$Res> extends _$ItemDtoCopyWithImpl<$Res>
     Object existence = freezed,
     Object groupId = freezed,
     Object itemId = freezed,
-    Object itemType = freezed,
+    Object type = freezed,
     Object name = freezed,
     Object nameI18n = freezed,
     Object pron = freezed,
@@ -245,7 +245,7 @@ class __$ItemDtoCopyWithImpl<$Res> extends _$ItemDtoCopyWithImpl<$Res>
           : existence as Map<String, ExistenceDto>,
       groupId: groupId == freezed ? _value.groupId : groupId as String,
       itemId: itemId == freezed ? _value.itemId : itemId as String,
-      itemType: itemType == freezed ? _value.itemType : itemType as String,
+      type: type == freezed ? _value.type : type as String,
       name: name == freezed ? _value.name : name as String,
       nameI18n: nameI18n == freezed
           ? _value.nameI18n
@@ -270,7 +270,7 @@ class _$_ItemDto implements _ItemDto {
       @JsonKey(defaultValue: <dynamic>{}) this.existence,
       @JsonKey(defaultValue: '') this.groupId,
       @JsonKey(required: true) this.itemId,
-      @JsonKey(defaultValue: '') this.itemType,
+      @JsonKey(name: 'itemType', defaultValue: '') this.type,
       @JsonKey(defaultValue: '') this.name,
       @JsonKey(name: 'name_i18n', defaultValue: <dynamic>{}) this.nameI18n,
       @JsonKey(defaultValue: <dynamic>{}) this.pron,
@@ -297,8 +297,8 @@ class _$_ItemDto implements _ItemDto {
   @JsonKey(required: true)
   final String itemId;
   @override
-  @JsonKey(defaultValue: '')
-  final String itemType;
+  @JsonKey(name: 'itemType', defaultValue: '')
+  final String type;
   @override
   @JsonKey(defaultValue: '')
   final String name;
@@ -320,7 +320,7 @@ class _$_ItemDto implements _ItemDto {
 
   @override
   String toString() {
-    return 'ItemDto(addTimePoint: $addTimePoint, alias: $alias, existence: $existence, groupId: $groupId, itemId: $itemId, itemType: $itemType, name: $name, nameI18n: $nameI18n, pron: $pron, rarity: $rarity, sortId: $sortId, spriteCoord: $spriteCoord)';
+    return 'ItemDto(addTimePoint: $addTimePoint, alias: $alias, existence: $existence, groupId: $groupId, itemId: $itemId, type: $type, name: $name, nameI18n: $nameI18n, pron: $pron, rarity: $rarity, sortId: $sortId, spriteCoord: $spriteCoord)';
   }
 
   @override
@@ -340,9 +340,8 @@ class _$_ItemDto implements _ItemDto {
                     .equals(other.groupId, groupId)) &&
             (identical(other.itemId, itemId) ||
                 const DeepCollectionEquality().equals(other.itemId, itemId)) &&
-            (identical(other.itemType, itemType) ||
-                const DeepCollectionEquality()
-                    .equals(other.itemType, itemType)) &&
+            (identical(other.type, type) ||
+                const DeepCollectionEquality().equals(other.type, type)) &&
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.nameI18n, nameI18n) ||
@@ -367,7 +366,7 @@ class _$_ItemDto implements _ItemDto {
       const DeepCollectionEquality().hash(existence) ^
       const DeepCollectionEquality().hash(groupId) ^
       const DeepCollectionEquality().hash(itemId) ^
-      const DeepCollectionEquality().hash(itemType) ^
+      const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(nameI18n) ^
       const DeepCollectionEquality().hash(pron) ^
@@ -398,8 +397,8 @@ abstract class _ItemDto implements ItemDto {
           String groupId,
       @JsonKey(required: true)
           String itemId,
-      @JsonKey(defaultValue: '')
-          String itemType,
+      @JsonKey(name: 'itemType', defaultValue: '')
+          String type,
       @JsonKey(defaultValue: '')
           String name,
       @JsonKey(name: 'name_i18n', defaultValue: <dynamic>{})
@@ -431,8 +430,8 @@ abstract class _ItemDto implements ItemDto {
   @JsonKey(required: true)
   String get itemId;
   @override
-  @JsonKey(defaultValue: '')
-  String get itemType;
+  @JsonKey(name: 'itemType', defaultValue: '')
+  String get type;
   @override
   @JsonKey(defaultValue: '')
   String get name;

@@ -34,6 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "networkUnreachable" : MessageLookupByLibrary.simpleMessage("Network is unreachable. Please try again later."),
     "recruit" : MessageLookupByLibrary.simpleMessage("Recruit"),
     "remoteServerError" : MessageLookupByLibrary.simpleMessage("Unable to connect to the remote server. Please try again later."),
-    "splash" : MessageLookupByLibrary.simpleMessage("Splash")
+    "splash" : MessageLookupByLibrary.simpleMessage("Splash"),
+    "uncategorized" : MessageLookupByLibrary.simpleMessage("Uncategorized")
   };
 }

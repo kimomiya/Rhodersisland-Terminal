@@ -165,6 +165,16 @@ class S {
     );
   }
 
+  /// `Uncategorized`
+  String get uncategorized {
+    return Intl.message(
+      'Uncategorized',
+      name: 'uncategorized',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Recruit`
   String get recruit {
     return Intl.message(

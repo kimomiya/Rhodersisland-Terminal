@@ -34,6 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "networkUnreachable" : MessageLookupByLibrary.simpleMessage("系统检测到网络异常，请确保您的网线没有被猫咬断。"),
     "recruit" : MessageLookupByLibrary.simpleMessage("公开招募"),
     "remoteServerError" : MessageLookupByLibrary.simpleMessage("服务器软体不稳定，请稍后重试。"),
-    "splash" : MessageLookupByLibrary.simpleMessage("加载页")
+    "splash" : MessageLookupByLibrary.simpleMessage("加载页"),
+    "uncategorized" : MessageLookupByLibrary.simpleMessage("未分类")
   };
 }

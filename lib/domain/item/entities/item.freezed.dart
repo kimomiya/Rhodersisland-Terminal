@@ -20,7 +20,7 @@ class _$ItemTearOff {
       @required KtMap<String, List<String>> alias,
       @required KtMap<Server, Existence> existence,
       @required String groupId,
-      @required String itemType,
+      @required ItemType type,
       @required String name,
       @required KtMap<String, String> nameI18n,
       @required KtMap<String, List<String>> pron,
@@ -33,7 +33,7 @@ class _$ItemTearOff {
       alias: alias,
       existence: existence,
       groupId: groupId,
-      itemType: itemType,
+      type: type,
       name: name,
       nameI18n: nameI18n,
       pron: pron,
@@ -55,7 +55,7 @@ mixin _$Item {
   KtMap<String, List<String>> get alias;
   KtMap<Server, Existence> get existence;
   String get groupId;
-  String get itemType;
+  ItemType get type;
   String get name;
   KtMap<String, String> get nameI18n;
   KtMap<String, List<String>> get pron;
@@ -77,7 +77,7 @@ abstract class $ItemCopyWith<$Res> {
       KtMap<String, List<String>> alias,
       KtMap<Server, Existence> existence,
       String groupId,
-      String itemType,
+      ItemType type,
       String name,
       KtMap<String, String> nameI18n,
       KtMap<String, List<String>> pron,
@@ -103,7 +103,7 @@ class _$ItemCopyWithImpl<$Res> implements $ItemCopyWith<$Res> {
     Object alias = freezed,
     Object existence = freezed,
     Object groupId = freezed,
-    Object itemType = freezed,
+    Object type = freezed,
     Object name = freezed,
     Object nameI18n = freezed,
     Object pron = freezed,
@@ -122,7 +122,7 @@ class _$ItemCopyWithImpl<$Res> implements $ItemCopyWith<$Res> {
           ? _value.existence
           : existence as KtMap<Server, Existence>,
       groupId: groupId == freezed ? _value.groupId : groupId as String,
-      itemType: itemType == freezed ? _value.itemType : itemType as String,
+      type: type == freezed ? _value.type : type as ItemType,
       name: name == freezed ? _value.name : name as String,
       nameI18n: nameI18n == freezed
           ? _value.nameI18n
@@ -158,7 +158,7 @@ abstract class _$ItemCopyWith<$Res> implements $ItemCopyWith<$Res> {
       KtMap<String, List<String>> alias,
       KtMap<Server, Existence> existence,
       String groupId,
-      String itemType,
+      ItemType type,
       String name,
       KtMap<String, String> nameI18n,
       KtMap<String, List<String>> pron,
@@ -186,7 +186,7 @@ class __$ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res>
     Object alias = freezed,
     Object existence = freezed,
     Object groupId = freezed,
-    Object itemType = freezed,
+    Object type = freezed,
     Object name = freezed,
     Object nameI18n = freezed,
     Object pron = freezed,
@@ -205,7 +205,7 @@ class __$ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res>
           ? _value.existence
           : existence as KtMap<Server, Existence>,
       groupId: groupId == freezed ? _value.groupId : groupId as String,
-      itemType: itemType == freezed ? _value.itemType : itemType as String,
+      type: type == freezed ? _value.type : type as ItemType,
       name: name == freezed ? _value.name : name as String,
       nameI18n: nameI18n == freezed
           ? _value.nameI18n
@@ -228,7 +228,7 @@ class _$_Item implements _Item {
       @required this.alias,
       @required this.existence,
       @required this.groupId,
-      @required this.itemType,
+      @required this.type,
       @required this.name,
       @required this.nameI18n,
       @required this.pron,
@@ -239,7 +239,7 @@ class _$_Item implements _Item {
         assert(alias != null),
         assert(existence != null),
         assert(groupId != null),
-        assert(itemType != null),
+        assert(type != null),
         assert(name != null),
         assert(nameI18n != null),
         assert(pron != null);
@@ -255,7 +255,7 @@ class _$_Item implements _Item {
   @override
   final String groupId;
   @override
-  final String itemType;
+  final ItemType type;
   @override
   final String name;
   @override
@@ -271,7 +271,7 @@ class _$_Item implements _Item {
 
   @override
   String toString() {
-    return 'Item(id: $id, addTimePoint: $addTimePoint, alias: $alias, existence: $existence, groupId: $groupId, itemType: $itemType, name: $name, nameI18n: $nameI18n, pron: $pron, rarity: $rarity, sortId: $sortId, spriteCoord: $spriteCoord)';
+    return 'Item(id: $id, addTimePoint: $addTimePoint, alias: $alias, existence: $existence, groupId: $groupId, type: $type, name: $name, nameI18n: $nameI18n, pron: $pron, rarity: $rarity, sortId: $sortId, spriteCoord: $spriteCoord)';
   }
 
   @override
@@ -291,9 +291,8 @@ class _$_Item implements _Item {
             (identical(other.groupId, groupId) ||
                 const DeepCollectionEquality()
                     .equals(other.groupId, groupId)) &&
-            (identical(other.itemType, itemType) ||
-                const DeepCollectionEquality()
-                    .equals(other.itemType, itemType)) &&
+            (identical(other.type, type) ||
+                const DeepCollectionEquality().equals(other.type, type)) &&
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.nameI18n, nameI18n) ||
@@ -318,7 +317,7 @@ class _$_Item implements _Item {
       const DeepCollectionEquality().hash(alias) ^
       const DeepCollectionEquality().hash(existence) ^
       const DeepCollectionEquality().hash(groupId) ^
-      const DeepCollectionEquality().hash(itemType) ^
+      const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(nameI18n) ^
       const DeepCollectionEquality().hash(pron) ^
@@ -339,7 +338,7 @@ abstract class _Item implements Item {
       @required KtMap<String, List<String>> alias,
       @required KtMap<Server, Existence> existence,
       @required String groupId,
-      @required String itemType,
+      @required ItemType type,
       @required String name,
       @required KtMap<String, String> nameI18n,
       @required KtMap<String, List<String>> pron,
@@ -358,7 +357,7 @@ abstract class _Item implements Item {
   @override
   String get groupId;
   @override
-  String get itemType;
+  ItemType get type;
   @override
   String get name;
   @override

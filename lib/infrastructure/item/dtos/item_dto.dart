@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:kt_dart/collection.dart';
 
+import '../../../core/enums/item_type.dart';
 import '../../../core/enums/server.dart';
 import '../../../domain/core/entities/existence.dart';
 import '../../../domain/core/unique_id.dart';
@@ -21,7 +22,7 @@ abstract class ItemDto with _$ItemDto {
     @JsonKey(defaultValue: <dynamic>{}) Map<String, ExistenceDto> existence,
     @JsonKey(defaultValue: '') String groupId,
     @JsonKey(required: true) String itemId,
-    @JsonKey(defaultValue: '') String itemType,
+    @JsonKey(name: 'itemType', defaultValue: '') String type,
     @JsonKey(defaultValue: '') String name,
     @JsonKey(name: 'name_i18n', defaultValue: <dynamic>{})
         Map<String, String> nameI18n,
@@ -66,7 +67,7 @@ extension ItemDtoToDomain on ItemDto {
       alias: alias.toImmutableMap(),
       existence: _transferExistence(),
       groupId: groupId,
-      itemType: itemType,
+      type: ItemTypeValue.of(type),
       name: name,
       nameI18n: nameI18n.toImmutableMap(),
       pron: pron.toImmutableMap(),

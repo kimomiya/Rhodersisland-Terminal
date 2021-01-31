@@ -38,7 +38,7 @@ class ItemLocalDataSourceImpl implements ItemLocalDataSource {
         ''',
         <dynamic>[
           item.itemId,
-          item.itemType,
+          item.type,
           item.name,
           jsonEncode(item.nameI18n),
           jsonEncode(item.alias),
