@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/all.dart';
 
-import '../../application/item/item_provider.dart';
+import '../../application/item/items_provider.dart';
 import '../../generated/l10n.dart';
 import '../core/widgets/rhodes_app_bar.dart';
 import '../core/widgets/rhodes_drawer.dart';

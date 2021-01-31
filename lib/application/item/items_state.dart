@@ -5,17 +5,17 @@ import 'package:kt_dart/collection.dart';
 import '../../domain/item/entities/item.dart';
 import '../../domain/item/item_failure.dart';
 
-part 'item_state.freezed.dart';
+part 'items_state.freezed.dart';
 
 @freezed
-abstract class ItemState with _$ItemState {
-  const factory ItemState({
+abstract class ItemsState with _$ItemsState {
+  const factory ItemsState({
     KtList<Item> items,
     @required bool isLoading,
     @required Option<ItemFailure> failureOption,
-  }) = _ItemState;
+  }) = _ItemsState;
 
-  factory ItemState.initial() => ItemState(
+  factory ItemsState.initial() => ItemsState(
         items: const KtList.empty(),
         isLoading: false,
         failureOption: none(),

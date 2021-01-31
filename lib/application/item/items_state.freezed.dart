@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
-part of 'item_state.dart';
+part of 'items_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -10,15 +10,15 @@ part of 'item_state.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-class _$ItemStateTearOff {
-  const _$ItemStateTearOff();
+class _$ItemsStateTearOff {
+  const _$ItemsStateTearOff();
 
 // ignore: unused_element
-  _ItemState call(
+  _ItemsState call(
       {KtList<Item> items,
       @required bool isLoading,
       @required Option<ItemFailure> failureOption}) {
-    return _ItemState(
+    return _ItemsState(
       items: items,
       isLoading: isLoading,
       failureOption: failureOption,
@@ -28,33 +28,34 @@ class _$ItemStateTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $ItemState = _$ItemStateTearOff();
+const $ItemsState = _$ItemsStateTearOff();
 
 /// @nodoc
-mixin _$ItemState {
+mixin _$ItemsState {
   KtList<Item> get items;
   bool get isLoading;
   Option<ItemFailure> get failureOption;
 
   @JsonKey(ignore: true)
-  $ItemStateCopyWith<ItemState> get copyWith;
+  $ItemsStateCopyWith<ItemsState> get copyWith;
 }
 
 /// @nodoc
-abstract class $ItemStateCopyWith<$Res> {
-  factory $ItemStateCopyWith(ItemState value, $Res Function(ItemState) then) =
-      _$ItemStateCopyWithImpl<$Res>;
+abstract class $ItemsStateCopyWith<$Res> {
+  factory $ItemsStateCopyWith(
+          ItemsState value, $Res Function(ItemsState) then) =
+      _$ItemsStateCopyWithImpl<$Res>;
   $Res call(
       {KtList<Item> items, bool isLoading, Option<ItemFailure> failureOption});
 }
 
 /// @nodoc
-class _$ItemStateCopyWithImpl<$Res> implements $ItemStateCopyWith<$Res> {
-  _$ItemStateCopyWithImpl(this._value, this._then);
+class _$ItemsStateCopyWithImpl<$Res> implements $ItemsStateCopyWith<$Res> {
+  _$ItemsStateCopyWithImpl(this._value, this._then);
 
-  final ItemState _value;
+  final ItemsState _value;
   // ignore: unused_field
-  final $Res Function(ItemState) _then;
+  final $Res Function(ItemsState) _then;
 
   @override
   $Res call({
@@ -73,23 +74,24 @@ class _$ItemStateCopyWithImpl<$Res> implements $ItemStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$ItemStateCopyWith<$Res> implements $ItemStateCopyWith<$Res> {
-  factory _$ItemStateCopyWith(
-          _ItemState value, $Res Function(_ItemState) then) =
-      __$ItemStateCopyWithImpl<$Res>;
+abstract class _$ItemsStateCopyWith<$Res> implements $ItemsStateCopyWith<$Res> {
+  factory _$ItemsStateCopyWith(
+          _ItemsState value, $Res Function(_ItemsState) then) =
+      __$ItemsStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {KtList<Item> items, bool isLoading, Option<ItemFailure> failureOption});
 }
 
 /// @nodoc
-class __$ItemStateCopyWithImpl<$Res> extends _$ItemStateCopyWithImpl<$Res>
-    implements _$ItemStateCopyWith<$Res> {
-  __$ItemStateCopyWithImpl(_ItemState _value, $Res Function(_ItemState) _then)
-      : super(_value, (v) => _then(v as _ItemState));
+class __$ItemsStateCopyWithImpl<$Res> extends _$ItemsStateCopyWithImpl<$Res>
+    implements _$ItemsStateCopyWith<$Res> {
+  __$ItemsStateCopyWithImpl(
+      _ItemsState _value, $Res Function(_ItemsState) _then)
+      : super(_value, (v) => _then(v as _ItemsState));
 
   @override
-  _ItemState get _value => super._value as _ItemState;
+  _ItemsState get _value => super._value as _ItemsState;
 
   @override
   $Res call({
@@ -97,7 +99,7 @@ class __$ItemStateCopyWithImpl<$Res> extends _$ItemStateCopyWithImpl<$Res>
     Object isLoading = freezed,
     Object failureOption = freezed,
   }) {
-    return _then(_ItemState(
+    return _then(_ItemsState(
       items: items == freezed ? _value.items : items as KtList<Item>,
       isLoading: isLoading == freezed ? _value.isLoading : isLoading as bool,
       failureOption: failureOption == freezed
@@ -108,8 +110,8 @@ class __$ItemStateCopyWithImpl<$Res> extends _$ItemStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$_ItemState implements _ItemState {
-  const _$_ItemState(
+class _$_ItemsState implements _ItemsState {
+  const _$_ItemsState(
       {this.items, @required this.isLoading, @required this.failureOption})
       : assert(isLoading != null),
         assert(failureOption != null);
@@ -123,13 +125,13 @@ class _$_ItemState implements _ItemState {
 
   @override
   String toString() {
-    return 'ItemState(items: $items, isLoading: $isLoading, failureOption: $failureOption)';
+    return 'ItemsState(items: $items, isLoading: $isLoading, failureOption: $failureOption)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ItemState &&
+        (other is _ItemsState &&
             (identical(other.items, items) ||
                 const DeepCollectionEquality().equals(other.items, items)) &&
             (identical(other.isLoading, isLoading) ||
@@ -149,15 +151,15 @@ class _$_ItemState implements _ItemState {
 
   @JsonKey(ignore: true)
   @override
-  _$ItemStateCopyWith<_ItemState> get copyWith =>
-      __$ItemStateCopyWithImpl<_ItemState>(this, _$identity);
+  _$ItemsStateCopyWith<_ItemsState> get copyWith =>
+      __$ItemsStateCopyWithImpl<_ItemsState>(this, _$identity);
 }
 
-abstract class _ItemState implements ItemState {
-  const factory _ItemState(
+abstract class _ItemsState implements ItemsState {
+  const factory _ItemsState(
       {KtList<Item> items,
       @required bool isLoading,
-      @required Option<ItemFailure> failureOption}) = _$_ItemState;
+      @required Option<ItemFailure> failureOption}) = _$_ItemsState;
 
   @override
   KtList<Item> get items;
@@ -167,5 +169,5 @@ abstract class _ItemState implements ItemState {
   Option<ItemFailure> get failureOption;
   @override
   @JsonKey(ignore: true)
-  _$ItemStateCopyWith<_ItemState> get copyWith;
+  _$ItemsStateCopyWith<_ItemsState> get copyWith;
 }
