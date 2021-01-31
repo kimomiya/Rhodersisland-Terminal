@@ -3,7 +3,7 @@ import 'package:kt_dart/collection.dart';
 
 import 'items_provider.dart';
 
-final item = Provider.autoDispose.family(
+final itemBy = Provider.autoDispose.family(
   (ref, String id) {
     final items = ref.watch(itemsProvider.state).items;
     return items.firstOrNull((item) => item.id.getOrCrash() == id);

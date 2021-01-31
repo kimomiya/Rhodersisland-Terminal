@@ -7,5 +7,10 @@
   "connecting": "ニューラルコネクターに接続中",
   "amiyaAttention": "ドクター、終わってない仕事がたくさんありますから、まだ休んじゃだめですよ。",
   "items": "素材選択",
+  "activityItem": "活动道具",
+  "cardExp": "作戦記録",
+  "chip": "SoC",
+  "furn": "家具",
+  "material": "素材",
   "recruit": "公開求人"
 }

@@ -115,6 +115,56 @@ class S {
     );
   }
 
+  /// `Event Items`
+  String get activityItem {
+    return Intl.message(
+      'Event Items',
+      name: 'activityItem',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Battle Records`
+  String get cardExp {
+    return Intl.message(
+      'Battle Records',
+      name: 'cardExp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chips`
+  String get chip {
+    return Intl.message(
+      'Chips',
+      name: 'chip',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Furniture`
+  String get furn {
+    return Intl.message(
+      'Furniture',
+      name: 'furn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Materials`
+  String get material {
+    return Intl.message(
+      'Materials',
+      name: 'material',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Recruit`
   String get recruit {
     return Intl.message(

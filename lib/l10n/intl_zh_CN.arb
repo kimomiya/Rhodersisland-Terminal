@@ -7,5 +7,10 @@
   "connecting": "正在尝试取得神经连接",
   "amiyaAttention": "博士，您还有许多事情需要处理。现在还不能休息哦。",
   "items": "素材选择",
+  "activityItem": "活动道具",
+  "cardExp": "作战记录",
+  "chip": "芯片",
+  "furn": "家具",
+  "material": "素材",
   "recruit": "公开招募"
 }
