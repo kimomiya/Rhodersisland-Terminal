@@ -2,11 +2,9 @@ import 'package:auto_route/auto_route.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/all.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../application/prefetch/prefetch_provider.dart';
 import '../../application/prefetch/prefetch_state.dart';
-import '../../core/constants/asset_path.dart';
 import '../../generated/l10n.dart';
 import '../router.gr.dart';
 import 'widgets/index.dart';
@@ -33,25 +31,11 @@ class _ContentView extends StatelessWidget {
       provider: prefetchProvider.state,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          _buildLogo(),
-          const SplashLoadingView(),
+        children: const [
+          SplashLogo(),
+          SplashLoadingView(),
         ],
       ),
-    );
-  }
-
-  //* Components
-
-  Widget _buildLogo() {
-    final logo = Image.asset(
-      logoPath,
-      width: ScreenUtil().screenWidth * 0.618,
-      fit: BoxFit.contain,
-    );
-    return Padding(
-      padding: EdgeInsets.only(top: 160.h),
-      child: Center(child: logo),
     );
   }
 
