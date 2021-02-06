@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_screenutil/screenutil_init.dart';
 
 import '../generated/l10n.dart';
 import 'router.gr.dart';
@@ -13,7 +13,7 @@ class RhodesIslandTerminal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      child: const _MaterialApp(),
+      builder: () => const _MaterialApp(),
       designSize: const Size(750, 1334),
     );
   }
