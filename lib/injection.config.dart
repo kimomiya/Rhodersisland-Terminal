@@ -19,6 +19,7 @@ import 'domain/item/item_repository.dart';
 import 'infrastructure/item/item_repository_impl.dart';
 import 'infrastructure/core/network_info.dart';
 import 'application/prefetch/prefetch_provider.dart';
+import 'domain/prefetch/prefetch_repository.dart';
 import 'injection.dart';
 
 /// adds generated dependencies
@@ -40,6 +41,8 @@ Future<GetIt> $initGetIt(
   gh.lazySingleton<ItemRemoteDataSource>(
       () => ItemRemoteDataSourceImpl(client: get<Dio>()));
   gh.lazySingleton<NetworkInfo>(() => NetworkInfoImpl(get<Connectivity>()));
+  gh.factory<PrefetchNotifier>(
+      () => PrefetchNotifier(get<PrefetchRepository>()));
   final resolvedSharedPreferences = await registerModule.prefs;
   gh.lazySingleton<SharedPreferences>(() => resolvedSharedPreferences);
   gh.lazySingleton<AppSettings>(
@@ -49,8 +52,6 @@ Future<GetIt> $initGetIt(
         localDataSource: get<ItemLocalDataSource>(),
         remoteDataSource: get<ItemRemoteDataSource>(),
       ));
-  gh.factory<PrefetchNotifier>(
-      () => PrefetchNotifier(itemRepository: get<ItemRepository>()));
   gh.factory<ItemNotifier>(() => ItemNotifier(get<ItemRepository>()));
   return get;
 }

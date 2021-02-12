@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../application/prefetch/prefetch_provider.dart';
-import '../../application/prefetch/prefetch_state.dart';
 import '../../generated/l10n.dart';
 import '../router.gr.dart';
 import 'widgets/index.dart';
@@ -28,7 +27,7 @@ class _ContentView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ProviderListener(
       onChange: _onStateChanged,
-      provider: prefetchProvider.state,
+      provider: prefetchProvider,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: const [
@@ -41,7 +40,7 @@ class _ContentView extends StatelessWidget {
 
   //* Event Methods
 
-  void _onStateChanged(BuildContext context, PrefetchState state) {
+  void _onStateChanged(BuildContext context, PrefetchNotifier state) {
     if (state.isCompleted) {
       context.navigator.replace(Routes.items);
     }
