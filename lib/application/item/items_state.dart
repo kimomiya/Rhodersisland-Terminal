@@ -10,7 +10,7 @@ part 'items_state.freezed.dart';
 @freezed
 abstract class ItemsState with _$ItemsState {
   const factory ItemsState({
-    KtList<Item> items,
+    @required KtList<Item> items,
     @required bool isLoading,
     @required Option<ItemFailure> failureOption,
   }) = _ItemsState;

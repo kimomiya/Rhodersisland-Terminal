@@ -21,7 +21,7 @@ class ItemRemoteDataSourceImpl implements ItemRemoteDataSource {
 
   @override
   Future<List<ItemDto>> fetchItems() async {
-    final url = '$penguinStatsBaseURL/items';
+    const url = '$penguinStatsBaseURL/items';
 
     final response = await client.get<List>(url);
 

@@ -15,7 +15,7 @@ class _$ItemsStateTearOff {
 
 // ignore: unused_element
   _ItemsState call(
-      {KtList<Item> items,
+      {@required KtList<Item> items,
       @required bool isLoading,
       @required Option<ItemFailure> failureOption}) {
     return _ItemsState(
@@ -112,8 +112,11 @@ class __$ItemsStateCopyWithImpl<$Res> extends _$ItemsStateCopyWithImpl<$Res>
 /// @nodoc
 class _$_ItemsState implements _ItemsState {
   const _$_ItemsState(
-      {this.items, @required this.isLoading, @required this.failureOption})
-      : assert(isLoading != null),
+      {@required this.items,
+      @required this.isLoading,
+      @required this.failureOption})
+      : assert(items != null),
+        assert(isLoading != null),
         assert(failureOption != null);
 
   @override
@@ -157,7 +160,7 @@ class _$_ItemsState implements _ItemsState {
 
 abstract class _ItemsState implements ItemsState {
   const factory _ItemsState(
-      {KtList<Item> items,
+      {@required KtList<Item> items,
       @required bool isLoading,
       @required Option<ItemFailure> failureOption}) = _$_ItemsState;
 

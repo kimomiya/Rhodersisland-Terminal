@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/all.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../application/prefetch/prefetch_provider.dart';
 import '../../application/prefetch/prefetch_state.dart';

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../core/constants/asset_path.dart';
+import '../../../core/constants/assets_path.dart';
 
 class SplashLogo extends StatelessWidget {
-  const SplashLogo({Key key}) : super(key: key);
+  const SplashLogo();
 
   @override
   Widget build(BuildContext context) {
