@@ -1,12 +1,19 @@
-import 'dart:typed_data';
+import 'dart:io';
 
 import 'package:flutter/services.dart';
 import 'package:image/image.dart';
+import 'package:path_provider/path_provider.dart';
 
 import '../core/constants/app_constants.dart';
 import '../core/constants/assets_path.dart';
 
-Future<Uint8List> cropSprite(int coordX, int coordY) async {
+Future<File> cropSprite(int coordX, int coordY) async {
+  final appDocDir = await getApplicationDocumentsDirectory();
+  final file = File('${appDocDir.path}/sprite_${coordX}_$coordY.png');
+  if (file.existsSync()) {
+    return file;
+  }
+
   final byteData = await rootBundle.load(spritePath);
   final image = copyResize(
     decodeImage(byteData.buffer.asUint8List()),
@@ -20,5 +27,7 @@ Future<Uint8List> cropSprite(int coordX, int coordY) async {
     spriteIconSize,
     spriteIconSize,
   );
-  return Uint8List.fromList(encodePng(croppedImage));
+
+  await file.writeAsBytes(encodePng(croppedImage));
+  return file;
 }

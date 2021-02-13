@@ -1,10 +1,11 @@
-import 'dart:typed_data';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kt_dart/collection.dart';
 
+import '../../../application/item/item_provider.dart';
 import '../../../application/item/items_provider.dart';
 import '../../../shared/crop_sprite.dart';
 
@@ -21,17 +22,32 @@ class MaterialItemsView extends StatelessWidget {
         }
 
         final item = materials.first();
-        return FutureBuilder<Uint8List>(
-          future: cropSprite(item.spriteCoord.x, item.spriteCoord.y),
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              return ClipOval(
-                child: Image.memory(snapshot.data, width: 100.w, height: 100.w),
-              );
-            }
-            return Container();
-          },
+        return ProviderScope(
+          overrides: [currentItem.overrideWithValue(item)],
+          child: const _ItemChip(),
         );
+      },
+    );
+  }
+}
+
+//* Components
+
+class _ItemChip extends ConsumerWidget {
+  const _ItemChip();
+
+  @override
+  Widget build(BuildContext context, ScopedReader watch) {
+    final item = watch(currentItem);
+    return FutureBuilder<File>(
+      future: cropSprite(item.spriteCoord.x, item.spriteCoord.y),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return ClipOval(
+            child: Image.file(snapshot.data, width: 100.w, height: 100.w),
+          );
+        }
+        return Container();
       },
     );
   }
