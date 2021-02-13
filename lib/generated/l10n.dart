@@ -75,6 +75,16 @@ class S {
     );
   }
 
+  /// `You spoiled my grand entrance, rat.`
+  String get unexpectedError {
+    return Intl.message(
+      'You spoiled my grand entrance, rat.',
+      name: 'unexpectedError',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Splash`
   String get splash {
     return Intl.message(

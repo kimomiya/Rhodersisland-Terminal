@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -17,15 +16,15 @@ abstract class ItemLocalDataSource {
 
 @LazySingleton(as: ItemLocalDataSource)
 class ItemLocalDataSourceImpl implements ItemLocalDataSource {
-  const ItemLocalDataSourceImpl({
-    @required this.db,
-  });
+  const ItemLocalDataSourceImpl(
+    this._db,
+  );
 
-  final Database db;
+  final Database _db;
 
   @override
   Future<void> saveItems(List<ItemDto> items) async {
-    final batch = db.batch();
+    final batch = _db.batch();
 
     for (final item in items) {
       batch.execute(
@@ -58,7 +57,7 @@ class ItemLocalDataSourceImpl implements ItemLocalDataSource {
 
   @override
   Future<List<ItemDto>> loadItems() async {
-    final results = await db.query(_tableName, orderBy: 'sortId');
+    final results = await _db.query(_tableName, orderBy: 'sortId');
 
     final dtos = <ItemDto>[];
     for (final data in results) {

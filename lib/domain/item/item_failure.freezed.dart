@@ -14,11 +14,6 @@ class _$ItemFailureTearOff {
   const _$ItemFailureTearOff();
 
 // ignore: unused_element
-  _NetworkUnreachable networkUnreachable() {
-    return const _NetworkUnreachable();
-  }
-
-// ignore: unused_element
   _RemoteServerError remoteServerError(
       {@required int code, @required String description}) {
     return _RemoteServerError(
@@ -46,14 +41,12 @@ const $ItemFailure = _$ItemFailureTearOff();
 mixin _$ItemFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult networkUnreachable(),
     @required TResult remoteServerError(int code, String description),
     @required TResult unexpectedError(),
     @required TResult emptyQueryResult(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult networkUnreachable(),
     TResult remoteServerError(int code, String description),
     TResult unexpectedError(),
     TResult emptyQueryResult(),
@@ -61,14 +54,12 @@ mixin _$ItemFailure {
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult networkUnreachable(_NetworkUnreachable value),
     @required TResult remoteServerError(_RemoteServerError value),
     @required TResult unexpectedError(_UnexpectedError value),
     @required TResult emptyQueryResult(_EmptyQueryResult value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult networkUnreachable(_NetworkUnreachable value),
     TResult remoteServerError(_RemoteServerError value),
     TResult unexpectedError(_UnexpectedError value),
     TResult emptyQueryResult(_EmptyQueryResult value),
@@ -90,109 +81,6 @@ class _$ItemFailureCopyWithImpl<$Res> implements $ItemFailureCopyWith<$Res> {
   final ItemFailure _value;
   // ignore: unused_field
   final $Res Function(ItemFailure) _then;
-}
-
-/// @nodoc
-abstract class _$NetworkUnreachableCopyWith<$Res> {
-  factory _$NetworkUnreachableCopyWith(
-          _NetworkUnreachable value, $Res Function(_NetworkUnreachable) then) =
-      __$NetworkUnreachableCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$NetworkUnreachableCopyWithImpl<$Res>
-    extends _$ItemFailureCopyWithImpl<$Res>
-    implements _$NetworkUnreachableCopyWith<$Res> {
-  __$NetworkUnreachableCopyWithImpl(
-      _NetworkUnreachable _value, $Res Function(_NetworkUnreachable) _then)
-      : super(_value, (v) => _then(v as _NetworkUnreachable));
-
-  @override
-  _NetworkUnreachable get _value => super._value as _NetworkUnreachable;
-}
-
-/// @nodoc
-class _$_NetworkUnreachable implements _NetworkUnreachable {
-  const _$_NetworkUnreachable();
-
-  @override
-  String toString() {
-    return 'ItemFailure.networkUnreachable()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _NetworkUnreachable);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult networkUnreachable(),
-    @required TResult remoteServerError(int code, String description),
-    @required TResult unexpectedError(),
-    @required TResult emptyQueryResult(),
-  }) {
-    assert(networkUnreachable != null);
-    assert(remoteServerError != null);
-    assert(unexpectedError != null);
-    assert(emptyQueryResult != null);
-    return networkUnreachable();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult networkUnreachable(),
-    TResult remoteServerError(int code, String description),
-    TResult unexpectedError(),
-    TResult emptyQueryResult(),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (networkUnreachable != null) {
-      return networkUnreachable();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult networkUnreachable(_NetworkUnreachable value),
-    @required TResult remoteServerError(_RemoteServerError value),
-    @required TResult unexpectedError(_UnexpectedError value),
-    @required TResult emptyQueryResult(_EmptyQueryResult value),
-  }) {
-    assert(networkUnreachable != null);
-    assert(remoteServerError != null);
-    assert(unexpectedError != null);
-    assert(emptyQueryResult != null);
-    return networkUnreachable(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult networkUnreachable(_NetworkUnreachable value),
-    TResult remoteServerError(_RemoteServerError value),
-    TResult unexpectedError(_UnexpectedError value),
-    TResult emptyQueryResult(_EmptyQueryResult value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (networkUnreachable != null) {
-      return networkUnreachable(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _NetworkUnreachable implements ItemFailure {
-  const factory _NetworkUnreachable() = _$_NetworkUnreachable;
 }
 
 /// @nodoc
@@ -268,12 +156,10 @@ class _$_RemoteServerError implements _RemoteServerError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult networkUnreachable(),
     @required TResult remoteServerError(int code, String description),
     @required TResult unexpectedError(),
     @required TResult emptyQueryResult(),
   }) {
-    assert(networkUnreachable != null);
     assert(remoteServerError != null);
     assert(unexpectedError != null);
     assert(emptyQueryResult != null);
@@ -283,7 +169,6 @@ class _$_RemoteServerError implements _RemoteServerError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult networkUnreachable(),
     TResult remoteServerError(int code, String description),
     TResult unexpectedError(),
     TResult emptyQueryResult(),
@@ -299,12 +184,10 @@ class _$_RemoteServerError implements _RemoteServerError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult networkUnreachable(_NetworkUnreachable value),
     @required TResult remoteServerError(_RemoteServerError value),
     @required TResult unexpectedError(_UnexpectedError value),
     @required TResult emptyQueryResult(_EmptyQueryResult value),
   }) {
-    assert(networkUnreachable != null);
     assert(remoteServerError != null);
     assert(unexpectedError != null);
     assert(emptyQueryResult != null);
@@ -314,7 +197,6 @@ class _$_RemoteServerError implements _RemoteServerError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult networkUnreachable(_NetworkUnreachable value),
     TResult remoteServerError(_RemoteServerError value),
     TResult unexpectedError(_UnexpectedError value),
     TResult emptyQueryResult(_EmptyQueryResult value),
@@ -378,12 +260,10 @@ class _$_UnexpectedError implements _UnexpectedError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult networkUnreachable(),
     @required TResult remoteServerError(int code, String description),
     @required TResult unexpectedError(),
     @required TResult emptyQueryResult(),
   }) {
-    assert(networkUnreachable != null);
     assert(remoteServerError != null);
     assert(unexpectedError != null);
     assert(emptyQueryResult != null);
@@ -393,7 +273,6 @@ class _$_UnexpectedError implements _UnexpectedError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult networkUnreachable(),
     TResult remoteServerError(int code, String description),
     TResult unexpectedError(),
     TResult emptyQueryResult(),
@@ -409,12 +288,10 @@ class _$_UnexpectedError implements _UnexpectedError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult networkUnreachable(_NetworkUnreachable value),
     @required TResult remoteServerError(_RemoteServerError value),
     @required TResult unexpectedError(_UnexpectedError value),
     @required TResult emptyQueryResult(_EmptyQueryResult value),
   }) {
-    assert(networkUnreachable != null);
     assert(remoteServerError != null);
     assert(unexpectedError != null);
     assert(emptyQueryResult != null);
@@ -424,7 +301,6 @@ class _$_UnexpectedError implements _UnexpectedError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult networkUnreachable(_NetworkUnreachable value),
     TResult remoteServerError(_RemoteServerError value),
     TResult unexpectedError(_UnexpectedError value),
     TResult emptyQueryResult(_EmptyQueryResult value),
@@ -481,12 +357,10 @@ class _$_EmptyQueryResult implements _EmptyQueryResult {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult networkUnreachable(),
     @required TResult remoteServerError(int code, String description),
     @required TResult unexpectedError(),
     @required TResult emptyQueryResult(),
   }) {
-    assert(networkUnreachable != null);
     assert(remoteServerError != null);
     assert(unexpectedError != null);
     assert(emptyQueryResult != null);
@@ -496,7 +370,6 @@ class _$_EmptyQueryResult implements _EmptyQueryResult {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult networkUnreachable(),
     TResult remoteServerError(int code, String description),
     TResult unexpectedError(),
     TResult emptyQueryResult(),
@@ -512,12 +385,10 @@ class _$_EmptyQueryResult implements _EmptyQueryResult {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult networkUnreachable(_NetworkUnreachable value),
     @required TResult remoteServerError(_RemoteServerError value),
     @required TResult unexpectedError(_UnexpectedError value),
     @required TResult emptyQueryResult(_EmptyQueryResult value),
   }) {
-    assert(networkUnreachable != null);
     assert(remoteServerError != null);
     assert(unexpectedError != null);
     assert(emptyQueryResult != null);
@@ -527,7 +398,6 @@ class _$_EmptyQueryResult implements _EmptyQueryResult {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult networkUnreachable(_NetworkUnreachable value),
     TResult remoteServerError(_RemoteServerError value),
     TResult unexpectedError(_UnexpectedError value),
     TResult emptyQueryResult(_EmptyQueryResult value),

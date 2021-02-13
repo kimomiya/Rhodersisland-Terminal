@@ -9,7 +9,7 @@ import '../../injection.dart';
 import 'items_state.dart';
 
 final itemsProvider = StateNotifierProvider.autoDispose(
-  (ref) => locator<ItemNotifier>(),
+  (ref) => locator<ItemsNotifier>(),
 );
 
 final materialItems = Provider.autoDispose((ref) {
@@ -38,8 +38,8 @@ final activityItems = Provider.autoDispose((ref) {
 });
 
 @injectable
-class ItemNotifier extends StateNotifier<ItemsState> {
-  ItemNotifier(this._repository) : super(ItemsState.initial()) {
+class ItemsNotifier extends StateNotifier<ItemsState> {
+  ItemsNotifier(this._repository) : super(ItemsState.initial()) {
     _loadItems();
   }
 

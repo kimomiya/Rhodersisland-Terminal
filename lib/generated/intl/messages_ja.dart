@@ -35,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "recruit" : MessageLookupByLibrary.simpleMessage("公開求人"),
     "remoteServerError" : MessageLookupByLibrary.simpleMessage("サーバーに接続できません。しばらくたってから再度お試しください。"),
     "splash" : MessageLookupByLibrary.simpleMessage("スプラッシュ"),
-    "uncategorized" : MessageLookupByLibrary.simpleMessage("未分類")
+    "uncategorized" : MessageLookupByLibrary.simpleMessage("未分類"),
+    "unexpectedError" : MessageLookupByLibrary.simpleMessage("あなたは私の華麗なる登場を台無しにした、ネズミ。")
   };
 }

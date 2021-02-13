@@ -45,16 +45,8 @@ class _ContentView extends StatelessWidget {
       context.navigator.replace(Routes.items);
     }
 
-    state.failureOption.fold(() {}, (failure) {
-      failure.maybeMap(
-        networkUnreachable: (_) => BotToast.showText(
-          text: S.of(context).networkUnreachable,
-        ),
-        remoteServerError: (_) => BotToast.showText(
-          text: S.of(context).remoteServerError,
-        ),
-        orElse: () {},
-      );
-    });
+    if (state.hasFailure) {
+      BotToast.showText(text: S.of(context).unexpectedError);
+    }
   }
 }
