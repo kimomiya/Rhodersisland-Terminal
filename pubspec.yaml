@@ -60,7 +60,7 @@ flutter:
 
   assets:
     - assets/images/logo/
-    - assets/images/sprite/
+    - assets/images/sprites/
 
 flutter_intl:
   enabled: true
