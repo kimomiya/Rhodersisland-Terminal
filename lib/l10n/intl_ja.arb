@@ -7,12 +7,12 @@
   "splash": "スプラッシュ",
   "connecting": "ニューラルコネクターに接続中",
   "amiyaAttention": "ドクター、終わってない仕事がたくさんありますから、まだ休んじゃだめですよ。",
-  "items": "素材選択",
-  "activityItem": "活动道具",
-  "cardExp": "作戦記録",
-  "chip": "SoC",
-  "furn": "家具",
-  "material": "素材",
+  "chooseItem": "素材選択",
+  "eventItems": "イベントアイテム",
+  "battleRecords": "作戦記録",
+  "chips": "SoC",
+  "furniture": "家具",
+  "materials": "素材",
   "uncategorized": "未分類",
   "recruit": "公開求人"
 }

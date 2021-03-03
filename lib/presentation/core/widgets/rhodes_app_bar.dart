@@ -9,13 +9,13 @@ class RhodesAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 
-  final String title;
+  final Widget title;
   final List<Widget> actions;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text(title),
+      title: title,
       actions: actions,
     );
   }

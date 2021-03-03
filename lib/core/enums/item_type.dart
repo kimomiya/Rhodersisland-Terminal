@@ -4,10 +4,10 @@ import '../../generated/l10n.dart';
 
 enum ItemType {
   material,
-  cardExp,
+  battleRecord,
   chip,
-  furn,
-  activityItem,
+  furniture,
+  eventItem,
   uncategorized,
 }
 
@@ -24,16 +24,16 @@ extension ItemTypeValues on ItemType {
       case ItemType.material:
         return 'MATERIAL';
 
-      case ItemType.cardExp:
+      case ItemType.battleRecord:
         return 'CARD_EXP';
 
       case ItemType.chip:
         return 'CHIP';
 
-      case ItemType.furn:
+      case ItemType.furniture:
         return 'FURN';
 
-      case ItemType.activityItem:
+      case ItemType.eventItem:
         return 'ACTIVITY_ITEM';
 
       default:
@@ -44,19 +44,19 @@ extension ItemTypeValues on ItemType {
   String translate(BuildContext context) {
     switch (this) {
       case ItemType.material:
-        return S.of(context).material;
+        return S.of(context).materials;
 
-      case ItemType.cardExp:
-        return S.of(context).cardExp;
+      case ItemType.battleRecord:
+        return S.of(context).battleRecords;
 
       case ItemType.chip:
-        return S.of(context).chip;
+        return S.of(context).chips;
 
-      case ItemType.furn:
-        return S.of(context).furn;
+      case ItemType.furniture:
+        return S.of(context).furniture;
 
-      case ItemType.activityItem:
-        return S.of(context).activityItem;
+      case ItemType.eventItem:
+        return S.of(context).eventItems;
 
       default:
         return S.of(context).uncategorized;

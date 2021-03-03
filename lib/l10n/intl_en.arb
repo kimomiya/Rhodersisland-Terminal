@@ -7,12 +7,12 @@
   "splash": "Splash",
   "connecting": "Connecting to the neural network of Rhodes Island",
   "amiyaAttention": "There's still lots of work that needs to be done, Doctor. You can't rest now!",
-  "items": "Choose Item",
-  "activityItem": "Event Items",
-  "cardExp": "Battle Records",
-  "chip": "Chips",
-  "furn": "Furniture",
-  "material": "Materials",
+  "chooseItem": "Choose Item",
+  "eventItems": "Event Items",
+  "battleRecords": "Battle Records",
+  "chips": "Chips",
+  "furniture": "Furniture",
+  "materials": "Materials",
   "uncategorized": "Uncategorized",
   "recruit": "Recruit"
 }

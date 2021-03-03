@@ -12,14 +12,20 @@ class ItemsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: RhodesAppBar(title: S.of(context).items),
+      appBar: RhodesAppBar(title: Text(S.of(context).chooseItem)),
       body: _buildBody(),
       drawer: const RhodesDrawer(),
     );
   }
 
   Widget _buildBody() {
-    const items = [MaterialItemsView()];
+    const items = [
+      MaterialsView(),
+      BattleRecordsView(),
+      ChipsView(),
+      FurnitureView(),
+      EventItemsView(),
+    ];
     return ListView.builder(
       padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 40.w),
       itemBuilder: (context, index) => items[index],

@@ -116,60 +116,60 @@ class S {
   }
 
   /// `Choose Item`
-  String get items {
+  String get chooseItem {
     return Intl.message(
       'Choose Item',
-      name: 'items',
+      name: 'chooseItem',
       desc: '',
       args: [],
     );
   }
 
   /// `Event Items`
-  String get activityItem {
+  String get eventItems {
     return Intl.message(
       'Event Items',
-      name: 'activityItem',
+      name: 'eventItems',
       desc: '',
       args: [],
     );
   }
 
   /// `Battle Records`
-  String get cardExp {
+  String get battleRecords {
     return Intl.message(
       'Battle Records',
-      name: 'cardExp',
+      name: 'battleRecords',
       desc: '',
       args: [],
     );
   }
 
   /// `Chips`
-  String get chip {
+  String get chips {
     return Intl.message(
       'Chips',
-      name: 'chip',
+      name: 'chips',
       desc: '',
       args: [],
     );
   }
 
   /// `Furniture`
-  String get furn {
+  String get furniture {
     return Intl.message(
       'Furniture',
-      name: 'furn',
+      name: 'furniture',
       desc: '',
       args: [],
     );
   }
 
   /// `Materials`
-  String get material {
+  String get materials {
     return Intl.message(
       'Materials',
-      name: 'material',
+      name: 'materials',
       desc: '',
       args: [],
     );

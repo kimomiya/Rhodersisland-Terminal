@@ -21,16 +21,16 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
-    "activityItem" : MessageLookupByLibrary.simpleMessage("Event Items"),
     "amiyaAttention" : MessageLookupByLibrary.simpleMessage("There\'s still lots of work that needs to be done, Doctor. You can\'t rest now!"),
     "appTitle" : MessageLookupByLibrary.simpleMessage("Rhodes Island Terminal"),
-    "cardExp" : MessageLookupByLibrary.simpleMessage("Battle Records"),
-    "chip" : MessageLookupByLibrary.simpleMessage("Chips"),
+    "battleRecords" : MessageLookupByLibrary.simpleMessage("Battle Records"),
+    "chips" : MessageLookupByLibrary.simpleMessage("Chips"),
+    "chooseItem" : MessageLookupByLibrary.simpleMessage("Choose Item"),
     "connecting" : MessageLookupByLibrary.simpleMessage("Connecting to the neural network of Rhodes Island"),
-    "furn" : MessageLookupByLibrary.simpleMessage("Furniture"),
-    "items" : MessageLookupByLibrary.simpleMessage("Choose Item"),
+    "eventItems" : MessageLookupByLibrary.simpleMessage("Event Items"),
+    "furniture" : MessageLookupByLibrary.simpleMessage("Furniture"),
     "lang" : MessageLookupByLibrary.simpleMessage("English"),
-    "material" : MessageLookupByLibrary.simpleMessage("Materials"),
+    "materials" : MessageLookupByLibrary.simpleMessage("Materials"),
     "networkUnreachable" : MessageLookupByLibrary.simpleMessage("Network is unreachable. Please try again later."),
     "recruit" : MessageLookupByLibrary.simpleMessage("Recruit"),
     "remoteServerError" : MessageLookupByLibrary.simpleMessage("Unable to connect to the remote server. Please try again later."),

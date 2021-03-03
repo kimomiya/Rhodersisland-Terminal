@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kt_dart/collection.dart';
 
 import '../../../application/item/item_provider.dart';
 import '../../../application/item/items_provider.dart';
-import '../../../core/constants/assets_path.dart';
+import '../../../core/enums/item_type.dart';
 import '../../../generated/l10n.dart';
+import 'item_chip.dart';
 
-class MaterialItemsView extends StatelessWidget {
-  const MaterialItemsView();
+final _chips = Provider.autoDispose((ref) {
+  final items = ref.watch(itemsProvider.state).items;
+  return items.filter((item) => item.type == ItemType.chip);
+});
+
+class ChipsView extends StatelessWidget {
+  const ChipsView();
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +30,7 @@ class MaterialItemsView extends StatelessWidget {
 
   Widget _buildTypeLabel(BuildContext context) {
     return Text(
-      S.of(context).material,
+      S.of(context).chips,
       style: TextStyle(fontSize: 32.sp, fontWeight: FontWeight.bold),
     );
   }
@@ -31,13 +38,13 @@ class MaterialItemsView extends StatelessWidget {
   Widget _buildGrid() {
     return Consumer(
       builder: (contexxt, watch, child) {
-        final materials = watch(materialItems);
+        final battleRecords = watch(_chips);
 
         final chips = <Widget>[];
-        for (final item in materials.iter) {
+        for (final item in battleRecords.iter) {
           final chip = ProviderScope(
             overrides: [currentItem.overrideWithValue(item)],
-            child: const _ItemChip(),
+            child: const ItemChip(),
           );
           chips.add(chip);
         }
@@ -53,36 +60,5 @@ class MaterialItemsView extends StatelessWidget {
         );
       },
     );
-  }
-}
-
-//* Components
-
-class _ItemChip extends ConsumerWidget {
-  const _ItemChip();
-
-  @override
-  Widget build(BuildContext context, ScopedReader watch) {
-    final item = watch(currentItem);
-    final coordX = item.spriteCoord.x;
-    final coordY = item.spriteCoord.y;
-    final assetPath = spritePath.replaceFirst('{x}_{y}', '${coordX}_$coordY');
-    return GestureDetector(
-      child: ClipOval(
-        child: Image.asset(assetPath, fit: BoxFit.contain),
-      ),
-      onTap: () => _onItemTap(context),
-      onLongPress: () => _onItemLongPress(context),
-    );
-  }
-
-  //* Event Methods
-
-  void _onItemTap(BuildContext context) {
-    // TODO(hiei): should navigate to item drop page
-  }
-
-  void _onItemLongPress(BuildContext context) {
-    // TODO(hiei): should show simple drap table
   }
 }
