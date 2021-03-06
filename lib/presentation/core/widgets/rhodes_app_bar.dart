@@ -4,7 +4,7 @@ class RhodesAppBar extends StatelessWidget implements PreferredSizeWidget {
   const RhodesAppBar({
     @required this.title,
     this.actions,
-  }) : super();
+  });
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
