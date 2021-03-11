@@ -5,7 +5,7 @@ enum ThemeType {
 }
 
 extension ThemeTypeValue on ThemeType {
-  static ThemeType of(String value) => ThemeType.values.firstWhere(
+  static ThemeType of(String? value) => ThemeType.values.firstWhere(
         (type) => type.value.toLowerCase() == value?.toLowerCase(),
         orElse: () => ThemeType.followSystem,
       );

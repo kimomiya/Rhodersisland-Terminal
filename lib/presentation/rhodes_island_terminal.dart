@@ -38,7 +38,10 @@ class _MaterialApp extends ConsumerWidget {
           initialRoute: '/',
           router: Router(),
         );
-        return botToastBuilder(context, navigatorBuilder(context, child));
+        return botToastBuilder(
+          context,
+          navigatorBuilder(context, child ?? const SizedBox()),
+        );
       },
       onGenerateTitle: (context) => S.of(context).appTitle,
       theme: lightTheme,

@@ -15,22 +15,21 @@ part 'item_dto.freezed.dart';
 part 'item_dto.g.dart';
 
 @freezed
-abstract class ItemDto with _$ItemDto {
-  const factory ItemDto({
-    @JsonKey(nullable: true) int addTimePoint,
-    @JsonKey(defaultValue: <dynamic>{}) Map<String, List<String>> alias,
-    @JsonKey(defaultValue: <dynamic>{}) Map<String, ExistenceDto> existence,
-    @JsonKey(defaultValue: '') String groupId,
-    @JsonKey(required: true) String itemId,
-    @JsonKey(name: 'itemType', defaultValue: '') String type,
-    @JsonKey(defaultValue: '') String name,
-    @JsonKey(name: 'name_i18n', defaultValue: <dynamic>{})
-        Map<String, String> nameI18n,
-    @JsonKey(defaultValue: <dynamic>{}) Map<String, List<String>> pron,
-    @JsonKey(nullable: true) int rarity,
-    @JsonKey(nullable: true) int sortId,
-    @JsonKey(defaultValue: <int>[]) List<int> spriteCoord,
-  }) = _ItemDto;
+class ItemDto with _$ItemDto {
+  const factory ItemDto(
+    int? addTimePoint,
+    Map<String, List<String>>? alias,
+    Map<String, ExistenceDto>? existence,
+    String? groupId,
+    String? itemId,
+    @JsonKey(name: 'itemType') String? type,
+    String? name,
+    @JsonKey(name: 'name_i18n') Map<String, String>? nameI18n,
+    Map<String, List<String>>? pron,
+    int? rarity,
+    int? sortId,
+    List<int>? spriteCoord,
+  ) = _ItemDto;
 
   factory ItemDto.fromJson(Map<String, dynamic> json) =>
       _$ItemDtoFromJson(json);
@@ -62,15 +61,15 @@ abstract class ItemDto with _$ItemDto {
 extension ItemDtoToDomain on ItemDto {
   Item toDomain() {
     return Item(
-      id: UniqueId.fromUniqueString(itemId),
+      id: UniqueId.fromUniqueString(itemId ?? ''),
       addTimePoint: addTimePoint,
-      alias: alias.toImmutableMap(),
+      alias: alias?.toImmutableMap() ?? const KtMap.empty(),
       existence: _transferExistence(),
-      groupId: groupId,
+      groupId: groupId ?? '',
       type: ItemTypeValue.of(type),
-      name: name,
-      nameI18n: nameI18n.toImmutableMap(),
-      pron: pron.toImmutableMap(),
+      name: name ?? '',
+      nameI18n: nameI18n?.toImmutableMap() ?? const KtMap.empty(),
+      pron: pron?.toImmutableMap() ?? const KtMap.empty(),
       rarity: rarity,
       sortId: sortId,
       spriteCoord: _transferSpriteCoord(),
@@ -79,14 +78,15 @@ extension ItemDtoToDomain on ItemDto {
 
   KtMap<Server, Existence> _transferExistence() {
     final map = <Server, Existence>{};
-    existence.forEach(
+    existence?.forEach(
       (key, value) => map[ServerValue.of(key)] = value.toDomain(),
     );
     return map.toImmutableMap();
   }
 
-  ItemSpriteCoord _transferSpriteCoord() {
-    if (spriteCoord.isEmpty) {
+  ItemSpriteCoord? _transferSpriteCoord() {
+    final spriteCoord = this.spriteCoord ?? [];
+    if (spriteCoord.length < 2) {
       return null;
     }
 

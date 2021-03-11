@@ -31,15 +31,23 @@ class ItemChip extends ConsumerWidget {
   //* Components
 
   Widget _buildFurnitureChip() {
-    return Container(
-      color: const Color(0xFFFF5722),
-      child: const Icon(FontAwesomeIcons.couch, color: Colors.white),
+    return const ColoredBox(
+      color: Color(0xFFFF5722),
+      child: Icon(FontAwesomeIcons.couch, color: Colors.white),
     );
   }
 
   Widget _buildSpriteChip(Item item) {
-    final coordX = item.spriteCoord.x;
-    final coordY = item.spriteCoord.y;
+    final coordX = item.spriteCoord?.x;
+    final coordY = item.spriteCoord?.y;
+
+    if (coordX == null || coordY == null) {
+      return const ColoredBox(
+        color: Color(0xFFFF5722),
+        child: Icon(FontAwesomeIcons.dove, color: Colors.white),
+      );
+    }
+
     final assetPath = spritePath.replaceFirst('{x}_{y}', '${coordX}_$coordY');
     return Image.asset(assetPath, fit: BoxFit.contain);
   }

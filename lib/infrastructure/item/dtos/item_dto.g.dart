@@ -7,37 +7,29 @@ part of 'item_dto.dart';
 // **************************************************************************
 
 _$_ItemDto _$_$_ItemDtoFromJson(Map<String, dynamic> json) {
-  $checkKeys(json, requiredKeys: const ['itemId']);
   return _$_ItemDto(
-    addTimePoint: json['addTimePoint'] as int,
-    alias: (json['alias'] as Map<String, dynamic>)?.map(
-          (k, e) => MapEntry(k, (e as List)?.map((e) => e as String)?.toList()),
-        ) ??
-        {},
-    existence: (json['existence'] as Map<String, dynamic>)?.map(
-          (k, e) => MapEntry(
-              k,
-              e == null
-                  ? null
-                  : ExistenceDto.fromJson(e as Map<String, dynamic>)),
-        ) ??
-        {},
-    groupId: json['groupId'] as String ?? '',
-    itemId: json['itemId'] as String,
-    type: json['itemType'] as String ?? '',
-    name: json['name'] as String ?? '',
-    nameI18n: (json['name_i18n'] as Map<String, dynamic>)?.map(
-          (k, e) => MapEntry(k, e as String),
-        ) ??
-        {},
-    pron: (json['pron'] as Map<String, dynamic>)?.map(
-          (k, e) => MapEntry(k, (e as List)?.map((e) => e as String)?.toList()),
-        ) ??
-        {},
-    rarity: json['rarity'] as int,
-    sortId: json['sortId'] as int,
-    spriteCoord:
-        (json['spriteCoord'] as List)?.map((e) => e as int)?.toList() ?? [],
+    json['addTimePoint'] as int?,
+    (json['alias'] as Map<String, dynamic>?)?.map(
+      (k, e) =>
+          MapEntry(k, (e as List<dynamic>).map((e) => e as String).toList()),
+    ),
+    (json['existence'] as Map<String, dynamic>?)?.map(
+      (k, e) => MapEntry(k, ExistenceDto.fromJson(e as Map<String, dynamic>)),
+    ),
+    json['groupId'] as String?,
+    json['itemId'] as String?,
+    json['itemType'] as String?,
+    json['name'] as String?,
+    (json['name_i18n'] as Map<String, dynamic>?)?.map(
+      (k, e) => MapEntry(k, e as String),
+    ),
+    (json['pron'] as Map<String, dynamic>?)?.map(
+      (k, e) =>
+          MapEntry(k, (e as List<dynamic>).map((e) => e as String).toList()),
+    ),
+    json['rarity'] as int?,
+    json['sortId'] as int?,
+    (json['spriteCoord'] as List<dynamic>?)?.map((e) => e as int).toList(),
   );
 }
 

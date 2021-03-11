@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'existence.dart';
 
@@ -9,16 +9,18 @@ part of 'existence.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$ExistenceTearOff {
   const _$ExistenceTearOff();
 
-// ignore: unused_element
   _Existence call(
-      {@required UniqueId id,
-      DateTime closeTime,
-      @required bool exist,
-      DateTime openTime}) {
+      {required UniqueId id,
+      DateTime? closeTime,
+      required bool exist,
+      DateTime? openTime}) {
     return _Existence(
       id: id,
       closeTime: closeTime,
@@ -29,25 +31,25 @@ class _$ExistenceTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $Existence = _$ExistenceTearOff();
 
 /// @nodoc
 mixin _$Existence {
-  UniqueId get id;
-  DateTime get closeTime;
-  bool get exist;
-  DateTime get openTime;
+  UniqueId get id => throw _privateConstructorUsedError;
+  DateTime? get closeTime => throw _privateConstructorUsedError;
+  bool get exist => throw _privateConstructorUsedError;
+  DateTime? get openTime => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ExistenceCopyWith<Existence> get copyWith;
+  $ExistenceCopyWith<Existence> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ExistenceCopyWith<$Res> {
   factory $ExistenceCopyWith(Existence value, $Res Function(Existence) then) =
       _$ExistenceCopyWithImpl<$Res>;
-  $Res call({UniqueId id, DateTime closeTime, bool exist, DateTime openTime});
+  $Res call({UniqueId id, DateTime? closeTime, bool exist, DateTime? openTime});
 }
 
 /// @nodoc
@@ -60,17 +62,28 @@ class _$ExistenceCopyWithImpl<$Res> implements $ExistenceCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object closeTime = freezed,
-    Object exist = freezed,
-    Object openTime = freezed,
+    Object? id = freezed,
+    Object? closeTime = freezed,
+    Object? exist = freezed,
+    Object? openTime = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as UniqueId,
-      closeTime:
-          closeTime == freezed ? _value.closeTime : closeTime as DateTime,
-      exist: exist == freezed ? _value.exist : exist as bool,
-      openTime: openTime == freezed ? _value.openTime : openTime as DateTime,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      closeTime: closeTime == freezed
+          ? _value.closeTime
+          : closeTime // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      exist: exist == freezed
+          ? _value.exist
+          : exist // ignore: cast_nullable_to_non_nullable
+              as bool,
+      openTime: openTime == freezed
+          ? _value.openTime
+          : openTime // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -81,7 +94,7 @@ abstract class _$ExistenceCopyWith<$Res> implements $ExistenceCopyWith<$Res> {
           _Existence value, $Res Function(_Existence) then) =
       __$ExistenceCopyWithImpl<$Res>;
   @override
-  $Res call({UniqueId id, DateTime closeTime, bool exist, DateTime openTime});
+  $Res call({UniqueId id, DateTime? closeTime, bool exist, DateTime? openTime});
 }
 
 /// @nodoc
@@ -95,17 +108,28 @@ class __$ExistenceCopyWithImpl<$Res> extends _$ExistenceCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object closeTime = freezed,
-    Object exist = freezed,
-    Object openTime = freezed,
+    Object? id = freezed,
+    Object? closeTime = freezed,
+    Object? exist = freezed,
+    Object? openTime = freezed,
   }) {
     return _then(_Existence(
-      id: id == freezed ? _value.id : id as UniqueId,
-      closeTime:
-          closeTime == freezed ? _value.closeTime : closeTime as DateTime,
-      exist: exist == freezed ? _value.exist : exist as bool,
-      openTime: openTime == freezed ? _value.openTime : openTime as DateTime,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      closeTime: closeTime == freezed
+          ? _value.closeTime
+          : closeTime // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      exist: exist == freezed
+          ? _value.exist
+          : exist // ignore: cast_nullable_to_non_nullable
+              as bool,
+      openTime: openTime == freezed
+          ? _value.openTime
+          : openTime // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -113,18 +137,16 @@ class __$ExistenceCopyWithImpl<$Res> extends _$ExistenceCopyWithImpl<$Res>
 /// @nodoc
 class _$_Existence implements _Existence {
   const _$_Existence(
-      {@required this.id, this.closeTime, @required this.exist, this.openTime})
-      : assert(id != null),
-        assert(exist != null);
+      {required this.id, this.closeTime, required this.exist, this.openTime});
 
   @override
   final UniqueId id;
   @override
-  final DateTime closeTime;
+  final DateTime? closeTime;
   @override
   final bool exist;
   @override
-  final DateTime openTime;
+  final DateTime? openTime;
 
   @override
   String toString() {
@@ -163,20 +185,21 @@ class _$_Existence implements _Existence {
 
 abstract class _Existence implements Existence {
   const factory _Existence(
-      {@required UniqueId id,
-      DateTime closeTime,
-      @required bool exist,
-      DateTime openTime}) = _$_Existence;
+      {required UniqueId id,
+      DateTime? closeTime,
+      required bool exist,
+      DateTime? openTime}) = _$_Existence;
 
   @override
-  UniqueId get id;
+  UniqueId get id => throw _privateConstructorUsedError;
   @override
-  DateTime get closeTime;
+  DateTime? get closeTime => throw _privateConstructorUsedError;
   @override
-  bool get exist;
+  bool get exist => throw _privateConstructorUsedError;
   @override
-  DateTime get openTime;
+  DateTime? get openTime => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ExistenceCopyWith<_Existence> get copyWith;
+  _$ExistenceCopyWith<_Existence> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'item_dto.dart';
 
@@ -8,6 +8,10 @@ part of 'item_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 ItemDto _$ItemDtoFromJson(Map<String, dynamic> json) {
   return _ItemDto.fromJson(json);
 }
@@ -16,88 +20,64 @@ ItemDto _$ItemDtoFromJson(Map<String, dynamic> json) {
 class _$ItemDtoTearOff {
   const _$ItemDtoTearOff();
 
-// ignore: unused_element
   _ItemDto call(
-      {@JsonKey(nullable: true)
-          int addTimePoint,
-      @JsonKey(defaultValue: <dynamic>{})
-          Map<String, List<String>> alias,
-      @JsonKey(defaultValue: <dynamic>{})
-          Map<String, ExistenceDto> existence,
-      @JsonKey(defaultValue: '')
-          String groupId,
-      @JsonKey(required: true)
-          String itemId,
-      @JsonKey(name: 'itemType', defaultValue: '')
-          String type,
-      @JsonKey(defaultValue: '')
-          String name,
-      @JsonKey(name: 'name_i18n', defaultValue: <dynamic>{})
-          Map<String, String> nameI18n,
-      @JsonKey(defaultValue: <dynamic>{})
-          Map<String, List<String>> pron,
-      @JsonKey(nullable: true)
-          int rarity,
-      @JsonKey(nullable: true)
-          int sortId,
-      @JsonKey(defaultValue: <int>[])
-          List<int> spriteCoord}) {
+      int? addTimePoint,
+      Map<String, List<String>>? alias,
+      Map<String, ExistenceDto>? existence,
+      String? groupId,
+      String? itemId,
+      @JsonKey(name: 'itemType') String? type,
+      String? name,
+      @JsonKey(name: 'name_i18n') Map<String, String>? nameI18n,
+      Map<String, List<String>>? pron,
+      int? rarity,
+      int? sortId,
+      List<int>? spriteCoord) {
     return _ItemDto(
-      addTimePoint: addTimePoint,
-      alias: alias,
-      existence: existence,
-      groupId: groupId,
-      itemId: itemId,
-      type: type,
-      name: name,
-      nameI18n: nameI18n,
-      pron: pron,
-      rarity: rarity,
-      sortId: sortId,
-      spriteCoord: spriteCoord,
+      addTimePoint,
+      alias,
+      existence,
+      groupId,
+      itemId,
+      type,
+      name,
+      nameI18n,
+      pron,
+      rarity,
+      sortId,
+      spriteCoord,
     );
   }
 
-// ignore: unused_element
   ItemDto fromJson(Map<String, Object> json) {
     return ItemDto.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ItemDto = _$ItemDtoTearOff();
 
 /// @nodoc
 mixin _$ItemDto {
-  @JsonKey(nullable: true)
-  int get addTimePoint;
-  @JsonKey(defaultValue: <dynamic>{})
-  Map<String, List<String>> get alias;
-  @JsonKey(defaultValue: <dynamic>{})
-  Map<String, ExistenceDto> get existence;
-  @JsonKey(defaultValue: '')
-  String get groupId;
-  @JsonKey(required: true)
-  String get itemId;
-  @JsonKey(name: 'itemType', defaultValue: '')
-  String get type;
-  @JsonKey(defaultValue: '')
-  String get name;
-  @JsonKey(name: 'name_i18n', defaultValue: <dynamic>{})
-  Map<String, String> get nameI18n;
-  @JsonKey(defaultValue: <dynamic>{})
-  Map<String, List<String>> get pron;
-  @JsonKey(nullable: true)
-  int get rarity;
-  @JsonKey(nullable: true)
-  int get sortId;
-  @JsonKey(defaultValue: <int>[])
-  List<int> get spriteCoord;
+  int? get addTimePoint => throw _privateConstructorUsedError;
+  Map<String, List<String>>? get alias => throw _privateConstructorUsedError;
+  Map<String, ExistenceDto>? get existence =>
+      throw _privateConstructorUsedError;
+  String? get groupId => throw _privateConstructorUsedError;
+  String? get itemId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'itemType')
+  String? get type => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  @JsonKey(name: 'name_i18n')
+  Map<String, String>? get nameI18n => throw _privateConstructorUsedError;
+  Map<String, List<String>>? get pron => throw _privateConstructorUsedError;
+  int? get rarity => throw _privateConstructorUsedError;
+  int? get sortId => throw _privateConstructorUsedError;
+  List<int>? get spriteCoord => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ItemDtoCopyWith<ItemDto> get copyWith;
+  $ItemDtoCopyWith<ItemDto> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -105,30 +85,18 @@ abstract class $ItemDtoCopyWith<$Res> {
   factory $ItemDtoCopyWith(ItemDto value, $Res Function(ItemDto) then) =
       _$ItemDtoCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(nullable: true)
-          int addTimePoint,
-      @JsonKey(defaultValue: <dynamic>{})
-          Map<String, List<String>> alias,
-      @JsonKey(defaultValue: <dynamic>{})
-          Map<String, ExistenceDto> existence,
-      @JsonKey(defaultValue: '')
-          String groupId,
-      @JsonKey(required: true)
-          String itemId,
-      @JsonKey(name: 'itemType', defaultValue: '')
-          String type,
-      @JsonKey(defaultValue: '')
-          String name,
-      @JsonKey(name: 'name_i18n', defaultValue: <dynamic>{})
-          Map<String, String> nameI18n,
-      @JsonKey(defaultValue: <dynamic>{})
-          Map<String, List<String>> pron,
-      @JsonKey(nullable: true)
-          int rarity,
-      @JsonKey(nullable: true)
-          int sortId,
-      @JsonKey(defaultValue: <int>[])
-          List<int> spriteCoord});
+      {int? addTimePoint,
+      Map<String, List<String>>? alias,
+      Map<String, ExistenceDto>? existence,
+      String? groupId,
+      String? itemId,
+      @JsonKey(name: 'itemType') String? type,
+      String? name,
+      @JsonKey(name: 'name_i18n') Map<String, String>? nameI18n,
+      Map<String, List<String>>? pron,
+      int? rarity,
+      int? sortId,
+      List<int>? spriteCoord});
 }
 
 /// @nodoc
@@ -141,40 +109,68 @@ class _$ItemDtoCopyWithImpl<$Res> implements $ItemDtoCopyWith<$Res> {
 
   @override
   $Res call({
-    Object addTimePoint = freezed,
-    Object alias = freezed,
-    Object existence = freezed,
-    Object groupId = freezed,
-    Object itemId = freezed,
-    Object type = freezed,
-    Object name = freezed,
-    Object nameI18n = freezed,
-    Object pron = freezed,
-    Object rarity = freezed,
-    Object sortId = freezed,
-    Object spriteCoord = freezed,
+    Object? addTimePoint = freezed,
+    Object? alias = freezed,
+    Object? existence = freezed,
+    Object? groupId = freezed,
+    Object? itemId = freezed,
+    Object? type = freezed,
+    Object? name = freezed,
+    Object? nameI18n = freezed,
+    Object? pron = freezed,
+    Object? rarity = freezed,
+    Object? sortId = freezed,
+    Object? spriteCoord = freezed,
   }) {
     return _then(_value.copyWith(
-      addTimePoint:
-          addTimePoint == freezed ? _value.addTimePoint : addTimePoint as int,
-      alias:
-          alias == freezed ? _value.alias : alias as Map<String, List<String>>,
+      addTimePoint: addTimePoint == freezed
+          ? _value.addTimePoint
+          : addTimePoint // ignore: cast_nullable_to_non_nullable
+              as int?,
+      alias: alias == freezed
+          ? _value.alias
+          : alias // ignore: cast_nullable_to_non_nullable
+              as Map<String, List<String>>?,
       existence: existence == freezed
           ? _value.existence
-          : existence as Map<String, ExistenceDto>,
-      groupId: groupId == freezed ? _value.groupId : groupId as String,
-      itemId: itemId == freezed ? _value.itemId : itemId as String,
-      type: type == freezed ? _value.type : type as String,
-      name: name == freezed ? _value.name : name as String,
+          : existence // ignore: cast_nullable_to_non_nullable
+              as Map<String, ExistenceDto>?,
+      groupId: groupId == freezed
+          ? _value.groupId
+          : groupId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      itemId: itemId == freezed
+          ? _value.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
       nameI18n: nameI18n == freezed
           ? _value.nameI18n
-          : nameI18n as Map<String, String>,
-      pron: pron == freezed ? _value.pron : pron as Map<String, List<String>>,
-      rarity: rarity == freezed ? _value.rarity : rarity as int,
-      sortId: sortId == freezed ? _value.sortId : sortId as int,
+          : nameI18n // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>?,
+      pron: pron == freezed
+          ? _value.pron
+          : pron // ignore: cast_nullable_to_non_nullable
+              as Map<String, List<String>>?,
+      rarity: rarity == freezed
+          ? _value.rarity
+          : rarity // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sortId: sortId == freezed
+          ? _value.sortId
+          : sortId // ignore: cast_nullable_to_non_nullable
+              as int?,
       spriteCoord: spriteCoord == freezed
           ? _value.spriteCoord
-          : spriteCoord as List<int>,
+          : spriteCoord // ignore: cast_nullable_to_non_nullable
+              as List<int>?,
     ));
   }
 }
@@ -185,30 +181,18 @@ abstract class _$ItemDtoCopyWith<$Res> implements $ItemDtoCopyWith<$Res> {
       __$ItemDtoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(nullable: true)
-          int addTimePoint,
-      @JsonKey(defaultValue: <dynamic>{})
-          Map<String, List<String>> alias,
-      @JsonKey(defaultValue: <dynamic>{})
-          Map<String, ExistenceDto> existence,
-      @JsonKey(defaultValue: '')
-          String groupId,
-      @JsonKey(required: true)
-          String itemId,
-      @JsonKey(name: 'itemType', defaultValue: '')
-          String type,
-      @JsonKey(defaultValue: '')
-          String name,
-      @JsonKey(name: 'name_i18n', defaultValue: <dynamic>{})
-          Map<String, String> nameI18n,
-      @JsonKey(defaultValue: <dynamic>{})
-          Map<String, List<String>> pron,
-      @JsonKey(nullable: true)
-          int rarity,
-      @JsonKey(nullable: true)
-          int sortId,
-      @JsonKey(defaultValue: <int>[])
-          List<int> spriteCoord});
+      {int? addTimePoint,
+      Map<String, List<String>>? alias,
+      Map<String, ExistenceDto>? existence,
+      String? groupId,
+      String? itemId,
+      @JsonKey(name: 'itemType') String? type,
+      String? name,
+      @JsonKey(name: 'name_i18n') Map<String, String>? nameI18n,
+      Map<String, List<String>>? pron,
+      int? rarity,
+      int? sortId,
+      List<int>? spriteCoord});
 }
 
 /// @nodoc
@@ -222,40 +206,68 @@ class __$ItemDtoCopyWithImpl<$Res> extends _$ItemDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object addTimePoint = freezed,
-    Object alias = freezed,
-    Object existence = freezed,
-    Object groupId = freezed,
-    Object itemId = freezed,
-    Object type = freezed,
-    Object name = freezed,
-    Object nameI18n = freezed,
-    Object pron = freezed,
-    Object rarity = freezed,
-    Object sortId = freezed,
-    Object spriteCoord = freezed,
+    Object? addTimePoint = freezed,
+    Object? alias = freezed,
+    Object? existence = freezed,
+    Object? groupId = freezed,
+    Object? itemId = freezed,
+    Object? type = freezed,
+    Object? name = freezed,
+    Object? nameI18n = freezed,
+    Object? pron = freezed,
+    Object? rarity = freezed,
+    Object? sortId = freezed,
+    Object? spriteCoord = freezed,
   }) {
     return _then(_ItemDto(
-      addTimePoint:
-          addTimePoint == freezed ? _value.addTimePoint : addTimePoint as int,
-      alias:
-          alias == freezed ? _value.alias : alias as Map<String, List<String>>,
-      existence: existence == freezed
+      addTimePoint == freezed
+          ? _value.addTimePoint
+          : addTimePoint // ignore: cast_nullable_to_non_nullable
+              as int?,
+      alias == freezed
+          ? _value.alias
+          : alias // ignore: cast_nullable_to_non_nullable
+              as Map<String, List<String>>?,
+      existence == freezed
           ? _value.existence
-          : existence as Map<String, ExistenceDto>,
-      groupId: groupId == freezed ? _value.groupId : groupId as String,
-      itemId: itemId == freezed ? _value.itemId : itemId as String,
-      type: type == freezed ? _value.type : type as String,
-      name: name == freezed ? _value.name : name as String,
-      nameI18n: nameI18n == freezed
+          : existence // ignore: cast_nullable_to_non_nullable
+              as Map<String, ExistenceDto>?,
+      groupId == freezed
+          ? _value.groupId
+          : groupId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      itemId == freezed
+          ? _value.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      nameI18n == freezed
           ? _value.nameI18n
-          : nameI18n as Map<String, String>,
-      pron: pron == freezed ? _value.pron : pron as Map<String, List<String>>,
-      rarity: rarity == freezed ? _value.rarity : rarity as int,
-      sortId: sortId == freezed ? _value.sortId : sortId as int,
-      spriteCoord: spriteCoord == freezed
+          : nameI18n // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>?,
+      pron == freezed
+          ? _value.pron
+          : pron // ignore: cast_nullable_to_non_nullable
+              as Map<String, List<String>>?,
+      rarity == freezed
+          ? _value.rarity
+          : rarity // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sortId == freezed
+          ? _value.sortId
+          : sortId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      spriteCoord == freezed
           ? _value.spriteCoord
-          : spriteCoord as List<int>,
+          : spriteCoord // ignore: cast_nullable_to_non_nullable
+              as List<int>?,
     ));
   }
 }
@@ -265,58 +277,48 @@ class __$ItemDtoCopyWithImpl<$Res> extends _$ItemDtoCopyWithImpl<$Res>
 /// @nodoc
 class _$_ItemDto implements _ItemDto {
   const _$_ItemDto(
-      {@JsonKey(nullable: true) this.addTimePoint,
-      @JsonKey(defaultValue: <dynamic>{}) this.alias,
-      @JsonKey(defaultValue: <dynamic>{}) this.existence,
-      @JsonKey(defaultValue: '') this.groupId,
-      @JsonKey(required: true) this.itemId,
-      @JsonKey(name: 'itemType', defaultValue: '') this.type,
-      @JsonKey(defaultValue: '') this.name,
-      @JsonKey(name: 'name_i18n', defaultValue: <dynamic>{}) this.nameI18n,
-      @JsonKey(defaultValue: <dynamic>{}) this.pron,
-      @JsonKey(nullable: true) this.rarity,
-      @JsonKey(nullable: true) this.sortId,
-      @JsonKey(defaultValue: <int>[]) this.spriteCoord});
+      this.addTimePoint,
+      this.alias,
+      this.existence,
+      this.groupId,
+      this.itemId,
+      @JsonKey(name: 'itemType') this.type,
+      this.name,
+      @JsonKey(name: 'name_i18n') this.nameI18n,
+      this.pron,
+      this.rarity,
+      this.sortId,
+      this.spriteCoord);
 
   factory _$_ItemDto.fromJson(Map<String, dynamic> json) =>
       _$_$_ItemDtoFromJson(json);
 
   @override
-  @JsonKey(nullable: true)
-  final int addTimePoint;
+  final int? addTimePoint;
   @override
-  @JsonKey(defaultValue: <dynamic>{})
-  final Map<String, List<String>> alias;
+  final Map<String, List<String>>? alias;
   @override
-  @JsonKey(defaultValue: <dynamic>{})
-  final Map<String, ExistenceDto> existence;
+  final Map<String, ExistenceDto>? existence;
   @override
-  @JsonKey(defaultValue: '')
-  final String groupId;
+  final String? groupId;
   @override
-  @JsonKey(required: true)
-  final String itemId;
+  final String? itemId;
   @override
-  @JsonKey(name: 'itemType', defaultValue: '')
-  final String type;
+  @JsonKey(name: 'itemType')
+  final String? type;
   @override
-  @JsonKey(defaultValue: '')
-  final String name;
+  final String? name;
   @override
-  @JsonKey(name: 'name_i18n', defaultValue: <dynamic>{})
-  final Map<String, String> nameI18n;
+  @JsonKey(name: 'name_i18n')
+  final Map<String, String>? nameI18n;
   @override
-  @JsonKey(defaultValue: <dynamic>{})
-  final Map<String, List<String>> pron;
+  final Map<String, List<String>>? pron;
   @override
-  @JsonKey(nullable: true)
-  final int rarity;
+  final int? rarity;
   @override
-  @JsonKey(nullable: true)
-  final int sortId;
+  final int? sortId;
   @override
-  @JsonKey(defaultValue: <int>[])
-  final List<int> spriteCoord;
+  final List<int>? spriteCoord;
 
   @override
   String toString() {
@@ -387,70 +389,50 @@ class _$_ItemDto implements _ItemDto {
 
 abstract class _ItemDto implements ItemDto {
   const factory _ItemDto(
-      {@JsonKey(nullable: true)
-          int addTimePoint,
-      @JsonKey(defaultValue: <dynamic>{})
-          Map<String, List<String>> alias,
-      @JsonKey(defaultValue: <dynamic>{})
-          Map<String, ExistenceDto> existence,
-      @JsonKey(defaultValue: '')
-          String groupId,
-      @JsonKey(required: true)
-          String itemId,
-      @JsonKey(name: 'itemType', defaultValue: '')
-          String type,
-      @JsonKey(defaultValue: '')
-          String name,
-      @JsonKey(name: 'name_i18n', defaultValue: <dynamic>{})
-          Map<String, String> nameI18n,
-      @JsonKey(defaultValue: <dynamic>{})
-          Map<String, List<String>> pron,
-      @JsonKey(nullable: true)
-          int rarity,
-      @JsonKey(nullable: true)
-          int sortId,
-      @JsonKey(defaultValue: <int>[])
-          List<int> spriteCoord}) = _$_ItemDto;
+      int? addTimePoint,
+      Map<String, List<String>>? alias,
+      Map<String, ExistenceDto>? existence,
+      String? groupId,
+      String? itemId,
+      @JsonKey(name: 'itemType') String? type,
+      String? name,
+      @JsonKey(name: 'name_i18n') Map<String, String>? nameI18n,
+      Map<String, List<String>>? pron,
+      int? rarity,
+      int? sortId,
+      List<int>? spriteCoord) = _$_ItemDto;
 
   factory _ItemDto.fromJson(Map<String, dynamic> json) = _$_ItemDto.fromJson;
 
   @override
-  @JsonKey(nullable: true)
-  int get addTimePoint;
+  int? get addTimePoint => throw _privateConstructorUsedError;
   @override
-  @JsonKey(defaultValue: <dynamic>{})
-  Map<String, List<String>> get alias;
+  Map<String, List<String>>? get alias => throw _privateConstructorUsedError;
   @override
-  @JsonKey(defaultValue: <dynamic>{})
-  Map<String, ExistenceDto> get existence;
+  Map<String, ExistenceDto>? get existence =>
+      throw _privateConstructorUsedError;
   @override
-  @JsonKey(defaultValue: '')
-  String get groupId;
+  String? get groupId => throw _privateConstructorUsedError;
   @override
-  @JsonKey(required: true)
-  String get itemId;
+  String? get itemId => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'itemType', defaultValue: '')
-  String get type;
+  @JsonKey(name: 'itemType')
+  String? get type => throw _privateConstructorUsedError;
   @override
-  @JsonKey(defaultValue: '')
-  String get name;
+  String? get name => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'name_i18n', defaultValue: <dynamic>{})
-  Map<String, String> get nameI18n;
+  @JsonKey(name: 'name_i18n')
+  Map<String, String>? get nameI18n => throw _privateConstructorUsedError;
   @override
-  @JsonKey(defaultValue: <dynamic>{})
-  Map<String, List<String>> get pron;
+  Map<String, List<String>>? get pron => throw _privateConstructorUsedError;
   @override
-  @JsonKey(nullable: true)
-  int get rarity;
+  int? get rarity => throw _privateConstructorUsedError;
   @override
-  @JsonKey(nullable: true)
-  int get sortId;
+  int? get sortId => throw _privateConstructorUsedError;
   @override
-  @JsonKey(defaultValue: <int>[])
-  List<int> get spriteCoord;
+  List<int>? get spriteCoord => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ItemDtoCopyWith<_ItemDto> get copyWith;
+  _$ItemDtoCopyWith<_ItemDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }

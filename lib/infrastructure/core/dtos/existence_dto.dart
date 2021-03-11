@@ -8,12 +8,12 @@ part 'existence_dto.freezed.dart';
 part 'existence_dto.g.dart';
 
 @freezed
-abstract class ExistenceDto with _$ExistenceDto {
-  const factory ExistenceDto({
-    @JsonKey(nullable: true) int closeTime,
-    @JsonKey(defaultValue: false) bool exist,
-    @JsonKey(nullable: true) int openTime,
-  }) = _ExistenceDto;
+class ExistenceDto with _$ExistenceDto {
+  const factory ExistenceDto(
+    int? closeTime,
+    bool? exist,
+    int? openTime,
+  ) = _ExistenceDto;
 
   factory ExistenceDto.fromJson(Map<String, dynamic> json) =>
       _$ExistenceDtoFromJson(json);
@@ -24,7 +24,7 @@ extension ExistenceDtoToDomain on ExistenceDto {
     return Existence(
       id: UniqueId(),
       closeTime: closeTime?.toDateTime(),
-      exist: exist,
+      exist: exist ?? false,
       openTime: openTime?.toDateTime(),
     );
   }

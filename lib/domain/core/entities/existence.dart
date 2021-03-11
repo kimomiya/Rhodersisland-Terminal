@@ -6,11 +6,11 @@ import '../../core/unique_id.dart';
 part 'existence.freezed.dart';
 
 @freezed
-abstract class Existence with _$Existence implements Entity {
+class Existence with _$Existence implements Entity {
   const factory Existence({
-    @required UniqueId id,
-    DateTime closeTime,
-    @required bool exist,
-    DateTime openTime,
+    required UniqueId id,
+    DateTime? closeTime,
+    required bool exist,
+    DateTime? openTime,
   }) = _Existence;
 }

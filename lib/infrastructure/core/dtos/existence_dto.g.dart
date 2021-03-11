@@ -8,9 +8,9 @@ part of 'existence_dto.dart';
 
 _$_ExistenceDto _$_$_ExistenceDtoFromJson(Map<String, dynamic> json) {
   return _$_ExistenceDto(
-    closeTime: json['closeTime'] as int,
-    exist: json['exist'] as bool ?? false,
-    openTime: json['openTime'] as int,
+    json['closeTime'] as int?,
+    json['exist'] as bool?,
+    json['openTime'] as int?,
   );
 }
 

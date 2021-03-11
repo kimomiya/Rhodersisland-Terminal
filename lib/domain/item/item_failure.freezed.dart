@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'item_failure.dart';
 
@@ -9,62 +9,65 @@ part of 'item_failure.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$ItemFailureTearOff {
   const _$ItemFailureTearOff();
 
-// ignore: unused_element
   _RemoteServerError remoteServerError(
-      {@required int code, @required String description}) {
+      {required int code, required String description}) {
     return _RemoteServerError(
       code: code,
       description: description,
     );
   }
 
-// ignore: unused_element
   _UnexpectedError unexpectedError() {
     return const _UnexpectedError();
   }
 
-// ignore: unused_element
   _EmptyQueryResult emptyQueryResult() {
     return const _EmptyQueryResult();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ItemFailure = _$ItemFailureTearOff();
 
 /// @nodoc
 mixin _$ItemFailure {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult remoteServerError(int code, String description),
-    @required TResult unexpectedError(),
-    @required TResult emptyQueryResult(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(int code, String description) remoteServerError,
+    required TResult Function() unexpectedError,
+    required TResult Function() emptyQueryResult,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult remoteServerError(int code, String description),
-    TResult unexpectedError(),
-    TResult emptyQueryResult(),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int code, String description)? remoteServerError,
+    TResult Function()? unexpectedError,
+    TResult Function()? emptyQueryResult,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult remoteServerError(_RemoteServerError value),
-    @required TResult unexpectedError(_UnexpectedError value),
-    @required TResult emptyQueryResult(_EmptyQueryResult value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_RemoteServerError value) remoteServerError,
+    required TResult Function(_UnexpectedError value) unexpectedError,
+    required TResult Function(_EmptyQueryResult value) emptyQueryResult,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult remoteServerError(_RemoteServerError value),
-    TResult unexpectedError(_UnexpectedError value),
-    TResult emptyQueryResult(_EmptyQueryResult value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_RemoteServerError value)? remoteServerError,
+    TResult Function(_UnexpectedError value)? unexpectedError,
+    TResult Function(_EmptyQueryResult value)? emptyQueryResult,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -104,22 +107,25 @@ class __$RemoteServerErrorCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object code = freezed,
-    Object description = freezed,
+    Object? code = freezed,
+    Object? description = freezed,
   }) {
     return _then(_RemoteServerError(
-      code: code == freezed ? _value.code : code as int,
-      description:
-          description == freezed ? _value.description : description as String,
+      code: code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as int,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
 class _$_RemoteServerError implements _RemoteServerError {
-  const _$_RemoteServerError({@required this.code, @required this.description})
-      : assert(code != null),
-        assert(description != null);
+  const _$_RemoteServerError({required this.code, required this.description});
 
   @override
   final int code;
@@ -155,26 +161,22 @@ class _$_RemoteServerError implements _RemoteServerError {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult remoteServerError(int code, String description),
-    @required TResult unexpectedError(),
-    @required TResult emptyQueryResult(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(int code, String description) remoteServerError,
+    required TResult Function() unexpectedError,
+    required TResult Function() emptyQueryResult,
   }) {
-    assert(remoteServerError != null);
-    assert(unexpectedError != null);
-    assert(emptyQueryResult != null);
     return remoteServerError(code, description);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult remoteServerError(int code, String description),
-    TResult unexpectedError(),
-    TResult emptyQueryResult(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int code, String description)? remoteServerError,
+    TResult Function()? unexpectedError,
+    TResult Function()? emptyQueryResult,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (remoteServerError != null) {
       return remoteServerError(code, description);
     }
@@ -183,26 +185,22 @@ class _$_RemoteServerError implements _RemoteServerError {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult remoteServerError(_RemoteServerError value),
-    @required TResult unexpectedError(_UnexpectedError value),
-    @required TResult emptyQueryResult(_EmptyQueryResult value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_RemoteServerError value) remoteServerError,
+    required TResult Function(_UnexpectedError value) unexpectedError,
+    required TResult Function(_EmptyQueryResult value) emptyQueryResult,
   }) {
-    assert(remoteServerError != null);
-    assert(unexpectedError != null);
-    assert(emptyQueryResult != null);
     return remoteServerError(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult remoteServerError(_RemoteServerError value),
-    TResult unexpectedError(_UnexpectedError value),
-    TResult emptyQueryResult(_EmptyQueryResult value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_RemoteServerError value)? remoteServerError,
+    TResult Function(_UnexpectedError value)? unexpectedError,
+    TResult Function(_EmptyQueryResult value)? emptyQueryResult,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (remoteServerError != null) {
       return remoteServerError(this);
     }
@@ -212,13 +210,13 @@ class _$_RemoteServerError implements _RemoteServerError {
 
 abstract class _RemoteServerError implements ItemFailure {
   const factory _RemoteServerError(
-      {@required int code,
-      @required String description}) = _$_RemoteServerError;
+      {required int code, required String description}) = _$_RemoteServerError;
 
-  int get code;
-  String get description;
+  int get code => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$RemoteServerErrorCopyWith<_RemoteServerError> get copyWith;
+  _$RemoteServerErrorCopyWith<_RemoteServerError> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -259,26 +257,22 @@ class _$_UnexpectedError implements _UnexpectedError {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult remoteServerError(int code, String description),
-    @required TResult unexpectedError(),
-    @required TResult emptyQueryResult(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(int code, String description) remoteServerError,
+    required TResult Function() unexpectedError,
+    required TResult Function() emptyQueryResult,
   }) {
-    assert(remoteServerError != null);
-    assert(unexpectedError != null);
-    assert(emptyQueryResult != null);
     return unexpectedError();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult remoteServerError(int code, String description),
-    TResult unexpectedError(),
-    TResult emptyQueryResult(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int code, String description)? remoteServerError,
+    TResult Function()? unexpectedError,
+    TResult Function()? emptyQueryResult,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unexpectedError != null) {
       return unexpectedError();
     }
@@ -287,26 +281,22 @@ class _$_UnexpectedError implements _UnexpectedError {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult remoteServerError(_RemoteServerError value),
-    @required TResult unexpectedError(_UnexpectedError value),
-    @required TResult emptyQueryResult(_EmptyQueryResult value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_RemoteServerError value) remoteServerError,
+    required TResult Function(_UnexpectedError value) unexpectedError,
+    required TResult Function(_EmptyQueryResult value) emptyQueryResult,
   }) {
-    assert(remoteServerError != null);
-    assert(unexpectedError != null);
-    assert(emptyQueryResult != null);
     return unexpectedError(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult remoteServerError(_RemoteServerError value),
-    TResult unexpectedError(_UnexpectedError value),
-    TResult emptyQueryResult(_EmptyQueryResult value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_RemoteServerError value)? remoteServerError,
+    TResult Function(_UnexpectedError value)? unexpectedError,
+    TResult Function(_EmptyQueryResult value)? emptyQueryResult,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unexpectedError != null) {
       return unexpectedError(this);
     }
@@ -356,26 +346,22 @@ class _$_EmptyQueryResult implements _EmptyQueryResult {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult remoteServerError(int code, String description),
-    @required TResult unexpectedError(),
-    @required TResult emptyQueryResult(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(int code, String description) remoteServerError,
+    required TResult Function() unexpectedError,
+    required TResult Function() emptyQueryResult,
   }) {
-    assert(remoteServerError != null);
-    assert(unexpectedError != null);
-    assert(emptyQueryResult != null);
     return emptyQueryResult();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult remoteServerError(int code, String description),
-    TResult unexpectedError(),
-    TResult emptyQueryResult(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int code, String description)? remoteServerError,
+    TResult Function()? unexpectedError,
+    TResult Function()? emptyQueryResult,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (emptyQueryResult != null) {
       return emptyQueryResult();
     }
@@ -384,26 +370,22 @@ class _$_EmptyQueryResult implements _EmptyQueryResult {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult remoteServerError(_RemoteServerError value),
-    @required TResult unexpectedError(_UnexpectedError value),
-    @required TResult emptyQueryResult(_EmptyQueryResult value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_RemoteServerError value) remoteServerError,
+    required TResult Function(_UnexpectedError value) unexpectedError,
+    required TResult Function(_EmptyQueryResult value) emptyQueryResult,
   }) {
-    assert(remoteServerError != null);
-    assert(unexpectedError != null);
-    assert(emptyQueryResult != null);
     return emptyQueryResult(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult remoteServerError(_RemoteServerError value),
-    TResult unexpectedError(_UnexpectedError value),
-    TResult emptyQueryResult(_EmptyQueryResult value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_RemoteServerError value)? remoteServerError,
+    TResult Function(_UnexpectedError value)? unexpectedError,
+    TResult Function(_EmptyQueryResult value)? emptyQueryResult,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (emptyQueryResult != null) {
       return emptyQueryResult(this);
     }

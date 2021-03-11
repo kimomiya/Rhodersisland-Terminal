@@ -8,11 +8,11 @@ import '../../domain/item/item_failure.dart';
 part 'items_state.freezed.dart';
 
 @freezed
-abstract class ItemsState with _$ItemsState {
+class ItemsState with _$ItemsState {
   const factory ItemsState({
-    @required KtList<Item> items,
-    @required bool isLoading,
-    @required Option<ItemFailure> failureOption,
+    required KtList<Item> items,
+    required bool isLoading,
+    required Option<ItemFailure> failureOption,
   }) = _ItemsState;
 
   factory ItemsState.initial() => ItemsState(

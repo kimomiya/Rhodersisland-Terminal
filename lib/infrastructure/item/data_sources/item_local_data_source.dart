@@ -69,10 +69,10 @@ class ItemLocalDataSourceImpl implements ItemLocalDataSource {
   //* Helper Methods
 
   Map<String, dynamic> _transferExistence(
-    Map<String, ExistenceDto> existence,
+    Map<String, ExistenceDto>? existence,
   ) {
     final map = <String, dynamic>{};
-    existence.forEach((key, value) => map[key] = value.toJson());
+    existence?.forEach((key, value) => map[key] = value.toJson());
     return map;
   }
 }

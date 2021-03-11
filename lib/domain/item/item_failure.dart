@@ -3,10 +3,10 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'item_failure.freezed.dart';
 
 @freezed
-abstract class ItemFailure with _$ItemFailure {
+class ItemFailure with _$ItemFailure {
   const factory ItemFailure.remoteServerError({
-    @required int code,
-    @required String description,
+    required int code,
+    required String description,
   }) = _RemoteServerError;
 
   const factory ItemFailure.unexpectedError() = _UnexpectedError;

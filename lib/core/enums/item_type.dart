@@ -12,7 +12,7 @@ enum ItemType {
 }
 
 extension ItemTypeValue on ItemType {
-  static ItemType of(String value) => ItemType.values.firstWhere(
+  static ItemType of(String? value) => ItemType.values.firstWhere(
         (type) => type.value.toLowerCase() == value?.toLowerCase(),
         orElse: () => ItemType.uncategorized,
       );

@@ -14,7 +14,7 @@ class ThemeRepositoryImpl implements ThemeRepository {
   final ThemeLocalDataSource _localDataSource;
 
   @override
-  ThemeType loadTheme() {
+  ThemeType? loadTheme() {
     try {
       return _localDataSource.loadTheme();
     } catch (e) {
@@ -24,7 +24,7 @@ class ThemeRepositoryImpl implements ThemeRepository {
   }
 
   @override
-  Future<ThemeType> saveTheme(ThemeType theme) async {
+  Future<ThemeType?> saveTheme(ThemeType theme) async {
     try {
       await _localDataSource.saveTheme(theme);
       return _localDataSource.loadTheme();

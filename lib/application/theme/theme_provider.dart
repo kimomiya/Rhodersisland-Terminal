@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../core/constants/app_constants.dart';
 import '../../core/enums/theme_type.dart';
 import '../../domain/theme/theme_repository.dart';
 import '../../injection.dart';
@@ -33,17 +34,17 @@ class ThemeNotifier extends ChangeNotifier {
 
   final ThemeRepository _repository;
 
-  ThemeType _theme;
+  var _theme = defaultTheme;
 
-  ThemeType get theme => _theme ?? ThemeType.light;
+  ThemeType get theme => _theme;
 
   Future<void> change(ThemeType theme) async {
-    _theme = await _repository.saveTheme(theme);
+    _theme = await _repository.saveTheme(theme) ?? defaultTheme;
     notifyListeners();
   }
 
   void _load() {
-    _theme = _repository.loadTheme();
+    _theme = _repository.loadTheme() ?? defaultTheme;
     notifyListeners();
   }
 }
