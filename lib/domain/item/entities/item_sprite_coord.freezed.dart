@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'item_sprite_coord.dart';
 
@@ -9,12 +9,14 @@ part of 'item_sprite_coord.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$ItemSpriteCoordTearOff {
   const _$ItemSpriteCoordTearOff();
 
-// ignore: unused_element
-  _ItemSpriteCoord call({@required UniqueId id, int x, int y}) {
+  _ItemSpriteCoord call({required UniqueId id, int? x, int? y}) {
     return _ItemSpriteCoord(
       id: id,
       x: x,
@@ -24,17 +26,17 @@ class _$ItemSpriteCoordTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ItemSpriteCoord = _$ItemSpriteCoordTearOff();
 
 /// @nodoc
 mixin _$ItemSpriteCoord {
-  UniqueId get id;
-  int get x;
-  int get y;
+  UniqueId get id => throw _privateConstructorUsedError;
+  int? get x => throw _privateConstructorUsedError;
+  int? get y => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ItemSpriteCoordCopyWith<ItemSpriteCoord> get copyWith;
+  $ItemSpriteCoordCopyWith<ItemSpriteCoord> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -42,7 +44,7 @@ abstract class $ItemSpriteCoordCopyWith<$Res> {
   factory $ItemSpriteCoordCopyWith(
           ItemSpriteCoord value, $Res Function(ItemSpriteCoord) then) =
       _$ItemSpriteCoordCopyWithImpl<$Res>;
-  $Res call({UniqueId id, int x, int y});
+  $Res call({UniqueId id, int? x, int? y});
 }
 
 /// @nodoc
@@ -56,14 +58,23 @@ class _$ItemSpriteCoordCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object x = freezed,
-    Object y = freezed,
+    Object? id = freezed,
+    Object? x = freezed,
+    Object? y = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as UniqueId,
-      x: x == freezed ? _value.x : x as int,
-      y: y == freezed ? _value.y : y as int,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      x: x == freezed
+          ? _value.x
+          : x // ignore: cast_nullable_to_non_nullable
+              as int?,
+      y: y == freezed
+          ? _value.y
+          : y // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -75,7 +86,7 @@ abstract class _$ItemSpriteCoordCopyWith<$Res>
           _ItemSpriteCoord value, $Res Function(_ItemSpriteCoord) then) =
       __$ItemSpriteCoordCopyWithImpl<$Res>;
   @override
-  $Res call({UniqueId id, int x, int y});
+  $Res call({UniqueId id, int? x, int? y});
 }
 
 /// @nodoc
@@ -91,29 +102,37 @@ class __$ItemSpriteCoordCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object x = freezed,
-    Object y = freezed,
+    Object? id = freezed,
+    Object? x = freezed,
+    Object? y = freezed,
   }) {
     return _then(_ItemSpriteCoord(
-      id: id == freezed ? _value.id : id as UniqueId,
-      x: x == freezed ? _value.x : x as int,
-      y: y == freezed ? _value.y : y as int,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      x: x == freezed
+          ? _value.x
+          : x // ignore: cast_nullable_to_non_nullable
+              as int?,
+      y: y == freezed
+          ? _value.y
+          : y // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
 
 /// @nodoc
 class _$_ItemSpriteCoord implements _ItemSpriteCoord {
-  const _$_ItemSpriteCoord({@required this.id, this.x, this.y})
-      : assert(id != null);
+  const _$_ItemSpriteCoord({required this.id, this.x, this.y});
 
   @override
   final UniqueId id;
   @override
-  final int x;
+  final int? x;
   @override
-  final int y;
+  final int? y;
 
   @override
   String toString() {
@@ -146,16 +165,17 @@ class _$_ItemSpriteCoord implements _ItemSpriteCoord {
 }
 
 abstract class _ItemSpriteCoord implements ItemSpriteCoord {
-  const factory _ItemSpriteCoord({@required UniqueId id, int x, int y}) =
+  const factory _ItemSpriteCoord({required UniqueId id, int? x, int? y}) =
       _$_ItemSpriteCoord;
 
   @override
-  UniqueId get id;
+  UniqueId get id => throw _privateConstructorUsedError;
   @override
-  int get x;
+  int? get x => throw _privateConstructorUsedError;
   @override
-  int get y;
+  int? get y => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ItemSpriteCoordCopyWith<_ItemSpriteCoord> get copyWith;
+  _$ItemSpriteCoordCopyWith<_ItemSpriteCoord> get copyWith =>
+      throw _privateConstructorUsedError;
 }

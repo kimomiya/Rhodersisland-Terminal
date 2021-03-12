@@ -3,6 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 import 'package:path/path.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:sqflite/sqlite_api.dart';
@@ -27,12 +28,16 @@ abstract class RegisterModule {
 
   @preResolve
   @lazySingleton
-  Future<Database> get db async => openDatabase(
-        join(await getDatabasesPath(), databaseName),
-        version: databaseVersion,
-        onConfigure: database.onConfigure,
-        onCreate: database.onCreate,
-      );
+  Future<Database> get db async {
+    final databaseDir = await getDatabasesPath() ??
+        (await getApplicationDocumentsDirectory()).path;
+    return openDatabase(
+      join(databaseDir, databaseName),
+      version: databaseVersion,
+      onConfigure: database.onConfigure,
+      onCreate: database.onCreate,
+    );
+  }
 
   @lazySingleton
   Dio get client {

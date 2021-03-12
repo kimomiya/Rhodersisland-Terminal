@@ -6,10 +6,10 @@ import '../../core/unique_id.dart';
 part 'item_sprite_coord.freezed.dart';
 
 @freezed
-abstract class ItemSpriteCoord with _$ItemSpriteCoord implements Entity {
+class ItemSpriteCoord with _$ItemSpriteCoord implements Entity {
   const factory ItemSpriteCoord({
-    @required UniqueId id,
-    int x,
-    int y,
+    required UniqueId id,
+    int? x,
+    int? y,
   }) = _ItemSpriteCoord;
 }

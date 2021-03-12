@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'item.dart';
 
@@ -9,24 +9,26 @@ part of 'item.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$ItemTearOff {
   const _$ItemTearOff();
 
-// ignore: unused_element
   _Item call(
-      {@required UniqueId id,
-      int addTimePoint,
-      @required KtMap<String, List<String>> alias,
-      @required KtMap<Server, Existence> existence,
-      @required String groupId,
-      @required ItemType type,
-      @required String name,
-      @required KtMap<String, String> nameI18n,
-      @required KtMap<String, List<String>> pron,
-      int rarity,
-      int sortId,
-      ItemSpriteCoord spriteCoord}) {
+      {required UniqueId id,
+      int? addTimePoint,
+      required KtMap<String, List<String>> alias,
+      required KtMap<Server, Existence> existence,
+      required String groupId,
+      required ItemType type,
+      required String name,
+      required KtMap<String, String> nameI18n,
+      required KtMap<String, List<String>> pron,
+      int? rarity,
+      int? sortId,
+      ItemSpriteCoord? spriteCoord}) {
     return _Item(
       id: id,
       addTimePoint: addTimePoint,
@@ -45,26 +47,25 @@ class _$ItemTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $Item = _$ItemTearOff();
 
 /// @nodoc
 mixin _$Item {
-  UniqueId get id;
-  int get addTimePoint;
-  KtMap<String, List<String>> get alias;
-  KtMap<Server, Existence> get existence;
-  String get groupId;
-  ItemType get type;
-  String get name;
-  KtMap<String, String> get nameI18n;
-  KtMap<String, List<String>> get pron;
-  int get rarity;
-  int get sortId;
-  ItemSpriteCoord get spriteCoord;
+  UniqueId get id => throw _privateConstructorUsedError;
+  int? get addTimePoint => throw _privateConstructorUsedError;
+  KtMap<String, List<String>> get alias => throw _privateConstructorUsedError;
+  KtMap<Server, Existence> get existence => throw _privateConstructorUsedError;
+  String get groupId => throw _privateConstructorUsedError;
+  ItemType get type => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  KtMap<String, String> get nameI18n => throw _privateConstructorUsedError;
+  KtMap<String, List<String>> get pron => throw _privateConstructorUsedError;
+  int? get rarity => throw _privateConstructorUsedError;
+  int? get sortId => throw _privateConstructorUsedError;
+  ItemSpriteCoord? get spriteCoord => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ItemCopyWith<Item> get copyWith;
+  $ItemCopyWith<Item> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -73,7 +74,7 @@ abstract class $ItemCopyWith<$Res> {
       _$ItemCopyWithImpl<$Res>;
   $Res call(
       {UniqueId id,
-      int addTimePoint,
+      int? addTimePoint,
       KtMap<String, List<String>> alias,
       KtMap<Server, Existence> existence,
       String groupId,
@@ -81,11 +82,11 @@ abstract class $ItemCopyWith<$Res> {
       String name,
       KtMap<String, String> nameI18n,
       KtMap<String, List<String>> pron,
-      int rarity,
-      int sortId,
-      ItemSpriteCoord spriteCoord});
+      int? rarity,
+      int? sortId,
+      ItemSpriteCoord? spriteCoord});
 
-  $ItemSpriteCoordCopyWith<$Res> get spriteCoord;
+  $ItemSpriteCoordCopyWith<$Res>? get spriteCoord;
 }
 
 /// @nodoc
@@ -98,50 +99,78 @@ class _$ItemCopyWithImpl<$Res> implements $ItemCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object addTimePoint = freezed,
-    Object alias = freezed,
-    Object existence = freezed,
-    Object groupId = freezed,
-    Object type = freezed,
-    Object name = freezed,
-    Object nameI18n = freezed,
-    Object pron = freezed,
-    Object rarity = freezed,
-    Object sortId = freezed,
-    Object spriteCoord = freezed,
+    Object? id = freezed,
+    Object? addTimePoint = freezed,
+    Object? alias = freezed,
+    Object? existence = freezed,
+    Object? groupId = freezed,
+    Object? type = freezed,
+    Object? name = freezed,
+    Object? nameI18n = freezed,
+    Object? pron = freezed,
+    Object? rarity = freezed,
+    Object? sortId = freezed,
+    Object? spriteCoord = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as UniqueId,
-      addTimePoint:
-          addTimePoint == freezed ? _value.addTimePoint : addTimePoint as int,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      addTimePoint: addTimePoint == freezed
+          ? _value.addTimePoint
+          : addTimePoint // ignore: cast_nullable_to_non_nullable
+              as int?,
       alias: alias == freezed
           ? _value.alias
-          : alias as KtMap<String, List<String>>,
+          : alias // ignore: cast_nullable_to_non_nullable
+              as KtMap<String, List<String>>,
       existence: existence == freezed
           ? _value.existence
-          : existence as KtMap<Server, Existence>,
-      groupId: groupId == freezed ? _value.groupId : groupId as String,
-      type: type == freezed ? _value.type : type as ItemType,
-      name: name == freezed ? _value.name : name as String,
+          : existence // ignore: cast_nullable_to_non_nullable
+              as KtMap<Server, Existence>,
+      groupId: groupId == freezed
+          ? _value.groupId
+          : groupId // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ItemType,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
       nameI18n: nameI18n == freezed
           ? _value.nameI18n
-          : nameI18n as KtMap<String, String>,
-      pron: pron == freezed ? _value.pron : pron as KtMap<String, List<String>>,
-      rarity: rarity == freezed ? _value.rarity : rarity as int,
-      sortId: sortId == freezed ? _value.sortId : sortId as int,
+          : nameI18n // ignore: cast_nullable_to_non_nullable
+              as KtMap<String, String>,
+      pron: pron == freezed
+          ? _value.pron
+          : pron // ignore: cast_nullable_to_non_nullable
+              as KtMap<String, List<String>>,
+      rarity: rarity == freezed
+          ? _value.rarity
+          : rarity // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sortId: sortId == freezed
+          ? _value.sortId
+          : sortId // ignore: cast_nullable_to_non_nullable
+              as int?,
       spriteCoord: spriteCoord == freezed
           ? _value.spriteCoord
-          : spriteCoord as ItemSpriteCoord,
+          : spriteCoord // ignore: cast_nullable_to_non_nullable
+              as ItemSpriteCoord?,
     ));
   }
 
   @override
-  $ItemSpriteCoordCopyWith<$Res> get spriteCoord {
+  $ItemSpriteCoordCopyWith<$Res>? get spriteCoord {
     if (_value.spriteCoord == null) {
       return null;
     }
-    return $ItemSpriteCoordCopyWith<$Res>(_value.spriteCoord, (value) {
+
+    return $ItemSpriteCoordCopyWith<$Res>(_value.spriteCoord!, (value) {
       return _then(_value.copyWith(spriteCoord: value));
     });
   }
@@ -154,7 +183,7 @@ abstract class _$ItemCopyWith<$Res> implements $ItemCopyWith<$Res> {
   @override
   $Res call(
       {UniqueId id,
-      int addTimePoint,
+      int? addTimePoint,
       KtMap<String, List<String>> alias,
       KtMap<Server, Existence> existence,
       String groupId,
@@ -162,12 +191,12 @@ abstract class _$ItemCopyWith<$Res> implements $ItemCopyWith<$Res> {
       String name,
       KtMap<String, String> nameI18n,
       KtMap<String, List<String>> pron,
-      int rarity,
-      int sortId,
-      ItemSpriteCoord spriteCoord});
+      int? rarity,
+      int? sortId,
+      ItemSpriteCoord? spriteCoord});
 
   @override
-  $ItemSpriteCoordCopyWith<$Res> get spriteCoord;
+  $ItemSpriteCoordCopyWith<$Res>? get spriteCoord;
 }
 
 /// @nodoc
@@ -181,41 +210,68 @@ class __$ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object addTimePoint = freezed,
-    Object alias = freezed,
-    Object existence = freezed,
-    Object groupId = freezed,
-    Object type = freezed,
-    Object name = freezed,
-    Object nameI18n = freezed,
-    Object pron = freezed,
-    Object rarity = freezed,
-    Object sortId = freezed,
-    Object spriteCoord = freezed,
+    Object? id = freezed,
+    Object? addTimePoint = freezed,
+    Object? alias = freezed,
+    Object? existence = freezed,
+    Object? groupId = freezed,
+    Object? type = freezed,
+    Object? name = freezed,
+    Object? nameI18n = freezed,
+    Object? pron = freezed,
+    Object? rarity = freezed,
+    Object? sortId = freezed,
+    Object? spriteCoord = freezed,
   }) {
     return _then(_Item(
-      id: id == freezed ? _value.id : id as UniqueId,
-      addTimePoint:
-          addTimePoint == freezed ? _value.addTimePoint : addTimePoint as int,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      addTimePoint: addTimePoint == freezed
+          ? _value.addTimePoint
+          : addTimePoint // ignore: cast_nullable_to_non_nullable
+              as int?,
       alias: alias == freezed
           ? _value.alias
-          : alias as KtMap<String, List<String>>,
+          : alias // ignore: cast_nullable_to_non_nullable
+              as KtMap<String, List<String>>,
       existence: existence == freezed
           ? _value.existence
-          : existence as KtMap<Server, Existence>,
-      groupId: groupId == freezed ? _value.groupId : groupId as String,
-      type: type == freezed ? _value.type : type as ItemType,
-      name: name == freezed ? _value.name : name as String,
+          : existence // ignore: cast_nullable_to_non_nullable
+              as KtMap<Server, Existence>,
+      groupId: groupId == freezed
+          ? _value.groupId
+          : groupId // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ItemType,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
       nameI18n: nameI18n == freezed
           ? _value.nameI18n
-          : nameI18n as KtMap<String, String>,
-      pron: pron == freezed ? _value.pron : pron as KtMap<String, List<String>>,
-      rarity: rarity == freezed ? _value.rarity : rarity as int,
-      sortId: sortId == freezed ? _value.sortId : sortId as int,
+          : nameI18n // ignore: cast_nullable_to_non_nullable
+              as KtMap<String, String>,
+      pron: pron == freezed
+          ? _value.pron
+          : pron // ignore: cast_nullable_to_non_nullable
+              as KtMap<String, List<String>>,
+      rarity: rarity == freezed
+          ? _value.rarity
+          : rarity // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sortId: sortId == freezed
+          ? _value.sortId
+          : sortId // ignore: cast_nullable_to_non_nullable
+              as int?,
       spriteCoord: spriteCoord == freezed
           ? _value.spriteCoord
-          : spriteCoord as ItemSpriteCoord,
+          : spriteCoord // ignore: cast_nullable_to_non_nullable
+              as ItemSpriteCoord?,
     ));
   }
 }
@@ -223,31 +279,23 @@ class __$ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res>
 /// @nodoc
 class _$_Item implements _Item {
   const _$_Item(
-      {@required this.id,
+      {required this.id,
       this.addTimePoint,
-      @required this.alias,
-      @required this.existence,
-      @required this.groupId,
-      @required this.type,
-      @required this.name,
-      @required this.nameI18n,
-      @required this.pron,
+      required this.alias,
+      required this.existence,
+      required this.groupId,
+      required this.type,
+      required this.name,
+      required this.nameI18n,
+      required this.pron,
       this.rarity,
       this.sortId,
-      this.spriteCoord})
-      : assert(id != null),
-        assert(alias != null),
-        assert(existence != null),
-        assert(groupId != null),
-        assert(type != null),
-        assert(name != null),
-        assert(nameI18n != null),
-        assert(pron != null);
+      this.spriteCoord});
 
   @override
   final UniqueId id;
   @override
-  final int addTimePoint;
+  final int? addTimePoint;
   @override
   final KtMap<String, List<String>> alias;
   @override
@@ -263,11 +311,11 @@ class _$_Item implements _Item {
   @override
   final KtMap<String, List<String>> pron;
   @override
-  final int rarity;
+  final int? rarity;
   @override
-  final int sortId;
+  final int? sortId;
   @override
-  final ItemSpriteCoord spriteCoord;
+  final ItemSpriteCoord? spriteCoord;
 
   @override
   String toString() {
@@ -333,44 +381,44 @@ class _$_Item implements _Item {
 
 abstract class _Item implements Item {
   const factory _Item(
-      {@required UniqueId id,
-      int addTimePoint,
-      @required KtMap<String, List<String>> alias,
-      @required KtMap<Server, Existence> existence,
-      @required String groupId,
-      @required ItemType type,
-      @required String name,
-      @required KtMap<String, String> nameI18n,
-      @required KtMap<String, List<String>> pron,
-      int rarity,
-      int sortId,
-      ItemSpriteCoord spriteCoord}) = _$_Item;
+      {required UniqueId id,
+      int? addTimePoint,
+      required KtMap<String, List<String>> alias,
+      required KtMap<Server, Existence> existence,
+      required String groupId,
+      required ItemType type,
+      required String name,
+      required KtMap<String, String> nameI18n,
+      required KtMap<String, List<String>> pron,
+      int? rarity,
+      int? sortId,
+      ItemSpriteCoord? spriteCoord}) = _$_Item;
 
   @override
-  UniqueId get id;
+  UniqueId get id => throw _privateConstructorUsedError;
   @override
-  int get addTimePoint;
+  int? get addTimePoint => throw _privateConstructorUsedError;
   @override
-  KtMap<String, List<String>> get alias;
+  KtMap<String, List<String>> get alias => throw _privateConstructorUsedError;
   @override
-  KtMap<Server, Existence> get existence;
+  KtMap<Server, Existence> get existence => throw _privateConstructorUsedError;
   @override
-  String get groupId;
+  String get groupId => throw _privateConstructorUsedError;
   @override
-  ItemType get type;
+  ItemType get type => throw _privateConstructorUsedError;
   @override
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
-  KtMap<String, String> get nameI18n;
+  KtMap<String, String> get nameI18n => throw _privateConstructorUsedError;
   @override
-  KtMap<String, List<String>> get pron;
+  KtMap<String, List<String>> get pron => throw _privateConstructorUsedError;
   @override
-  int get rarity;
+  int? get rarity => throw _privateConstructorUsedError;
   @override
-  int get sortId;
+  int? get sortId => throw _privateConstructorUsedError;
   @override
-  ItemSpriteCoord get spriteCoord;
+  ItemSpriteCoord? get spriteCoord => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ItemCopyWith<_Item> get copyWith;
+  _$ItemCopyWith<_Item> get copyWith => throw _privateConstructorUsedError;
 }

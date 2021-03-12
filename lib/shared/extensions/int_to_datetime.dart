@@ -1,5 +1,5 @@
 extension IntToDateTime on int {
-  DateTime toDateTime() {
+  DateTime? toDateTime() {
     try {
       return DateTime.fromMillisecondsSinceEpoch(this);
     } catch (e) {
