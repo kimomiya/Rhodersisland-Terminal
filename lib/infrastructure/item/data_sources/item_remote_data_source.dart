@@ -25,7 +25,7 @@ class ItemRemoteDataSourceImpl implements ItemRemoteDataSource {
     final response = await client.get<List>(url);
 
     final items = <ItemDto>[];
-    for (final data in response.data) {
+    for (final data in response.data ?? <dynamic>[]) {
       items.add(ItemDto.fromJson(data as Map<String, dynamic>));
     }
     return items;
@@ -35,6 +35,6 @@ class ItemRemoteDataSourceImpl implements ItemRemoteDataSource {
   Future<ItemDto> fetchItemBy({required String id}) async {
     final url = '$penguinStatsBaseURL/items/$id';
     final response = await client.get<Map<String, dynamic>>(url);
-    return ItemDto.fromJson(response.data);
+    return ItemDto.fromJson(response.data ?? <String, dynamic>{});
   }
 }

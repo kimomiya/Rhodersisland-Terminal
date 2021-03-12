@@ -1,8 +1,5 @@
-import '../enums/theme_type.dart';
-
 //* System
 
-const defaultTheme = ThemeType.followSystem;
 const databaseName = 'rhodes_island_terminal.db';
 const databaseVersion = 1;
 const networkTimeout = 60 * 1000;
