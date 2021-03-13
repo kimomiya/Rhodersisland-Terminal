@@ -4,45 +4,49 @@
 // AutoRouteGenerator
 // **************************************************************************
 
-// ignore_for_file: public_member_api_docs
+import 'package:auto_route/auto_route.dart' as _i1;
 
-import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
+import 'item/items_page.dart' as _i3;
+import 'splash/splash_page.dart' as _i2;
 
-import 'item/items_page.dart';
-import 'splash/splash_page.dart';
+class AppRouter extends _i1.RootStackRouter {
+  AppRouter();
 
-class Routes {
-  static const String splash = '/';
-  static const String items = '/items';
-  static const all = <String>{
-    splash,
-    items,
+  @override
+  final Map<String, _i1.PageFactory> pagesMap = {
+    SplashRoute.name: (entry) {
+      return _i1.AdaptivePage(entry: entry, child: _i2.SplashPage());
+    },
+    ItemsRoute.name: (entry) {
+      return _i1.CustomPage(
+          entry: entry,
+          child: _i3.ItemsPage(),
+          transitionsBuilder: _i1.TransitionsBuilders.fadeIn);
+    }
   };
+
+  @override
+  List<_i1.RouteConfig> get routes => [
+        _i1.RouteConfig<SplashRoute>(SplashRoute.name,
+            path: '/', routeBuilder: (match) => SplashRoute.fromMatch(match)),
+        _i1.RouteConfig<ItemsRoute>(ItemsRoute.name,
+            path: '/items-page',
+            routeBuilder: (match) => ItemsRoute.fromMatch(match))
+      ];
 }
 
-class Router extends RouterBase {
-  @override
-  List<RouteDef> get routes => _routes;
-  final _routes = <RouteDef>[
-    RouteDef(Routes.splash, page: SplashPage),
-    RouteDef(Routes.items, page: ItemsPage),
-  ];
-  @override
-  Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
-  final _pagesMap = <Type, AutoRouteFactory>{
-    SplashPage: (data) {
-      return buildAdaptivePageRoute<void>(
-        builder: (context) => SplashPage(),
-        settings: data,
-      );
-    },
-    ItemsPage: (data) {
-      return PageRouteBuilder<void>(
-        pageBuilder: (context, animation, secondaryAnimation) => ItemsPage(),
-        settings: data,
-        transitionsBuilder: TransitionsBuilders.fadeIn,
-      );
-    },
-  };
+class SplashRoute extends _i1.PageRouteInfo {
+  const SplashRoute() : super(name, path: '/');
+
+  SplashRoute.fromMatch(_i1.RouteMatch match) : super.fromMatch(match);
+
+  static const String name = 'SplashRoute';
+}
+
+class ItemsRoute extends _i1.PageRouteInfo {
+  const ItemsRoute() : super(name, path: '/items-page');
+
+  ItemsRoute.fromMatch(_i1.RouteMatch match) : super.fromMatch(match);
+
+  static const String name = 'ItemsRoute';
 }

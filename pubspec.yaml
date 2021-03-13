@@ -14,7 +14,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
-  auto_route: 0.6.9
+  auto_route: 1.0.0-beta.10
   bot_toast: 4.0.0+1
   connectivity: 3.0.2
   cupertino_icons: 1.0.2
@@ -43,7 +43,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  auto_route_generator: 0.6.10
+  auto_route_generator: 1.0.0-beta.11
   build_runner: 1.11.5
   freezed: 0.14.0+1
   injectable_generator: 1.2.0

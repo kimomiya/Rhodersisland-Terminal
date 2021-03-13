@@ -42,7 +42,7 @@ class _ContentView extends StatelessWidget {
 
   void _onStateChanged(BuildContext context, PrefetchNotifier state) {
     if (state.isCompleted) {
-      context.navigator.replace(Routes.items);
+      context.router.replace(const ItemsRoute());
     }
 
     if (state.hasFailure) {
