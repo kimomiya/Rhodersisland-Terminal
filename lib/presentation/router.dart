@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 
-import 'items/items_page.dart';
-import 'items/stats/item_stats_page.dart';
+import 'item/items_page.dart';
+import 'item/stats/item_stats_page.dart';
 import 'splash/splash_page.dart';
 
 @AdaptiveAutoRouter(
