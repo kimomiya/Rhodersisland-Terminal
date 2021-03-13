@@ -197,6 +197,16 @@ class S {
     );
   }
 
+  /// `Statistics`
+  String get stats {
+    return Intl.message(
+      'Statistics',
+      name: 'stats',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Recruit`
   String get recruit {
     return Intl.message(

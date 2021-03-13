@@ -35,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "recruit" : MessageLookupByLibrary.simpleMessage("公开招募"),
     "remoteServerError" : MessageLookupByLibrary.simpleMessage("服务器软体不稳定，请稍后重试。"),
     "splash" : MessageLookupByLibrary.simpleMessage("加载页"),
+    "stats" : MessageLookupByLibrary.simpleMessage("统计结果"),
     "uncategorized" : MessageLookupByLibrary.simpleMessage("未分类"),
     "unexpectedError" : MessageLookupByLibrary.simpleMessage("你打破了我的大门，老鼠。")
   };

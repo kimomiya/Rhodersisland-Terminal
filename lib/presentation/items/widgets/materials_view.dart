@@ -9,13 +9,13 @@ import '../../../core/enums/item_type.dart';
 import '../../../generated/l10n.dart';
 import 'item_chip.dart';
 
-final _furniture = Provider.autoDispose((ref) {
+final _materials = Provider.autoDispose((ref) {
   final items = ref.watch(itemsProvider.state).items;
-  return items.filter((item) => item.type == ItemType.furniture);
+  return items.filter((item) => item.type == ItemType.material);
 });
 
-class FurnitureView extends StatelessWidget {
-  const FurnitureView();
+class MaterialsView extends StatelessWidget {
+  const MaterialsView();
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class FurnitureView extends StatelessWidget {
 
   Widget _buildTypeLabel(BuildContext context) {
     return Text(
-      S.of(context).furniture,
+      S.of(context).materials,
       style: TextStyle(fontSize: 32.sp, fontWeight: FontWeight.bold),
     );
   }
@@ -38,12 +38,12 @@ class FurnitureView extends StatelessWidget {
   Widget _buildGrid() {
     return Consumer(
       builder: (contexxt, watch, child) {
-        final furniture = watch(_furniture);
+        final materials = watch(_materials);
 
         final chips = <Widget>[];
-        for (final item in furniture.iter) {
+        for (final item in materials.iter) {
           final chip = ProviderScope(
-            overrides: [currentItem.overrideWithValue(item)],
+            overrides: [currentItemProvider.overrideWithValue(item)],
             child: const ItemChip(),
           );
           chips.add(chip);

@@ -43,7 +43,7 @@ class EventItemsView extends StatelessWidget {
         final chips = <Widget>[];
         for (final item in eventItems.iter) {
           final chip = ProviderScope(
-            overrides: [currentItem.overrideWithValue(item)],
+            overrides: [currentItemProvider.overrideWithValue(item)],
             child: const ItemChip(),
           );
           chips.add(chip);

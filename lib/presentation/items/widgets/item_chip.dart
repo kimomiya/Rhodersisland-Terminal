@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -6,13 +7,14 @@ import '../../../application/item/item_provider.dart';
 import '../../../core/constants/assets_path.dart';
 import '../../../core/enums/item_type.dart';
 import '../../../domain/item/entities/item.dart';
+import '../../router.gr.dart';
 
 class ItemChip extends ConsumerWidget {
   const ItemChip();
 
   @override
   Widget build(BuildContext context, ScopedReader watch) {
-    final item = watch(currentItem);
+    final item = watch(currentItemProvider);
 
     Widget chip;
     if (item.type == ItemType.furniture) {
@@ -23,7 +25,7 @@ class ItemChip extends ConsumerWidget {
 
     return GestureDetector(
       child: ClipOval(child: chip),
-      onTap: () => _onItemTap(context),
+      onTap: () => _onItemTap(context, item),
       onLongPress: () => _onItemLongPress(context),
     );
   }
@@ -54,8 +56,8 @@ class ItemChip extends ConsumerWidget {
 
   //* Event Methods
 
-  void _onItemTap(BuildContext context) {
-    // TODO(hiei): should navigate to item drop page
+  void _onItemTap(BuildContext context, Item item) {
+    context.router.push(ItemStatsRoute(id: item.id.getOrNull()));
   }
 
   void _onItemLongPress(BuildContext context) {

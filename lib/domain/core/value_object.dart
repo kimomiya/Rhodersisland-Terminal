@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'errors.dart';
 import 'value_failure.dart';
 
 @immutable
@@ -10,8 +9,12 @@ abstract class ValueObject<T> {
 
   Either<ValueFailure<T>, T> get value;
 
-  T getOrCrash() {
-    return value.fold((f) => throw UnexpectedValueError(f), id);
+  T? getOrNull() {
+    return value.fold((_) => null, id);
+  }
+
+  T getOrElse(T alt) {
+    return value.fold((_) => alt, id);
   }
 
   Either<ValueFailure<dynamic>, Unit> get failureOrUnit {

@@ -35,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "recruit" : MessageLookupByLibrary.simpleMessage("Recruit"),
     "remoteServerError" : MessageLookupByLibrary.simpleMessage("Unable to connect to the remote server. Please try again later."),
     "splash" : MessageLookupByLibrary.simpleMessage("Splash"),
+    "stats" : MessageLookupByLibrary.simpleMessage("Statistics"),
     "uncategorized" : MessageLookupByLibrary.simpleMessage("Uncategorized"),
     "unexpectedError" : MessageLookupByLibrary.simpleMessage("You spoiled my grand entrance, rat.")
   };

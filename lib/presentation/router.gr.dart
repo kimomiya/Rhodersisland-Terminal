@@ -6,7 +6,8 @@
 
 import 'package:auto_route/auto_route.dart' as _i1;
 
-import 'item/items_page.dart' as _i3;
+import 'items/items_page.dart' as _i3;
+import 'items/stats/item_stats_page.dart' as _i4;
 import 'splash/splash_page.dart' as _i2;
 
 class AppRouter extends _i1.RootStackRouter {
@@ -22,6 +23,10 @@ class AppRouter extends _i1.RootStackRouter {
           entry: entry,
           child: _i3.ItemsPage(),
           transitionsBuilder: _i1.TransitionsBuilders.fadeIn);
+    },
+    ItemStatsRoute.name: (entry) {
+      var route = entry.routeData.as<ItemStatsRoute>();
+      return _i1.AdaptivePage(entry: entry, child: _i4.ItemStatsPage(route.id));
     }
   };
 
@@ -31,7 +36,10 @@ class AppRouter extends _i1.RootStackRouter {
             path: '/', routeBuilder: (match) => SplashRoute.fromMatch(match)),
         _i1.RouteConfig<ItemsRoute>(ItemsRoute.name,
             path: '/items-page',
-            routeBuilder: (match) => ItemsRoute.fromMatch(match))
+            routeBuilder: (match) => ItemsRoute.fromMatch(match)),
+        _i1.RouteConfig<ItemStatsRoute>(ItemStatsRoute.name,
+            path: '/item-stats-page',
+            routeBuilder: (match) => ItemStatsRoute.fromMatch(match))
       ];
 }
 
@@ -49,4 +57,16 @@ class ItemsRoute extends _i1.PageRouteInfo {
   ItemsRoute.fromMatch(_i1.RouteMatch match) : super.fromMatch(match);
 
   static const String name = 'ItemsRoute';
+}
+
+class ItemStatsRoute extends _i1.PageRouteInfo {
+  ItemStatsRoute({this.id}) : super(name, path: '/item-stats-page');
+
+  ItemStatsRoute.fromMatch(_i1.RouteMatch match)
+      : id = null,
+        super.fromMatch(match);
+
+  final String? id;
+
+  static const String name = 'ItemStatsRoute';
 }
