@@ -6,9 +6,10 @@ import 'package:loading_indicator/loading_indicator.dart';
 import '../../../application/prefetch/prefetch_provider.dart';
 import '../../../generated/l10n.dart';
 
-final _isPrefetched = Provider.autoDispose(
-  (ref) => ref.watch(prefetchProvider).isCompleted,
-);
+final _isFinished = Provider.autoDispose((ref) {
+  final notifier = ref.watch(prefetchProvider);
+  return notifier.isCompleted || notifier.hasFailure;
+});
 
 class SplashLoadingView extends StatelessWidget {
   const SplashLoadingView();
@@ -30,8 +31,7 @@ class SplashLoadingView extends StatelessWidget {
   Widget _buildConnectingView() {
     return Consumer(
       builder: (context, watch, state) {
-        final isCompleted = watch(_isPrefetched);
-        if (isCompleted) {
+        if (watch(_isFinished)) {
           return Container();
         }
 

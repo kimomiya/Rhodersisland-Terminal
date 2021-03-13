@@ -46,6 +46,7 @@ class _ContentView extends StatelessWidget {
     }
 
     if (state.hasFailure) {
+      // TODO(hiei): Maybe should show a retry dialog
       BotToast.showText(text: S.of(context).unexpectedError);
     }
   }

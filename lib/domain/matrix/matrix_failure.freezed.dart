@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'item_failure.dart';
+part of 'matrix_failure.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,8 +13,8 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$ItemFailureTearOff {
-  const _$ItemFailureTearOff();
+class _$MatrixFailureTearOff {
+  const _$MatrixFailureTearOff();
 
   _RemoteServerError remoteServerError(
       {required int code, required String description}) {
@@ -30,10 +30,10 @@ class _$ItemFailureTearOff {
 }
 
 /// @nodoc
-const $ItemFailure = _$ItemFailureTearOff();
+const $MatrixFailure = _$MatrixFailureTearOff();
 
 /// @nodoc
-mixin _$ItemFailure {
+mixin _$MatrixFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int code, String description) remoteServerError,
@@ -63,19 +63,20 @@ mixin _$ItemFailure {
 }
 
 /// @nodoc
-abstract class $ItemFailureCopyWith<$Res> {
-  factory $ItemFailureCopyWith(
-          ItemFailure value, $Res Function(ItemFailure) then) =
-      _$ItemFailureCopyWithImpl<$Res>;
+abstract class $MatrixFailureCopyWith<$Res> {
+  factory $MatrixFailureCopyWith(
+          MatrixFailure value, $Res Function(MatrixFailure) then) =
+      _$MatrixFailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ItemFailureCopyWithImpl<$Res> implements $ItemFailureCopyWith<$Res> {
-  _$ItemFailureCopyWithImpl(this._value, this._then);
+class _$MatrixFailureCopyWithImpl<$Res>
+    implements $MatrixFailureCopyWith<$Res> {
+  _$MatrixFailureCopyWithImpl(this._value, this._then);
 
-  final ItemFailure _value;
+  final MatrixFailure _value;
   // ignore: unused_field
-  final $Res Function(ItemFailure) _then;
+  final $Res Function(MatrixFailure) _then;
 }
 
 /// @nodoc
@@ -88,7 +89,7 @@ abstract class _$RemoteServerErrorCopyWith<$Res> {
 
 /// @nodoc
 class __$RemoteServerErrorCopyWithImpl<$Res>
-    extends _$ItemFailureCopyWithImpl<$Res>
+    extends _$MatrixFailureCopyWithImpl<$Res>
     implements _$RemoteServerErrorCopyWith<$Res> {
   __$RemoteServerErrorCopyWithImpl(
       _RemoteServerError _value, $Res Function(_RemoteServerError) _then)
@@ -126,7 +127,7 @@ class _$_RemoteServerError implements _RemoteServerError {
 
   @override
   String toString() {
-    return 'ItemFailure.remoteServerError(code: $code, description: $description)';
+    return 'MatrixFailure.remoteServerError(code: $code, description: $description)';
   }
 
   @override
@@ -196,7 +197,7 @@ class _$_RemoteServerError implements _RemoteServerError {
   }
 }
 
-abstract class _RemoteServerError implements ItemFailure {
+abstract class _RemoteServerError implements MatrixFailure {
   const factory _RemoteServerError(
       {required int code, required String description}) = _$_RemoteServerError;
 
@@ -216,7 +217,7 @@ abstract class _$UnexpectedErrorCopyWith<$Res> {
 
 /// @nodoc
 class __$UnexpectedErrorCopyWithImpl<$Res>
-    extends _$ItemFailureCopyWithImpl<$Res>
+    extends _$MatrixFailureCopyWithImpl<$Res>
     implements _$UnexpectedErrorCopyWith<$Res> {
   __$UnexpectedErrorCopyWithImpl(
       _UnexpectedError _value, $Res Function(_UnexpectedError) _then)
@@ -232,7 +233,7 @@ class _$_UnexpectedError implements _UnexpectedError {
 
   @override
   String toString() {
-    return 'ItemFailure.unexpectedError()';
+    return 'MatrixFailure.unexpectedError()';
   }
 
   @override
@@ -288,6 +289,6 @@ class _$_UnexpectedError implements _UnexpectedError {
   }
 }
 
-abstract class _UnexpectedError implements ItemFailure {
+abstract class _UnexpectedError implements MatrixFailure {
   const factory _UnexpectedError() = _$_UnexpectedError;
 }

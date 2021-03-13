@@ -6,8 +6,8 @@
 
 import 'package:auto_route/auto_route.dart' as _i1;
 
-import 'items/items_page.dart' as _i3;
-import 'items/stats/item_stats_page.dart' as _i4;
+import 'item/items_page.dart' as _i3;
+import 'item/stats/item_stats_page.dart' as _i4;
 import 'splash/splash_page.dart' as _i2;
 
 class AppRouter extends _i1.RootStackRouter {

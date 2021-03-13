@@ -38,7 +38,7 @@ class ItemRepositoryImpl implements ItemRepository {
       return right(dtos.map((dto) => dto.toDomain()).toImmutableList());
     } catch (e) {
       logger.e(e.toString(), e);
-      return left(const ItemFailure.emptyQueryResult());
+      return left(const ItemFailure.unexpectedError());
     }
   }
 

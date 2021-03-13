@@ -10,6 +10,4 @@ class ItemFailure with _$ItemFailure {
   }) = _RemoteServerError;
 
   const factory ItemFailure.unexpectedError() = _UnexpectedError;
-
-  const factory ItemFailure.emptyQueryResult() = _EmptyQueryResult;
 }
