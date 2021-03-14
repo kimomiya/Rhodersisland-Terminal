@@ -17,12 +17,12 @@ class _$ItemsStateTearOff {
   const _$ItemsStateTearOff();
 
   _ItemsState call(
-      {required KtList<Item> items,
-      required bool isLoading,
+      {required bool isLoading,
+      required KtList<Item> items,
       required Option<ItemFailure> failureOption}) {
     return _ItemsState(
-      items: items,
       isLoading: isLoading,
+      items: items,
       failureOption: failureOption,
     );
   }
@@ -33,8 +33,8 @@ const $ItemsState = _$ItemsStateTearOff();
 
 /// @nodoc
 mixin _$ItemsState {
-  KtList<Item> get items => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
+  KtList<Item> get items => throw _privateConstructorUsedError;
   Option<ItemFailure> get failureOption => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -48,7 +48,7 @@ abstract class $ItemsStateCopyWith<$Res> {
           ItemsState value, $Res Function(ItemsState) then) =
       _$ItemsStateCopyWithImpl<$Res>;
   $Res call(
-      {KtList<Item> items, bool isLoading, Option<ItemFailure> failureOption});
+      {bool isLoading, KtList<Item> items, Option<ItemFailure> failureOption});
 }
 
 /// @nodoc
@@ -61,19 +61,19 @@ class _$ItemsStateCopyWithImpl<$Res> implements $ItemsStateCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? items = freezed,
     Object? isLoading = freezed,
+    Object? items = freezed,
     Object? failureOption = freezed,
   }) {
     return _then(_value.copyWith(
-      items: items == freezed
-          ? _value.items
-          : items // ignore: cast_nullable_to_non_nullable
-              as KtList<Item>,
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      items: items == freezed
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
+              as KtList<Item>,
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
@@ -89,7 +89,7 @@ abstract class _$ItemsStateCopyWith<$Res> implements $ItemsStateCopyWith<$Res> {
       __$ItemsStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {KtList<Item> items, bool isLoading, Option<ItemFailure> failureOption});
+      {bool isLoading, KtList<Item> items, Option<ItemFailure> failureOption});
 }
 
 /// @nodoc
@@ -104,19 +104,19 @@ class __$ItemsStateCopyWithImpl<$Res> extends _$ItemsStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? items = freezed,
     Object? isLoading = freezed,
+    Object? items = freezed,
     Object? failureOption = freezed,
   }) {
     return _then(_ItemsState(
-      items: items == freezed
-          ? _value.items
-          : items // ignore: cast_nullable_to_non_nullable
-              as KtList<Item>,
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      items: items == freezed
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
+              as KtList<Item>,
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
@@ -128,31 +128,31 @@ class __$ItemsStateCopyWithImpl<$Res> extends _$ItemsStateCopyWithImpl<$Res>
 /// @nodoc
 class _$_ItemsState implements _ItemsState {
   const _$_ItemsState(
-      {required this.items,
-      required this.isLoading,
+      {required this.isLoading,
+      required this.items,
       required this.failureOption});
 
   @override
-  final KtList<Item> items;
-  @override
   final bool isLoading;
+  @override
+  final KtList<Item> items;
   @override
   final Option<ItemFailure> failureOption;
 
   @override
   String toString() {
-    return 'ItemsState(items: $items, isLoading: $isLoading, failureOption: $failureOption)';
+    return 'ItemsState(isLoading: $isLoading, items: $items, failureOption: $failureOption)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ItemsState &&
-            (identical(other.items, items) ||
-                const DeepCollectionEquality().equals(other.items, items)) &&
             (identical(other.isLoading, isLoading) ||
                 const DeepCollectionEquality()
                     .equals(other.isLoading, isLoading)) &&
+            (identical(other.items, items) ||
+                const DeepCollectionEquality().equals(other.items, items)) &&
             (identical(other.failureOption, failureOption) ||
                 const DeepCollectionEquality()
                     .equals(other.failureOption, failureOption)));
@@ -161,8 +161,8 @@ class _$_ItemsState implements _ItemsState {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(items) ^
       const DeepCollectionEquality().hash(isLoading) ^
+      const DeepCollectionEquality().hash(items) ^
       const DeepCollectionEquality().hash(failureOption);
 
   @JsonKey(ignore: true)
@@ -173,14 +173,14 @@ class _$_ItemsState implements _ItemsState {
 
 abstract class _ItemsState implements ItemsState {
   const factory _ItemsState(
-      {required KtList<Item> items,
-      required bool isLoading,
+      {required bool isLoading,
+      required KtList<Item> items,
       required Option<ItemFailure> failureOption}) = _$_ItemsState;
 
   @override
-  KtList<Item> get items => throw _privateConstructorUsedError;
-  @override
   bool get isLoading => throw _privateConstructorUsedError;
+  @override
+  KtList<Item> get items => throw _privateConstructorUsedError;
   @override
   Option<ItemFailure> get failureOption => throw _privateConstructorUsedError;
   @override

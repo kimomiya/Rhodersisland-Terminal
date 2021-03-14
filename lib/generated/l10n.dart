@@ -97,6 +97,16 @@ class S {
     );
   }
 
+  /// `Unable to load local data. Please reload all data and try again.`
+  String get failedToLoadData {
+    return Intl.message(
+      'Unable to load local data. Please reload all data and try again.',
+      name: 'failedToLoadData',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Splash`
   String get splash {
     return Intl.message(
@@ -202,6 +212,56 @@ class S {
     return Intl.message(
       'Statistics',
       name: 'stats',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `stage`
+  String get stage {
+    return Intl.message(
+      'stage',
+      name: 'stage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Loots`
+  String get loots {
+    return Intl.message(
+      'Loots',
+      name: 'loots',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Samples`
+  String get samples {
+    return Intl.message(
+      'Samples',
+      name: 'samples',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Drop Rate`
+  String get dropRate {
+    return Intl.message(
+      'Drop Rate',
+      name: 'dropRate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Expected Sanity`
+  String get expectedSanity {
+    return Intl.message(
+      'Expected Sanity',
+      name: 'expectedSanity',
       desc: '',
       args: [],
     );

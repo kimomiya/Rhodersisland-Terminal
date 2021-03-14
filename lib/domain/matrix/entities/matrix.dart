@@ -11,8 +11,8 @@ class Matrix with _$Matrix implements Entity {
     required UniqueId id,
     required String stageId,
     required String itemId,
-    int? quantity,
-    int? times,
+    required int quantity,
+    required int times,
     DateTime? start,
     DateTime? end,
   }) = _Matrix;

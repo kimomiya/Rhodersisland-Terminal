@@ -4,6 +4,7 @@
   "networkUnreachable": "ネットワークに接続されていません。インタネット接続を確認してください。",
   "remoteServerError": "サーバーに接続できません。しばらくたってから再度お試しください。",
   "unexpectedError": "あなたは私の華麗なる登場を台無しにした、ネズミ。",
+  "failedToLoadData": "データの読み込みに失敗しました。更新してから再度お試しください。",
   "splash": "スプラッシュ",
   "connecting": "ニューラルコネクターに接続中",
   "amiyaAttention": "ドクター、終わってない仕事がたくさんありますから、まだ休んじゃだめですよ。",
@@ -15,5 +16,10 @@
   "materials": "素材",
   "uncategorized": "未分類",
   "stats": "統計データ",
+  "stage": "ステージ",
+  "loots": "ドロップ数",
+  "samples": "周回数",
+  "dropRate": "ドロップ率",
+  "expectedSanity": "期待理性",
   "recruit": "公開求人"
 }

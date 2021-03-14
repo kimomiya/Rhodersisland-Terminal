@@ -30,8 +30,8 @@ extension MatrixDtoToDomain on MatrixDto {
       id: UniqueId(),
       stageId: stageId ?? '',
       itemId: itemId ?? '',
-      quantity: quantity,
-      times: times,
+      quantity: quantity ?? -1,
+      times: times ?? -1,
       start: start?.toDateTime(),
       end: end?.toDateTime(),
     );

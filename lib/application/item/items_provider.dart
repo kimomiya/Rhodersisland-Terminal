@@ -22,12 +22,12 @@ class ItemsNotifier extends StateNotifier<ItemsState> {
     state = state.copyWith(isLoading: true, failureOption: none());
 
     final failureOrItems = await _repository.loadItems();
-    failureOrItems.fold(
-      (failure) => state = state.copyWith(
+    state = failureOrItems.fold(
+      (failure) => state.copyWith(
         isLoading: false,
         failureOption: optionOf(failure),
       ),
-      (items) => state = state.copyWith(
+      (items) => state.copyWith(
         items: items,
         isLoading: true,
         failureOption: none(),

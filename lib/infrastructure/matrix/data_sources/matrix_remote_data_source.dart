@@ -19,8 +19,14 @@ class MatrixRemoteDataSourceImpl implements MatrixRemoteDataSource {
   @override
   Future<List<MatrixDto>> fetchMatrix() async {
     const url = '$penguinStatsBaseURL/result/matrix';
+    final queryParameters = {
+      'show_closed_zones': true,
+    };
 
-    final response = await client.get<Map<String, dynamic>>(url);
+    final response = await client.get<Map<String, dynamic>>(
+      url,
+      queryParameters: queryParameters,
+    );
 
     final matrix = <MatrixDto>[];
     for (final data in response.data?['matrix'] ?? <Map>[]) {

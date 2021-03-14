@@ -20,8 +20,8 @@ class _$MatrixTearOff {
       {required UniqueId id,
       required String stageId,
       required String itemId,
-      int? quantity,
-      int? times,
+      required int quantity,
+      required int times,
       DateTime? start,
       DateTime? end}) {
     return _Matrix(
@@ -44,8 +44,8 @@ mixin _$Matrix {
   UniqueId get id => throw _privateConstructorUsedError;
   String get stageId => throw _privateConstructorUsedError;
   String get itemId => throw _privateConstructorUsedError;
-  int? get quantity => throw _privateConstructorUsedError;
-  int? get times => throw _privateConstructorUsedError;
+  int get quantity => throw _privateConstructorUsedError;
+  int get times => throw _privateConstructorUsedError;
   DateTime? get start => throw _privateConstructorUsedError;
   DateTime? get end => throw _privateConstructorUsedError;
 
@@ -61,8 +61,8 @@ abstract class $MatrixCopyWith<$Res> {
       {UniqueId id,
       String stageId,
       String itemId,
-      int? quantity,
-      int? times,
+      int quantity,
+      int times,
       DateTime? start,
       DateTime? end});
 }
@@ -101,11 +101,11 @@ class _$MatrixCopyWithImpl<$Res> implements $MatrixCopyWith<$Res> {
       quantity: quantity == freezed
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       times: times == freezed
           ? _value.times
           : times // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       start: start == freezed
           ? _value.start
           : start // ignore: cast_nullable_to_non_nullable
@@ -127,8 +127,8 @@ abstract class _$MatrixCopyWith<$Res> implements $MatrixCopyWith<$Res> {
       {UniqueId id,
       String stageId,
       String itemId,
-      int? quantity,
-      int? times,
+      int quantity,
+      int times,
       DateTime? start,
       DateTime? end});
 }
@@ -168,11 +168,11 @@ class __$MatrixCopyWithImpl<$Res> extends _$MatrixCopyWithImpl<$Res>
       quantity: quantity == freezed
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       times: times == freezed
           ? _value.times
           : times // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       start: start == freezed
           ? _value.start
           : start // ignore: cast_nullable_to_non_nullable
@@ -191,8 +191,8 @@ class _$_Matrix implements _Matrix {
       {required this.id,
       required this.stageId,
       required this.itemId,
-      this.quantity,
-      this.times,
+      required this.quantity,
+      required this.times,
       this.start,
       this.end});
 
@@ -203,9 +203,9 @@ class _$_Matrix implements _Matrix {
   @override
   final String itemId;
   @override
-  final int? quantity;
+  final int quantity;
   @override
-  final int? times;
+  final int times;
   @override
   final DateTime? start;
   @override
@@ -260,8 +260,8 @@ abstract class _Matrix implements Matrix {
       {required UniqueId id,
       required String stageId,
       required String itemId,
-      int? quantity,
-      int? times,
+      required int quantity,
+      required int times,
       DateTime? start,
       DateTime? end}) = _$_Matrix;
 
@@ -272,9 +272,9 @@ abstract class _Matrix implements Matrix {
   @override
   String get itemId => throw _privateConstructorUsedError;
   @override
-  int? get quantity => throw _privateConstructorUsedError;
+  int get quantity => throw _privateConstructorUsedError;
   @override
-  int? get times => throw _privateConstructorUsedError;
+  int get times => throw _privateConstructorUsedError;
   @override
   DateTime? get start => throw _privateConstructorUsedError;
   @override
