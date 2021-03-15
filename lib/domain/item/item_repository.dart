@@ -5,7 +5,7 @@ import 'entities/item.dart';
 import 'item_failure.dart';
 
 abstract class ItemRepository {
-  Future<Either<ItemFailure, Unit>> fetchAndSaveItems();
+  Future<Either<ItemFailure, Unit>> fetchAndSaveAll();
 
-  Future<Either<ItemFailure, KtList<Item>>> loadItems();
+  Future<Either<ItemFailure, KtList<Item>>> loadAll();
 }

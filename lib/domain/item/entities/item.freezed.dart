@@ -24,8 +24,8 @@ class _$ItemTearOff {
       required String groupId,
       required ItemType type,
       required String name,
-      required KtMap<String, String> nameI18n,
-      required KtMap<String, List<String>> pron,
+      required KtMap<I18n, String> nameI18n,
+      required KtMap<I18n, List<String>> pron,
       int? rarity,
       int? sortId,
       ItemSpriteCoord? spriteCoord}) {
@@ -58,8 +58,8 @@ mixin _$Item {
   String get groupId => throw _privateConstructorUsedError;
   ItemType get type => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  KtMap<String, String> get nameI18n => throw _privateConstructorUsedError;
-  KtMap<String, List<String>> get pron => throw _privateConstructorUsedError;
+  KtMap<I18n, String> get nameI18n => throw _privateConstructorUsedError;
+  KtMap<I18n, List<String>> get pron => throw _privateConstructorUsedError;
   int? get rarity => throw _privateConstructorUsedError;
   int? get sortId => throw _privateConstructorUsedError;
   ItemSpriteCoord? get spriteCoord => throw _privateConstructorUsedError;
@@ -80,8 +80,8 @@ abstract class $ItemCopyWith<$Res> {
       String groupId,
       ItemType type,
       String name,
-      KtMap<String, String> nameI18n,
-      KtMap<String, List<String>> pron,
+      KtMap<I18n, String> nameI18n,
+      KtMap<I18n, List<String>> pron,
       int? rarity,
       int? sortId,
       ItemSpriteCoord? spriteCoord});
@@ -144,11 +144,11 @@ class _$ItemCopyWithImpl<$Res> implements $ItemCopyWith<$Res> {
       nameI18n: nameI18n == freezed
           ? _value.nameI18n
           : nameI18n // ignore: cast_nullable_to_non_nullable
-              as KtMap<String, String>,
+              as KtMap<I18n, String>,
       pron: pron == freezed
           ? _value.pron
           : pron // ignore: cast_nullable_to_non_nullable
-              as KtMap<String, List<String>>,
+              as KtMap<I18n, List<String>>,
       rarity: rarity == freezed
           ? _value.rarity
           : rarity // ignore: cast_nullable_to_non_nullable
@@ -189,8 +189,8 @@ abstract class _$ItemCopyWith<$Res> implements $ItemCopyWith<$Res> {
       String groupId,
       ItemType type,
       String name,
-      KtMap<String, String> nameI18n,
-      KtMap<String, List<String>> pron,
+      KtMap<I18n, String> nameI18n,
+      KtMap<I18n, List<String>> pron,
       int? rarity,
       int? sortId,
       ItemSpriteCoord? spriteCoord});
@@ -255,11 +255,11 @@ class __$ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res>
       nameI18n: nameI18n == freezed
           ? _value.nameI18n
           : nameI18n // ignore: cast_nullable_to_non_nullable
-              as KtMap<String, String>,
+              as KtMap<I18n, String>,
       pron: pron == freezed
           ? _value.pron
           : pron // ignore: cast_nullable_to_non_nullable
-              as KtMap<String, List<String>>,
+              as KtMap<I18n, List<String>>,
       rarity: rarity == freezed
           ? _value.rarity
           : rarity // ignore: cast_nullable_to_non_nullable
@@ -307,9 +307,9 @@ class _$_Item implements _Item {
   @override
   final String name;
   @override
-  final KtMap<String, String> nameI18n;
+  final KtMap<I18n, String> nameI18n;
   @override
-  final KtMap<String, List<String>> pron;
+  final KtMap<I18n, List<String>> pron;
   @override
   final int? rarity;
   @override
@@ -388,8 +388,8 @@ abstract class _Item implements Item {
       required String groupId,
       required ItemType type,
       required String name,
-      required KtMap<String, String> nameI18n,
-      required KtMap<String, List<String>> pron,
+      required KtMap<I18n, String> nameI18n,
+      required KtMap<I18n, List<String>> pron,
       int? rarity,
       int? sortId,
       ItemSpriteCoord? spriteCoord}) = _$_Item;
@@ -409,9 +409,9 @@ abstract class _Item implements Item {
   @override
   String get name => throw _privateConstructorUsedError;
   @override
-  KtMap<String, String> get nameI18n => throw _privateConstructorUsedError;
+  KtMap<I18n, String> get nameI18n => throw _privateConstructorUsedError;
   @override
-  KtMap<String, List<String>> get pron => throw _privateConstructorUsedError;
+  KtMap<I18n, List<String>> get pron => throw _privateConstructorUsedError;
   @override
   int? get rarity => throw _privateConstructorUsedError;
   @override

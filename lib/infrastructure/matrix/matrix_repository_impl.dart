@@ -23,10 +23,10 @@ class MatrixRepositoryImpl implements MatrixRepository {
   final MatrixRemoteDataSource _remoteDataSource;
 
   @override
-  Future<Either<MatrixFailure, Unit>> fetchAndSave() async {
+  Future<Either<MatrixFailure, Unit>> fetchAndSaveAll() async {
     return _execute(() async {
       final dtos = await _remoteDataSource.fetchMatrix();
-      await _localDataSource.save(dtos);
+      await _localDataSource.saveAll(dtos);
       return unit;
     });
   }

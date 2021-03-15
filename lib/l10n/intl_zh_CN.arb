@@ -21,5 +21,8 @@
   "samples": "样本数",
   "dropRate": "掉落率",
   "expectedSanity": "期望理智",
+  "normalDrop": "常规掉落",
+  "extraDrop": "额外物资",
+  "specialDrop": "特殊掉落",
   "recruit": "公开招募"
 }

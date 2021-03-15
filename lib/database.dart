@@ -4,6 +4,7 @@ import 'package:sqflite/sqflite.dart';
 
 import 'infrastructure/item/dtos/item_dto.dart';
 import 'infrastructure/matrix/dtos/matrix_dto.dart';
+import 'infrastructure/stage/dtos/stage_dto.dart';
 
 Future<void> onConfigure(Database db) async {
   await db.execute('PRAGMA foreign_keys = ON');
@@ -12,6 +13,7 @@ Future<void> onConfigure(Database db) async {
 Future<void> onCreate(Database db, int version) async {
   final batch = db.batch();
 
+  _createStageTable(batch);
   _createItemTable(batch);
   _creatMatrixTable(batch);
 
@@ -19,6 +21,24 @@ Future<void> onCreate(Database db, int version) async {
 }
 
 //* Table Creators
+
+void _createStageTable(Batch batch) {
+  batch.execute(
+    '''
+      CREATE TABLE ${StageDto.tableName} (
+        stageId TEXT PRIMARY KEY,
+        zoneId TEXT,
+        code TEXT,
+        stageType TEXT,
+        apCost INTEGER,
+        dropInfos TEXT,
+        existence TEXT,
+        minClearTime INTEGER,
+        code_i18n INTEGER
+      )
+      ''',
+  );
+}
 
 void _createItemTable(Batch batch) {
   batch.execute(

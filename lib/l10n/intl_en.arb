@@ -21,5 +21,8 @@
   "samples": "Samples",
   "dropRate": "Drop Rate",
   "expectedSanity": "Expected Sanity",
+  "normalDrop": "Regular",
+  "extraDrop": "Extra",
+  "specialDrop": "Special",
   "recruit": "Recruit"
 }

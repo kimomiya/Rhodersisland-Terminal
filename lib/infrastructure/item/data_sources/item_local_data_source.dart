@@ -9,9 +9,9 @@ import '../dtos/item_dto.dart';
 const _tableName = ItemDto.tableName;
 
 abstract class ItemLocalDataSource {
-  Future<void> saveItems(List<ItemDto> items);
+  Future<void> saveAll(List<ItemDto> items);
 
-  Future<List<ItemDto>> loadItems();
+  Future<List<ItemDto>> loadAll();
 }
 
 @LazySingleton(as: ItemLocalDataSource)
@@ -23,7 +23,7 @@ class ItemLocalDataSourceImpl implements ItemLocalDataSource {
   final Database _db;
 
   @override
-  Future<void> saveItems(List<ItemDto> items) async {
+  Future<void> saveAll(List<ItemDto> items) async {
     final batch = _db.batch();
 
     for (final item in items) {
@@ -37,12 +37,12 @@ class ItemLocalDataSourceImpl implements ItemLocalDataSource {
         ''',
         <dynamic>[
           item.itemId,
-          item.type,
+          item.itemType,
           item.name,
           jsonEncode(item.nameI18n),
           jsonEncode(item.alias),
           jsonEncode(item.pron),
-          jsonEncode(_transferExistence(item.existence)),
+          _transferExistence(item.existence),
           item.rarity,
           item.addTimePoint,
           jsonEncode(item.spriteCoord),
@@ -56,7 +56,7 @@ class ItemLocalDataSourceImpl implements ItemLocalDataSource {
   }
 
   @override
-  Future<List<ItemDto>> loadItems() async {
+  Future<List<ItemDto>> loadAll() async {
     final results = await _db.query(_tableName, orderBy: 'sortId');
 
     final dtos = <ItemDto>[];
@@ -68,11 +68,9 @@ class ItemLocalDataSourceImpl implements ItemLocalDataSource {
 
   //* Helper Methods
 
-  Map<String, dynamic> _transferExistence(
-    Map<String, ExistenceDto>? existence,
-  ) {
+  String _transferExistence(Map<String, ExistenceDto>? existence) {
     final map = <String, dynamic>{};
     existence?.forEach((key, value) => map[key] = value.toJson());
-    return map;
+    return jsonEncode(map);
   }
 }

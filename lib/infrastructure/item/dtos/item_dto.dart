@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:kt_dart/collection.dart';
 
+import '../../../core/enums/i18n.dart';
 import '../../../core/enums/item_type.dart';
 import '../../../core/enums/server.dart';
 import '../../../domain/core/entities/existence.dart';
@@ -22,7 +23,7 @@ class ItemDto with _$ItemDto {
     Map<String, ExistenceDto>? existence,
     String? groupId,
     String? itemId,
-    @JsonKey(name: 'itemType') String? type,
+    String? itemType,
     String? name,
     @JsonKey(name: 'name_i18n') Map<String, String>? nameI18n,
     Map<String, List<String>>? pron,
@@ -66,10 +67,10 @@ extension ItemDtoToDomain on ItemDto {
       alias: alias?.toImmutableMap() ?? const KtMap.empty(),
       existence: _transferExistence(),
       groupId: groupId ?? '',
-      type: ItemTypeValue.of(type),
+      type: ItemTypeValue.of(itemType),
       name: name ?? '',
-      nameI18n: nameI18n?.toImmutableMap() ?? const KtMap.empty(),
-      pron: pron?.toImmutableMap() ?? const KtMap.empty(),
+      nameI18n: _transferNameI18n(),
+      pron: _transferPron(),
       rarity: rarity,
       sortId: sortId,
       spriteCoord: _transferSpriteCoord(),
@@ -81,6 +82,18 @@ extension ItemDtoToDomain on ItemDto {
     existence?.forEach(
       (key, value) => map[ServerValue.of(key)] = value.toDomain(),
     );
+    return map.toImmutableMap();
+  }
+
+  KtMap<I18n, String> _transferNameI18n() {
+    final map = <I18n, String>{};
+    nameI18n?.forEach((key, value) => map[I18nValue.of(key)] = value);
+    return map.toImmutableMap();
+  }
+
+  KtMap<I18n, List<String>> _transferPron() {
+    final map = <I18n, List<String>>{};
+    pron?.forEach((key, value) => map[I18nValue.of(key)] = value);
     return map.toImmutableMap();
   }
 

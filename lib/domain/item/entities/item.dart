@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:kt_dart/collection.dart';
 
+import '../../../core/enums/i18n.dart';
 import '../../../core/enums/item_type.dart';
 import '../../../core/enums/server.dart';
 import '../../core/entities/existence.dart';
@@ -20,8 +21,8 @@ class Item with _$Item implements Entity {
     required String groupId,
     required ItemType type,
     required String name,
-    required KtMap<String, String> nameI18n,
-    required KtMap<String, List<String>> pron,
+    required KtMap<I18n, String> nameI18n,
+    required KtMap<I18n, List<String>> pron,
     int? rarity,
     int? sortId,
     ItemSpriteCoord? spriteCoord,

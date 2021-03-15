@@ -21,7 +21,7 @@ class ItemsNotifier extends StateNotifier<ItemsState> {
   Future<void> _loadItems() async {
     state = state.copyWith(isLoading: true, failureOption: none());
 
-    final failureOrItems = await _repository.loadItems();
+    final failureOrItems = await _repository.loadAll();
     state = failureOrItems.fold(
       (failure) => state.copyWith(
         isLoading: false,

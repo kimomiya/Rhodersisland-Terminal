@@ -26,7 +26,7 @@ class _$ItemDtoTearOff {
       Map<String, ExistenceDto>? existence,
       String? groupId,
       String? itemId,
-      @JsonKey(name: 'itemType') String? type,
+      String? itemType,
       String? name,
       @JsonKey(name: 'name_i18n') Map<String, String>? nameI18n,
       Map<String, List<String>>? pron,
@@ -39,7 +39,7 @@ class _$ItemDtoTearOff {
       existence,
       groupId,
       itemId,
-      type,
+      itemType,
       name,
       nameI18n,
       pron,
@@ -65,8 +65,7 @@ mixin _$ItemDto {
       throw _privateConstructorUsedError;
   String? get groupId => throw _privateConstructorUsedError;
   String? get itemId => throw _privateConstructorUsedError;
-  @JsonKey(name: 'itemType')
-  String? get type => throw _privateConstructorUsedError;
+  String? get itemType => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   @JsonKey(name: 'name_i18n')
   Map<String, String>? get nameI18n => throw _privateConstructorUsedError;
@@ -90,7 +89,7 @@ abstract class $ItemDtoCopyWith<$Res> {
       Map<String, ExistenceDto>? existence,
       String? groupId,
       String? itemId,
-      @JsonKey(name: 'itemType') String? type,
+      String? itemType,
       String? name,
       @JsonKey(name: 'name_i18n') Map<String, String>? nameI18n,
       Map<String, List<String>>? pron,
@@ -114,7 +113,7 @@ class _$ItemDtoCopyWithImpl<$Res> implements $ItemDtoCopyWith<$Res> {
     Object? existence = freezed,
     Object? groupId = freezed,
     Object? itemId = freezed,
-    Object? type = freezed,
+    Object? itemType = freezed,
     Object? name = freezed,
     Object? nameI18n = freezed,
     Object? pron = freezed,
@@ -143,9 +142,9 @@ class _$ItemDtoCopyWithImpl<$Res> implements $ItemDtoCopyWith<$Res> {
           ? _value.itemId
           : itemId // ignore: cast_nullable_to_non_nullable
               as String?,
-      type: type == freezed
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
+      itemType: itemType == freezed
+          ? _value.itemType
+          : itemType // ignore: cast_nullable_to_non_nullable
               as String?,
       name: name == freezed
           ? _value.name
@@ -186,7 +185,7 @@ abstract class _$ItemDtoCopyWith<$Res> implements $ItemDtoCopyWith<$Res> {
       Map<String, ExistenceDto>? existence,
       String? groupId,
       String? itemId,
-      @JsonKey(name: 'itemType') String? type,
+      String? itemType,
       String? name,
       @JsonKey(name: 'name_i18n') Map<String, String>? nameI18n,
       Map<String, List<String>>? pron,
@@ -211,7 +210,7 @@ class __$ItemDtoCopyWithImpl<$Res> extends _$ItemDtoCopyWithImpl<$Res>
     Object? existence = freezed,
     Object? groupId = freezed,
     Object? itemId = freezed,
-    Object? type = freezed,
+    Object? itemType = freezed,
     Object? name = freezed,
     Object? nameI18n = freezed,
     Object? pron = freezed,
@@ -240,9 +239,9 @@ class __$ItemDtoCopyWithImpl<$Res> extends _$ItemDtoCopyWithImpl<$Res>
           ? _value.itemId
           : itemId // ignore: cast_nullable_to_non_nullable
               as String?,
-      type == freezed
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
+      itemType == freezed
+          ? _value.itemType
+          : itemType // ignore: cast_nullable_to_non_nullable
               as String?,
       name == freezed
           ? _value.name
@@ -282,7 +281,7 @@ class _$_ItemDto implements _ItemDto {
       this.existence,
       this.groupId,
       this.itemId,
-      @JsonKey(name: 'itemType') this.type,
+      this.itemType,
       this.name,
       @JsonKey(name: 'name_i18n') this.nameI18n,
       this.pron,
@@ -304,8 +303,7 @@ class _$_ItemDto implements _ItemDto {
   @override
   final String? itemId;
   @override
-  @JsonKey(name: 'itemType')
-  final String? type;
+  final String? itemType;
   @override
   final String? name;
   @override
@@ -322,7 +320,7 @@ class _$_ItemDto implements _ItemDto {
 
   @override
   String toString() {
-    return 'ItemDto(addTimePoint: $addTimePoint, alias: $alias, existence: $existence, groupId: $groupId, itemId: $itemId, type: $type, name: $name, nameI18n: $nameI18n, pron: $pron, rarity: $rarity, sortId: $sortId, spriteCoord: $spriteCoord)';
+    return 'ItemDto(addTimePoint: $addTimePoint, alias: $alias, existence: $existence, groupId: $groupId, itemId: $itemId, itemType: $itemType, name: $name, nameI18n: $nameI18n, pron: $pron, rarity: $rarity, sortId: $sortId, spriteCoord: $spriteCoord)';
   }
 
   @override
@@ -342,8 +340,9 @@ class _$_ItemDto implements _ItemDto {
                     .equals(other.groupId, groupId)) &&
             (identical(other.itemId, itemId) ||
                 const DeepCollectionEquality().equals(other.itemId, itemId)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.itemType, itemType) ||
+                const DeepCollectionEquality()
+                    .equals(other.itemType, itemType)) &&
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.nameI18n, nameI18n) ||
@@ -368,7 +367,7 @@ class _$_ItemDto implements _ItemDto {
       const DeepCollectionEquality().hash(existence) ^
       const DeepCollectionEquality().hash(groupId) ^
       const DeepCollectionEquality().hash(itemId) ^
-      const DeepCollectionEquality().hash(type) ^
+      const DeepCollectionEquality().hash(itemType) ^
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(nameI18n) ^
       const DeepCollectionEquality().hash(pron) ^
@@ -394,7 +393,7 @@ abstract class _ItemDto implements ItemDto {
       Map<String, ExistenceDto>? existence,
       String? groupId,
       String? itemId,
-      @JsonKey(name: 'itemType') String? type,
+      String? itemType,
       String? name,
       @JsonKey(name: 'name_i18n') Map<String, String>? nameI18n,
       Map<String, List<String>>? pron,
@@ -416,8 +415,7 @@ abstract class _ItemDto implements ItemDto {
   @override
   String? get itemId => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'itemType')
-  String? get type => throw _privateConstructorUsedError;
+  String? get itemType => throw _privateConstructorUsedError;
   @override
   String? get name => throw _privateConstructorUsedError;
   @override

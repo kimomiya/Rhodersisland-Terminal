@@ -21,5 +21,8 @@
   "samples": "周回数",
   "dropRate": "ドロップ率",
   "expectedSanity": "期待理性",
+  "normalDrop": "通常",
+  "extraDrop": "その他",
+  "specialDrop": "レア",
   "recruit": "公開求人"
 }

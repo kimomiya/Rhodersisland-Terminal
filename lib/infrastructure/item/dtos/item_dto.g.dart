@@ -40,7 +40,7 @@ Map<String, dynamic> _$_$_ItemDtoToJson(_$_ItemDto instance) =>
       'existence': instance.existence,
       'groupId': instance.groupId,
       'itemId': instance.itemId,
-      'itemType': instance.type,
+      'itemType': instance.itemType,
       'name': instance.name,
       'name_i18n': instance.nameI18n,
       'pron': instance.pron,

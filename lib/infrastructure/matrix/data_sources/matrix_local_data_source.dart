@@ -6,7 +6,7 @@ import '../dtos/matrix_dto.dart';
 const _tableName = MatrixDto.tableName;
 
 abstract class MatrixLocalDataSource {
-  Future<void> save(List<MatrixDto> matrix);
+  Future<void> saveAll(List<MatrixDto> matrix);
 
   Future<List<MatrixDto>> loadByStage(String id);
 
@@ -22,7 +22,7 @@ class MatrixLocalDataSourceImpl implements MatrixLocalDataSource {
   final Database _db;
 
   @override
-  Future<void> save(List<MatrixDto> matrix) async {
+  Future<void> saveAll(List<MatrixDto> matrix) async {
     final batch = _db.batch();
 
     for (final m in matrix) {

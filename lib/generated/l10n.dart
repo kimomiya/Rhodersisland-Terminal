@@ -267,6 +267,36 @@ class S {
     );
   }
 
+  /// `Regular`
+  String get normalDrop {
+    return Intl.message(
+      'Regular',
+      name: 'normalDrop',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Extra`
+  String get extraDrop {
+    return Intl.message(
+      'Extra',
+      name: 'extraDrop',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Special`
+  String get specialDrop {
+    return Intl.message(
+      'Special',
+      name: 'specialDrop',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Recruit`
   String get recruit {
     return Intl.message(
