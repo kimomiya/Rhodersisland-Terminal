@@ -20,8 +20,16 @@ MatrixDto _$MatrixDtoFromJson(Map<String, dynamic> json) {
 class _$MatrixDtoTearOff {
   const _$MatrixDtoTearOff();
 
-  _MatrixDto call(String? stageId, String? itemId, int? quantity, int? times,
-      int? start, int? end) {
+  _MatrixDto call(
+      String? stageId,
+      String? itemId,
+      int? quantity,
+      int? times,
+      int? start,
+      int? end,
+      @JsonKey(name: 'code_i18n') Map<String, String>? stageCodeI18n,
+      @JsonKey(name: 'apCost') int? stageApCost,
+      @JsonKey(name: 'minClearTime') int? stageMinClearTime) {
     return _MatrixDto(
       stageId,
       itemId,
@@ -29,6 +37,9 @@ class _$MatrixDtoTearOff {
       times,
       start,
       end,
+      stageCodeI18n,
+      stageApCost,
+      stageMinClearTime,
     );
   }
 
@@ -48,6 +59,12 @@ mixin _$MatrixDto {
   int? get times => throw _privateConstructorUsedError;
   int? get start => throw _privateConstructorUsedError;
   int? get end => throw _privateConstructorUsedError;
+  @JsonKey(name: 'code_i18n')
+  Map<String, String>? get stageCodeI18n => throw _privateConstructorUsedError;
+  @JsonKey(name: 'apCost')
+  int? get stageApCost => throw _privateConstructorUsedError;
+  @JsonKey(name: 'minClearTime')
+  int? get stageMinClearTime => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -65,7 +82,10 @@ abstract class $MatrixDtoCopyWith<$Res> {
       int? quantity,
       int? times,
       int? start,
-      int? end});
+      int? end,
+      @JsonKey(name: 'code_i18n') Map<String, String>? stageCodeI18n,
+      @JsonKey(name: 'apCost') int? stageApCost,
+      @JsonKey(name: 'minClearTime') int? stageMinClearTime});
 }
 
 /// @nodoc
@@ -84,6 +104,9 @@ class _$MatrixDtoCopyWithImpl<$Res> implements $MatrixDtoCopyWith<$Res> {
     Object? times = freezed,
     Object? start = freezed,
     Object? end = freezed,
+    Object? stageCodeI18n = freezed,
+    Object? stageApCost = freezed,
+    Object? stageMinClearTime = freezed,
   }) {
     return _then(_value.copyWith(
       stageId: stageId == freezed
@@ -110,6 +133,18 @@ class _$MatrixDtoCopyWithImpl<$Res> implements $MatrixDtoCopyWith<$Res> {
           ? _value.end
           : end // ignore: cast_nullable_to_non_nullable
               as int?,
+      stageCodeI18n: stageCodeI18n == freezed
+          ? _value.stageCodeI18n
+          : stageCodeI18n // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>?,
+      stageApCost: stageApCost == freezed
+          ? _value.stageApCost
+          : stageApCost // ignore: cast_nullable_to_non_nullable
+              as int?,
+      stageMinClearTime: stageMinClearTime == freezed
+          ? _value.stageMinClearTime
+          : stageMinClearTime // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -126,7 +161,10 @@ abstract class _$MatrixDtoCopyWith<$Res> implements $MatrixDtoCopyWith<$Res> {
       int? quantity,
       int? times,
       int? start,
-      int? end});
+      int? end,
+      @JsonKey(name: 'code_i18n') Map<String, String>? stageCodeI18n,
+      @JsonKey(name: 'apCost') int? stageApCost,
+      @JsonKey(name: 'minClearTime') int? stageMinClearTime});
 }
 
 /// @nodoc
@@ -146,6 +184,9 @@ class __$MatrixDtoCopyWithImpl<$Res> extends _$MatrixDtoCopyWithImpl<$Res>
     Object? times = freezed,
     Object? start = freezed,
     Object? end = freezed,
+    Object? stageCodeI18n = freezed,
+    Object? stageApCost = freezed,
+    Object? stageMinClearTime = freezed,
   }) {
     return _then(_MatrixDto(
       stageId == freezed
@@ -172,6 +213,18 @@ class __$MatrixDtoCopyWithImpl<$Res> extends _$MatrixDtoCopyWithImpl<$Res>
           ? _value.end
           : end // ignore: cast_nullable_to_non_nullable
               as int?,
+      stageCodeI18n == freezed
+          ? _value.stageCodeI18n
+          : stageCodeI18n // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>?,
+      stageApCost == freezed
+          ? _value.stageApCost
+          : stageApCost // ignore: cast_nullable_to_non_nullable
+              as int?,
+      stageMinClearTime == freezed
+          ? _value.stageMinClearTime
+          : stageMinClearTime // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -180,8 +233,16 @@ class __$MatrixDtoCopyWithImpl<$Res> extends _$MatrixDtoCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_MatrixDto implements _MatrixDto {
-  const _$_MatrixDto(this.stageId, this.itemId, this.quantity, this.times,
-      this.start, this.end);
+  const _$_MatrixDto(
+      this.stageId,
+      this.itemId,
+      this.quantity,
+      this.times,
+      this.start,
+      this.end,
+      @JsonKey(name: 'code_i18n') this.stageCodeI18n,
+      @JsonKey(name: 'apCost') this.stageApCost,
+      @JsonKey(name: 'minClearTime') this.stageMinClearTime);
 
   factory _$_MatrixDto.fromJson(Map<String, dynamic> json) =>
       _$_$_MatrixDtoFromJson(json);
@@ -198,10 +259,19 @@ class _$_MatrixDto implements _MatrixDto {
   final int? start;
   @override
   final int? end;
+  @override
+  @JsonKey(name: 'code_i18n')
+  final Map<String, String>? stageCodeI18n;
+  @override
+  @JsonKey(name: 'apCost')
+  final int? stageApCost;
+  @override
+  @JsonKey(name: 'minClearTime')
+  final int? stageMinClearTime;
 
   @override
   String toString() {
-    return 'MatrixDto(stageId: $stageId, itemId: $itemId, quantity: $quantity, times: $times, start: $start, end: $end)';
+    return 'MatrixDto(stageId: $stageId, itemId: $itemId, quantity: $quantity, times: $times, start: $start, end: $end, stageCodeI18n: $stageCodeI18n, stageApCost: $stageApCost, stageMinClearTime: $stageMinClearTime)';
   }
 
   @override
@@ -221,7 +291,16 @@ class _$_MatrixDto implements _MatrixDto {
             (identical(other.start, start) ||
                 const DeepCollectionEquality().equals(other.start, start)) &&
             (identical(other.end, end) ||
-                const DeepCollectionEquality().equals(other.end, end)));
+                const DeepCollectionEquality().equals(other.end, end)) &&
+            (identical(other.stageCodeI18n, stageCodeI18n) ||
+                const DeepCollectionEquality()
+                    .equals(other.stageCodeI18n, stageCodeI18n)) &&
+            (identical(other.stageApCost, stageApCost) ||
+                const DeepCollectionEquality()
+                    .equals(other.stageApCost, stageApCost)) &&
+            (identical(other.stageMinClearTime, stageMinClearTime) ||
+                const DeepCollectionEquality()
+                    .equals(other.stageMinClearTime, stageMinClearTime)));
   }
 
   @override
@@ -232,7 +311,10 @@ class _$_MatrixDto implements _MatrixDto {
       const DeepCollectionEquality().hash(quantity) ^
       const DeepCollectionEquality().hash(times) ^
       const DeepCollectionEquality().hash(start) ^
-      const DeepCollectionEquality().hash(end);
+      const DeepCollectionEquality().hash(end) ^
+      const DeepCollectionEquality().hash(stageCodeI18n) ^
+      const DeepCollectionEquality().hash(stageApCost) ^
+      const DeepCollectionEquality().hash(stageMinClearTime);
 
   @JsonKey(ignore: true)
   @override
@@ -246,8 +328,16 @@ class _$_MatrixDto implements _MatrixDto {
 }
 
 abstract class _MatrixDto implements MatrixDto {
-  const factory _MatrixDto(String? stageId, String? itemId, int? quantity,
-      int? times, int? start, int? end) = _$_MatrixDto;
+  const factory _MatrixDto(
+      String? stageId,
+      String? itemId,
+      int? quantity,
+      int? times,
+      int? start,
+      int? end,
+      @JsonKey(name: 'code_i18n') Map<String, String>? stageCodeI18n,
+      @JsonKey(name: 'apCost') int? stageApCost,
+      @JsonKey(name: 'minClearTime') int? stageMinClearTime) = _$_MatrixDto;
 
   factory _MatrixDto.fromJson(Map<String, dynamic> json) =
       _$_MatrixDto.fromJson;
@@ -264,6 +354,15 @@ abstract class _MatrixDto implements MatrixDto {
   int? get start => throw _privateConstructorUsedError;
   @override
   int? get end => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'code_i18n')
+  Map<String, String>? get stageCodeI18n => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'apCost')
+  int? get stageApCost => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'minClearTime')
+  int? get stageMinClearTime => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$MatrixDtoCopyWith<_MatrixDto> get copyWith =>

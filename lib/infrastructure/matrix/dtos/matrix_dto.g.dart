@@ -14,6 +14,11 @@ _$_MatrixDto _$_$_MatrixDtoFromJson(Map<String, dynamic> json) {
     json['times'] as int?,
     json['start'] as int?,
     json['end'] as int?,
+    (json['code_i18n'] as Map<String, dynamic>?)?.map(
+      (k, e) => MapEntry(k, e as String),
+    ),
+    json['apCost'] as int?,
+    json['minClearTime'] as int?,
   );
 }
 
@@ -25,4 +30,7 @@ Map<String, dynamic> _$_$_MatrixDtoToJson(_$_MatrixDto instance) =>
       'times': instance.times,
       'start': instance.start,
       'end': instance.end,
+      'code_i18n': instance.stageCodeI18n,
+      'apCost': instance.stageApCost,
+      'minClearTime': instance.stageMinClearTime,
     };

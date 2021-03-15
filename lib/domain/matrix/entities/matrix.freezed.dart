@@ -23,7 +23,10 @@ class _$MatrixTearOff {
       required int quantity,
       required int times,
       DateTime? start,
-      DateTime? end}) {
+      DateTime? end,
+      required KtMap<I18n, String> stageCodeI18n,
+      required int stageApCost,
+      DateTime? stageMinClearTime}) {
     return _Matrix(
       id: id,
       stageId: stageId,
@@ -32,6 +35,9 @@ class _$MatrixTearOff {
       times: times,
       start: start,
       end: end,
+      stageCodeI18n: stageCodeI18n,
+      stageApCost: stageApCost,
+      stageMinClearTime: stageMinClearTime,
     );
   }
 }
@@ -48,6 +54,9 @@ mixin _$Matrix {
   int get times => throw _privateConstructorUsedError;
   DateTime? get start => throw _privateConstructorUsedError;
   DateTime? get end => throw _privateConstructorUsedError;
+  KtMap<I18n, String> get stageCodeI18n => throw _privateConstructorUsedError;
+  int get stageApCost => throw _privateConstructorUsedError;
+  DateTime? get stageMinClearTime => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $MatrixCopyWith<Matrix> get copyWith => throw _privateConstructorUsedError;
@@ -64,7 +73,10 @@ abstract class $MatrixCopyWith<$Res> {
       int quantity,
       int times,
       DateTime? start,
-      DateTime? end});
+      DateTime? end,
+      KtMap<I18n, String> stageCodeI18n,
+      int stageApCost,
+      DateTime? stageMinClearTime});
 }
 
 /// @nodoc
@@ -84,6 +96,9 @@ class _$MatrixCopyWithImpl<$Res> implements $MatrixCopyWith<$Res> {
     Object? times = freezed,
     Object? start = freezed,
     Object? end = freezed,
+    Object? stageCodeI18n = freezed,
+    Object? stageApCost = freezed,
+    Object? stageMinClearTime = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -114,6 +129,18 @@ class _$MatrixCopyWithImpl<$Res> implements $MatrixCopyWith<$Res> {
           ? _value.end
           : end // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      stageCodeI18n: stageCodeI18n == freezed
+          ? _value.stageCodeI18n
+          : stageCodeI18n // ignore: cast_nullable_to_non_nullable
+              as KtMap<I18n, String>,
+      stageApCost: stageApCost == freezed
+          ? _value.stageApCost
+          : stageApCost // ignore: cast_nullable_to_non_nullable
+              as int,
+      stageMinClearTime: stageMinClearTime == freezed
+          ? _value.stageMinClearTime
+          : stageMinClearTime // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -130,7 +157,10 @@ abstract class _$MatrixCopyWith<$Res> implements $MatrixCopyWith<$Res> {
       int quantity,
       int times,
       DateTime? start,
-      DateTime? end});
+      DateTime? end,
+      KtMap<I18n, String> stageCodeI18n,
+      int stageApCost,
+      DateTime? stageMinClearTime});
 }
 
 /// @nodoc
@@ -151,6 +181,9 @@ class __$MatrixCopyWithImpl<$Res> extends _$MatrixCopyWithImpl<$Res>
     Object? times = freezed,
     Object? start = freezed,
     Object? end = freezed,
+    Object? stageCodeI18n = freezed,
+    Object? stageApCost = freezed,
+    Object? stageMinClearTime = freezed,
   }) {
     return _then(_Matrix(
       id: id == freezed
@@ -181,6 +214,18 @@ class __$MatrixCopyWithImpl<$Res> extends _$MatrixCopyWithImpl<$Res>
           ? _value.end
           : end // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      stageCodeI18n: stageCodeI18n == freezed
+          ? _value.stageCodeI18n
+          : stageCodeI18n // ignore: cast_nullable_to_non_nullable
+              as KtMap<I18n, String>,
+      stageApCost: stageApCost == freezed
+          ? _value.stageApCost
+          : stageApCost // ignore: cast_nullable_to_non_nullable
+              as int,
+      stageMinClearTime: stageMinClearTime == freezed
+          ? _value.stageMinClearTime
+          : stageMinClearTime // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -194,7 +239,10 @@ class _$_Matrix implements _Matrix {
       required this.quantity,
       required this.times,
       this.start,
-      this.end});
+      this.end,
+      required this.stageCodeI18n,
+      required this.stageApCost,
+      this.stageMinClearTime});
 
   @override
   final UniqueId id;
@@ -210,10 +258,16 @@ class _$_Matrix implements _Matrix {
   final DateTime? start;
   @override
   final DateTime? end;
+  @override
+  final KtMap<I18n, String> stageCodeI18n;
+  @override
+  final int stageApCost;
+  @override
+  final DateTime? stageMinClearTime;
 
   @override
   String toString() {
-    return 'Matrix(id: $id, stageId: $stageId, itemId: $itemId, quantity: $quantity, times: $times, start: $start, end: $end)';
+    return 'Matrix(id: $id, stageId: $stageId, itemId: $itemId, quantity: $quantity, times: $times, start: $start, end: $end, stageCodeI18n: $stageCodeI18n, stageApCost: $stageApCost, stageMinClearTime: $stageMinClearTime)';
   }
 
   @override
@@ -235,7 +289,16 @@ class _$_Matrix implements _Matrix {
             (identical(other.start, start) ||
                 const DeepCollectionEquality().equals(other.start, start)) &&
             (identical(other.end, end) ||
-                const DeepCollectionEquality().equals(other.end, end)));
+                const DeepCollectionEquality().equals(other.end, end)) &&
+            (identical(other.stageCodeI18n, stageCodeI18n) ||
+                const DeepCollectionEquality()
+                    .equals(other.stageCodeI18n, stageCodeI18n)) &&
+            (identical(other.stageApCost, stageApCost) ||
+                const DeepCollectionEquality()
+                    .equals(other.stageApCost, stageApCost)) &&
+            (identical(other.stageMinClearTime, stageMinClearTime) ||
+                const DeepCollectionEquality()
+                    .equals(other.stageMinClearTime, stageMinClearTime)));
   }
 
   @override
@@ -247,7 +310,10 @@ class _$_Matrix implements _Matrix {
       const DeepCollectionEquality().hash(quantity) ^
       const DeepCollectionEquality().hash(times) ^
       const DeepCollectionEquality().hash(start) ^
-      const DeepCollectionEquality().hash(end);
+      const DeepCollectionEquality().hash(end) ^
+      const DeepCollectionEquality().hash(stageCodeI18n) ^
+      const DeepCollectionEquality().hash(stageApCost) ^
+      const DeepCollectionEquality().hash(stageMinClearTime);
 
   @JsonKey(ignore: true)
   @override
@@ -263,7 +329,10 @@ abstract class _Matrix implements Matrix {
       required int quantity,
       required int times,
       DateTime? start,
-      DateTime? end}) = _$_Matrix;
+      DateTime? end,
+      required KtMap<I18n, String> stageCodeI18n,
+      required int stageApCost,
+      DateTime? stageMinClearTime}) = _$_Matrix;
 
   @override
   UniqueId get id => throw _privateConstructorUsedError;
@@ -279,6 +348,12 @@ abstract class _Matrix implements Matrix {
   DateTime? get start => throw _privateConstructorUsedError;
   @override
   DateTime? get end => throw _privateConstructorUsedError;
+  @override
+  KtMap<I18n, String> get stageCodeI18n => throw _privateConstructorUsedError;
+  @override
+  int get stageApCost => throw _privateConstructorUsedError;
+  @override
+  DateTime? get stageMinClearTime => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$MatrixCopyWith<_Matrix> get copyWith => throw _privateConstructorUsedError;

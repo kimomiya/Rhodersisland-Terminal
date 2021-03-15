@@ -1,6 +1,7 @@
 import 'package:injectable/injectable.dart';
 import 'package:sqflite/sqflite.dart';
 
+import '../../stage/dtos/stage_dto.dart';
 import '../dtos/matrix_dto.dart';
 
 const _tableName = MatrixDto.tableName;
@@ -63,15 +64,18 @@ class MatrixLocalDataSourceImpl implements MatrixLocalDataSource {
 
   @override
   Future<List<MatrixDto>> loadByItem(String id) async {
-    final results = await _db.query(
-      _tableName,
-      where: 'itemId=?',
-      whereArgs: [id],
+    final results = await _db.rawQuery(
+      '''
+    SELECT *
+    FROM $_tableName as m
+    LEFT JOIN ${StageDto.tableName} as s ON m.stageId = s.stageId
+    WHERE m.itemId = $id;
+    ''',
     );
 
     final dtos = <MatrixDto>[];
     for (final data in results) {
-      dtos.add(MatrixDto.fromJson(data));
+      dtos.add(MatrixDto.fromQueryResult(data));
     }
     return dtos;
   }

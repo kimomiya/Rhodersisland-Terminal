@@ -19,6 +19,14 @@ class _$ValueFailureTearOff {
   _Empty<T> empty<T>() {
     return _Empty<T>();
   }
+
+  _InvalidExpectedSanity<T> invalidExpectedSanity<T>() {
+    return _InvalidExpectedSanity<T>();
+  }
+
+  _InvalidDropRate<T> invalidDropRate<T>() {
+    return _InvalidDropRate<T>();
+  }
 }
 
 /// @nodoc
@@ -29,22 +37,31 @@ mixin _$ValueFailure<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
+    required TResult Function() invalidExpectedSanity,
+    required TResult Function() invalidDropRate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
+    TResult Function()? invalidExpectedSanity,
+    TResult Function()? invalidDropRate,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Empty<T> value) empty,
+    required TResult Function(_InvalidExpectedSanity<T> value)
+        invalidExpectedSanity,
+    required TResult Function(_InvalidDropRate<T> value) invalidDropRate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Empty<T> value)? empty,
+    TResult Function(_InvalidExpectedSanity<T> value)? invalidExpectedSanity,
+    TResult Function(_InvalidDropRate<T> value)? invalidDropRate,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -104,6 +121,8 @@ class _$_Empty<T> implements _Empty<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
+    required TResult Function() invalidExpectedSanity,
+    required TResult Function() invalidDropRate,
   }) {
     return empty();
   }
@@ -112,6 +131,8 @@ class _$_Empty<T> implements _Empty<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
+    TResult Function()? invalidExpectedSanity,
+    TResult Function()? invalidDropRate,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -124,6 +145,9 @@ class _$_Empty<T> implements _Empty<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Empty<T> value) empty,
+    required TResult Function(_InvalidExpectedSanity<T> value)
+        invalidExpectedSanity,
+    required TResult Function(_InvalidDropRate<T> value) invalidDropRate,
   }) {
     return empty(this);
   }
@@ -132,6 +156,8 @@ class _$_Empty<T> implements _Empty<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Empty<T> value)? empty,
+    TResult Function(_InvalidExpectedSanity<T> value)? invalidExpectedSanity,
+    TResult Function(_InvalidDropRate<T> value)? invalidDropRate,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -143,4 +169,185 @@ class _$_Empty<T> implements _Empty<T> {
 
 abstract class _Empty<T> implements ValueFailure<T> {
   const factory _Empty() = _$_Empty<T>;
+}
+
+/// @nodoc
+abstract class _$InvalidExpectedSanityCopyWith<T, $Res> {
+  factory _$InvalidExpectedSanityCopyWith(_InvalidExpectedSanity<T> value,
+          $Res Function(_InvalidExpectedSanity<T>) then) =
+      __$InvalidExpectedSanityCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$InvalidExpectedSanityCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$InvalidExpectedSanityCopyWith<T, $Res> {
+  __$InvalidExpectedSanityCopyWithImpl(_InvalidExpectedSanity<T> _value,
+      $Res Function(_InvalidExpectedSanity<T>) _then)
+      : super(_value, (v) => _then(v as _InvalidExpectedSanity<T>));
+
+  @override
+  _InvalidExpectedSanity<T> get _value =>
+      super._value as _InvalidExpectedSanity<T>;
+}
+
+/// @nodoc
+class _$_InvalidExpectedSanity<T> implements _InvalidExpectedSanity<T> {
+  const _$_InvalidExpectedSanity();
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidExpectedSanity()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _InvalidExpectedSanity<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() empty,
+    required TResult Function() invalidExpectedSanity,
+    required TResult Function() invalidDropRate,
+  }) {
+    return invalidExpectedSanity();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? empty,
+    TResult Function()? invalidExpectedSanity,
+    TResult Function()? invalidDropRate,
+    required TResult orElse(),
+  }) {
+    if (invalidExpectedSanity != null) {
+      return invalidExpectedSanity();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Empty<T> value) empty,
+    required TResult Function(_InvalidExpectedSanity<T> value)
+        invalidExpectedSanity,
+    required TResult Function(_InvalidDropRate<T> value) invalidDropRate,
+  }) {
+    return invalidExpectedSanity(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Empty<T> value)? empty,
+    TResult Function(_InvalidExpectedSanity<T> value)? invalidExpectedSanity,
+    TResult Function(_InvalidDropRate<T> value)? invalidDropRate,
+    required TResult orElse(),
+  }) {
+    if (invalidExpectedSanity != null) {
+      return invalidExpectedSanity(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InvalidExpectedSanity<T> implements ValueFailure<T> {
+  const factory _InvalidExpectedSanity() = _$_InvalidExpectedSanity<T>;
+}
+
+/// @nodoc
+abstract class _$InvalidDropRateCopyWith<T, $Res> {
+  factory _$InvalidDropRateCopyWith(
+          _InvalidDropRate<T> value, $Res Function(_InvalidDropRate<T>) then) =
+      __$InvalidDropRateCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$InvalidDropRateCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$InvalidDropRateCopyWith<T, $Res> {
+  __$InvalidDropRateCopyWithImpl(
+      _InvalidDropRate<T> _value, $Res Function(_InvalidDropRate<T>) _then)
+      : super(_value, (v) => _then(v as _InvalidDropRate<T>));
+
+  @override
+  _InvalidDropRate<T> get _value => super._value as _InvalidDropRate<T>;
+}
+
+/// @nodoc
+class _$_InvalidDropRate<T> implements _InvalidDropRate<T> {
+  const _$_InvalidDropRate();
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidDropRate()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _InvalidDropRate<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() empty,
+    required TResult Function() invalidExpectedSanity,
+    required TResult Function() invalidDropRate,
+  }) {
+    return invalidDropRate();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? empty,
+    TResult Function()? invalidExpectedSanity,
+    TResult Function()? invalidDropRate,
+    required TResult orElse(),
+  }) {
+    if (invalidDropRate != null) {
+      return invalidDropRate();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Empty<T> value) empty,
+    required TResult Function(_InvalidExpectedSanity<T> value)
+        invalidExpectedSanity,
+    required TResult Function(_InvalidDropRate<T> value) invalidDropRate,
+  }) {
+    return invalidDropRate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Empty<T> value)? empty,
+    TResult Function(_InvalidExpectedSanity<T> value)? invalidExpectedSanity,
+    TResult Function(_InvalidDropRate<T> value)? invalidDropRate,
+    required TResult orElse(),
+  }) {
+    if (invalidDropRate != null) {
+      return invalidDropRate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InvalidDropRate<T> implements ValueFailure<T> {
+  const factory _InvalidDropRate() = _$_InvalidDropRate<T>;
 }

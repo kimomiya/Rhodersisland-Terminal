@@ -1,8 +1,11 @@
+import 'dart:core';
+
 import 'package:dartz/dartz.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/collection.dart';
 
+import '../../domain/matrix/entities/matrix.dart';
 import '../../domain/matrix/matrix_repository.dart';
 import '../../injection.dart';
 import 'item_matrix_state.dart';
@@ -36,10 +39,26 @@ class ItemMatrixNotifier extends StateNotifier<ItemMatrixState> {
   void sortByDropRate(bool ascending) {
     final matrix = [...state.matrix.iter];
     matrix.sort((prev, next) {
+      final prevDropRate = prev.dropRate.getOrElse(0);
+      final nextDropRate = next.dropRate.getOrElse(0);
       if (ascending) {
-        return prev.quantity.compareTo(next.quantity);
+        return prevDropRate.compareTo(nextDropRate);
       } else {
-        return next.quantity.compareTo(prev.quantity);
+        return nextDropRate.compareTo(prevDropRate);
+      }
+    });
+    state = state.copyWith(matrix: matrix.toImmutableList());
+  }
+
+  void sortByExpectedSanity(bool ascending) {
+    final matrix = [...state.matrix.iter];
+    matrix.sort((prev, next) {
+      final prevExpectedSanity = prev.expectedSanity.getOrElse(double.infinity);
+      final nextExpectedSanity = next.expectedSanity.getOrElse(double.infinity);
+      if (ascending) {
+        return prevExpectedSanity.compareTo(nextExpectedSanity);
+      } else {
+        return nextExpectedSanity.compareTo(prevExpectedSanity);
       }
     });
     state = state.copyWith(matrix: matrix.toImmutableList());
