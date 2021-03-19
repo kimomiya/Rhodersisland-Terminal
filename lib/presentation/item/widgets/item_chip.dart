@@ -57,7 +57,10 @@ class ItemChip extends ConsumerWidget {
   //* Event Methods
 
   void _onItemTap(BuildContext context, Item item) {
-    context.router.push(ItemStatsRoute(id: item.id.getOrNull()));
+    final id = item.id.getOrElse('');
+    if (id.isNotEmpty) {
+      context.router.push(ItemStatsRoute(id: id));
+    }
   }
 
   void _onItemLongPress(BuildContext context) {

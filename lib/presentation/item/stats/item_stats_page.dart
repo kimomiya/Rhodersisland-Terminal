@@ -17,7 +17,7 @@ import 'widgets/index.dart';
 class ItemStatsPage extends StatefulWidget {
   const ItemStatsPage(this.id);
 
-  final String? id;
+  final String id;
 
   @override
   _ItemStatsPageState createState() => _ItemStatsPageState();
@@ -28,7 +28,7 @@ class _ItemStatsPageState extends State<ItemStatsPage> {
   void initState() {
     super.initState();
 
-    context.read(itemMatrixProvider).loadMatrix(widget.id ?? '');
+    context.read(itemMatrixProvider).loadMatrix(widget.id);
   }
 
   @override
