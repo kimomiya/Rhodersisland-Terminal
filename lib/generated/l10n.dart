@@ -217,10 +217,10 @@ class S {
     );
   }
 
-  /// `stage`
+  /// `Stage`
   String get stage {
     return Intl.message(
-      'stage',
+      'Stage',
       name: 'stage',
       desc: '',
       args: [],

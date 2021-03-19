@@ -65,12 +65,11 @@ class MatrixLocalDataSourceImpl implements MatrixLocalDataSource {
   @override
   Future<List<MatrixDto>> loadByItem(String id) async {
     final results = await _db.rawQuery(
-      '''
-    SELECT *
-    FROM $_tableName as m
-    LEFT JOIN ${StageDto.tableName} as s ON m.stageId = s.stageId
-    WHERE m.itemId = $id;
-    ''',
+      'SELECT '
+      'm.*, s.code_i18n, s.apCost, minClearTime '
+      'FROM $_tableName as m '
+      'LEFT JOIN ${StageDto.tableName} as s ON m.stageId = s.stageId '
+      'WHERE m.itemId = $id;',
     );
 
     final dtos = <MatrixDto>[];

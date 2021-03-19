@@ -3,7 +3,6 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 import 'package:path/path.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:sqflite/sqlite_api.dart';
@@ -29,8 +28,7 @@ abstract class RegisterModule {
   @preResolve
   @lazySingleton
   Future<Database> get db async {
-    final databaseDir = await getDatabasesPath() ??
-        (await getApplicationDocumentsDirectory()).path;
+    final databaseDir = await getDatabasesPath();
     return openDatabase(
       join(databaseDir, databaseName),
       version: databaseVersion,

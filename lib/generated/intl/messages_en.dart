@@ -43,7 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "samples" : MessageLookupByLibrary.simpleMessage("Samples"),
     "specialDrop" : MessageLookupByLibrary.simpleMessage("Special"),
     "splash" : MessageLookupByLibrary.simpleMessage("Splash"),
-    "stage" : MessageLookupByLibrary.simpleMessage("stage"),
+    "stage" : MessageLookupByLibrary.simpleMessage("Stage"),
     "stats" : MessageLookupByLibrary.simpleMessage("Statistics"),
     "uncategorized" : MessageLookupByLibrary.simpleMessage("Uncategorized"),
     "unexpectedError" : MessageLookupByLibrary.simpleMessage("You spoiled my grand entrance, rat.")

@@ -14,29 +14,29 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
-  auto_route: 1.0.0-beta.10
+  auto_route: 1.0.1
   bot_toast: 4.0.1
-  connectivity: 3.0.2
+  connectivity: 3.0.3
   cupertino_icons: 1.0.2
   dartz: 0.10.0-nullsafety.1
-  dio: 4.0.0-beta7
+  dio: 4.0.0-prev2
   flutter_riverpod: 0.13.1
-  flutter_screenutil: 5.0.0-nullsafety.9
-  font_awesome_flutter: 9.0.0-nullsafety
+  flutter_screenutil: 5.0.0-nullsafety.11
+  font_awesome_flutter: 9.0.0
   freezed_annotation: 0.14.1
   fuzzy: 0.4.0-nullsafety.0
   get_it: 6.0.0
-  horizontal_data_table: 2.5.2
+  horizontal_data_table: 2.6.1-beta
   injectable: 1.2.0
   intl: 0.17.0
   json_annotation: 4.0.0
   kt_dart: 0.9.0
   loading_indicator: 1.2.0
-  logger: 1.0.0-nullsafety.0
+  logger: 1.0.0
   path_provider: 2.0.1
   pretty_dio_logger: 1.2.0-beta
-  shared_preferences: 2.0.4
-  sqflite: 2.0.0+2
+  shared_preferences: 2.0.5
+  sqflite: 2.0.0+3
   url_launcher: 6.0.2
   uuid: 3.0.1
 
@@ -44,7 +44,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  auto_route_generator: 1.0.0-beta.11
+  auto_route_generator: 1.0.1
   build_runner: 1.11.5
   freezed: 0.14.1
   injectable_generator: 1.2.0
