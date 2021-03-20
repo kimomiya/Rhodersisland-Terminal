@@ -1,7 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../core/classes/safety_change_notifier.dart';
 import '../../domain/item/item_repository.dart';
 import '../../domain/matrix/matrix_repository.dart';
 import '../../domain/stage/stage_repository.dart';
@@ -12,7 +12,7 @@ final prefetchProvider = ChangeNotifierProvider.autoDispose(
 );
 
 @injectable
-class PrefetchNotifier extends ChangeNotifier {
+class PrefetchNotifier extends SafetyChangeNotifier {
   PrefetchNotifier(
     this._stageRepository,
     this._itemRepository,
@@ -51,6 +51,6 @@ class PrefetchNotifier extends ChangeNotifier {
       _isCompleted = true;
     }
 
-    notifyListeners();
+    safetyNotifyListeners();
   }
 }

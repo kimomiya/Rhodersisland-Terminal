@@ -1,8 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../core/classes/safety_change_notifier.dart';
 import '../../core/enums/theme_type.dart';
 import '../../domain/theme/theme_repository.dart';
 import '../../injection.dart';
@@ -26,7 +26,7 @@ final currentThemeMode = Provider<ThemeMode>((ref) {
 });
 
 @injectable
-class ThemeNotifier extends ChangeNotifier {
+class ThemeNotifier extends SafetyChangeNotifier {
   ThemeNotifier(this._repository) {
     _load();
   }
@@ -39,11 +39,11 @@ class ThemeNotifier extends ChangeNotifier {
 
   Future<void> change(ThemeType theme) async {
     _theme = await _repository.saveTheme(theme);
-    notifyListeners();
+    safetyNotifyListeners();
   }
 
   void _load() {
     _theme = _repository.loadTheme();
-    notifyListeners();
+    safetyNotifyListeners();
   }
 }

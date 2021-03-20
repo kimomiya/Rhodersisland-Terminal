@@ -49,6 +49,7 @@ dev_dependencies:
   freezed: 0.14.1
   injectable_generator: 1.2.0
   json_serializable: 4.0.2
+  mockito: 5.0.2
   pedantic: 1.11.0
 
 flutter:
