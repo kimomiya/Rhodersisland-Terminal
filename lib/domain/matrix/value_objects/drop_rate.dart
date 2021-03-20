@@ -18,7 +18,7 @@ class DropRate extends ValueObject<double> {
 extension DropRateValues on DropRate {
   String toFixedString() {
     return value.fold(
-      (_) => 'N/A',
+      (_) => '--',
       (value) => (value * 100).toStringAsFixed(2) + '%',
     );
   }

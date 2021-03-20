@@ -19,22 +19,22 @@ dependencies:
   connectivity: 3.0.3
   cupertino_icons: 1.0.2
   dartz: 0.10.0-nullsafety.1
-  dio: 4.0.0-beta7
+  dio: 4.0.0-prev3
   flutter_riverpod: 0.13.1
   flutter_screenutil: 5.0.0-nullsafety.11
   font_awesome_flutter: 9.0.0
   freezed_annotation: 0.14.1
   fuzzy: 0.4.0-nullsafety.0
   get_it: 6.0.0
-  horizontal_data_table: 2.6.1-beta
+  google_fonts: 2.0.0
   injectable: 1.2.0
   intl: 0.17.0
   json_annotation: 4.0.0
   kt_dart: 0.9.0
-  loading_indicator: 1.2.0
+  loading_indicator: 2.0.0
   logger: 1.0.0
   path_provider: 2.0.1
-  pretty_dio_logger: 1.2.0-beta
+  pretty_dio_logger: 1.2.0-beta-1
   shared_preferences: 2.0.5
   sqflite: 2.0.0+3
   url_launcher: 6.0.2

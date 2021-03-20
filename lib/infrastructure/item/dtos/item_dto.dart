@@ -39,19 +39,19 @@ class ItemDto with _$ItemDto {
     final json = Map<String, dynamic>.from(result);
 
     final alias = json['alias'] as String;
-    json['alias'] = jsonDecode(alias) as Map<String, dynamic>;
+    json['alias'] = jsonDecode(alias) as Map<String, dynamic>?;
 
     final existence = json['existence'] as String;
-    json['existence'] = jsonDecode(existence) as Map<String, dynamic>;
+    json['existence'] = jsonDecode(existence) as Map<String, dynamic>?;
 
     final nameI18n = json['name_i18n'] as String;
-    json['name_i18n'] = jsonDecode(nameI18n) as Map<String, dynamic>;
+    json['name_i18n'] = jsonDecode(nameI18n) as Map<String, dynamic>?;
 
     final pron = json['pron'] as String;
-    json['pron'] = jsonDecode(pron) as Map<String, dynamic>;
+    json['pron'] = jsonDecode(pron) as Map<String, dynamic>?;
 
     final spriteCoord = json['spriteCoord'] as String;
-    json['spriteCoord'] = jsonDecode(spriteCoord) as List;
+    json['spriteCoord'] = jsonDecode(spriteCoord) as List?;
 
     return ItemDto.fromJson(json);
   }

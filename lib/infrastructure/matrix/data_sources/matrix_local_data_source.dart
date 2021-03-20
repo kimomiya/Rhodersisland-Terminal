@@ -26,20 +26,20 @@ class MatrixLocalDataSourceImpl implements MatrixLocalDataSource {
   Future<void> saveAll(List<MatrixDto> matrix) async {
     final batch = _db.batch();
 
-    for (final m in matrix) {
+    for (final mtx in matrix) {
       batch.execute(
         '''
         REPLACE INTO $_tableName (
           stageId, itemId, quantity, times, start, end
         ) VALUES (?, ?, ?, ?, ?, ?)
         ''',
-        <dynamic>[
-          m.stageId,
-          m.itemId,
-          m.quantity,
-          m.times,
-          m.start,
-          m.end,
+        [
+          mtx.stageId,
+          mtx.itemId,
+          mtx.quantity,
+          mtx.times,
+          mtx.start,
+          mtx.end,
         ],
       );
     }

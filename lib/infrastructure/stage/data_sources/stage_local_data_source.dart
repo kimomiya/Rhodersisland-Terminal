@@ -35,7 +35,7 @@ class StageLocalDataSourceImpl implements StageLocalDataSource {
           dropInfos, existence, minClearTime, code_i18n
         ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
         ''',
-        <dynamic>[
+        [
           stage.stageId,
           stage.zoneId,
           stage.code,

@@ -35,7 +35,7 @@ class ItemLocalDataSourceImpl implements ItemLocalDataSource {
           addTimePoint, spriteCoord, groupId, sortId
         ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ''',
-        <dynamic>[
+        [
           item.itemId,
           item.itemType,
           item.name,

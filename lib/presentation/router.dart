@@ -5,7 +5,7 @@ import 'item/stats/item_stats_page.dart';
 import 'splash/splash_page.dart';
 
 @AdaptiveAutoRouter(
-  routes: <AutoRoute>[
+  routes: [
     AutoRoute<void>(page: SplashPage, initial: true),
     CustomRoute<void>(
       page: ItemsPage,
