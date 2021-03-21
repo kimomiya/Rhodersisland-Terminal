@@ -16,9 +16,9 @@ class ExpectedSanity extends ValueObject<double> {
 }
 
 extension ExpectedSanityValues on ExpectedSanity {
-  String? toFixedString() {
+  String toFixedString() {
     return value.fold(
-      (_) => null,
+      (_) => '--',
       (value) => value.toStringAsFixed(2),
     );
   }

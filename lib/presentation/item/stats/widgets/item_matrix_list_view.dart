@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../application/item/item_matrix_provider.dart';
 import '../../../../core/enums/i18n.dart';
 import '../../../../domain/matrix/entities/matrix.dart';
-import '../../../../domain/matrix/value_objects/expected_sanity.dart';
+import '../../../../domain/matrix/value_objects/index.dart';
 import '../../../core/widgets/list_separator.dart';
 
 final _matrix = Provider.autoDispose(
@@ -50,7 +50,7 @@ class _MatrixTile extends ConsumerWidget {
           ),
           Expanded(
             flex: 1,
-            child: Text(matrix.expectedSanity.toFixedString() ?? '--'),
+            child: Text(matrix.expectedSanity.toFixedString()),
           ),
         ],
       ),

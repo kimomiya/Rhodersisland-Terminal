@@ -11,6 +11,7 @@ class SafetyChangeNotifier extends ChangeNotifier {
   }
 
   @protected
+  @visibleForTesting
   void safetyNotifyListeners() {
     if (_isAlive) {
       notifyListeners();
