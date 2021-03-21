@@ -16,8 +16,8 @@ class ItemMatrixInfoBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: const Color(0xFFF8F1F1),
-      padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
-      height: kToolbarHeight + 8,
+      padding: const EdgeInsets.all(8),
+      height: kToolbarHeight,
       child: Consumer(
         builder: (context, watch, child) {
           final item = watch(itemFilter(id));

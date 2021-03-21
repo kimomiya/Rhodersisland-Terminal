@@ -10,6 +10,7 @@ class SafetyChangeNotifier extends ChangeNotifier {
     super.dispose();
   }
 
+  @protected
   void safetyNotifyListeners() {
     if (_isAlive) {
       notifyListeners();

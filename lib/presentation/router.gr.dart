@@ -18,40 +18,27 @@ class AppRouter extends _i1.RootStackRouter {
   @override
   final Map<String, _i1.PageFactory> pagesMap = {
     SplashRoute.name: (entry) {
-      return _i1.AdaptivePage(
-          entry: entry,
-          child: _i2.SplashPage(),
-          maintainState: true,
-          fullscreenDialog: false);
+      return _i1.AdaptivePage(entry: entry, child: _i2.SplashPage());
     },
     ItemsRoute.name: (entry) {
       return _i1.CustomPage(
           entry: entry,
           child: _i3.ItemsPage(),
-          maintainState: true,
-          fullscreenDialog: false,
           transitionsBuilder: _i1.TransitionsBuilders.fadeIn,
           opaque: true,
           barrierDismissible: false);
     },
     ItemStatsRoute.name: (entry) {
       var args = entry.routeData.argsAs<ItemStatsRouteArgs>();
-      return _i1.AdaptivePage(
-          entry: entry,
-          child: _i4.ItemStatsPage(args.id),
-          maintainState: true,
-          fullscreenDialog: false);
+      return _i1.AdaptivePage(entry: entry, child: _i4.ItemStatsPage(args.id));
     }
   };
 
   @override
   List<_i1.RouteConfig> get routes => [
-        _i1.RouteConfig(SplashRoute.name,
-            path: '/', fullMatch: false, usesTabsRouter: false),
-        _i1.RouteConfig(ItemsRoute.name,
-            path: '/items-page', fullMatch: false, usesTabsRouter: false),
-        _i1.RouteConfig(ItemStatsRoute.name,
-            path: '/item-stats-page', fullMatch: false, usesTabsRouter: false)
+        _i1.RouteConfig(SplashRoute.name, path: '/'),
+        _i1.RouteConfig(ItemsRoute.name, path: '/items-page'),
+        _i1.RouteConfig(ItemStatsRoute.name, path: '/item-stats-page')
       ];
 }
 
@@ -68,10 +55,8 @@ class ItemsRoute extends _i1.PageRouteInfo {
 }
 
 class ItemStatsRoute extends _i1.PageRouteInfo<ItemStatsRouteArgs> {
-  ItemStatsRoute({required this.id})
+  ItemStatsRoute({required String id})
       : super(name, path: '/item-stats-page', args: ItemStatsRouteArgs(id: id));
-
-  final String id;
 
   static const String name = 'ItemStatsRoute';
 }
