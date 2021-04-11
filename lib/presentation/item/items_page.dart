@@ -19,7 +19,7 @@ class ItemsPage extends StatelessWidget {
       appBar: RhodesAppBar(title: Text(S.of(context).chooseItem)),
       body: ProviderListener(
         onChange: _onStateChanged,
-        provider: itemsProvider.state,
+        provider: itemsProvider,
         child: _buildBody(),
       ),
       drawer: const RhodesDrawer(),

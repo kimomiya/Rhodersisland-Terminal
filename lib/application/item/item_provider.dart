@@ -7,6 +7,6 @@ import 'items_provider.dart';
 final currentItemProvider = ScopedProvider<Item>(null);
 
 final itemFilter = Provider.autoDispose.family((ref, String? id) {
-  final items = ref.watch(itemsProvider.state).items;
+  final items = ref.watch(itemsProvider).items;
   return items.firstOrNull((item) => item.id.getOrNull() == id);
 });

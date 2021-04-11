@@ -6,7 +6,8 @@ import '../../domain/item/item_repository.dart';
 import '../../injection.dart';
 import 'items_state.dart';
 
-final itemsProvider = StateNotifierProvider.autoDispose(
+final itemsProvider =
+    StateNotifierProvider.autoDispose<ItemsNotifier, ItemsState>(
   (ref) => locator<ItemsNotifier>(),
 );
 

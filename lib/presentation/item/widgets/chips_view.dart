@@ -10,7 +10,7 @@ import '../../../generated/l10n.dart';
 import 'item_chip.dart';
 
 final _chips = Provider.autoDispose((ref) {
-  final items = ref.watch(itemsProvider.state).items;
+  final items = ref.watch(itemsProvider).items;
   return items.filter((item) => item.type == ItemType.chip);
 });
 
