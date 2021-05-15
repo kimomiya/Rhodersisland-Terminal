@@ -11,46 +11,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_localizations:
-    sdk: flutter
 
-  auto_route: 1.0.2
-  bot_toast: 4.0.1
-  connectivity: 3.0.3
   cupertino_icons: 1.0.2
-  dartz: 0.10.0-nullsafety.1
-  dio: 4.0.0
-  flutter_riverpod: 0.14.0+1
-  flutter_screenutil: 5.0.0
-  font_awesome_flutter: 9.0.0
-  freezed_annotation: 0.14.1
-  fuzzy: 0.4.0-nullsafety.0
-  get_it: 6.0.0
-  google_fonts: 2.0.0
-  injectable: 1.2.2
-  intl: 0.17.0
-  json_annotation: 4.0.1
-  kt_dart: 0.9.0
-  loading_indicator: 2.0.1
-  logger: 1.0.0
-  modal_bottom_sheet: 2.0.0
-  path_provider: 2.0.1
-  pretty_dio_logger: 1.2.0-beta-1
-  shared_preferences: 2.0.5
-  sqflite: 2.0.0+3
-  url_launcher: 6.0.3
-  uuid: 3.0.4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-  auto_route_generator: 1.0.2
-  build_runner: 1.12.2
-  freezed: 0.14.1+2
-  injectable_generator: 1.2.2
-  json_serializable: 4.1.0
-  pedantic: 1.11.0
 
 flutter:
   uses-material-design: true
@@ -58,6 +24,3 @@ flutter:
   assets:
     - assets/images/logo/
     - assets/images/sprites/
-
-flutter_intl:
-  enabled: true
