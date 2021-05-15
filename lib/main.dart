@@ -6,7 +6,7 @@ import 'app/router/router.dart';
 import 'app/ui/material/splash/splash_page.dart';
 import 'app/ui/theme/app_theme.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   runApp(GetMaterialApp(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 enum I18n {
   cn,
-  ja,
+  jp,
   kr,
   us,
 }
@@ -20,7 +20,7 @@ extension I18nValues on I18n {
       case I18n.cn:
         return 'zh';
 
-      case I18n.ja:
+      case I18n.jp:
         return 'ja';
 
       case I18n.kr:
@@ -39,7 +39,7 @@ extension I18nValues on I18n {
       case I18n.cn:
         return const Locale('zh', 'CN');
 
-      case I18n.ja:
+      case I18n.jp:
         return const Locale('ja', 'JP');
 
       case I18n.kr:
