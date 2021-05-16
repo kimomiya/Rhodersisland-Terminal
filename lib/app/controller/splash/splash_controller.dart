@@ -5,10 +5,23 @@ import '../../router/router.dart';
 class SplashController extends GetxController {
   SplashController();
 
-  final _opacity = 0.0.obs;
-  double get opacity => _opacity.value;
+  var _opacity = 0.0;
+  double get opacity => _opacity;
 
-  void initialize() => Future.delayed(Duration.zero, () => _opacity.value = 1);
+  @override
+  void onInit() {
+    _initialize();
+
+    super.onInit();
+  }
 
   void toNext() => Get.offAllNamed<void>(Routes.items);
+
+  void _initialize() => Future.delayed(
+        Duration.zero,
+        () {
+          _opacity = 1;
+          update();
+        },
+      );
 }
