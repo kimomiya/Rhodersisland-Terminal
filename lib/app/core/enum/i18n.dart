@@ -34,6 +34,25 @@ extension I18nValues on I18n {
     }
   }
 
+  String get code {
+    switch (this) {
+      case I18n.cn:
+        return 'zh_CN';
+
+      case I18n.jp:
+        return 'ja_JP';
+
+      case I18n.kr:
+        return 'ko_KR';
+
+      case I18n.us:
+        return 'en_US';
+
+      default:
+        return I18n.cn.value;
+    }
+  }
+
   Locale get locale {
     switch (this) {
       case I18n.cn:
