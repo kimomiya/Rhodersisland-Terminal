@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../controller/items/items_controller.dart';
+import '../../../core/assets/images.dart';
 import '../../../core/enum/item_type.dart';
-import '../../../core/images/images.dart';
 import '../widgets/rhodes_drawer.dart';
 import 'widgets/index.dart';
 
@@ -29,7 +29,7 @@ class ItemsPage extends GetView<ItemsController> {
         .toList();
     return Stack(
       children: [
-        Center(child: Opacity(opacity: 0.25, child: Image.asset(logoPath))),
+        Center(child: Opacity(opacity: 0.25, child: Image.asset(Assets.logo))),
         Positioned.fill(
           child: ListView.separated(
             padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 20.w),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../../../core/images/images.dart';
+import '../../../../core/assets/images.dart';
 
 class SplashContentView extends StatelessWidget {
   const SplashContentView({Key? key}) : super(key: key);
@@ -19,7 +19,7 @@ class SplashContentView extends StatelessWidget {
 
   Widget get _logoView => Center(
         child: Image.asset(
-          logoPath,
+          Assets.logo,
           width: ScreenUtil().screenWidth * 0.618,
           fit: BoxFit.contain,
         ),

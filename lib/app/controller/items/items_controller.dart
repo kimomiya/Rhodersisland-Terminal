@@ -7,6 +7,7 @@ import '../../core/enum/item_type.dart';
 import '../../core/shared/show_error.dart';
 import '../../data/model/item_model.dart';
 import '../../data/repository/item_repository.dart';
+import '../../router/router.dart';
 
 class ItemsController extends GetxController {
   ItemsController({
@@ -26,6 +27,8 @@ class ItemsController extends GetxController {
 
   List<ItemModel> filterBy(ItemType type) =>
       _items.filter((item) => item.type == type.value).toList();
+
+  void toDetails(String id) => Get.toNamed<void>('${Routes.items}/$id');
 
   Future<void> _initialize() async {
     await _getAll();

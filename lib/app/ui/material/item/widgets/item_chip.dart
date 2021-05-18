@@ -2,13 +2,15 @@ import 'dart:core';
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:supercharged/supercharged.dart';
 
+import '../../../../controller/items/items_controller.dart';
+import '../../../../core/assets/images.dart';
 import '../../../../core/enum/item_type.dart';
-import '../../../../core/images/images.dart';
 import '../../../../data/model/item_model.dart';
 
-class ItemChip extends StatelessWidget {
+class ItemChip extends GetView<ItemsController> {
   const ItemChip(this.item, {Key? key}) : super(key: key);
 
   final ItemModel item;
@@ -24,8 +26,8 @@ class ItemChip extends StatelessWidget {
 
     return GestureDetector(
       child: ClipOval(child: chip),
-      onTap: () => _onItemTap(context, item),
-      onLongPress: () => _onItemLongPress(context),
+      onTap: () => _onItemTap(item),
+      onLongPress: () => _onItemLongPress(item),
     );
   }
 
@@ -49,17 +51,18 @@ class ItemChip extends StatelessWidget {
       );
     }
 
-    final assetPath = spritePath.replaceFirst('{x}_{y}', '${coordX}_$coordY');
+    final assetPath = Assets.sprite.replaceFirst(
+      '{x}_{y}',
+      '${coordX}_$coordY',
+    );
     return Image.asset(assetPath, fit: BoxFit.contain);
   }
 
   //* Event Methods
 
-  void _onItemTap(BuildContext context, ItemModel item) {
-    // TODO(hiei): should navigate to details page
-  }
+  void _onItemTap(ItemModel item) => controller.toDetails(item.id);
 
-  void _onItemLongPress(BuildContext context) {
+  void _onItemLongPress(ItemModel item) {
     // TODO(hiei): should show simple drap table
   }
 }
