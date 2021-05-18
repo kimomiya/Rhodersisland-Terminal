@@ -1,6 +1,7 @@
 final enUsTr = {
   'lang': 'English',
   'appTitle': 'Rhodes Island Terminal App',
+  'error': 'Error',
   'networkUnreachable': 'Network is unreachable. Please try again later.',
   'remoteServerError': 'Unable to connect to the remote server. '
       'Please try again later.',

@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:supercharged/supercharged.dart';
 
 import '../../core/enum/item_type.dart';
+import '../../core/shared/show_error.dart';
 import '../../data/model/item_model.dart';
 import '../../data/repository/item_repository.dart';
 
@@ -28,8 +29,8 @@ class ItemsController extends GetxController {
 
   Future<void> _initialize() async {
     await _getAll();
-    await repository.fetchAndSaveAll();
-    await _getAll();
+    final failureOrSuccess = await repository.fetchAndSaveAll();
+    failureOrSuccess.fold(showError, (_) => _getAll());
   }
 
   Future<void> _getAll() async {

@@ -1,6 +1,7 @@
 final jaJpTr = {
   'lang': '日本語',
   'appTitle': 'ロドス・アイランド　ターミナル',
+  'error': 'エラー発生',
   'networkUnreachable': 'ネットワークに接続されていません。インタネット接続を確認してください。',
   'remoteServerError': 'サーバーに接続できません。しばらくたってから再度お試しください。',
   'unexpectedError': 'あなたは私の華麗なる登場を台無しにした、ネズミ。',

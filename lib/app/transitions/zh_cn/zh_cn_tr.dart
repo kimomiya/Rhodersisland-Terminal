@@ -1,10 +1,11 @@
 final zhCnTr = {
   'lang': '简体中文',
   'appTitle': '罗德岛终端',
+  'error': '发生错误',
   'networkUnreachable': '系统检测到网络异常，请确保您的网线没有被猫咬断。',
   'remoteServerError': '服务器软体不稳定，请稍后重试。',
   'unexpectedError': '你打破了我的大门，老鼠。',
-  'failedToLoadData': '无法加载本地数据，请刷新后重试。',
+  'localDataError': '无法加载本地数据，请刷新后重试。',
   'connecting': '正在尝试取得神经连接',
   'amiyaAttention': '博士，您还有许多事情需要处理。现在还不能休息哦。',
   'itemsPage': '素材选择',
