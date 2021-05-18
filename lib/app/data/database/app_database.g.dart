@@ -12,8 +12,8 @@ class Item extends DataClass implements Insertable<Item> {
   final Map<String, dynamic> alias;
   final Map<String, dynamic> existence;
   final String groupId;
-  final String itemId;
-  final String itemType;
+  final String id;
+  final String type;
   final String name;
   final Map<String, dynamic> nameI18n;
   final Map<String, dynamic> pron;
@@ -25,8 +25,8 @@ class Item extends DataClass implements Insertable<Item> {
       required this.alias,
       required this.existence,
       required this.groupId,
-      required this.itemId,
-      required this.itemType,
+      required this.id,
+      required this.type,
       required this.name,
       required this.nameI18n,
       required this.pron,
@@ -45,10 +45,10 @@ class Item extends DataClass implements Insertable<Item> {
           .mapFromDatabaseResponse(data['${effectivePrefix}existence']))!,
       groupId: const StringType()
           .mapFromDatabaseResponse(data['${effectivePrefix}group_id'])!,
-      itemId: const StringType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}item_id'])!,
-      itemType: const StringType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}item_type'])!,
+      id: const StringType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}id'])!,
+      type: const StringType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}type'])!,
       name: const StringType()
           .mapFromDatabaseResponse(data['${effectivePrefix}name'])!,
       nameI18n: $ItemsTable.$converter2.mapToDart(const StringType()
@@ -78,8 +78,8 @@ class Item extends DataClass implements Insertable<Item> {
       map['existence'] = Variable<String>(converter.mapToSql(existence)!);
     }
     map['group_id'] = Variable<String>(groupId);
-    map['item_id'] = Variable<String>(itemId);
-    map['item_type'] = Variable<String>(itemType);
+    map['id'] = Variable<String>(id);
+    map['type'] = Variable<String>(type);
     map['name'] = Variable<String>(name);
     {
       final converter = $ItemsTable.$converter2;
@@ -110,8 +110,8 @@ class Item extends DataClass implements Insertable<Item> {
       alias: Value(alias),
       existence: Value(existence),
       groupId: Value(groupId),
-      itemId: Value(itemId),
-      itemType: Value(itemType),
+      id: Value(id),
+      type: Value(type),
       name: Value(name),
       nameI18n: Value(nameI18n),
       pron: Value(pron),
@@ -131,8 +131,8 @@ class Item extends DataClass implements Insertable<Item> {
       alias: serializer.fromJson<Map<String, dynamic>>(json['alias']),
       existence: serializer.fromJson<Map<String, dynamic>>(json['existence']),
       groupId: serializer.fromJson<String>(json['groupId']),
-      itemId: serializer.fromJson<String>(json['itemId']),
-      itemType: serializer.fromJson<String>(json['itemType']),
+      id: serializer.fromJson<String>(json['itemId']),
+      type: serializer.fromJson<String>(json['itemType']),
       name: serializer.fromJson<String>(json['name']),
       nameI18n: serializer.fromJson<Map<String, dynamic>>(json['name_i18n']),
       pron: serializer.fromJson<Map<String, dynamic>>(json['pron']),
@@ -149,8 +149,8 @@ class Item extends DataClass implements Insertable<Item> {
       'alias': serializer.toJson<Map<String, dynamic>>(alias),
       'existence': serializer.toJson<Map<String, dynamic>>(existence),
       'groupId': serializer.toJson<String>(groupId),
-      'itemId': serializer.toJson<String>(itemId),
-      'itemType': serializer.toJson<String>(itemType),
+      'itemId': serializer.toJson<String>(id),
+      'itemType': serializer.toJson<String>(type),
       'name': serializer.toJson<String>(name),
       'name_i18n': serializer.toJson<Map<String, dynamic>>(nameI18n),
       'pron': serializer.toJson<Map<String, dynamic>>(pron),
@@ -165,8 +165,8 @@ class Item extends DataClass implements Insertable<Item> {
           Map<String, dynamic>? alias,
           Map<String, dynamic>? existence,
           String? groupId,
-          String? itemId,
-          String? itemType,
+          String? id,
+          String? type,
           String? name,
           Map<String, dynamic>? nameI18n,
           Map<String, dynamic>? pron,
@@ -178,8 +178,8 @@ class Item extends DataClass implements Insertable<Item> {
         alias: alias ?? this.alias,
         existence: existence ?? this.existence,
         groupId: groupId ?? this.groupId,
-        itemId: itemId ?? this.itemId,
-        itemType: itemType ?? this.itemType,
+        id: id ?? this.id,
+        type: type ?? this.type,
         name: name ?? this.name,
         nameI18n: nameI18n ?? this.nameI18n,
         pron: pron ?? this.pron,
@@ -194,8 +194,8 @@ class Item extends DataClass implements Insertable<Item> {
           ..write('alias: $alias, ')
           ..write('existence: $existence, ')
           ..write('groupId: $groupId, ')
-          ..write('itemId: $itemId, ')
-          ..write('itemType: $itemType, ')
+          ..write('id: $id, ')
+          ..write('type: $type, ')
           ..write('name: $name, ')
           ..write('nameI18n: $nameI18n, ')
           ..write('pron: $pron, ')
@@ -216,9 +216,9 @@ class Item extends DataClass implements Insertable<Item> {
               $mrjc(
                   groupId.hashCode,
                   $mrjc(
-                      itemId.hashCode,
+                      id.hashCode,
                       $mrjc(
-                          itemType.hashCode,
+                          type.hashCode,
                           $mrjc(
                               name.hashCode,
                               $mrjc(
@@ -237,8 +237,8 @@ class Item extends DataClass implements Insertable<Item> {
           other.alias == this.alias &&
           other.existence == this.existence &&
           other.groupId == this.groupId &&
-          other.itemId == this.itemId &&
-          other.itemType == this.itemType &&
+          other.id == this.id &&
+          other.type == this.type &&
           other.name == this.name &&
           other.nameI18n == this.nameI18n &&
           other.pron == this.pron &&
@@ -252,8 +252,8 @@ class ItemsCompanion extends UpdateCompanion<Item> {
   final Value<Map<String, dynamic>> alias;
   final Value<Map<String, dynamic>> existence;
   final Value<String> groupId;
-  final Value<String> itemId;
-  final Value<String> itemType;
+  final Value<String> id;
+  final Value<String> type;
   final Value<String> name;
   final Value<Map<String, dynamic>> nameI18n;
   final Value<Map<String, dynamic>> pron;
@@ -265,8 +265,8 @@ class ItemsCompanion extends UpdateCompanion<Item> {
     this.alias = const Value.absent(),
     this.existence = const Value.absent(),
     this.groupId = const Value.absent(),
-    this.itemId = const Value.absent(),
-    this.itemType = const Value.absent(),
+    this.id = const Value.absent(),
+    this.type = const Value.absent(),
     this.name = const Value.absent(),
     this.nameI18n = const Value.absent(),
     this.pron = const Value.absent(),
@@ -279,8 +279,8 @@ class ItemsCompanion extends UpdateCompanion<Item> {
     required Map<String, dynamic> alias,
     required Map<String, dynamic> existence,
     required String groupId,
-    required String itemId,
-    required String itemType,
+    required String id,
+    required String type,
     required String name,
     required Map<String, dynamic> nameI18n,
     required Map<String, dynamic> pron,
@@ -290,8 +290,8 @@ class ItemsCompanion extends UpdateCompanion<Item> {
   })  : alias = Value(alias),
         existence = Value(existence),
         groupId = Value(groupId),
-        itemId = Value(itemId),
-        itemType = Value(itemType),
+        id = Value(id),
+        type = Value(type),
         name = Value(name),
         nameI18n = Value(nameI18n),
         pron = Value(pron),
@@ -301,8 +301,8 @@ class ItemsCompanion extends UpdateCompanion<Item> {
     Expression<Map<String, dynamic>>? alias,
     Expression<Map<String, dynamic>>? existence,
     Expression<String>? groupId,
-    Expression<String>? itemId,
-    Expression<String>? itemType,
+    Expression<String>? id,
+    Expression<String>? type,
     Expression<String>? name,
     Expression<Map<String, dynamic>>? nameI18n,
     Expression<Map<String, dynamic>>? pron,
@@ -315,8 +315,8 @@ class ItemsCompanion extends UpdateCompanion<Item> {
       if (alias != null) 'alias': alias,
       if (existence != null) 'existence': existence,
       if (groupId != null) 'group_id': groupId,
-      if (itemId != null) 'item_id': itemId,
-      if (itemType != null) 'item_type': itemType,
+      if (id != null) 'id': id,
+      if (type != null) 'type': type,
       if (name != null) 'name': name,
       if (nameI18n != null) 'name_i18n': nameI18n,
       if (pron != null) 'pron': pron,
@@ -331,8 +331,8 @@ class ItemsCompanion extends UpdateCompanion<Item> {
       Value<Map<String, dynamic>>? alias,
       Value<Map<String, dynamic>>? existence,
       Value<String>? groupId,
-      Value<String>? itemId,
-      Value<String>? itemType,
+      Value<String>? id,
+      Value<String>? type,
       Value<String>? name,
       Value<Map<String, dynamic>>? nameI18n,
       Value<Map<String, dynamic>>? pron,
@@ -344,8 +344,8 @@ class ItemsCompanion extends UpdateCompanion<Item> {
       alias: alias ?? this.alias,
       existence: existence ?? this.existence,
       groupId: groupId ?? this.groupId,
-      itemId: itemId ?? this.itemId,
-      itemType: itemType ?? this.itemType,
+      id: id ?? this.id,
+      type: type ?? this.type,
       name: name ?? this.name,
       nameI18n: nameI18n ?? this.nameI18n,
       pron: pron ?? this.pron,
@@ -372,11 +372,11 @@ class ItemsCompanion extends UpdateCompanion<Item> {
     if (groupId.present) {
       map['group_id'] = Variable<String>(groupId.value);
     }
-    if (itemId.present) {
-      map['item_id'] = Variable<String>(itemId.value);
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
     }
-    if (itemType.present) {
-      map['item_type'] = Variable<String>(itemType.value);
+    if (type.present) {
+      map['type'] = Variable<String>(type.value);
     }
     if (name.present) {
       map['name'] = Variable<String>(name.value);
@@ -410,8 +410,8 @@ class ItemsCompanion extends UpdateCompanion<Item> {
           ..write('alias: $alias, ')
           ..write('existence: $existence, ')
           ..write('groupId: $groupId, ')
-          ..write('itemId: $itemId, ')
-          ..write('itemType: $itemType, ')
+          ..write('id: $id, ')
+          ..write('type: $type, ')
           ..write('name: $name, ')
           ..write('nameI18n: $nameI18n, ')
           ..write('pron: $pron, ')
@@ -472,23 +472,23 @@ class $ItemsTable extends Items with TableInfo<$ItemsTable, Item> {
     );
   }
 
-  final VerificationMeta _itemIdMeta = const VerificationMeta('itemId');
+  final VerificationMeta _idMeta = const VerificationMeta('id');
   @override
-  late final GeneratedTextColumn itemId = _constructItemId();
-  GeneratedTextColumn _constructItemId() {
+  late final GeneratedTextColumn id = _constructId();
+  GeneratedTextColumn _constructId() {
     return GeneratedTextColumn(
-      'item_id',
+      'id',
       $tableName,
       false,
     );
   }
 
-  final VerificationMeta _itemTypeMeta = const VerificationMeta('itemType');
+  final VerificationMeta _typeMeta = const VerificationMeta('type');
   @override
-  late final GeneratedTextColumn itemType = _constructItemType();
-  GeneratedTextColumn _constructItemType() {
+  late final GeneratedTextColumn type = _constructType();
+  GeneratedTextColumn _constructType() {
     return GeneratedTextColumn(
-      'item_type',
+      'type',
       $tableName,
       false,
     );
@@ -567,8 +567,8 @@ class $ItemsTable extends Items with TableInfo<$ItemsTable, Item> {
         alias,
         existence,
         groupId,
-        itemId,
-        itemType,
+        id,
+        type,
         name,
         nameI18n,
         pron,
@@ -601,17 +601,16 @@ class $ItemsTable extends Items with TableInfo<$ItemsTable, Item> {
     } else if (isInserting) {
       context.missing(_groupIdMeta);
     }
-    if (data.containsKey('item_id')) {
-      context.handle(_itemIdMeta,
-          itemId.isAcceptableOrUnknown(data['item_id']!, _itemIdMeta));
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
     } else if (isInserting) {
-      context.missing(_itemIdMeta);
+      context.missing(_idMeta);
     }
-    if (data.containsKey('item_type')) {
-      context.handle(_itemTypeMeta,
-          itemType.isAcceptableOrUnknown(data['item_type']!, _itemTypeMeta));
+    if (data.containsKey('type')) {
+      context.handle(
+          _typeMeta, type.isAcceptableOrUnknown(data['type']!, _typeMeta));
     } else if (isInserting) {
-      context.missing(_itemTypeMeta);
+      context.missing(_typeMeta);
     }
     if (data.containsKey('name')) {
       context.handle(
@@ -634,7 +633,7 @@ class $ItemsTable extends Items with TableInfo<$ItemsTable, Item> {
   }
 
   @override
-  Set<GeneratedColumn> get $primaryKey => {itemId};
+  Set<GeneratedColumn> get $primaryKey => {id};
   @override
   Item map(Map<String, dynamic> data, {String? tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;

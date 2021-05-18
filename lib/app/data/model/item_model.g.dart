@@ -20,8 +20,8 @@ _$_ItemModel _$_$_ItemModelFromJson(Map<String, dynamic> json) {
         ) ??
         {},
     groupId: json['groupId'] as String? ?? '',
-    itemId: json['itemId'] as String? ?? '',
-    itemType: json['itemType'] as String? ?? '',
+    id: json['itemId'] as String,
+    type: json['itemType'] as String,
     name: json['name'] as String? ?? '',
     nameI18n: Map<String, String>.from(json['name_i18n'] as Map),
     pron: (json['pron'] as Map<String, dynamic>?)?.map(
@@ -44,8 +44,8 @@ Map<String, dynamic> _$_$_ItemModelToJson(_$_ItemModel instance) =>
       'alias': instance.alias,
       'existence': instance.existence,
       'groupId': instance.groupId,
-      'itemId': instance.itemId,
-      'itemType': instance.itemType,
+      'itemId': instance.id,
+      'itemType': instance.type,
       'name': instance.name,
       'name_i18n': instance.nameI18n,
       'pron': instance.pron,

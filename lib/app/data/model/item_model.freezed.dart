@@ -25,8 +25,10 @@ class _$ItemModelTearOff {
       Map<String, List<String>> alias = const <String, List<String>>{},
       Map<String, ExistenceModel> existence = const <String, ExistenceModel>{},
       String groupId = '',
-      String itemId = '',
-      String itemType = '',
+      @JsonKey(name: 'itemId')
+          String id = '',
+      @JsonKey(name: 'itemType')
+          String type = '',
       String name = '',
       @JsonKey(name: 'name_i18n')
           Map<String, String> nameI18n = const <String, String>{},
@@ -39,8 +41,8 @@ class _$ItemModelTearOff {
       alias: alias,
       existence: existence,
       groupId: groupId,
-      itemId: itemId,
-      itemType: itemType,
+      id: id,
+      type: type,
       name: name,
       nameI18n: nameI18n,
       pron: pron,
@@ -65,8 +67,10 @@ mixin _$ItemModel {
   Map<String, ExistenceModel> get existence =>
       throw _privateConstructorUsedError;
   String get groupId => throw _privateConstructorUsedError;
-  String get itemId => throw _privateConstructorUsedError;
-  String get itemType => throw _privateConstructorUsedError;
+  @JsonKey(name: 'itemId')
+  String get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'itemType')
+  String get type => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   @JsonKey(name: 'name_i18n')
   Map<String, String> get nameI18n => throw _privateConstructorUsedError;
@@ -90,8 +94,8 @@ abstract class $ItemModelCopyWith<$Res> {
       Map<String, List<String>> alias,
       Map<String, ExistenceModel> existence,
       String groupId,
-      String itemId,
-      String itemType,
+      @JsonKey(name: 'itemId') String id,
+      @JsonKey(name: 'itemType') String type,
       String name,
       @JsonKey(name: 'name_i18n') Map<String, String> nameI18n,
       Map<String, List<String>> pron,
@@ -114,8 +118,8 @@ class _$ItemModelCopyWithImpl<$Res> implements $ItemModelCopyWith<$Res> {
     Object? alias = freezed,
     Object? existence = freezed,
     Object? groupId = freezed,
-    Object? itemId = freezed,
-    Object? itemType = freezed,
+    Object? id = freezed,
+    Object? type = freezed,
     Object? name = freezed,
     Object? nameI18n = freezed,
     Object? pron = freezed,
@@ -140,13 +144,13 @@ class _$ItemModelCopyWithImpl<$Res> implements $ItemModelCopyWith<$Res> {
           ? _value.groupId
           : groupId // ignore: cast_nullable_to_non_nullable
               as String,
-      itemId: itemId == freezed
-          ? _value.itemId
-          : itemId // ignore: cast_nullable_to_non_nullable
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as String,
-      itemType: itemType == freezed
-          ? _value.itemType
-          : itemType // ignore: cast_nullable_to_non_nullable
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
               as String,
       name: name == freezed
           ? _value.name
@@ -187,8 +191,8 @@ abstract class _$ItemModelCopyWith<$Res> implements $ItemModelCopyWith<$Res> {
       Map<String, List<String>> alias,
       Map<String, ExistenceModel> existence,
       String groupId,
-      String itemId,
-      String itemType,
+      @JsonKey(name: 'itemId') String id,
+      @JsonKey(name: 'itemType') String type,
       String name,
       @JsonKey(name: 'name_i18n') Map<String, String> nameI18n,
       Map<String, List<String>> pron,
@@ -212,8 +216,8 @@ class __$ItemModelCopyWithImpl<$Res> extends _$ItemModelCopyWithImpl<$Res>
     Object? alias = freezed,
     Object? existence = freezed,
     Object? groupId = freezed,
-    Object? itemId = freezed,
-    Object? itemType = freezed,
+    Object? id = freezed,
+    Object? type = freezed,
     Object? name = freezed,
     Object? nameI18n = freezed,
     Object? pron = freezed,
@@ -238,13 +242,13 @@ class __$ItemModelCopyWithImpl<$Res> extends _$ItemModelCopyWithImpl<$Res>
           ? _value.groupId
           : groupId // ignore: cast_nullable_to_non_nullable
               as String,
-      itemId: itemId == freezed
-          ? _value.itemId
-          : itemId // ignore: cast_nullable_to_non_nullable
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as String,
-      itemType: itemType == freezed
-          ? _value.itemType
-          : itemType // ignore: cast_nullable_to_non_nullable
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
               as String,
       name: name == freezed
           ? _value.name
@@ -282,8 +286,8 @@ class _$_ItemModel implements _ItemModel {
       this.alias = const <String, List<String>>{},
       this.existence = const <String, ExistenceModel>{},
       this.groupId = '',
-      this.itemId = '',
-      this.itemType = '',
+      @JsonKey(name: 'itemId') this.id = '',
+      @JsonKey(name: 'itemType') this.type = '',
       this.name = '',
       @JsonKey(name: 'name_i18n') this.nameI18n = const <String, String>{},
       this.pron = const <String, List<String>>{},
@@ -305,12 +309,12 @@ class _$_ItemModel implements _ItemModel {
   @JsonKey(defaultValue: '')
   @override
   final String groupId;
-  @JsonKey(defaultValue: '')
   @override
-  final String itemId;
-  @JsonKey(defaultValue: '')
+  @JsonKey(name: 'itemId')
+  final String id;
   @override
-  final String itemType;
+  @JsonKey(name: 'itemType')
+  final String type;
   @JsonKey(defaultValue: '')
   @override
   final String name;
@@ -330,7 +334,7 @@ class _$_ItemModel implements _ItemModel {
 
   @override
   String toString() {
-    return 'ItemModel(addTimePoint: $addTimePoint, alias: $alias, existence: $existence, groupId: $groupId, itemId: $itemId, itemType: $itemType, name: $name, nameI18n: $nameI18n, pron: $pron, rarity: $rarity, sortId: $sortId, spriteCoord: $spriteCoord)';
+    return 'ItemModel(addTimePoint: $addTimePoint, alias: $alias, existence: $existence, groupId: $groupId, id: $id, type: $type, name: $name, nameI18n: $nameI18n, pron: $pron, rarity: $rarity, sortId: $sortId, spriteCoord: $spriteCoord)';
   }
 
   @override
@@ -348,11 +352,10 @@ class _$_ItemModel implements _ItemModel {
             (identical(other.groupId, groupId) ||
                 const DeepCollectionEquality()
                     .equals(other.groupId, groupId)) &&
-            (identical(other.itemId, itemId) ||
-                const DeepCollectionEquality().equals(other.itemId, itemId)) &&
-            (identical(other.itemType, itemType) ||
-                const DeepCollectionEquality()
-                    .equals(other.itemType, itemType)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.type, type) ||
+                const DeepCollectionEquality().equals(other.type, type)) &&
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.nameI18n, nameI18n) ||
@@ -376,8 +379,8 @@ class _$_ItemModel implements _ItemModel {
       const DeepCollectionEquality().hash(alias) ^
       const DeepCollectionEquality().hash(existence) ^
       const DeepCollectionEquality().hash(groupId) ^
-      const DeepCollectionEquality().hash(itemId) ^
-      const DeepCollectionEquality().hash(itemType) ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(nameI18n) ^
       const DeepCollectionEquality().hash(pron) ^
@@ -402,8 +405,8 @@ abstract class _ItemModel implements ItemModel {
       Map<String, List<String>> alias,
       Map<String, ExistenceModel> existence,
       String groupId,
-      String itemId,
-      String itemType,
+      @JsonKey(name: 'itemId') String id,
+      @JsonKey(name: 'itemType') String type,
       String name,
       @JsonKey(name: 'name_i18n') Map<String, String> nameI18n,
       Map<String, List<String>> pron,
@@ -424,9 +427,11 @@ abstract class _ItemModel implements ItemModel {
   @override
   String get groupId => throw _privateConstructorUsedError;
   @override
-  String get itemId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'itemId')
+  String get id => throw _privateConstructorUsedError;
   @override
-  String get itemType => throw _privateConstructorUsedError;
+  @JsonKey(name: 'itemType')
+  String get type => throw _privateConstructorUsedError;
   @override
   String get name => throw _privateConstructorUsedError;
   @override

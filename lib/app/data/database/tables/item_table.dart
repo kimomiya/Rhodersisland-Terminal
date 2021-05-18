@@ -5,8 +5,10 @@ class Items extends Table {
   TextColumn get alias => text().map(JsonConverter())();
   TextColumn get existence => text().map(JsonConverter())();
   TextColumn get groupId => text()();
-  TextColumn get itemId => text()();
-  TextColumn get itemType => text()();
+  @JsonKey('itemId')
+  TextColumn get id => text()();
+  @JsonKey('itemType')
+  TextColumn get type => text()();
   TextColumn get name => text()();
   @JsonKey('name_i18n')
   TextColumn get nameI18n => text().map(JsonConverter())();
@@ -16,5 +18,5 @@ class Items extends Table {
   TextColumn get spriteCoord => text().map(ListConverter())();
 
   @override
-  Set<Column>? get primaryKey => {itemId};
+  Set<Column>? get primaryKey => {id};
 }

@@ -12,8 +12,8 @@ class ItemModel with _$ItemModel {
     @Default(<String, List<String>>{}) Map<String, List<String>> alias,
     @Default(<String, ExistenceModel>{}) Map<String, ExistenceModel> existence,
     @Default('') String groupId,
-    @Default('') String itemId,
-    @Default('') String itemType,
+    @JsonKey(name: 'itemId') @Default('') String id,
+    @JsonKey(name: 'itemType') @Default('') String type,
     @Default('') String name,
     @JsonKey(name: 'name_i18n')
     @Default(<String, String>{})

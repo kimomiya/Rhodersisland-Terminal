@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:get/get.dart';
+import 'package:supercharged/supercharged.dart';
 
+import '../../core/enum/item_type.dart';
 import '../../data/model/item_model.dart';
 import '../../data/repository/item_repository.dart';
 
@@ -13,7 +15,6 @@ class ItemsController extends GetxController {
   final ItemRepository repository;
 
   final _items = <ItemModel>[];
-  List<ItemModel> get items => _items;
 
   @override
   void onInit() {
@@ -21,6 +22,9 @@ class ItemsController extends GetxController {
 
     super.onInit();
   }
+
+  List<ItemModel> filterBy(ItemType type) =>
+      _items.filter((item) => item.type == type.value).toList();
 
   Future<void> _initialize() async {
     await _getAll();
