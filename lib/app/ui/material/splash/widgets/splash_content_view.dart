@@ -12,7 +12,7 @@ class SplashContentView extends StatelessWidget {
     return Column(
       children: [
         Expanded(flex: 6, child: _logoView),
-        Expanded(flex: 1, child: _buildTipsView()),
+        Expanded(flex: 1, child: _tipsView),
       ],
     );
   }
@@ -25,7 +25,7 @@ class SplashContentView extends StatelessWidget {
         ),
       );
 
-  Widget _buildTipsView() {
+  Widget get _tipsView {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: Text(
