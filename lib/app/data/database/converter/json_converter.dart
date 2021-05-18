@@ -1,21 +1,11 @@
-import 'dart:convert';
-
 import 'package:moor/moor.dart';
+import 'package:supercharged/supercharged.dart';
 
 class JsonConverter extends TypeConverter<Map<String, dynamic>, String> {
   @override
-  Map<String, dynamic>? mapToDart(String? fromDb) {
-    if (fromDb == null) {
-      return null;
-    }
-    return json.decode(fromDb) as Map<String, dynamic>;
-  }
+  Map<String, dynamic>? mapToDart(String? fromDb) =>
+      fromDb?.parseJSON() as Map<String, dynamic>?;
 
   @override
-  String? mapToSql(Map<String, dynamic>? value) {
-    if (value == null) {
-      return null;
-    }
-    return json.encode(value);
-  }
+  String? mapToSql(Map<String, dynamic>? value) => value?.toJSON();
 }
