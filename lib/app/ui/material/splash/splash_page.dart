@@ -20,7 +20,7 @@ class SplashPage extends GetView<SplashController> {
       body: SafeArea(
         child: AnimatedOpacity(
           opacity: controller.opacity,
-          duration: const Duration(milliseconds: 750),
+          duration: const Duration(milliseconds: 1250),
           onEnd: controller.toNext,
           child: const SplashContentView(),
         ),
