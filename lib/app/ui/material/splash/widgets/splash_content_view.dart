@@ -25,18 +25,16 @@ class SplashContentView extends StatelessWidget {
         ),
       );
 
-  Widget get _tipsView {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
-      child: Text(
-        'amiyaAttention'.tr,
-        style: TextStyle(
-          color: Colors.grey[700],
-          fontSize: 28.sp,
-          fontWeight: FontWeight.bold,
+  Widget get _tipsView => Padding(
+        padding: EdgeInsets.symmetric(horizontal: 24.w),
+        child: Text(
+          'amiyaAttention'.tr,
+          style: TextStyle(
+            color: Colors.grey[700],
+            fontSize: 28.sp,
+            fontWeight: FontWeight.bold,
+          ),
+          textAlign: TextAlign.center,
         ),
-        textAlign: TextAlign.center,
-      ),
-    );
-  }
+      );
 }
