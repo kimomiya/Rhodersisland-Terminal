@@ -8,5 +8,7 @@ class ItemLocalDataSource {
 
   Future<List<ItemModel>> getAll() => client.getAll();
 
+  Future<ItemModel> getById(String id) => client.getById(id);
+
   Future<void> replaceAll(List<ItemModel> models) => client.replaceAll(models);
 }

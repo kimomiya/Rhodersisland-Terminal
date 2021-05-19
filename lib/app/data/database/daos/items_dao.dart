@@ -12,8 +12,14 @@ class ItemsDao extends DatabaseAccessor<AppDatabase> with _$ItemsDaoMixin {
   Future<List<ItemModel>> getAll() async {
     final operator = select(items)
       ..orderBy([(t) => OrderingTerm(expression: t.sortId)]);
-    final result = await operator.get();
-    return result.map((item) => ItemModel.fromJson(item.toJson())).toList();
+    final results = await operator.get();
+    return results.map((item) => ItemModel.fromJson(item.toJson())).toList();
+  }
+
+  Future<ItemModel> getById(String id) async {
+    final operator = select(items)..where((t) => t.id.equals(id));
+    final result = await operator.getSingle();
+    return ItemModel.fromJson(result.toJson());
   }
 
   Future<void> replaceAll(List<ItemModel> models) async {

@@ -2,6 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
 import '../../core/failure/app_failure.dart';
+import '../../core/shared/logger.dart';
 import '../data_source/item_local_data_source.dart';
 import '../data_source/item_remote_data_source.dart';
 import '../model/item_model.dart';
@@ -31,6 +32,7 @@ class ItemRepository {
         code: e.response?.statusCode,
       ));
     } catch (e) {
+      logger.e(e.toString(), e);
       return left(AppFailure.unexpectedError(e));
     }
   }
@@ -40,6 +42,17 @@ class ItemRepository {
       final models = await localDataSource.getAll();
       return right(models);
     } catch (e) {
+      logger.e(e.toString(), e);
+      return left(AppFailure.localDataError(e));
+    }
+  }
+
+  Future<Either<AppFailure, ItemModel>> getById(String id) async {
+    try {
+      final model = await localDataSource.getById(id);
+      return right(model);
+    } catch (e) {
+      logger.e(e.toString(), e);
       return left(AppFailure.localDataError(e));
     }
   }

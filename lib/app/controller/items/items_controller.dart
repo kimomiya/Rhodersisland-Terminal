@@ -30,15 +30,11 @@ class ItemsController extends GetxController {
 
   void toDetails(String id) => Get.toNamed<void>('${Routes.items}/$id');
 
-  Future<void> _initialize() async {
-    await _getAll();
-    final failureOrSuccess = await repository.fetchAndSaveAll();
-    failureOrSuccess.fold(showError, (_) => _getAll());
-  }
+  Future<void> _initialize() => _getAll();
 
   Future<void> _getAll() async {
     final failureOrItems = await repository.getAll();
-    failureOrItems.fold((_) {}, (items) {
+    failureOrItems.fold(showError, (items) {
       _items.clear();
       _items.addAll(items);
     });
