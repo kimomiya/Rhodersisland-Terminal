@@ -287,7 +287,7 @@ class ItemsCompanion extends UpdateCompanion<Item> {
     this.rarity = const Value.absent(),
     this.sortId = const Value.absent(),
     required List<dynamic> spriteCoord,
-  })  : alias = Value(alias),
+  })   : alias = Value(alias),
         existence = Value(existence),
         groupId = Value(groupId),
         id = Value(id),

@@ -1,0 +1,15 @@
+[
+  {
+    "freezed": true,
+    "serializable": false,
+    "equatable": false,
+    "immutable": false,
+    "toString": false,
+    "copyWith": false,
+    "equality": false,
+    "nullSafety": true,
+    "targetDirectory": "/lib/app/data/model",
+    "primaryConfiguration": false,
+    "fastMode": false
+  }
+]
