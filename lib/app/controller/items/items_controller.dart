@@ -5,7 +5,7 @@ import 'package:supercharged/supercharged.dart';
 
 import '../../core/enum/item_type.dart';
 import '../../core/shared/show_error.dart';
-import '../../data/model/item_model.dart';
+import '../../data/models/item_model.dart';
 import '../../data/repository/item_repository.dart';
 import '../../router/router.dart';
 

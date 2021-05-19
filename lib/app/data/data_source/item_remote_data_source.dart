@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 
 import '../core/constants.dart';
-import '../model/item_model.dart';
+import '../models/item_model.dart';
 
 const _baseUrl = '$penguinStatsBaseURL/items';
 

@@ -8,7 +8,7 @@ import 'package:supercharged/supercharged.dart';
 import '../../../../controller/items/items_controller.dart';
 import '../../../../core/assets/images.dart';
 import '../../../../core/enum/item_type.dart';
-import '../../../../data/model/item_model.dart';
+import '../../../../data/models/item_model.dart';
 
 class ItemChip extends GetView<ItemsController> {
   const ItemChip(this.item, {Key? key}) : super(key: key);

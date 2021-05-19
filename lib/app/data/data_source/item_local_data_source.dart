@@ -1,5 +1,5 @@
 import '../database/daos/index.dart';
-import '../model/item_model.dart';
+import '../models/item_model.dart';
 
 class ItemLocalDataSource {
   ItemLocalDataSource({required this.client});

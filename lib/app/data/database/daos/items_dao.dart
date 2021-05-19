@@ -1,6 +1,6 @@
 import 'package:moor/moor.dart';
 
-import '../../model/item_model.dart';
+import '../../models/item_model.dart';
 import '../app_database.dart';
 
 part 'items_dao.g.dart';

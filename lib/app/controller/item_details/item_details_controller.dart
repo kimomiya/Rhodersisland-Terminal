@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 import '../../core/shared/show_error.dart';
-import '../../data/model/item_model.dart';
+import '../../data/models/item_model.dart';
 import '../../data/repository/item_repository.dart';
 
 class ItemDetailsController extends GetxController {

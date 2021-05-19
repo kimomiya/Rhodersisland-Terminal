@@ -5,7 +5,7 @@ import '../../core/failure/app_failure.dart';
 import '../../core/shared/logger.dart';
 import '../data_source/item_local_data_source.dart';
 import '../data_source/item_remote_data_source.dart';
-import '../model/item_model.dart';
+import '../models/item_model.dart';
 
 class ItemRepository {
   ItemRepository({
