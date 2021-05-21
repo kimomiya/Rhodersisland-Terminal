@@ -1,5 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../core/alias/type_alias.dart';
+
 part 'existence_model.freezed.dart';
 part 'existence_model.g.dart';
 
@@ -11,6 +13,5 @@ class ExistenceModel with _$ExistenceModel {
     int? openTime,
   }) = _ExistenceModel;
 
-  factory ExistenceModel.fromJson(Map<String, dynamic> json) =>
-      _$ExistenceModelFromJson(json);
+  factory ExistenceModel.fromJson(Json json) => _$ExistenceModelFromJson(json);
 }

@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../core/alias/type_alias.dart';
 import 'drop_info_model.dart';
 import 'existence_model.dart';
 
@@ -20,6 +21,5 @@ class StageModel with _$StageModel {
     @Default(<String, String>{}) Map<String, String> codeI18n,
   }) = _StageModel;
 
-  factory StageModel.fromJson(Map<String, dynamic> json) =>
-      _$StageModelFromJson(json);
+  factory StageModel.fromJson(Json json) => _$StageModelFromJson(json);
 }

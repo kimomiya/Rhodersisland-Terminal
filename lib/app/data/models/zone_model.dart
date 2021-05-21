@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../core/alias/type_alias.dart';
 import 'existence_model.dart';
 
 part 'zone_model.freezed.dart';
@@ -21,6 +22,5 @@ class ZoneModel with _$ZoneModel {
         Map<String, String> nameI18n,
   }) = _ZoneModel;
 
-  factory ZoneModel.fromJson(Map<String, dynamic> json) =>
-      _$ZoneModelFromJson(json);
+  factory ZoneModel.fromJson(Json json) => _$ZoneModelFromJson(json);
 }

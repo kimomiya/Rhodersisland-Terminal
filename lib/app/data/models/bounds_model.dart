@@ -1,5 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../core/alias/type_alias.dart';
+
 part 'bounds_model.freezed.dart';
 part 'bounds_model.g.dart';
 
@@ -10,6 +12,5 @@ class BoundsModel with _$BoundsModel {
     int? upper,
   }) = _BoundsModel;
 
-  factory BoundsModel.fromJson(Map<String, dynamic> json) =>
-      _$BoundsModelFromJson(json);
+  factory BoundsModel.fromJson(Json json) => _$BoundsModelFromJson(json);
 }

@@ -1,5 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../core/alias/type_alias.dart';
+
 part 'matrix_model.freezed.dart';
 part 'matrix_model.g.dart';
 
@@ -13,6 +15,5 @@ abstract class MatrixModel with _$MatrixModel {
     int? start,
   }) = _MatrixModel;
 
-  factory MatrixModel.fromJson(Map<String, dynamic> json) =>
-      _$MatrixModelFromJson(json);
+  factory MatrixModel.fromJson(Json json) => _$MatrixModelFromJson(json);
 }

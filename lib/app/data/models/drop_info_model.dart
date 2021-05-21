@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../core/alias/type_alias.dart';
 import 'bounds_model.dart';
 
 part 'drop_info_model.freezed.dart';
@@ -13,6 +14,5 @@ class DropInfoModel with _$DropInfoModel {
     BoundsModel? bounds,
   }) = _DropInfoModel;
 
-  factory DropInfoModel.fromJson(Map<String, dynamic> json) =>
-      _$DropInfoModelFromJson(json);
+  factory DropInfoModel.fromJson(Json json) => _$DropInfoModelFromJson(json);
 }

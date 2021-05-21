@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../core/alias/type_alias.dart';
 import 'existence_model.dart';
 
 part 'item_model.freezed.dart';
@@ -24,6 +25,5 @@ class ItemModel with _$ItemModel {
     @Default(<int>[]) List<int> spriteCoord,
   }) = _ItemModel;
 
-  factory ItemModel.fromJson(Map<String, dynamic> json) =>
-      _$ItemModelFromJson(json);
+  factory ItemModel.fromJson(Json json) => _$ItemModelFromJson(json);
 }
