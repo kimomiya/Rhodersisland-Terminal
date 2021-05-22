@@ -7,6 +7,7 @@ class SplashBinding implements Bindings {
   void dependencies() {
     Get.lazyPut<SplashController>(() => SplashController(
           itemRepository: Get.find(),
+          stageRepository: Get.find(),
         ));
   }
 }

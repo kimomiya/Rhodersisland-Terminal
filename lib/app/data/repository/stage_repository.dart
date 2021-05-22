@@ -3,19 +3,19 @@ import 'package:dio/dio.dart';
 
 import '../../core/failure/app_failure.dart';
 import '../../core/shared/logger.dart';
-import '../data_source/item_local_data_source.dart';
-import '../data_source/item_remote_data_source.dart';
-import '../models/item_model.dart';
+import '../data_source/stage_local_data_source.dart';
+import '../data_source/stage_remote_data_source.dart';
+import '../models/stage_model.dart';
 
-class ItemRepository {
-  ItemRepository({
+class StageRepository {
+  StageRepository({
     required this.localDataSource,
     required this.remoteDataSource,
   })  : assert(localDataSource != null),
         assert(remoteDataSource != null);
 
-  final ItemLocalDataSource localDataSource;
-  final ItemRemoteDataSource remoteDataSource;
+  final StageLocalDataSource localDataSource;
+  final StageRemoteDataSource remoteDataSource;
 
   Future<Either<AppFailure, Unit>> fetchAndSaveAll() async {
     try {
@@ -38,7 +38,7 @@ class ItemRepository {
     }
   }
 
-  Future<Either<AppFailure, List<ItemModel>>> getAll() async {
+  Future<Either<AppFailure, List<StageModel>>> getAll() async {
     try {
       final models = await localDataSource.getAll();
       return right(models);
@@ -48,7 +48,7 @@ class ItemRepository {
     }
   }
 
-  Future<Either<AppFailure, ItemModel>> getById(String id) async {
+  Future<Either<AppFailure, StageModel>> getById(String id) async {
     try {
       final model = await localDataSource.getById(id);
       return right(model);

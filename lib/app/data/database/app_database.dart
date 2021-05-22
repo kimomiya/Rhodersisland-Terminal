@@ -10,11 +10,12 @@ import 'converter/index.dart';
 import 'daos/index.dart';
 
 part 'app_database.g.dart';
-part 'tables/item_table.dart';
+part 'tables/items_table.dart';
+part 'tables/stages_table.dart';
 
-const _tables = [Items];
+const _tables = [Items, Stages];
 
-const _daos = [ItemsDao];
+const _daos = [ItemsDao, StagesDao];
 
 LazyDatabase _open() => LazyDatabase(() async {
       final appDir = await getApplicationDocumentsDirectory();

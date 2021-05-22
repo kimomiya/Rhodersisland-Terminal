@@ -656,12 +656,528 @@ class $ItemsTable extends Items with TableInfo<$ItemsTable, Item> {
   static TypeConverter<List<dynamic>, String> $converter4 = ListConverter();
 }
 
+class Stage extends DataClass implements Insertable<Stage> {
+  final String type;
+  final String id;
+  final String zoneId;
+  final String code;
+  final int? apCost;
+  final List<dynamic> dropInfos;
+  final Map<String, dynamic> existence;
+  final int? minClearTime;
+  final Map<String, dynamic> codeI18n;
+  Stage(
+      {required this.type,
+      required this.id,
+      required this.zoneId,
+      required this.code,
+      this.apCost,
+      required this.dropInfos,
+      required this.existence,
+      this.minClearTime,
+      required this.codeI18n});
+  factory Stage.fromData(Map<String, dynamic> data, GeneratedDatabase db,
+      {String? prefix}) {
+    final effectivePrefix = prefix ?? '';
+    return Stage(
+      type: const StringType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}type'])!,
+      id: const StringType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}id'])!,
+      zoneId: const StringType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}zone_id'])!,
+      code: const StringType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}code'])!,
+      apCost: const IntType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}ap_cost']),
+      dropInfos: $StagesTable.$converter0.mapToDart(const StringType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}drop_infos']))!,
+      existence: $StagesTable.$converter1.mapToDart(const StringType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}existence']))!,
+      minClearTime: const IntType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}min_clear_time']),
+      codeI18n: $StagesTable.$converter2.mapToDart(const StringType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}code_i18n']))!,
+    );
+  }
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['type'] = Variable<String>(type);
+    map['id'] = Variable<String>(id);
+    map['zone_id'] = Variable<String>(zoneId);
+    map['code'] = Variable<String>(code);
+    if (!nullToAbsent || apCost != null) {
+      map['ap_cost'] = Variable<int?>(apCost);
+    }
+    {
+      final converter = $StagesTable.$converter0;
+      map['drop_infos'] = Variable<String>(converter.mapToSql(dropInfos)!);
+    }
+    {
+      final converter = $StagesTable.$converter1;
+      map['existence'] = Variable<String>(converter.mapToSql(existence)!);
+    }
+    if (!nullToAbsent || minClearTime != null) {
+      map['min_clear_time'] = Variable<int?>(minClearTime);
+    }
+    {
+      final converter = $StagesTable.$converter2;
+      map['code_i18n'] = Variable<String>(converter.mapToSql(codeI18n)!);
+    }
+    return map;
+  }
+
+  StagesCompanion toCompanion(bool nullToAbsent) {
+    return StagesCompanion(
+      type: Value(type),
+      id: Value(id),
+      zoneId: Value(zoneId),
+      code: Value(code),
+      apCost:
+          apCost == null && nullToAbsent ? const Value.absent() : Value(apCost),
+      dropInfos: Value(dropInfos),
+      existence: Value(existence),
+      minClearTime: minClearTime == null && nullToAbsent
+          ? const Value.absent()
+          : Value(minClearTime),
+      codeI18n: Value(codeI18n),
+    );
+  }
+
+  factory Stage.fromJson(Map<String, dynamic> json,
+      {ValueSerializer? serializer}) {
+    serializer ??= moorRuntimeOptions.defaultSerializer;
+    return Stage(
+      type: serializer.fromJson<String>(json['stageType']),
+      id: serializer.fromJson<String>(json['stageId']),
+      zoneId: serializer.fromJson<String>(json['zoneId']),
+      code: serializer.fromJson<String>(json['code']),
+      apCost: serializer.fromJson<int?>(json['apCost']),
+      dropInfos: serializer.fromJson<List<dynamic>>(json['dropInfos']),
+      existence: serializer.fromJson<Map<String, dynamic>>(json['existence']),
+      minClearTime: serializer.fromJson<int?>(json['minClearTime']),
+      codeI18n: serializer.fromJson<Map<String, dynamic>>(json['codeI18n']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= moorRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'stageType': serializer.toJson<String>(type),
+      'stageId': serializer.toJson<String>(id),
+      'zoneId': serializer.toJson<String>(zoneId),
+      'code': serializer.toJson<String>(code),
+      'apCost': serializer.toJson<int?>(apCost),
+      'dropInfos': serializer.toJson<List<dynamic>>(dropInfos),
+      'existence': serializer.toJson<Map<String, dynamic>>(existence),
+      'minClearTime': serializer.toJson<int?>(minClearTime),
+      'codeI18n': serializer.toJson<Map<String, dynamic>>(codeI18n),
+    };
+  }
+
+  Stage copyWith(
+          {String? type,
+          String? id,
+          String? zoneId,
+          String? code,
+          int? apCost,
+          List<dynamic>? dropInfos,
+          Map<String, dynamic>? existence,
+          int? minClearTime,
+          Map<String, dynamic>? codeI18n}) =>
+      Stage(
+        type: type ?? this.type,
+        id: id ?? this.id,
+        zoneId: zoneId ?? this.zoneId,
+        code: code ?? this.code,
+        apCost: apCost ?? this.apCost,
+        dropInfos: dropInfos ?? this.dropInfos,
+        existence: existence ?? this.existence,
+        minClearTime: minClearTime ?? this.minClearTime,
+        codeI18n: codeI18n ?? this.codeI18n,
+      );
+  @override
+  String toString() {
+    return (StringBuffer('Stage(')
+          ..write('type: $type, ')
+          ..write('id: $id, ')
+          ..write('zoneId: $zoneId, ')
+          ..write('code: $code, ')
+          ..write('apCost: $apCost, ')
+          ..write('dropInfos: $dropInfos, ')
+          ..write('existence: $existence, ')
+          ..write('minClearTime: $minClearTime, ')
+          ..write('codeI18n: $codeI18n')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => $mrjf($mrjc(
+      type.hashCode,
+      $mrjc(
+          id.hashCode,
+          $mrjc(
+              zoneId.hashCode,
+              $mrjc(
+                  code.hashCode,
+                  $mrjc(
+                      apCost.hashCode,
+                      $mrjc(
+                          dropInfos.hashCode,
+                          $mrjc(
+                              existence.hashCode,
+                              $mrjc(minClearTime.hashCode,
+                                  codeI18n.hashCode)))))))));
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is Stage &&
+          other.type == this.type &&
+          other.id == this.id &&
+          other.zoneId == this.zoneId &&
+          other.code == this.code &&
+          other.apCost == this.apCost &&
+          other.dropInfos == this.dropInfos &&
+          other.existence == this.existence &&
+          other.minClearTime == this.minClearTime &&
+          other.codeI18n == this.codeI18n);
+}
+
+class StagesCompanion extends UpdateCompanion<Stage> {
+  final Value<String> type;
+  final Value<String> id;
+  final Value<String> zoneId;
+  final Value<String> code;
+  final Value<int?> apCost;
+  final Value<List<dynamic>> dropInfos;
+  final Value<Map<String, dynamic>> existence;
+  final Value<int?> minClearTime;
+  final Value<Map<String, dynamic>> codeI18n;
+  const StagesCompanion({
+    this.type = const Value.absent(),
+    this.id = const Value.absent(),
+    this.zoneId = const Value.absent(),
+    this.code = const Value.absent(),
+    this.apCost = const Value.absent(),
+    this.dropInfos = const Value.absent(),
+    this.existence = const Value.absent(),
+    this.minClearTime = const Value.absent(),
+    this.codeI18n = const Value.absent(),
+  });
+  StagesCompanion.insert({
+    required String type,
+    required String id,
+    required String zoneId,
+    required String code,
+    this.apCost = const Value.absent(),
+    required List<dynamic> dropInfos,
+    required Map<String, dynamic> existence,
+    this.minClearTime = const Value.absent(),
+    required Map<String, dynamic> codeI18n,
+  })  : type = Value(type),
+        id = Value(id),
+        zoneId = Value(zoneId),
+        code = Value(code),
+        dropInfos = Value(dropInfos),
+        existence = Value(existence),
+        codeI18n = Value(codeI18n);
+  static Insertable<Stage> custom({
+    Expression<String>? type,
+    Expression<String>? id,
+    Expression<String>? zoneId,
+    Expression<String>? code,
+    Expression<int?>? apCost,
+    Expression<List<dynamic>>? dropInfos,
+    Expression<Map<String, dynamic>>? existence,
+    Expression<int?>? minClearTime,
+    Expression<Map<String, dynamic>>? codeI18n,
+  }) {
+    return RawValuesInsertable({
+      if (type != null) 'type': type,
+      if (id != null) 'id': id,
+      if (zoneId != null) 'zone_id': zoneId,
+      if (code != null) 'code': code,
+      if (apCost != null) 'ap_cost': apCost,
+      if (dropInfos != null) 'drop_infos': dropInfos,
+      if (existence != null) 'existence': existence,
+      if (minClearTime != null) 'min_clear_time': minClearTime,
+      if (codeI18n != null) 'code_i18n': codeI18n,
+    });
+  }
+
+  StagesCompanion copyWith(
+      {Value<String>? type,
+      Value<String>? id,
+      Value<String>? zoneId,
+      Value<String>? code,
+      Value<int?>? apCost,
+      Value<List<dynamic>>? dropInfos,
+      Value<Map<String, dynamic>>? existence,
+      Value<int?>? minClearTime,
+      Value<Map<String, dynamic>>? codeI18n}) {
+    return StagesCompanion(
+      type: type ?? this.type,
+      id: id ?? this.id,
+      zoneId: zoneId ?? this.zoneId,
+      code: code ?? this.code,
+      apCost: apCost ?? this.apCost,
+      dropInfos: dropInfos ?? this.dropInfos,
+      existence: existence ?? this.existence,
+      minClearTime: minClearTime ?? this.minClearTime,
+      codeI18n: codeI18n ?? this.codeI18n,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (type.present) {
+      map['type'] = Variable<String>(type.value);
+    }
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (zoneId.present) {
+      map['zone_id'] = Variable<String>(zoneId.value);
+    }
+    if (code.present) {
+      map['code'] = Variable<String>(code.value);
+    }
+    if (apCost.present) {
+      map['ap_cost'] = Variable<int?>(apCost.value);
+    }
+    if (dropInfos.present) {
+      final converter = $StagesTable.$converter0;
+      map['drop_infos'] =
+          Variable<String>(converter.mapToSql(dropInfos.value)!);
+    }
+    if (existence.present) {
+      final converter = $StagesTable.$converter1;
+      map['existence'] = Variable<String>(converter.mapToSql(existence.value)!);
+    }
+    if (minClearTime.present) {
+      map['min_clear_time'] = Variable<int?>(minClearTime.value);
+    }
+    if (codeI18n.present) {
+      final converter = $StagesTable.$converter2;
+      map['code_i18n'] = Variable<String>(converter.mapToSql(codeI18n.value)!);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('StagesCompanion(')
+          ..write('type: $type, ')
+          ..write('id: $id, ')
+          ..write('zoneId: $zoneId, ')
+          ..write('code: $code, ')
+          ..write('apCost: $apCost, ')
+          ..write('dropInfos: $dropInfos, ')
+          ..write('existence: $existence, ')
+          ..write('minClearTime: $minClearTime, ')
+          ..write('codeI18n: $codeI18n')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $StagesTable extends Stages with TableInfo<$StagesTable, Stage> {
+  final GeneratedDatabase _db;
+  final String? _alias;
+  $StagesTable(this._db, [this._alias]);
+  final VerificationMeta _typeMeta = const VerificationMeta('type');
+  @override
+  late final GeneratedTextColumn type = _constructType();
+  GeneratedTextColumn _constructType() {
+    return GeneratedTextColumn(
+      'type',
+      $tableName,
+      false,
+    );
+  }
+
+  final VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedTextColumn id = _constructId();
+  GeneratedTextColumn _constructId() {
+    return GeneratedTextColumn(
+      'id',
+      $tableName,
+      false,
+    );
+  }
+
+  final VerificationMeta _zoneIdMeta = const VerificationMeta('zoneId');
+  @override
+  late final GeneratedTextColumn zoneId = _constructZoneId();
+  GeneratedTextColumn _constructZoneId() {
+    return GeneratedTextColumn(
+      'zone_id',
+      $tableName,
+      false,
+    );
+  }
+
+  final VerificationMeta _codeMeta = const VerificationMeta('code');
+  @override
+  late final GeneratedTextColumn code = _constructCode();
+  GeneratedTextColumn _constructCode() {
+    return GeneratedTextColumn(
+      'code',
+      $tableName,
+      false,
+    );
+  }
+
+  final VerificationMeta _apCostMeta = const VerificationMeta('apCost');
+  @override
+  late final GeneratedIntColumn apCost = _constructApCost();
+  GeneratedIntColumn _constructApCost() {
+    return GeneratedIntColumn(
+      'ap_cost',
+      $tableName,
+      true,
+    );
+  }
+
+  final VerificationMeta _dropInfosMeta = const VerificationMeta('dropInfos');
+  @override
+  late final GeneratedTextColumn dropInfos = _constructDropInfos();
+  GeneratedTextColumn _constructDropInfos() {
+    return GeneratedTextColumn(
+      'drop_infos',
+      $tableName,
+      false,
+    );
+  }
+
+  final VerificationMeta _existenceMeta = const VerificationMeta('existence');
+  @override
+  late final GeneratedTextColumn existence = _constructExistence();
+  GeneratedTextColumn _constructExistence() {
+    return GeneratedTextColumn(
+      'existence',
+      $tableName,
+      false,
+    );
+  }
+
+  final VerificationMeta _minClearTimeMeta =
+      const VerificationMeta('minClearTime');
+  @override
+  late final GeneratedIntColumn minClearTime = _constructMinClearTime();
+  GeneratedIntColumn _constructMinClearTime() {
+    return GeneratedIntColumn(
+      'min_clear_time',
+      $tableName,
+      true,
+    );
+  }
+
+  final VerificationMeta _codeI18nMeta = const VerificationMeta('codeI18n');
+  @override
+  late final GeneratedTextColumn codeI18n = _constructCodeI18n();
+  GeneratedTextColumn _constructCodeI18n() {
+    return GeneratedTextColumn(
+      'code_i18n',
+      $tableName,
+      false,
+    );
+  }
+
+  @override
+  List<GeneratedColumn> get $columns => [
+        type,
+        id,
+        zoneId,
+        code,
+        apCost,
+        dropInfos,
+        existence,
+        minClearTime,
+        codeI18n
+      ];
+  @override
+  $StagesTable get asDslTable => this;
+  @override
+  String get $tableName => _alias ?? 'stages';
+  @override
+  final String actualTableName = 'stages';
+  @override
+  VerificationContext validateIntegrity(Insertable<Stage> instance,
+      {bool isInserting = false}) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('type')) {
+      context.handle(
+          _typeMeta, type.isAcceptableOrUnknown(data['type']!, _typeMeta));
+    } else if (isInserting) {
+      context.missing(_typeMeta);
+    }
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('zone_id')) {
+      context.handle(_zoneIdMeta,
+          zoneId.isAcceptableOrUnknown(data['zone_id']!, _zoneIdMeta));
+    } else if (isInserting) {
+      context.missing(_zoneIdMeta);
+    }
+    if (data.containsKey('code')) {
+      context.handle(
+          _codeMeta, code.isAcceptableOrUnknown(data['code']!, _codeMeta));
+    } else if (isInserting) {
+      context.missing(_codeMeta);
+    }
+    if (data.containsKey('ap_cost')) {
+      context.handle(_apCostMeta,
+          apCost.isAcceptableOrUnknown(data['ap_cost']!, _apCostMeta));
+    }
+    context.handle(_dropInfosMeta, const VerificationResult.success());
+    context.handle(_existenceMeta, const VerificationResult.success());
+    if (data.containsKey('min_clear_time')) {
+      context.handle(
+          _minClearTimeMeta,
+          minClearTime.isAcceptableOrUnknown(
+              data['min_clear_time']!, _minClearTimeMeta));
+    }
+    context.handle(_codeI18nMeta, const VerificationResult.success());
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  Stage map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;
+    return Stage.fromData(data, _db, prefix: effectivePrefix);
+  }
+
+  @override
+  $StagesTable createAlias(String alias) {
+    return $StagesTable(_db, alias);
+  }
+
+  static TypeConverter<List<dynamic>, String> $converter0 = ListConverter();
+  static TypeConverter<Map<String, dynamic>, String> $converter1 =
+      JsonConverter();
+  static TypeConverter<Map<String, dynamic>, String> $converter2 =
+      JsonConverter();
+}
+
 abstract class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(SqlTypeSystem.defaultInstance, e);
   late final $ItemsTable items = $ItemsTable(this);
+  late final $StagesTable stages = $StagesTable(this);
   late final ItemsDao itemsDao = ItemsDao(this as AppDatabase);
+  late final StagesDao stagesDao = StagesDao(this as AppDatabase);
   @override
   Iterable<TableInfo> get allTables => allSchemaEntities.whereType<TableInfo>();
   @override
-  List<DatabaseSchemaEntity> get allSchemaEntities => [items];
+  List<DatabaseSchemaEntity> get allSchemaEntities => [items, stages];
 }

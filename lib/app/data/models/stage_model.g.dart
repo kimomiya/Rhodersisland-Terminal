@@ -14,11 +14,14 @@ _$_StageModel _$_$_StageModelFromJson(Map<String, dynamic> json) {
     code: json['code'] as String? ?? '',
     apCost: json['apCost'] as int?,
     dropInfos: (json['dropInfos'] as List<dynamic>?)
-        ?.map((e) => DropInfoModel.fromJson(e as Map<String, dynamic>))
-        .toList(),
-    existence: json['existence'] == null
-        ? null
-        : ExistenceModel.fromJson(json['existence'] as Map<String, dynamic>),
+            ?.map((e) => DropInfoModel.fromJson(e as Map<String, dynamic>))
+            .toList() ??
+        [],
+    existence: (json['existence'] as Map<String, dynamic>?)?.map(
+          (k, e) =>
+              MapEntry(k, ExistenceModel.fromJson(e as Map<String, dynamic>)),
+        ) ??
+        {},
     minClearTime: json['minClearTime'] as int?,
     codeI18n: (json['codeI18n'] as Map<String, dynamic>?)?.map(
           (k, e) => MapEntry(k, e as String),

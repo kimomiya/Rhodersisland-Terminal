@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import 'app/bindings/core/providers.dart';
+import 'app/bindings/core/base_dependencies.dart';
 import 'app/bindings/splash_binding.dart';
 import 'app/core/enum/i18n.dart';
 import 'app/router/router.dart';

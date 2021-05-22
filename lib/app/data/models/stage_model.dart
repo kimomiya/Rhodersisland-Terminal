@@ -15,8 +15,8 @@ class StageModel with _$StageModel {
     @Default('') String zoneId,
     @Default('') String code,
     int? apCost,
-    List<DropInfoModel>? dropInfos,
-    ExistenceModel? existence,
+    @Default(<DropInfoModel>[]) List<DropInfoModel> dropInfos,
+    @Default(<String, ExistenceModel>{}) Map<String, ExistenceModel> existence,
     int? minClearTime,
     @Default(<String, String>{}) Map<String, String> codeI18n,
   }) = _StageModel;

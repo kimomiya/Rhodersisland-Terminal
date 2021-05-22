@@ -1,14 +1,18 @@
 import 'package:get/get.dart';
 
 import '../../data/repository/item_repository.dart';
+import '../../data/repository/stage_repository.dart';
 import '../../router/router.dart';
 
 class SplashController extends GetxController {
   SplashController({
     required this.itemRepository,
-  }) : assert(itemRepository != null);
+    required this.stageRepository,
+  })  : assert(itemRepository != null),
+        assert(stageRepository != null);
 
   final ItemRepository itemRepository;
+  final StageRepository stageRepository;
 
   var _opacity = 0.0;
   double get opacity => _opacity;
@@ -25,6 +29,7 @@ class SplashController extends GetxController {
   void _initialize() {
     Future.wait([
       itemRepository.fetchAndSaveAll(),
+      stageRepository.fetchAndSaveAll(),
     ]);
 
     Future.delayed(

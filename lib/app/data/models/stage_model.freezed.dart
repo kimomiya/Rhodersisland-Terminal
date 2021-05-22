@@ -26,8 +26,8 @@ class _$StageModelTearOff {
       String zoneId = '',
       String code = '',
       int? apCost,
-      List<DropInfoModel>? dropInfos,
-      ExistenceModel? existence,
+      List<DropInfoModel> dropInfos = const <DropInfoModel>[],
+      Map<String, ExistenceModel> existence = const <String, ExistenceModel>{},
       int? minClearTime,
       Map<String, String> codeI18n = const <String, String>{}}) {
     return _StageModel(
@@ -60,8 +60,9 @@ mixin _$StageModel {
   String get zoneId => throw _privateConstructorUsedError;
   String get code => throw _privateConstructorUsedError;
   int? get apCost => throw _privateConstructorUsedError;
-  List<DropInfoModel>? get dropInfos => throw _privateConstructorUsedError;
-  ExistenceModel? get existence => throw _privateConstructorUsedError;
+  List<DropInfoModel> get dropInfos => throw _privateConstructorUsedError;
+  Map<String, ExistenceModel> get existence =>
+      throw _privateConstructorUsedError;
   int? get minClearTime => throw _privateConstructorUsedError;
   Map<String, String> get codeI18n => throw _privateConstructorUsedError;
 
@@ -82,12 +83,10 @@ abstract class $StageModelCopyWith<$Res> {
       String zoneId,
       String code,
       int? apCost,
-      List<DropInfoModel>? dropInfos,
-      ExistenceModel? existence,
+      List<DropInfoModel> dropInfos,
+      Map<String, ExistenceModel> existence,
       int? minClearTime,
       Map<String, String> codeI18n});
-
-  $ExistenceModelCopyWith<$Res>? get existence;
 }
 
 /// @nodoc
@@ -134,11 +133,11 @@ class _$StageModelCopyWithImpl<$Res> implements $StageModelCopyWith<$Res> {
       dropInfos: dropInfos == freezed
           ? _value.dropInfos
           : dropInfos // ignore: cast_nullable_to_non_nullable
-              as List<DropInfoModel>?,
+              as List<DropInfoModel>,
       existence: existence == freezed
           ? _value.existence
           : existence // ignore: cast_nullable_to_non_nullable
-              as ExistenceModel?,
+              as Map<String, ExistenceModel>,
       minClearTime: minClearTime == freezed
           ? _value.minClearTime
           : minClearTime // ignore: cast_nullable_to_non_nullable
@@ -148,17 +147,6 @@ class _$StageModelCopyWithImpl<$Res> implements $StageModelCopyWith<$Res> {
           : codeI18n // ignore: cast_nullable_to_non_nullable
               as Map<String, String>,
     ));
-  }
-
-  @override
-  $ExistenceModelCopyWith<$Res>? get existence {
-    if (_value.existence == null) {
-      return null;
-    }
-
-    return $ExistenceModelCopyWith<$Res>(_value.existence!, (value) {
-      return _then(_value.copyWith(existence: value));
-    });
   }
 }
 
@@ -174,13 +162,10 @@ abstract class _$StageModelCopyWith<$Res> implements $StageModelCopyWith<$Res> {
       String zoneId,
       String code,
       int? apCost,
-      List<DropInfoModel>? dropInfos,
-      ExistenceModel? existence,
+      List<DropInfoModel> dropInfos,
+      Map<String, ExistenceModel> existence,
       int? minClearTime,
       Map<String, String> codeI18n});
-
-  @override
-  $ExistenceModelCopyWith<$Res>? get existence;
 }
 
 /// @nodoc
@@ -229,11 +214,11 @@ class __$StageModelCopyWithImpl<$Res> extends _$StageModelCopyWithImpl<$Res>
       dropInfos: dropInfos == freezed
           ? _value.dropInfos
           : dropInfos // ignore: cast_nullable_to_non_nullable
-              as List<DropInfoModel>?,
+              as List<DropInfoModel>,
       existence: existence == freezed
           ? _value.existence
           : existence // ignore: cast_nullable_to_non_nullable
-              as ExistenceModel?,
+              as Map<String, ExistenceModel>,
       minClearTime: minClearTime == freezed
           ? _value.minClearTime
           : minClearTime // ignore: cast_nullable_to_non_nullable
@@ -255,8 +240,8 @@ class _$_StageModel implements _StageModel {
       this.zoneId = '',
       this.code = '',
       this.apCost,
-      this.dropInfos,
-      this.existence,
+      this.dropInfos = const <DropInfoModel>[],
+      this.existence = const <String, ExistenceModel>{},
       this.minClearTime,
       this.codeI18n = const <String, String>{}});
 
@@ -277,10 +262,12 @@ class _$_StageModel implements _StageModel {
   final String code;
   @override
   final int? apCost;
+  @JsonKey(defaultValue: const <DropInfoModel>[])
   @override
-  final List<DropInfoModel>? dropInfos;
+  final List<DropInfoModel> dropInfos;
+  @JsonKey(defaultValue: const <String, ExistenceModel>{})
   @override
-  final ExistenceModel? existence;
+  final Map<String, ExistenceModel> existence;
   @override
   final int? minClearTime;
   @JsonKey(defaultValue: const <String, String>{})
@@ -351,8 +338,8 @@ abstract class _StageModel implements StageModel {
       String zoneId,
       String code,
       int? apCost,
-      List<DropInfoModel>? dropInfos,
-      ExistenceModel? existence,
+      List<DropInfoModel> dropInfos,
+      Map<String, ExistenceModel> existence,
       int? minClearTime,
       Map<String, String> codeI18n}) = _$_StageModel;
 
@@ -372,9 +359,10 @@ abstract class _StageModel implements StageModel {
   @override
   int? get apCost => throw _privateConstructorUsedError;
   @override
-  List<DropInfoModel>? get dropInfos => throw _privateConstructorUsedError;
+  List<DropInfoModel> get dropInfos => throw _privateConstructorUsedError;
   @override
-  ExistenceModel? get existence => throw _privateConstructorUsedError;
+  Map<String, ExistenceModel> get existence =>
+      throw _privateConstructorUsedError;
   @override
   int? get minClearTime => throw _privateConstructorUsedError;
   @override
