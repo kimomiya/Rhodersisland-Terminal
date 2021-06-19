@@ -6,7 +6,7 @@ part 'matrix_model.freezed.dart';
 part 'matrix_model.g.dart';
 
 @freezed
-abstract class MatrixModel with _$MatrixModel {
+class MatrixModel with _$MatrixModel {
   const factory MatrixModel({
     @Default('') String stageId,
     @Default('') String itemId,

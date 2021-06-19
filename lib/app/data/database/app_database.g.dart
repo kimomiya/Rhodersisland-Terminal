@@ -636,8 +636,8 @@ class $ItemsTable extends Items with TableInfo<$ItemsTable, Item> {
   Set<GeneratedColumn> get $primaryKey => {id};
   @override
   Item map(Map<String, dynamic> data, {String? tablePrefix}) {
-    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;
-    return Item.fromData(data, _db, prefix: effectivePrefix);
+    return Item.fromData(data, _db,
+        prefix: tablePrefix != null ? '$tablePrefix.' : null);
   }
 
   @override
@@ -1154,8 +1154,8 @@ class $StagesTable extends Stages with TableInfo<$StagesTable, Stage> {
   Set<GeneratedColumn> get $primaryKey => {id};
   @override
   Stage map(Map<String, dynamic> data, {String? tablePrefix}) {
-    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;
-    return Stage.fromData(data, _db, prefix: effectivePrefix);
+    return Stage.fromData(data, _db,
+        prefix: tablePrefix != null ? '$tablePrefix.' : null);
   }
 
   @override
